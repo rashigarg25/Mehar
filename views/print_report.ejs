@@ -1,0 +1,258 @@
+<html lang="en">
+    <head>
+        <title>MEHAR SUPER SPECIALITY HOSPITAL</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datetimepicker.min.js"></script>
+
+        <link rel="stylesheet" href="css1/bootstrap.min.css">
+        <script src="js1/jquery.min.js"></script>  
+        <script type="text/javascript" src="js1/moment.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css1/bootstrap-datetimepicker.min.css"> 
+        <link rel="stylesheet" type="text/css" href="css1/bootstrap-datetimepicker-standalone.css"> 
+        <script type="text/javascript" src="js1/bootstrap-datetimepicker.min.js"></script>
+
+
+        <style>
+		
+		@page {
+  size: 8.5in 11in;
+}
+
+.page {
+  page-break-after: always;
+}
+
+.footer {
+  height: 75px;
+}
+
+.footer>div {
+  position: fixed;
+  bottom: 0;
+}
+
+body { 
+  font-family: sans-serif;
+}
+		
+		
+        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 2px;
+          font-size: 12px;      
+        }
+            thead th {
+                background-color: #E0E0E0;
+            }
+            thead th:first-child {
+                border-radius: 10px 0 0 10px;
+            }
+            thead th:last-child {
+                border-radius: 0 10px 10px 0;
+            }
+            /** Border Fix. **/
+            table th {
+                border: none !important;
+            }
+            table td {
+                border: none !important;
+            }
+
+
+            .form-group.descritopon_div {
+
+            }
+            .docotor_de {
+                float: right;
+                text-align: right;
+            }
+            .haddress {
+                float: right;
+            }
+            .patient_address {
+                border: 1px solid #ccc;
+                border-radius: 15px;
+            }
+
+            .patient_address .table>tbody>tr>td, .patient_address .table>tbody>tr>th, .patient_address .table>tfoot>tr>td, .patient_address .table>tfoot>tr>th, .patient_address .table>thead>tr>td, .patient_address .table>thead>tr>th{
+
+                border-top: 0px solid #ddd;
+            }
+
+
+
+            button.reportbutton {
+                float: right;
+                margin-top: 2px;
+                position: absolute;
+                right: 10px;
+            }
+            table th span {
+                text-align: right;
+                float: right;
+            }
+			
+			.patient_re {
+				padding-top:10px;
+				padding-bottom:10px;
+			}
+			
+            @media print{
+                button.reportbutton {
+                    display:none;
+                }
+                .haddress {
+                    float: right;
+                    margin-top: -10%;
+                }
+				
+				.patient_address {
+					border: 1px solid #ccc;
+					border-radius: 15px;
+				}
+            }
+
+        </style>
+
+
+
+    </head>
+    <body>
+
+
+        <div class="container">
+          <button class="reportbutton" onclick="window.print()">Print this Report</button> 
+          
+	   <div class="page">    
+            
+            <div class="row"> 
+                <div class="col-sm-5">
+                    <br>
+                    <img src="img/logo.png">    
+                </div>
+                <div class="col-sm-7">                    
+                    <div class="haddress">
+                        <h3>MEHAR SUPER SPECIALITY HOSPITAL</h3>
+                        <p>Opposite Grandeur Marriage Palace,Singhpura Road, <br/>
+                            Zirakpur, Mohali. Ph. : +91- 7527070509, 7527070510 <br/>
+                            E-mail:-info@meharhospital.com, Website:-www.meharhospital.com </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="patient_address">    
+                <table class="table">
+                    <tr>
+                        <th>Patient Name <span>:</span> </th>
+                        <td> <%= data.patient_name %> </td>
+                        <th>Age/Sex  <span>:</span> </th>
+                        <td> <%= data.Age %></td>
+                    </tr>
+                    <tr>
+                        <th>UHID No. <span>:</span> </th>
+                        <td> <?php echo $_REQUEST['uhid']; ?></td>
+                        <th>IPD No. :   <span>:</span> </th>
+                        <td> <?php echo $_REQUEST['ipd']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Department   <span>:</span> </th>
+                        <td> <?php echo $_REQUEST['department']; ?></td>
+                        <th>DOB     <span>:</span> </th>
+                        <td> <?php echo $_REQUEST['dob']; ?></td>
+                    </tr>
+
+                    <tr>
+                        <th>Consultant : <span>:</span></th>
+                        <td>  <?php echo $_REQUEST['consultant']; ?></td>
+                        <th>Sample Date   <span>:</span> </th>
+                        <td> <?php echo $_REQUEST['rdate_1']; ?></td>
+                    </tr>
+                    
+                    
+                </table>
+
+            </div>
+
+            <div class="patient_re">    
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Investigation</th>
+                            <th scope="col">Observations</th>
+                            <th scope="col">Biological  Reference Interval</th>
+                            <th scope="col">Units</th>
+                        </tr>
+                    </thead>
+
+                    <tr><td>Hb </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Hct </td> <td><%=data.Hct_1%></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>TLC </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>DLC </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Segmented Nerutrophils </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Lymphocytes </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Eosinophils </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Basophils </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>ESR </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Platelets </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    
+                    <tr><td>Albumin </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Sugar </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>RBCs </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>WBCs </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Casts </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Sugars </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Random </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Fasting </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+
+                    <tr><td>Postprandial </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Na </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>K </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>CI </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Urea </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Creatinine </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>SGOT </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>SGPT </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+
+                    <tr><td>Alk, Phosphatase </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Lactate Dehydrogenase </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Creatine Kinase (CK) </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Billnrubin T </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Totla Proteins </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Glabuln </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Calcium </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Magnesium </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Phosphorus </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Uric acid </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+
+                    <tr><td>Amyylase </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Lipase </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Total Cholesterol </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>LDL </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>VLDL </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>1G </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+
+                    <tr><td>HDL </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>PII </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>INR </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>PIIK </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>CPK MB </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Trap I </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Myoglobin </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>HIV </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+
+                    <tr><td>HbaAg </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>HCV </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    </tr>
+                </table>         
+            </div>
+        </div>    
+
+        </div>
+    
+ </body>
+ </html>
