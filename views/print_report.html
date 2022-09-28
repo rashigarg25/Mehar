@@ -124,15 +124,14 @@ body {
 
 
         <div class="container">
-            <form action="download" method="POST">
-                <button type="submit" class="reportbutton">Print this report</button>
-            </form>
+          <button class="reportbutton" onclick="window.print()">Print this Report</button> 
+          
 	   <div class="page">    
             
             <div class="row"> 
                 <div class="col-sm-5">
                     <br>
-                    <img src="img/logo.png">    
+                    <img style=display:none src="img/logo.png">    
                 </div>
                 <div class="col-sm-7">                    
                     <div class="haddress">
@@ -148,9 +147,9 @@ body {
                 <table class="table">
                     <tr>
                         <th>Patient Name <span>:</span> </th>
-                        <td> <%= data.patient_name %> </td>
+                        <td> {{patient_name}} </td>
                         <th>Age/Sex  <span>:</span> </th>
-                        <td> <%= data.Age %></td>
+                        <td> {{Age}}</td>
                     </tr>
                     <tr>
                         <th>UHID No. <span>:</span> </th>
@@ -189,7 +188,7 @@ body {
                     </thead>
 
                     <tr><td>Hb </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
-                    <tr><td>Hct </td> <td><%=data.Hct_1%></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
+                    <tr><td>Hct </td> <td>{{Hct_1}}</td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
                     <tr><td>TLC </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
                     <tr><td>DLC </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>
                     <tr><td>Segmented Nerutrophils </td> <td></td> <td>13.5-18 ( F-11.5-15)</td> <td> gsm/dl</td> </tr>

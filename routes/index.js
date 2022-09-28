@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const { check, validationResult } = require('express-validator');
+const {printView, generatePdf} = require("../controller/homeController");
 
 const router = express.Router();
 
@@ -14,17 +15,11 @@ router.get('/form', (req, res) => {
 });
 
 router.post("/print_report",
-[
-  check('Hct_1').isInt()
-  .withMessage("Please enter numeric value")
-],
-(req, res) => {
-  const errors = validationResult(req);
-  
-  //console.log(req.body);
-  console.log(errors);
-  res.render("print_report", {data : req.body});
-} 
+generatePdf
+);
+
+router.post("/download",
+generatePdf
 );
 
 router.post('/form', 
