@@ -10,7 +10,7 @@ const printView = (req, res, next) => {
 
 const generatePdf = async (req, res, next) => {
     const html = fs.readFileSync(path.join(__dirname, '../views/print_report.html'), 'utf-8');
-    const filename = Math.random() + '_doc' + '.pdf';
+    const filename = req.body.patient_name + '_' + '.pdf';
 
     const document = {
         html: html,
@@ -19,23 +19,10 @@ const generatePdf = async (req, res, next) => {
     }
 
     const options = {
-        formate: 'A4',
+        format: 'A4',
         orientation: 'portrait',
-        border: '2mm',
-        header: {
-            height: '15mm',
-            contents:`<h6>Name: ${req.body.patient_name}</h6>`
-        },
-        footer: {
-            height: '20mm',
-            contents: {
-                first: 'Cover page',
-                2: 'Second page',
-                default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', 
-                last: 'Last Page'
-            }
+        border: '50px'
         }
-    }
     
     pdf.create(document, options)
         .then(res => {
