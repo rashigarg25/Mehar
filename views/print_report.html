@@ -5,20 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datetimepicker.min.js"></script>
-
-    <script src="js1/jquery.min.js"></script>
-    <script type="text/javascript" src="js1/moment.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="css1/bootstrap-datetimepicker-standalone.css">
-    <script type="text/javascript" src="js1/bootstrap-datetimepicker.min.js"></script>
-
     <style>
         html {
-            zoom: 0.55 !important;
+            zoom: 0.55;
         }
 
         @page {
@@ -47,6 +36,10 @@
             font-size: x-small !important;
         }
 
+        .small-font {
+            font-size: small !important;
+        }
+
         tr.highlight th {
             padding-top: 20px !important;
         }
@@ -55,112 +48,98 @@
 <body>
 
 
-<div class="ui grid container this-page">
+<div class="this-page" style="overflow: hidden; white-space: nowrap">
     <div class="ui container">
-        <div class="ui grid">
-            <div class="six wide column">
-                <br>
-                <img class="ui medium left aligned image"
-                     src="https://meharhospital.com/wp-content/uploads/2020/01/Logo_Large_1119_319_100.png">
+        <div id="pageHeader">
+            <div class="ui grid" style="overflow: hidden; white-space: nowrap">
             </div>
-            <div class="four wide column">
-                <br>
-                <img class="ui tiny centered image"
-                     src="https://www.clipartmax.com/png/middle/247-2478763_nabh-accreditation-logo.png">
-            </div>
-            <div class="six wide right aligned column">
-                <h3>MEHAR SUPER SPECIALITY HOSPITAL</h3>
-                Opposite Grandeur Marriage Palace, Singhpura Road<br/>
-                Zirakpur, Mohali<br/>
-                Phone: +91 7527070509, 7527070510<br/>
-                E-mail: info@meharhospital.com<br/>
-                Website: www.meharhospital.com </p>
-            </div>
-        </div>
 
-        <div class="ui segment">
-            <div class="ui two column very relaxed grid">
-                <div class="column">
-                    <table class="ui very basic table">
-                        <tbody>
-                        <tr>
-                            <th>Patient Name</th>
-                            <td class="left aligned">Mrs. Kaushalya Devi</td>
-                        </tr>
-                        <tr>
-                            <th>UHID No.</th>
-                            <td>17984</td>
-                        </tr>
-                        <tr>
-                            <th>Address</th>
-                            <td>Ward No.3 Vill Post Mohanpura Katra</td>
-                        </tr>
-                        <tr>
-                            <th>Doctor</th>
-                            <td>DR. HARDEEP SINGH</td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <div class="ui segments" style="overflow: hidden; white-space: nowrap">
+                <div class="ui horizontal segments">
+                    <div class="ui segment" style="border: none !important">
+                        <br>
+                        <img class="ui medium left aligned image"
+                             src="https://meharhospital.com/wp-content/uploads/2020/01/Logo_Large_1119_319_100.png">
+                    </div>
+                    <div class="ui segment" style="border: none !important">
+                        <br>
+                        <img class="ui tiny centered image"
+                             src="https://www.clipartmax.com/png/middle/247-2478763_nabh-accreditation-logo.png">
+                    </div>
+                    <div class="ui right aligned segment" style="border: none !important">
+                        <h4>MEHAR SUPER SPECIALITY HOSPITAL</h4>
+                        <p class="small-font">
+                            Opposite Grandeur Marriage Palace<br/>
+                            Singhpura Road, Zirakpur, Mohali<br/>
+                            Phone: +91 7527070509, 7527070510<br/>
+                            E-mail: info@meharhospital.com<br/></p>
+                    </div>
                 </div>
-                <div class="column">
+                <div class="ui segment" style="overflow: hidden; white-space: nowrap">
+                    <div class="ui very relaxed grid">
+                        <div class="seven wide column">
+                            <table class="ui very basic table">
+                                <tbody>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <td>patient_name</td>
+                                </tr>
+                                <tr>
+                                    <th>UHID No.</th>
+                                    <td>17984</td>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <td>Ward No.3 Vill Post Mohanpura Katra</td>
+                                </tr>
+                                <tr>
+                                    <th>Doctor</th>
+                                    <td>DR. HARDEEP SINGH</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="two wide column"></div>
+                        <div class="seven wide column">
+                            <table class="ui very basic table">
+                                <tbody>
+                                <tr>
+                                    <th>Mobile No</th>
+                                    <td>987654567</td>
+                                </tr>
+                                <tr>
+                                    <th>ID No, Age</th>
+                                    <td>3074, 34 Yr Female</td>
+                                </tr>
+                                <tr>
+                                    <th>Sampling Date</th>
+                                    <td>28-09-2022 00:08:00</td>
+                                </tr>
+                                <tr>
+                                    <th>Print Date</th>
+                                    <td>28-09-2022 07:27 PM</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui segment" style="padding: 0">
                     <table class="ui very basic table">
-                        <tbody>
-                        <tr>
-                            <th>Mobile No</th>
-                            <td class="left aligned">987654567</td>
+                        <thead>
+                        <tr class="highlight center aligned">
+                            <th class="six wide">Investigation</th>
+                            <th class="three wide">Observations</th>
+                            <th class="four wide">Biological Reference Interval</th>
+                            <th class="three wide">Units</th>
                         </tr>
-                        <tr>
-                            <th>ID No, Age</th>
-                            <td>3074, 34 Yr Female</td>
-                        </tr>
-                        <tr>
-                            <th>Sampling Date</th>
-                            <td>28-09-2022 00:08:00</td>
-                        </tr>
-                        <tr>
-                            <th>Print Date</th>
-                            <td>28-09-2022 07:27 PM</td>
-                        </tr>
+                        </thead>
                     </table>
                 </div>
             </div>
         </div>
         <table class="ui compact table">
-            <thead>
-            <tr class="active">
-                <th>Investigation</th>
-                <th>Observations</th>
-                <th>Biological Reference Interval</th>
-                <th>Units</th>
-            </tr>
-            </thead>
             <tr class="highlight">
-                <th colspan="4"><u>KIDNEY FUNCTION TEST (KFT) CGHS 1512</u></th>
-            </tr>
-            <tr>
-                <td>BLOOD UREA<br/><i class="test-method">Method : Urease-GLDH</i></td>
-                <td></td>
-                <td>13.5-18 ( F-11.5-15)</td>
-                <td> mg/dl</td>
-            </tr>
-
-            <tr>
-                <td>SERUM CREATININE<br/><i class="test-method">Method : Enzymatic</i></td>
-                <td></td>
-                <td>13.5-18 ( F-11.5-15)</td>
-                <td> mg/dl</td>
-            </tr>
-
-            <tr>
-                <td>SERUM URIC ACID<br/><i class="test-method">Method : Uricase-POD</i></td>
-                <td></td>
-                <td>13.5-18 ( F-11.5-15)</td>
-                <td> mg/dl</td>
-            </tr>
-
-
-            <tr class="highlight">
-                <th colspan="4"><u>KIDNEY FUNCTION TEST (KFT) CGHS 1512</u></th>
+                <th><u>KIDNEY FUNCTION TEST (KFT) CGHS 1512</u></th>
             </tr>
             <tr>
                 <td>BLOOD UREA<br/><i class="test-method">Method : Urease-GLDH</i></td>

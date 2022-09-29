@@ -11,17 +11,17 @@
         <script src="js/bootstrap-datetimepicker.min.js"></script>
 
         <link rel="stylesheet" href="css1/bootstrap.min.css">
-        <script src="js1/jquery.min.js"></script>  
+        <script src="js1/jquery.min.js"></script>
         <script type="text/javascript" src="js1/moment.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css1/bootstrap-datetimepicker.min.css"> 
-        <link rel="stylesheet" type="text/css" href="css1/bootstrap-datetimepicker-standalone.css"> 
+        <link rel="stylesheet" type="text/css" href="css1/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" type="text/css" href="css1/bootstrap-datetimepicker-standalone.css">
         <script type="text/javascript" src="js1/bootstrap-datetimepicker.min.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"/>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
 
 
-        
-        
+
+
         <style>
 .row.patient_re th {
     font-size: 13px;
@@ -31,7 +31,7 @@
 .verticalTableHeader {
     width: 40px;
     position: absolute;
-     font-weight: 600; 
+     font-weight: 600;
     font-family: system-ui;
 }
             .row.headerdetails {
@@ -62,7 +62,7 @@
             }
 
 
-            .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {   
+            .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
                 border-top: 1px solid #000;
             }
             .table>thead>tr>th{
@@ -128,7 +128,7 @@ textarea
             .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
                 padding: 2px;
             }
-            
+
             td.vertical_td.HEMOGRAM .verticalTableHeader {
                 margin-top: 138px;
             }
@@ -149,7 +149,7 @@ textarea
     margin-top: 60px;
 }
 
-            
+
             .verticalTableHeader {
                 text-align:center;
                 white-space:nowrap;
@@ -166,11 +166,11 @@ textarea
                 padding-top:110%;/* takes width as reference, + 10% for faking some extra padding */
                 display:inline-block;
                 vertical-align:middle;
-            }     
+            }
 
             .verticalTableHeader {
                 width: 40px;
-                position: absolute;               
+                position: absolute;
             }
             .vertical_td{
                 width: 45px;
@@ -186,8 +186,8 @@ textarea
           .tr_border  {
            border-top: 1px solid #000;
            }
-            
-            
+
+
             @media print{
 
                 .vertailtext {
@@ -210,14 +210,14 @@ textarea
             <form action="print_report" method="POST">
             <div class="container">
                 <button type="submit" class="reportbutton">Preview</button>
-                <div class="row headerdetails"> 
+                <div class="row headerdetails">
                     <div class="col-sm-4 logodiv">
                         <br>
                         <p><img src="img/logo.png"></p>
                     </div>
                     <div class="col-sm-8 detaisheaddiv" >
 
-                        <div class="patient_address">    
+                        <div class="patient_address">
                             <table class="table">
 
                                 <tr>
@@ -228,12 +228,12 @@ textarea
 
                                 <tr>
                                     <td>UHID/MR No. : <input type="text" class="inputc" id="pwd"  name="uhid"></td>
-                                    <td>IPD No. : <input type="text" class="inputc" id="pwd"  name="ipd"></td>	
+                                    <td>IPD No. : <input type="text" class="inputc" id="pwd"  name="ipd"></td>
                                 </tr>
 
                                 <tr>
                                     <td>Department : <input type="text" class="inputc" id="pwd"  name="department"></td>
-                                    <td>DOB : 
+                                    <td>DOB :
 
                                         <div class='input-group date' id='datetimepicker2' data-date-format="dd-mm-yyyy">
                                             <input type="text" class="inputc" id="pwd" data-format="dd-MM-yyyy" name="dob">
@@ -249,7 +249,7 @@ textarea
                                                     format: 'DD/MM/Y hh:mm A'
                                                 });
                                             });
-                                            
+
                                         </script>
 
 
@@ -370,7 +370,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
 
 
 
-                                    </td>	
+                                    </td>
                                 </tr>
 
                                 <tr >
@@ -385,53 +385,53 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                 </div>
 
                 <div class="row nav" style="text-align:center">
-                    <h3>	INVESTIGATION FLOW SHEET</h3>  
+                    <h3>	INVESTIGATION FLOW SHEET</h3>
                 </div>
 
 
 
-                <div class="row patient_re">  
+                <div class="row patient_re">
                     <table class="table" border="1">
                         <thead>
  <tr>
                                 <th></th>
                                 <th scope="col">Test Name</th>
                                 <th scope="col">Investigation Date</th>
-                                <th> 
+                                <th>
                         <div class='input-group date ' id='datetimepicker3' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_1">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='datetimepicker4' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_2">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='datetimepicker5' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_3">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='datetimepicker6' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_4">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='datetimepicker7' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_5">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='datetimepicker8' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_6">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='datetimepicker9' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_7">
                         </div>
-                        </th>                               
+                        </th>
 
                         </tr>
 
@@ -443,41 +443,41 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                                 <th></th>
                                 <th scope="col"></th>
                                 <th scope="col">Print Date</th>
-                                <th> 
+                                <th>
                         <div class='input-group date ' id='printDatetimepicker3' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_1">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='printDatetimepicker4' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_2">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='printDatetimepicker5' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_3">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='printDatetimepicker6' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_4">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='printDatetimepicker7' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_5">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='printDatetimepicker8' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_6">
                         </div>
                         </th>
-                        <th> 
+                        <th>
                         <div class='input-group date ' id='printDatetimepicker9' >
                             <input type="text" class="input-group-addon" id="pwd"  name="rdate_7">
                         </div>
-                        </th>                               
+                        </th>
 
                         </tr>
 
@@ -497,7 +497,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="601" name="Hb_7" class="report_text"></td>
 
                         </tr>
-                        
+
                         <tr>
                             <td></td>
                             <td> Hct</td>
@@ -526,7 +526,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                         </tr>
                         <tr>
                             <td></td>
-                            <td> DLC</td>                           
+                            <td> DLC</td>
                             <td> Some range value </td>
                             <td> <input type="text" tabindex="4" name="DLC_1" class="report_text"></td>
                             <td> <input type="text" tabindex="104" name="DLC_2" class="report_text"></td>
@@ -535,7 +535,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="404" name="DLC_5" class="report_text"></td>
                             <td> <input type="text" tabindex="504" name="DLC_6" class="report_text"></td>
                             <td> <input type="text" tabindex="604" name="DLC_7" class="report_text"></td>
-                           
+
                         </tr>
 
                         <tr>
@@ -564,8 +564,8 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="606" name="Lymphocytes_7" class="report_text"></td>
 
                         </tr>
-                        
-                        
+
+
                         <tr>
                             <td></td>
                             <td> Eosinophils</td>
@@ -625,7 +625,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                         </tr>
 
                         <tr class="tr_border">
-                            <td> <div class="vertical_td URINE"> <div class="verticalTableHeader">URINE/E</div> </td>                                                 
+                            <td> <div class="vertical_td URINE"> <div class="verticalTableHeader">URINE/E</div> </td>
                             <td> Albumin</td>
                             <td>Not Delected</td>
                             <td> <input type="text" tabindex="11" name="Albumin_1"  class="report_text"></td>
@@ -636,7 +636,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="511" name="Albumin_6"  class="report_text"></td>
                             <td> <input type="text" tabindex="611" name="Albumin_7"  class="report_text"></td>
 
-                        </tr>    
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -650,7 +650,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="512" name="Sugar_6" class="report_text"></td>
                             <td> <input type="text" tabindex="612" name="Sugar_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -664,7 +664,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="513" name="RBC_6" class="report_text"></td>
                             <td> <input type="text" tabindex="613" name="RBC_7" class="report_text"></td>
 
-                        </tr>   
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -678,7 +678,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="514" name="WBC_6" class="report_text"></td>
                             <td> <input type="text" tabindex="614" name="WBC_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
                         <tr>
                             <td></td>
                             <td>  Casts </td>
@@ -691,11 +691,11 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="515" name="Casts_6" class="report_text"></td>
                             <td> <input type="text" tabindex="615" name="Casts_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
 
                         <tr class="tr_border">
-                            <td> <div class="vertical_td BLOOD"> <div class="verticalTableHeader">BLOOD BIOCHEMISTRY</div> </td>         
+                            <td> <div class="vertical_td BLOOD"> <div class="verticalTableHeader">BLOOD BIOCHEMISTRY</div> </td>
                             <td>  Sugars </td>
                             <td></td>
                             <td> <input type="text" tabindex="16" name="Sugars_7" class="report_text"></td>
@@ -706,7 +706,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="516" name="Sugars_7" class="report_text"></td>
                             <td> <input type="text" tabindex="616" name="Sugars_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -720,7 +720,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="517" name="Random_6" class="report_text"></td>
                             <td> <input type="text" tabindex="617" name="Random_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -734,7 +734,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="518" name="Fasting_6" class="report_text"></td>
                             <td> <input type="text" tabindex="618" name="Fasting_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -748,7 +748,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="519" name="Postprandial_6" class="report_text"></td>
                             <td> <input type="text" tabindex="619" name="Postprandial_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -762,7 +762,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="520" name="Na_6" class="report_text"></td>
                             <td> <input type="text" tabindex="620" name="Na_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
                         <tr>
                             <td></td>
                             <td>  K </td>
@@ -775,7 +775,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="521" name="K_6" class="report_text"></td>
                             <td> <input type="text" tabindex="621" name="K_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -789,7 +789,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="522" name="CI_6"  class="report_text"></td>
                             <td> <input type="text" tabindex="622" name="CI_7"  class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -803,7 +803,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="523" name="Urea_6" class="report_text"></td>
                             <td> <input type="text" tabindex="623" name="Urea_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -817,7 +817,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="524" name="Creatinine_6"   class="report_text"></td>
                             <td> <input type="text" tabindex="624" name="Creatinine_7"   class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -831,7 +831,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="525" name="SGOT_6"   class="report_text"></td>
                             <td> <input type="text" tabindex="625" name="SGOT_7"   class="report_text"></td>
 
-                        </tr> 
+                        </tr>
                         <tr>
                             <td></td>
                             <td>  SGPT </td>
@@ -844,7 +844,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="526" name="SGPT_6"   class="report_text"></td>
                             <td> <input type="text" tabindex="626" name="SGPT_7"   class="report_text"></td>
 
-                        </tr> 
+                        </tr>
                         <tr>
                             <td></td>
                             <td>   Alk, Phosphatase </td>
@@ -857,7 +857,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="527" name="alk_phosphatase_6" class="report_text"></td>
                             <td> <input type="text" tabindex="627" name="alk_phosphatase_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -871,7 +871,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="528" name="Lactate_6" class="report_text"></td>
                             <td> <input type="text" tabindex="628" name="Lactate_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
 
                         <tr>
@@ -886,7 +886,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="529" name="Creatine_CK_6" class="report_text"></td>
                             <td> <input type="text" tabindex="629" name="Creatine_CK_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
 
                         <tr>
@@ -901,7 +901,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="530" name="Billnrubin_6" class="report_text"></td>
                             <td> <input type="text" tabindex="630" name="Billnrubin_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -915,7 +915,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="531" name="D_6" class="report_text"></td>
                             <td> <input type="text" tabindex="631" name="D_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -929,7 +929,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="532" name="Totla_proteins_6" class="report_text"></td>
                             <td> <input type="text" tabindex="632" name="Totla_proteins_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -943,7 +943,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="533" name="Albumin_6" class="report_text"></td>
                             <td> <input type="text" tabindex="633" name="Albumin_7" class="report_text"></td>
 
-                        </tr>        
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -957,7 +957,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="534" name="Glabuln_6" class="report_text"></td>
                             <td> <input type="text" tabindex="634" name="Glabuln_7" class="report_text"></td>
 
-                        </tr>        
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -971,7 +971,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="535" name="Calcium_6" class="report_text"></td>
                             <td> <input type="text" tabindex="635" name="Calcium_7" class="report_text"></td>
 
-                        </tr>   
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -985,7 +985,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="536" name="Magnesium_6" class="report_text"></td>
                             <td> <input type="text" tabindex="636" name="Magnesium_7" class="report_text"></td>
 
-                        </tr>   
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -999,7 +999,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="537" name="Phosphorus_6" class="report_text"></td>
                             <td> <input type="text" tabindex="637" name="Phosphorus_7" class="report_text"></td>
 
-                        </tr>   
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -1013,7 +1013,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="538" name="Uric_acid_6" class="report_text"></td>
                             <td> <input type="text" tabindex="638" name="Uric_acid_7" class="report_text"></td>
 
-                        </tr>   
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -1027,7 +1027,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="539" name="Amyylase_6" class="report_text"></td>
                             <td> <input type="text" tabindex="639" name="Amyylase_7" class="report_text"></td>
 
-                        </tr>   
+                        </tr>
                         <tr>
                             <td></td>
                             <td> Lipase  </td>
@@ -1040,10 +1040,10 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="540" name="Lipase_6" class="report_text"></td>
                             <td> <input type="text" tabindex="640" name="Lipase_7" class="report_text"></td>
 
-                        </tr> 
-                       
+                        </tr>
+
                        <tr class="tr_border">
-                            <td> <div class="vertical_td LIPIDGRAM"> <div class="verticalTableHeader">LIPIDGRAM  </div> </td> 
+                            <td> <div class="vertical_td LIPIDGRAM"> <div class="verticalTableHeader">LIPIDGRAM  </div> </td>
                             <td> Total Cholesterol  </td>
                             <td>  <200 Mg/dl</td>
                             <td> <input type="text" tabindex="41" name="TotalCholesterol_1" class="report_text"></td>
@@ -1054,10 +1054,10 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="541" name="TotalCholesterol_6" class="report_text"></td>
                             <td> <input type="text" tabindex="641" name="TotalCholesterol_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                          <tr >
-                            <td></td> 
+                            <td></td>
                             <td> LDL  </td>
                             <td> <100  Mg/dl</td>
                             <td> <input type="text" tabindex="42" name="LDL_1" class="report_text"></td>
@@ -1096,7 +1096,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="544" name="MISC_1G_6" class="report_text"></td>
                             <td> <input type="text" tabindex="644" name="MISC_1G_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -1110,10 +1110,10 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="545" name="HDL_6" class="report_text"></td>
                             <td> <input type="text" tabindex="645" name="HDL_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr class="tr_border">
-                            <td> <div class="vertical_td COAGLCOGRAM"> <div class="verticalTableHeader">COAGLCOGRAM</div> </td> 
+                            <td> <div class="vertical_td COAGLCOGRAM"> <div class="verticalTableHeader">COAGLCOGRAM</div> </td>
                             <td> PII  </td>
                             <td>11.4-13.7 seconds</td>
                             <td> <input type="text" tabindex="46" name="PII_1" class="report_text"></td>
@@ -1124,7 +1124,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="546" name="PII_6" class="report_text"></td>
                             <td> <input type="text" tabindex="646" name="PII_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
 
                         <tr>
@@ -1139,7 +1139,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="547" name="INR_6" class="report_text"></td>
                             <td> <input type="text" tabindex="647" name="INR_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -1153,10 +1153,10 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="548" name="PIIK_6" class="report_text"></td>
                             <td> <input type="text" tabindex="648" name="PIIK_7" class="report_text"></td>
 
-                        </tr>  
+                        </tr>
 
                        <tr class="tr_border">
-                            <td> <div class="vertical_td CARDAC"> <div class="verticalTableHeader">CARDAC ENZYMES  </div> </td> 
+                            <td> <div class="vertical_td CARDAC"> <div class="verticalTableHeader">CARDAC ENZYMES  </div> </td>
                             <td>  CPK MB  </td>
                             <td> 0.6-3.5 ng/ml</td>
                             <td> <input type="text" tabindex="50" name="CARDAC_ENZYMES_1" class="report_text"></td>
@@ -1167,7 +1167,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="550" name="CARDAC_ENZYMES_6" class="report_text"></td>
                             <td> <input type="text" tabindex="650" name="CARDAC_ENZYMES_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
                         <tr>
                             <td></td>
                             <td>  Trap I  </td>
@@ -1180,7 +1180,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="551" name="TrapI_6" class="report_text"></td>
                             <td> <input type="text" tabindex="651" name="TrapI_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td></td>
@@ -1208,8 +1208,8 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="555" name="hiv_6" class="report_text"></td>
                             <td> <input type="text" tabindex="655" name="hiv_7" class="report_text"></td>
 
-                        </tr> 
-                        
+                        </tr>
+
                         <tr class="tr_border">
                             <td></td>
                             <td>  HbaAg  </td>
@@ -1222,7 +1222,7 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="556" name="HbaAg_6" class="report_text"></td>
                             <td> <input type="text" tabindex="656" name="HbaAg_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
 
                         <tr class="tr_border">
                             <td></td>
@@ -1236,12 +1236,12 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                             <td> <input type="text" tabindex="557" name="hcv_6" class="report_text"></td>
                             <td> <input type="text" tabindex="657" name="hcv_7" class="report_text"></td>
 
-                        </tr> 
+                        </tr>
                     </table>
                 </div>
                 </div>
                                 </form>
                 <br/>
-             
+
         </body>
     </html>
