@@ -8,7 +8,6 @@
     <style>
         html {
             zoom: 0.55;
-            font-family: auto;
         }
 
         @page {
@@ -48,6 +47,16 @@
         table, tbody, tr, td {
             break-inside: avoid;
         }
+
+        .fourthColumn {
+            font-style: italic !important;
+            font-size: medium !important;
+        }
+
+        .thirdColumn {
+            font-size: x-small !important;
+        }
+
     </style>
 </head>
 <body>
@@ -57,7 +66,7 @@
     <div class="ui container">
         <img src="https://i.postimg.cc/KRC0X4CC/signature.png" height="1px" style="display: none">
         <div id="pageHeader">
-            <div class="ui segments" style="overflow: hidden; white-space: nowrap">
+            <div class="ui segments" style="overflow: hidden; white-space: nowrap;">
                 <div class="ui horizontal segments">
                     <div class="ui segment" style="border: none !important">
                         <br>
@@ -79,58 +88,47 @@
                     </div>
                 </div>
                 <div class="ui segment" style="overflow: hidden; white-space: nowrap">
-                    <div class="ui very relaxed grid">
-                        <div class="seven wide column">
-                            <table class="ui very basic table">
-                                <tbody>
-                                <tr>
-                                    <th>Patient Name:</th>
-                                    <td>{{patient_name}}</td>
-                                </tr>
-                                <tr>
-                                    <th>UHID No.:</th>
-                                    <td>{{uhid}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Address:</th>
-                                    <td>Ward No.3 Vill Post Mohanpura Katra</td>
-                                </tr>
-                                <tr>
-                                    <th>Doctor:</th>
-                                    <td>{{consultant}}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="two wide column"></div>
-                        <div class="seven wide column">
-                            <table class="ui very basic table">
-                                <tbody>
-                                <tr>
-                                    <th>Mobile No:</th>
-                                    <td>987654567</td>
-                                </tr>
-                                <tr>
-                                    <th>Age:</th>
-                                    <td>{{Age}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Sampling Date:</th>
-                                    <td>{{testDate}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Print Date:</th>
-                                    <td>{{printDate}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                    <table class="ui very basic table">
+                        <tbody>
+                        <tr>
+                            <td class="three wide">Patient Name</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">{{patient_name}}</td>
+                            <td class="three wide">Mobile No</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">987654567</td>
+                        </tr>
+                        <tr>
+                            <td class="three wide">UHID No.</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">{{uhid}}</td>
+                            <td class="three wide">Age</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">{{Age}}</td>
+                        </tr>
+                        <tr>
+                            <td class="three wide">Address</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">Ward No.3 Vill Post Mohanpura Katra</td>
+                            <td class="three wide">Sampling Date</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">{{testDate}}</td>
+                        </tr>
+                        <tr>
+                            <td class="three wide">Doctor</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">{{consultant}}</td>
+                            <td class="three wide">Print Date</td>
+                            <td class="one wide">:</td>
+                            <td class="four wide">{{printDate}}</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="ui segment" style="padding: 0">
                     <table class="ui very basic table heading">
                         <thead>
                         <tr class="highlight left aligned">
-                            <th class="six wide">Investigation</th>
+                            <th class="six wide" style="padding-left: 20px!important;">Investigation</th>
                             <th class="three wide">Observations</th>
                             <th class="four wide">Biological Reference Interval</th>
                             <th class="three wide">Units</th>
@@ -156,7 +154,7 @@
                     (HB)<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL COUNTER</i></td>
                 <td class="secondColumn">{{hb}}</td>
                 <td class="thirdColumn">13.0 - 18.0</td>
-                <td>gm/dl</td>
+                <td class="fourthColumn">gm/dl</td>
             </tr>
 
             <tr>
