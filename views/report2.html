@@ -130,10 +130,10 @@ textarea
             }
 
             td.vertical_td.HEMOGRAM .verticalTableHeader {
-                margin-top: 138px;
+                margin-top: 380px;
             }
             .vertical_td.URINE .verticalTableHeader {
-                margin-top: 55px;
+                margin-top: 300px;
             }
             .vertical_td.BLOOD .verticalTableHeader {
                 margin-top: 28%;
@@ -141,6 +141,22 @@ textarea
             .vertical_td.CARDAC .verticalTableHeader {
                 margin-top: 100px;
             }
+            .vertical_td.KIDNEY .verticalTableHeader {
+                margin-top: 50px;
+            }
+            .vertical_td.LIVER .verticalTableHeader {
+                margin-top: 55px;
+            }
+            .vertical_td.SGPT .verticalTableHeader {
+                margin-top: 140px;
+            }
+            .vertical_td.COAGU .verticalTableHeader {
+                margin-top: 100px;
+            }
+            .vertical_td.DENGUE .verticalTableHeader {
+                margin-top: 30px;
+            }
+            
             .vertical_td.COAGLCOGRAM .verticalTableHeader {
     margin-top: 59px;
 }
@@ -236,7 +252,7 @@ textarea
                                     <td>DOB :
 
                                         <div class='input-group date' id='datetimepicker2' data-date-format="dd-mm-yyyy">
-                                            <input type="text" class="inputc" id="pwd" data-format="dd-MM-yyyy" name="dob">
+                                            <input type="text" class="inputc" id="pwd" data-format="dd/MM/yyyy" name="dob">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </span>
@@ -399,37 +415,37 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                                 <th scope="col">Investigation Date</th>
                                 <th>
                         <div class='input-group date ' id='datetimepicker3' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_1">
+                            <input type="text" class="input-group-addon" id="pwd"  name="testDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='datetimepicker4' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_2">
+                            <input type="text" class="input-group-addon" id="pwd"  name="testDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='datetimepicker5' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_3">
+                            <input type="text" class="input-group-addon" id="pwd"  name="testDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='datetimepicker6' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_4">
+                            <input type="text" class="input-group-addon" id="pwd"  name="testDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='datetimepicker7' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_5">
+                            <input type="text" class="input-group-addon" id="pwd"  name="testDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='datetimepicker8' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_6">
+                            <input type="text" class="input-group-addon" id="pwd"  name="testDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='datetimepicker9' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_7">
+                            <input type="text" class="input-group-addon" id="pwd"  name="testDate">
                         </div>
                         </th>
 
@@ -445,37 +461,37 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
                                 <th scope="col">Print Date</th>
                                 <th>
                         <div class='input-group date ' id='printDatetimepicker3' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_1">
+                            <input type="text" class="input-group-addon" id="pwd"  name="printDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='printDatetimepicker4' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_2">
+                            <input type="text" class="input-group-addon" id="pwd"  name="printDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='printDatetimepicker5' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_3">
+                            <input type="text" class="input-group-addon" id="pwd"  name="printDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='printDatetimepicker6' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_4">
+                            <input type="text" class="input-group-addon" id="pwd"  name="printDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='printDatetimepicker7' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_5">
+                            <input type="text" class="input-group-addon" id="pwd"  name="printDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='printDatetimepicker8' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_6">
+                            <input type="text" class="input-group-addon" id="pwd"  name="printDate">
                         </div>
                         </th>
                         <th>
                         <div class='input-group date ' id='printDatetimepicker9' >
-                            <input type="text" class="input-group-addon" id="pwd"  name="rdate_7">
+                            <input type="text" class="input-group-addon" id="pwd"  name="printDate">
                         </div>
                         </th>
 
@@ -485,756 +501,1070 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
 
                         </thead>
                         <tr>
-                            <td class="vertical_td HEMOGRAM"> <div class="verticalTableHeader">HEMOGRAM</div></td>
-                            <td> Hb</td>
-                            <td>13.5-18 ( F-11.5-15)gsm/dl </td>
-                            <td> <input type="text" tabindex="1" name="Hb_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="101" name="Hb_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="201" name="Hb_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="301" name="Hb_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="401" name="Hb_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="501" name="Hb_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="601" name="Hb_7" class="report_text"></td>
+                            <td class="vertical_td HEMOGRAM"> <div class="verticalTableHeader">COMPLETE HAEMOGRAM CBC CGHS 1394</div></td>
+                            <td>HAEMOGLOBIN (HB)</td>
+                            <td>13.0-18.0 gm/dl </td>
+                            <td> <input type="text" tabindex="1" name="hb" class="report_text"></td>
+                            <td> <input type="text" tabindex="101" name="hb" class="report_text"></td>
+                            <td> <input type="text" tabindex="201" name="hb" class="report_text"></td>
+                            <td> <input type="text" tabindex="301" name="hb" class="report_text"></td>
+                            <td> <input type="text" tabindex="401" name="hb" class="report_text"></td>
+                            <td> <input type="text" tabindex="501" name="hb" class="report_text"></td>
+                            <td> <input type="text" tabindex="601" name="hb" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td> Hct</td>
-                            <td>40-54 (F-37-47)% </td>
-                            <td> <input type="text" tabindex="2" name="Hct_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="102" name="Hct_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="202" name="Hct_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="302" name="Hct_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="402" name="Hct_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="502" name="Hct_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="602" name="Hct_7" class="report_text"></td>
+                            <td>TOTAL LEUCOCYTE COUNT (TLC)</td>
+                            <td>4000-11000 /cmm</td>
+                            <td> <input type="text" tabindex="2" name="tlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="102" name="tlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="202" name="tlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="302" name="tlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="402" name="tlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="502" name="tlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="602" name="tlc" class="report_text"></td>
 
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td> TLC</td>
-                            <td>4.0-11.0 thou</td>
-                            <td> <input type="text" tabindex="3" name="TLC_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="103" name="TLC_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="203" name="TLC_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="303" name="TLC_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="403" name="TLC_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="503" name="TLC_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="603" name="TLC_7" class="report_text"></td>
 
-                        </tr>
                         <tr>
                             <td></td>
-                            <td> DLC</td>
+                            <td>DLC</td>
                             <td> Some range value </td>
-                            <td> <input type="text" tabindex="4" name="DLC_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="104" name="DLC_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="204" name="DLC_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="304" name="DLC_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="404" name="DLC_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="504" name="DLC_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="604" name="DLC_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="3" name="dlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="103" name="dlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="203" name="dlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="303" name="dlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="403" name="dlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="503" name="dlc" class="report_text"></td>
+                            <td> <input type="text" tabindex="603" name="dlc" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td> Segmented Nerutrophils</td>
-                            <td>50%-70%</td>
-                            <td> <input type="text" tabindex="5" name="Segmented_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="105" name="Segmented_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="205" name="Segmented_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="305" name="Segmented_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="405" name="Segmented_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="505" name="Segmented_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="605" name="Segmented_7" class="report_text"></td>
+                            <td>NEUTROPHILS</td>
+                            <td>45%-75%</td>
+                            <td> <input type="text" tabindex="4" name="neutrophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="104" name="neutrophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="204" name="neutrophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="304" name="neutrophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="404" name="neutrophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="504" name="neutrophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="604" name="neutrophils" class="report_text"></td>
 
                         </tr>
                         <tr>
                             <td></td>
-                            <td> Lymphocytes</td>
-                            <td>20-40%</td>
-                            <td> <input type="text" tabindex="6" name="Lymphocytes_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="106" name="Lymphocytes_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="206" name="Lymphocytes_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="306" name="Lymphocytes_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="406" name="Lymphocytes_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="506" name="Lymphocytes_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="606" name="Lymphocytes_7" class="report_text"></td>
-
-                        </tr>
-
-
-                        <tr>
-                            <td></td>
-                            <td> Eosinophils</td>
-                            <td>0-5% </td>
-                            <td> <input type="text" tabindex="7" name="Eosinophils_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="107" name="Eosinophils_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="207" name="Eosinophils_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="307" name="Eosinophils_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="407" name="Eosinophils_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="507" name="Eosinophils_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="607" name="Eosinophils_7" class="report_text"></td>
+                            <td>LYMPHOCYTE</td>
+                            <td>20%-45%</td>
+                            <td> <input type="text" tabindex="5" name="lymphocytes" class="report_text"></td>
+                            <td> <input type="text" tabindex="105" name="lymphocytes" class="report_text"></td>
+                            <td> <input type="text" tabindex="205" name="lymphocytes" class="report_text"></td>
+                            <td> <input type="text" tabindex="305" name="lymphocytes" class="report_text"></td>
+                            <td> <input type="text" tabindex="405" name="lymphocytes" class="report_text"></td>
+                            <td> <input type="text" tabindex="505" name="lymphocytes" class="report_text"></td>
+                            <td> <input type="text" tabindex="605" name="lymphocytes" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td> Basophils</td>
-                            <td> 0-1% </td>
-                            <td> <input type="text" tabindex="8" name="Basophils_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="108" name="Basophils_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="208" name="Basophils_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="308" name="Basophils_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="408" name="Basophils_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="508" name="Basophils_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="608" name="Basophils_7" class="report_text"></td>
+                            <td>MONOCYTE</td>
+                            <td>0%-10% </td>
+                            <td> <input type="text" tabindex="6" name="monocyte" class="report_text"></td>
+                            <td> <input type="text" tabindex="106" name="monocyte" class="report_text"></td>
+                            <td> <input type="text" tabindex="206" name="monocyte" class="report_text"></td>
+                            <td> <input type="text" tabindex="306" name="monocyte" class="report_text"></td>
+                            <td> <input type="text" tabindex="406" name="monocyte" class="report_text"></td>
+                            <td> <input type="text" tabindex="506" name="monocyte" class="report_text"></td>
+                            <td> <input type="text" tabindex="606" name="monocyte" class="report_text"></td>
+
+                        </tr>		
+
+                        <tr>
+                            <td></td>
+                            <td>EOSINOPHIL</td>
+                            <td>0%-6% </td>
+                            <td> <input type="text" tabindex="7" name="eosinophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="107" name="eosinophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="207" name="eosinophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="307" name="eosinophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="407" name="eosinophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="507" name="eosinophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="607" name="eosinophils" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td> ESR</td>
-                            <td>0-15 (F-0-20)mm 1st hour)</td>
-                            <td> <input type="text" tabindex="9" name="ESR_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="109" name="ESR_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="209" name="ESR_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="309" name="ESR_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="409" name="ESR_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="509" name="ESR_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="609" name="ESR_7" class="report_text"></td>
+                            <td>Basophils</td>
+                            <td>0%-1%</td>
+                            <td> <input type="text" tabindex="8" name="basophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="108" name="basophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="208" name="basophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="308" name="basophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="408" name="basophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="508" name="basophils" class="report_text"></td>
+                            <td> <input type="text" tabindex="608" name="basophils" class="report_text"></td>
 
                         </tr>
 
-                        </tr>
-
-                        <tr >
+                        <tr>
                             <td></td>
-                            <td> Platelets</td>
-                            <td>150-400thou/ul</td>
-                            <td> <input type="text" tabindex="10" name="Platelets_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="110" name="Platelets_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="210" name="Platelets_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="310" name="Platelets_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="410" name="Platelets_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="510" name="Platelets_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="610" name="Platelets_7" class="report_text"></td>
+                            <td>RBC (RED BLOOD CELLS)</td>
+                            <td>3.8 - 5.8 Million/cmm</td>
+                            <td> <input type="text" tabindex="9" name="rbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="109" name="rbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="209" name="rbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="309" name="rbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="409" name="rbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="509" name="rbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="609" name="rbc" class="report_text"></td>
+
+                        </tr>	
+
+                        <tr>
+                            <td></td>
+                            <td>PCV</td>
+                            <td>35%-47%</td>
+                            <td> <input type="text" tabindex="10" name="pcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="110" name="pcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="210" name="pcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="310" name="pcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="410" name="pcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="510" name="pcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="610" name="pcv" class="report_text"></td>
+
+                        </tr>	
+
+                        <tr>
+                            <td></td>
+                            <td>MCV (MEAN CELL VOLUME)</td>
+                            <td>80-100 fL</td>
+                            <td> <input type="text" tabindex="11" name="mcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="111" name="mcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="211" name="mcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="311" name="mcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="411" name="mcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="511" name="mcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="611" name="mcv" class="report_text"></td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td>MCH (MEAN CELL HAEMOGLOBIN)</td>
+                            <td>27-31 picogram</td>
+                            <td> <input type="text" tabindex="12" name="mch" class="report_text"></td>
+                            <td> <input type="text" tabindex="112" name="mch" class="report_text"></td>
+                            <td> <input type="text" tabindex="212" name="mch" class="report_text"></td>
+                            <td> <input type="text" tabindex="312" name="mch" class="report_text"></td>
+                            <td> <input type="text" tabindex="412" name="mch" class="report_text"></td>
+                            <td> <input type="text" tabindex="512" name="mch" class="report_text"></td>
+                            <td> <input type="text" tabindex="612" name="mch" class="report_text"></td>
+
+                        </tr>
+
+
+                        <tr>
+                            <td></td>
+                            <td>MCHC</td>
+                            <td>33-37 g/dL</td>
+                            <td> <input type="text" tabindex="13" name="mchc" class="report_text"></td>
+                            <td> <input type="text" tabindex="113" name="mchc" class="report_text"></td>
+                            <td> <input type="text" tabindex="213" name="mchc" class="report_text"></td>
+                            <td> <input type="text" tabindex="313" name="mchc" class="report_text"></td>
+                            <td> <input type="text" tabindex="413" name="mchc" class="report_text"></td>
+                            <td> <input type="text" tabindex="513" name="mchc" class="report_text"></td>
+                            <td> <input type="text" tabindex="613" name="mchc" class="report_text"></td>
+
+                        </tr>
+
+
+                        <tr>
+                            <td></td>
+                            <td>RDW-CV</td>
+                            <td>10.0%-15.0%</td>
+                            <td> <input type="text" tabindex="14" name="rdwcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="114" name="rdwcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="214" name="rdwcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="314" name="rdwcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="414" name="rdwcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="514" name="rdwcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="614" name="rdwcv" class="report_text"></td>
+
+                        </tr>
+
+
+                        <tr>
+                            <td></td>
+                            <td>RDW-SD</td>
+                            <td>35-60 fL</td>
+                            <td> <input type="text" tabindex="15" name="rdwsd" class="report_text"></td>
+                            <td> <input type="text" tabindex="115" name="rdwsd" class="report_text"></td>
+                            <td> <input type="text" tabindex="215" name="rdwsd" class="report_text"></td>
+                            <td> <input type="text" tabindex="315" name="rdwsd" class="report_text"></td>
+                            <td> <input type="text" tabindex="415" name="rdwsd" class="report_text"></td>
+                            <td> <input type="text" tabindex="515" name="rdwsd" class="report_text"></td>
+                            <td> <input type="text" tabindex="615" name="rdwsd" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>PLATELET COUNT</td>
+                            <td>1.5-4.5 L/cmm</td>
+                            <td> <input type="text" tabindex="16" name="platelet" class="report_text"></td>
+                            <td> <input type="text" tabindex="116" name="platelet" class="report_text"></td>
+                            <td> <input type="text" tabindex="216" name="platelet" class="report_text"></td>
+                            <td> <input type="text" tabindex="316" name="platelet" class="report_text"></td>
+                            <td> <input type="text" tabindex="416" name="platelet" class="report_text"></td>
+                            <td> <input type="text" tabindex="516" name="platelet" class="report_text"></td>
+                            <td> <input type="text" tabindex="616" name="platelet" class="report_text"></td>
 
                         </tr>
 
                         <tr class="tr_border">
-                            <td> <div class="vertical_td URINE"> <div class="verticalTableHeader">URINE/E</div> </td>
-                            <td> Albumin</td>
+                            <td><div class="vertical_td"> <div class="verticalTableHeader"></div></td>
+                            <td>ESR</td>
+                            <td>0-20 mm</td>
+                            <td> <input type="text" tabindex="17" name="esr" class="report_text"></td>
+                            <td> <input type="text" tabindex="117" name="esr" class="report_text"></td>
+                            <td> <input type="text" tabindex="217" name="esr" class="report_text"></td>
+                            <td> <input type="text" tabindex="317" name="esr" class="report_text"></td>
+                            <td> <input type="text" tabindex="417" name="esr" class="report_text"></td>
+                            <td> <input type="text" tabindex="517" name="esr" class="report_text"></td>
+                            <td> <input type="text" tabindex="617" name="esr" class="report_text"></td>
+
+                        </tr>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td ></td>
+                            <td>C REACTIVE PROTEIN (CRP) QUANTITATIVE</td>
+                            <td>0-6 mg/l</td>
+                            <td> <input type="text" tabindex="18" name="crp" class="report_text"></td>
+                            <td> <input type="text" tabindex="118" name="crp" class="report_text"></td>
+                            <td> <input type="text" tabindex="218" name="crp" class="report_text"></td>
+                            <td> <input type="text" tabindex="318" name="crp" class="report_text"></td>
+                            <td> <input type="text" tabindex="418" name="crp" class="report_text"></td>
+                            <td> <input type="text" tabindex="518" name="crp" class="report_text"></td>
+                            <td> <input type="text" tabindex="618" name="crp" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td URINE"> <div class="verticalTableHeader">URINE ROUTINE CGHS 1383</div> </td>
+                            <td>QUANTITY</td>
                             <td>Not Delected</td>
-                            <td> <input type="text" tabindex="11" name="Albumin_1"  class="report_text"></td>
-                            <td> <input type="text" tabindex="111" name="Albumin_2"  class="report_text"></td>
-                            <td> <input type="text" tabindex="211" name="Albumin_3"  class="report_text"></td>
-                            <td> <input type="text" tabindex="311" name="Albumin_4"  class="report_text"></td>
-                            <td> <input type="text" tabindex="411" name="Albumin_5"  class="report_text"></td>
-                            <td> <input type="text" tabindex="511" name="Albumin_6"  class="report_text"></td>
-                            <td> <input type="text" tabindex="611" name="Albumin_7"  class="report_text"></td>
+                            <td> <input type="text" tabindex="19" name="quantity"  class="report_text"></td>
+                            <td> <input type="text" tabindex="119" name="quantity"  class="report_text"></td>
+                            <td> <input type="text" tabindex="219" name="quantity"  class="report_text"></td>
+                            <td> <input type="text" tabindex="319" name="quantity"  class="report_text"></td>
+                            <td> <input type="text" tabindex="419" name="quantity"  class="report_text"></td>
+                            <td> <input type="text" tabindex="519" name="quantity"  class="report_text"></td>
+                            <td> <input type="text" tabindex="619" name="quantity"  class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td> Sugar</td>
+                            <td>COLOR</td>
                             <td>Not Delected</td>
-                            <td> <input type="text" tabindex="12" name="Sugar_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="112" name="Sugar_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="212" name="Sugar_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="312" name="Sugar_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="412" name="Sugar_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="512" name="Sugar_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="612" name="Sugar_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="20" name="color" class="report_text"></td>
+                            <td> <input type="text" tabindex="120" name="color" class="report_text"></td>
+                            <td> <input type="text" tabindex="220" name="color" class="report_text"></td>
+                            <td> <input type="text" tabindex="320" name="color" class="report_text"></td>
+                            <td> <input type="text" tabindex="420" name="color" class="report_text"></td>
+                            <td> <input type="text" tabindex="520" name="color" class="report_text"></td>
+                            <td> <input type="text" tabindex="620" name="color" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td>  RBC's</td>
+                            <td>TRANSPARENCY</td>
                             <td>Not Delected</td>
-                            <td> <input type="text" tabindex="13" name="RBC_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="113" name="RBC_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="213" name="RBC_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="313" name="RBC_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="413" name="RBC_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="513" name="RBC_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="613" name="RBC_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="21" name="transparency" class="report_text"></td>
+                            <td> <input type="text" tabindex="121" name="transparency" class="report_text"></td>
+                            <td> <input type="text" tabindex="221" name="transparency" class="report_text"></td>
+                            <td> <input type="text" tabindex="321" name="transparency" class="report_text"></td>
+                            <td> <input type="text" tabindex="421" name="transparency" class="report_text"></td>
+                            <td> <input type="text" tabindex="521" name="transparency" class="report_text"></td>
+                            <td> <input type="text" tabindex="621" name="transparency" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td>  WBC's </td>
+                            <td>SPECIFIC GRAVITY</td>
                             <td>Not Delected</td>
-                            <td> <input type="text" tabindex="14" name="WBC_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="114" name="WBC_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="214" name="WBC_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="314" name="WBC_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="414" name="WBC_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="514" name="WBC_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="614" name="WBC_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="22" name="gravity" class="report_text"></td>
+                            <td> <input type="text" tabindex="122" name="gravity" class="report_text"></td>
+                            <td> <input type="text" tabindex="222" name="gravity" class="report_text"></td>
+                            <td> <input type="text" tabindex="322" name="gravity" class="report_text"></td>
+                            <td> <input type="text" tabindex="422" name="gravity" class="report_text"></td>
+                            <td> <input type="text" tabindex="522" name="gravity" class="report_text"></td>
+                            <td> <input type="text" tabindex="622" name="gravity" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>REACTION</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="23" name="reaction" class="report_text"></td>
+                            <td> <input type="text" tabindex="123" name="reaction" class="report_text"></td>
+                            <td> <input type="text" tabindex="223" name="reaction" class="report_text"></td>
+                            <td> <input type="text" tabindex="323" name="reaction" class="report_text"></td>
+                            <td> <input type="text" tabindex="423" name="reaction" class="report_text"></td>
+                            <td> <input type="text" tabindex="523" name="reaction" class="report_text"></td>
+                            <td> <input type="text" tabindex="623" name="reaction" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>PH</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="24" name="ph" class="report_text"></td>
+                            <td> <input type="text" tabindex="124" name="ph" class="report_text"></td>
+                            <td> <input type="text" tabindex="224" name="ph" class="report_text"></td>
+                            <td> <input type="text" tabindex="324" name="ph" class="report_text"></td>
+                            <td> <input type="text" tabindex="424" name="ph" class="report_text"></td>
+                            <td> <input type="text" tabindex="524" name="ph" class="report_text"></td>
+                            <td> <input type="text" tabindex="624" name="ph" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>ALBUMIN</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="25" name="albumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="125" name="albumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="225" name="albumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="325" name="albumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="425" name="albumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="525" name="albumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="625" name="albumin" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>SUGAR</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="26" name="usugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="126" name="usugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="226" name="usugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="326" name="usugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="426" name="usugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="526" name="usugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="626" name="usugar" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>URINE BILIRUBIN</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="27" name="ubilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="127" name="ubilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="227" name="ubilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="327" name="ubilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="427" name="ubilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="527" name="ubilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="627" name="ubilirubin" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>UROBILINOGEN</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="28" name="urobilinogen" class="report_text"></td>
+                            <td> <input type="text" tabindex="128" name="urobilinogen" class="report_text"></td>
+                            <td> <input type="text" tabindex="228" name="urobilinogen" class="report_text"></td>
+                            <td> <input type="text" tabindex="328" name="urobilinogen" class="report_text"></td>
+                            <td> <input type="text" tabindex="428" name="urobilinogen" class="report_text"></td>
+                            <td> <input type="text" tabindex="528" name="urobilinogen" class="report_text"></td>
+                            <td> <input type="text" tabindex="628" name="urobilinogen" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>URINE FOR KETONE BODIES/ACETONE</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="29" name="uacetone" class="report_text"></td>
+                            <td> <input type="text" tabindex="129" name="uacetone" class="report_text"></td>
+                            <td> <input type="text" tabindex="229" name="uacetone" class="report_text"></td>
+                            <td> <input type="text" tabindex="329" name="uacetone" class="report_text"></td>
+                            <td> <input type="text" tabindex="429" name="uacetone" class="report_text"></td>
+                            <td> <input type="text" tabindex="529" name="uacetone" class="report_text"></td>
+                            <td> <input type="text" tabindex="629" name="uacetone" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>EPITHELIAL CELLS</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="30" name="epithelial" class="report_text"></td>
+                            <td> <input type="text" tabindex="130" name="epithelial" class="report_text"></td>
+                            <td> <input type="text" tabindex="230" name="epithelial" class="report_text"></td>
+                            <td> <input type="text" tabindex="330" name="epithelial" class="report_text"></td>
+                            <td> <input type="text" tabindex="430" name="epithelial" class="report_text"></td>
+                            <td> <input type="text" tabindex="530" name="epithelial" class="report_text"></td>
+                            <td> <input type="text" tabindex="630" name="epithelial" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>PUS CELLS</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="31" name="pus" class="report_text"></td>
+                            <td> <input type="text" tabindex="131" name="pus" class="report_text"></td>
+                            <td> <input type="text" tabindex="231" name="pus" class="report_text"></td>
+                            <td> <input type="text" tabindex="331" name="pus" class="report_text"></td>
+                            <td> <input type="text" tabindex="431" name="pus" class="report_text"></td>
+                            <td> <input type="text" tabindex="531" name="pus" class="report_text"></td>
+                            <td> <input type="text" tabindex="631" name="pus" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>RBC</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="32" name="urbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="132" name="urbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="232" name="urbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="332" name="urbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="432" name="urbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="532" name="urbc" class="report_text"></td>
+                            <td> <input type="text" tabindex="632" name="urbc" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>CRYSTALS</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="33" name="crystals" class="report_text"></td>
+                            <td> <input type="text" tabindex="133" name="crystals" class="report_text"></td>
+                            <td> <input type="text" tabindex="233" name="crystals" class="report_text"></td>
+                            <td> <input type="text" tabindex="333" name="crystals" class="report_text"></td>
+                            <td> <input type="text" tabindex="433" name="crystals" class="report_text"></td>
+                            <td> <input type="text" tabindex="533" name="crystals" class="report_text"></td>
+                            <td> <input type="text" tabindex="633" name="crystals" class="report_text"></td>
 
                         </tr>
                         <tr>
                             <td></td>
-                            <td>  Casts </td>
+                            <td>CASTS</td>
                             <td>Not Delected</td>
-                            <td> <input type="text" tabindex="15" name="Casts_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="115" name="Casts_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="215" name="Casts_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="315" name="Casts_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="415" name="Casts_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="515" name="Casts_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="615" name="Casts_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="34" name="casts" class="report_text"></td>
+                            <td> <input type="text" tabindex="134" name="casts" class="report_text"></td>
+                            <td> <input type="text" tabindex="234" name="casts" class="report_text"></td>
+                            <td> <input type="text" tabindex="334" name="casts" class="report_text"></td>
+                            <td> <input type="text" tabindex="434" name="casts" class="report_text"></td>
+                            <td> <input type="text" tabindex="534" name="casts" class="report_text"></td>
+                            <td> <input type="text" tabindex="634" name="casts" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>BACTERIA</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="35" name="bacteria" class="report_text"></td>
+                            <td> <input type="text" tabindex="135" name="bacteria" class="report_text"></td>
+                            <td> <input type="text" tabindex="235" name="bacteria" class="report_text"></td>
+                            <td> <input type="text" tabindex="335" name="bacteria" class="report_text"></td>
+                            <td> <input type="text" tabindex="435" name="bacteria" class="report_text"></td>
+                            <td> <input type="text" tabindex="535" name="bacteria" class="report_text"></td>
+                            <td> <input type="text" tabindex="635" name="bacteria" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>OTHER</td>
+                            <td>Not Delected</td>
+                            <td> <input type="text" tabindex="36" name="uother" class="report_text"></td>
+                            <td> <input type="text" tabindex="136" name="uother" class="report_text"></td>
+                            <td> <input type="text" tabindex="236" name="uother" class="report_text"></td>
+                            <td> <input type="text" tabindex="336" name="uother" class="report_text"></td>
+                            <td> <input type="text" tabindex="436" name="uother" class="report_text"></td>
+                            <td> <input type="text" tabindex="536" name="uother" class="report_text"></td>
+                            <td> <input type="text" tabindex="636" name="uother" class="report_text"></td>
 
                         </tr>
 
 
                         <tr class="tr_border">
-                            <td> <div class="vertical_td BLOOD"> <div class="verticalTableHeader">BLOOD BIOCHEMISTRY</div> </td>
-                            <td>  Sugars </td>
+                            <td> <div class="vertical_td KIDNEY"> <div class="verticalTableHeader">KFT CGHS 1512</div> </td>
+                            <td>BLOOD UREA</td>
                             <td></td>
-                            <td> <input type="text" tabindex="16" name="Sugars_7" class="report_text"></td>
-                            <td> <input type="text" tabindex="116" name="Sugars_7" class="report_text"></td>
-                            <td> <input type="text" tabindex="216" name="Sugars_7" class="report_text"></td>
-                            <td> <input type="text" tabindex="316" name="Sugars_7" class="report_text"></td>
-                            <td> <input type="text" tabindex="416" name="Sugars_7" class="report_text"></td>
-                            <td> <input type="text" tabindex="516" name="Sugars_7" class="report_text"></td>
-                            <td> <input type="text" tabindex="616" name="Sugars_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="37" name="burea" class="report_text"></td>
+                            <td> <input type="text" tabindex="137" name="burea" class="report_text"></td>
+                            <td> <input type="text" tabindex="237" name="burea" class="report_text"></td>
+                            <td> <input type="text" tabindex="337" name="burea" class="report_text"></td>
+                            <td> <input type="text" tabindex="437" name="burea" class="report_text"></td>
+                            <td> <input type="text" tabindex="537" name="burea" class="report_text"></td>
+                            <td> <input type="text" tabindex="637" name="burea" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td>  Random </td>
+                            <td>SERUM CREATININE</td>
                             <td>70-140 Mg/dll</td>
-                            <td> <input type="text" tabindex="17" name="Random_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="117" name="Random_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="217" name="Random_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="317" name="Random_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="417" name="Random_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="517" name="Random_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="617" name="Random_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="38" name="creatinine" class="report_text"></td>
+                            <td> <input type="text" tabindex="138" name="creatinine" class="report_text"></td>
+                            <td> <input type="text" tabindex="238" name="creatinine" class="report_text"></td>
+                            <td> <input type="text" tabindex="338" name="creatinine" class="report_text"></td>
+                            <td> <input type="text" tabindex="438" name="creatinine" class="report_text"></td>
+                            <td> <input type="text" tabindex="538" name="creatinine" class="report_text"></td>
+                            <td> <input type="text" tabindex="638" name="creatinine" class="report_text"></td>
 
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td>  Fasting </td>
-                            <td>70-110 Mg/dl</td>
-                            <td> <input type="text" tabindex="18" name="Fasting_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="118" name="Fasting_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="218" name="Fasting_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="318" name="Fasting_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="418" name="Fasting_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="518" name="Fasting_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="618" name="Fasting_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Postprandial  </td>
-                            <td>70-140 Mg/dl</td>
-                            <td> <input type="text" tabindex="19" name="Postprandial_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="119" name="Postprandial_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="219" name="Postprandial_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="319" name="Postprandial_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="419" name="Postprandial_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="519" name="Postprandial_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="619" name="Postprandial_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Na </td>
-                            <td>135-145 mEg/L</td>
-                            <td> <input type="text" tabindex="20" name="Na_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="120" name="Na_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="220" name="Na_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="320" name="Na_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="420" name="Na_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="520" name="Na_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="620" name="Na_7" class="report_text"></td>
-
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>  K </td>
-                            <td>3.5-5.0 mEg/L'vovCl 93-108 mEg/L</td>
-                            <td> <input type="text" tabindex="21" name="K_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="121" name="K_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="221" name="K_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="321" name="K_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="421" name="K_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="521" name="K_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="621" name="K_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  CI </td>
-                            <td> 93-108 Mg/dl</td>
-                            <td> <input type="text" tabindex="22" name="CI_1"  class="report_text"></td>
-                            <td> <input type="text" tabindex="122" name="CI_2"  class="report_text"></td>
-                            <td> <input type="text" tabindex="222" name="CI_3"  class="report_text"></td>
-                            <td> <input type="text" tabindex="322" name="CI_4"  class="report_text"></td>
-                            <td> <input type="text" tabindex="422" name="CI_5"  class="report_text"></td>
-                            <td> <input type="text" tabindex="522" name="CI_6"  class="report_text"></td>
-                            <td> <input type="text" tabindex="622" name="CI_7"  class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Urea </td>
-                            <td> 7-18 Mg/dl</td>
-                            <td> <input type="text" tabindex="23" name="Urea_1"  class="report_text"></td>
-                            <td> <input type="text" tabindex="123" name="Urea_2"  class="report_text"></td>
-                            <td> <input type="text" tabindex="223" name="Urea_3"  class="report_text"></td>
-                            <td> <input type="text" tabindex="323" name="Urea_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="423" name="Urea_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="523" name="Urea_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="623" name="Urea_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Creatinine </td>
-                            <td>   0.6-1.3 Mg/dl</td>
-                            <td> <input type="text" tabindex="24" name="Creatinine_1"   class="report_text"></td>
-                            <td> <input type="text" tabindex="124" name="Creatinine_2"   class="report_text"></td>
-                            <td> <input type="text" tabindex="224" name="Creatinine_3"   class="report_text"></td>
-                            <td> <input type="text" tabindex="324" name="Creatinine_4"   class="report_text"></td>
-                            <td> <input type="text" tabindex="424" name="Creatinine_5"   class="report_text"></td>
-                            <td> <input type="text" tabindex="524" name="Creatinine_6"   class="report_text"></td>
-                            <td> <input type="text" tabindex="624" name="Creatinine_7"   class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  SGOT </td>
-                            <td>   15-37 U/L'</td>
-                            <td> <input type="text" tabindex="25" name="SGOT_1"   class="report_text"></td>
-                            <td> <input type="text" tabindex="125" name="SGOT_2"   class="report_text"></td>
-                            <td> <input type="text" tabindex="225" name="SGOT_3"   class="report_text"></td>
-                            <td> <input type="text" tabindex="325" name="SGOT_4"   class="report_text"></td>
-                            <td> <input type="text" tabindex="425" name="SGOT_5"   class="report_text"></td>
-                            <td> <input type="text" tabindex="525" name="SGOT_6"   class="report_text"></td>
-                            <td> <input type="text" tabindex="625" name="SGOT_7"   class="report_text"></td>
-
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>  SGPT </td>
-                            <td> 30-65 U/L</td>
-                            <td> <input type="text" tabindex="26" name="SGPT_1"   class="report_text"></td>
-                            <td> <input type="text" tabindex="126" name="SGPT_2"   class="report_text"></td>
-                            <td> <input type="text" tabindex="226" name="SGPT_3"   class="report_text"></td>
-                            <td> <input type="text" tabindex="326" name="SGPT_4"   class="report_text"></td>
-                            <td> <input type="text" tabindex="426" name="SGPT_5"   class="report_text"></td>
-                            <td> <input type="text" tabindex="526" name="SGPT_6"   class="report_text"></td>
-                            <td> <input type="text" tabindex="626" name="SGPT_7"   class="report_text"></td>
-
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>   Alk, Phosphatase </td>
-                            <td> 50-136 U/L'</td>
-                            <td> <input type="text" tabindex="27" name="alk_phosphatase_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="127" name="alk_phosphatase_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="227" name="alk_phosphatase_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="327" name="alk_phosphatase_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="427" name="alk_phosphatase_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="527" name="alk_phosphatase_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="627" name="alk_phosphatase_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>   Lactate Dehydrogenase </td>
-                            <td> 100-190 U/L'</td>
-                            <td> <input type="text" tabindex="28" name="Lactate_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="128" name="Lactate_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="228" name="Lactate_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="328" name="Lactate_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="428" name="Lactate_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="528" name="Lactate_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="628" name="Lactate_7" class="report_text"></td>
-
-                        </tr>
-
-
-                        <tr>
-                            <td></td>
-                            <td>    Creatine Kinase (CK) </td>
-                            <td>  35-232 (F-21-2015) U/L'</td>
-                            <td> <input type="text" tabindex="29" name="Creatine_CK_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="129" name="Creatine_CK_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="229" name="Creatine_CK_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="329" name="Creatine_CK_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="429" name="Creatine_CK_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="529" name="Creatine_CK_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="629" name="Creatine_CK_7" class="report_text"></td>
-
-                        </tr>
-
-
-                        <tr>
-                            <td></td>
-                            <td> Billnrubin T </td>
-                            <td>  0.0-1.0 Mg/dl</td>
-                            <td> <input type="text" tabindex="30" name="Billnrubin_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="130" name="Billnrubin_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="230" name="Billnrubin_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="330" name="Billnrubin_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="430" name="Billnrubin_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="530" name="Billnrubin_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="630" name="Billnrubin_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td> D   </td>
-                            <td> 0.0-0.3 Mg/dl</td>
-                            <td> <input type="text" tabindex="31" name="D_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="131" name="D_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="231" name="D_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="331" name="D_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="431" name="D_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="531" name="D_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="631" name="D_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Totla Proteins   </td>
-                            <td> 6.4-8.2 Mg/dl</td>
-                            <td> <input type="text" tabindex="32" name="Totla_proteins_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="132" name="Totla_proteins_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="232" name="Totla_proteins_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="332" name="Totla_proteins_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="432" name="Totla_proteins_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="532" name="Totla_proteins_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="632" name="Totla_proteins_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Albumin   </td>
-                            <td>  3.4-5.0 Mg/dl</td>
-                            <td> <input type="text" tabindex="33" name="Albumin_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="133" name="Albumin_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="233" name="Albumin_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="333" name="Albumin_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="433" name="Albumin_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="533" name="Albumin_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="633" name="Albumin_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Glabuln   </td>
-                            <td>   2.0-4.0 Mg/dl</td>
-                            <td> <input type="text" tabindex="34" name="Glabuln_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="134" name="Glabuln_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="234" name="Glabuln_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="334" name="Glabuln_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="434" name="Glabuln_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="534" name="Glabuln_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="634" name="Glabuln_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Calcium   </td>
-                            <td>  6.5-10 Mg/dl</td>
-                            <td> <input type="text" tabindex="35" name="Calcium_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="135" name="Calcium_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="235" name="Calcium_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="335" name="Calcium_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="435" name="Calcium_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="535" name="Calcium_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="635" name="Calcium_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Magnesium   </td>
-                            <td> 1.8-2.4 Mg/dl</td>
-                            <td> <input type="text" tabindex="36" name="Magnesium_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="136" name="Magnesium_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="236" name="Magnesium_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="336" name="Magnesium_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="436" name="Magnesium_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="536" name="Magnesium_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="636" name="Magnesium_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Phosphorus   </td>
-                            <td> 2.5-4.8 Mg/dl</td>
-                            <td> <input type="text" tabindex="37" name="Phosphorus_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="137" name="Phosphorus_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="237" name="Phosphorus_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="337" name="Phosphorus_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="437" name="Phosphorus_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="537" name="Phosphorus_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="637" name="Phosphorus_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>   Uric acid   </td>
-                            <td> 2.6-7.2</td>
-                            <td> <input type="text" tabindex="38" name="Uric_acid_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="138" name="Uric_acid_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="238" name="Uric_acid_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="338" name="Uric_acid_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="438" name="Uric_acid_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="538" name="Uric_acid_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="638" name="Uric_acid_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td> Amyylase  </td>
-                            <td>    0-96 U/L</td>
-                            <td> <input type="text" tabindex="39" name="Amyylase_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="139" name="Amyylase_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="239" name="Amyylase_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="339" name="Amyylase_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="439" name="Amyylase_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="539" name="Amyylase_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="639" name="Amyylase_7" class="report_text"></td>
-
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> Lipase  </td>
-                            <td> 144-286 U/L</td>
-                            <td> <input type="text" tabindex="40" name="Lipase_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="140" name="Lipase_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="240" name="Lipase_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="340" name="Lipase_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="440" name="Lipase_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="540" name="Lipase_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="640" name="Lipase_7" class="report_text"></td>
-
-                        </tr>
-
-                       <tr class="tr_border">
-                            <td> <div class="vertical_td LIPIDGRAM"> <div class="verticalTableHeader">LIPIDGRAM  </div> </td>
-                            <td> Total Cholesterol  </td>
-                            <td>  <200 Mg/dl</td>
-                            <td> <input type="text" tabindex="41" name="TotalCholesterol_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="141" name="TotalCholesterol_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="241" name="TotalCholesterol_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="341" name="TotalCholesterol_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="421" name="TotalCholesterol_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="541" name="TotalCholesterol_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="641" name="TotalCholesterol_7" class="report_text"></td>
-
-                        </tr>
-
-                         <tr >
-                            <td></td>
-                            <td> LDL  </td>
-                            <td> <100  Mg/dl</td>
-                            <td> <input type="text" tabindex="42" name="LDL_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="142" name="LDL_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="242" name="LDL_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="342" name="LDL_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="442" name="LDL_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="542" name="LDL_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="642" name="LDL_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td> VLDL  </td>
-                            <td>7.0-35.0  Mg/dl</td>
-                            <td> <input type="text" tabindex="43" name="VLDL_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="143" name="VLDL_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="243" name="VLDL_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="343" name="VLDL_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="443" name="VLDL_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="543" name="VLDL_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="643" name="VLDL_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td> 1G  </td>
-                            <td>30-200 Mg/dl</td>
-                            <td> <input type="text" tabindex="44" name="MISC_1G_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="144" name="MISC_1G_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="244" name="MISC_1G_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="344" name="MISC_1G_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="444" name="MISC_1G_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="544" name="MISC_1G_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="644" name="MISC_1G_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td> HDL  </td>
-                            <td>35-60  Mg/dl</td>
-                            <td> <input type="text" tabindex="45" name="HDL_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="145" name="HDL_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="245" name="HDL_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="345" name="HDL_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="445" name="HDL_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="545" name="HDL_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="645" name="HDL_7" class="report_text"></td>
+                            <td>SERUM URIC ACID</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="39" name="uric" class="report_text"></td>
+                            <td> <input type="text" tabindex="139" name="uric" class="report_text"></td>
+                            <td> <input type="text" tabindex="239" name="uric" class="report_text"></td>
+                            <td> <input type="text" tabindex="339" name="uric" class="report_text"></td>
+                            <td> <input type="text" tabindex="439" name="uric" class="report_text"></td>
+                            <td> <input type="text" tabindex="539" name="uric" class="report_text"></td>
+                            <td> <input type="text" tabindex="639" name="uric" class="report_text"></td>
 
                         </tr>
 
                         <tr class="tr_border">
-                            <td> <div class="vertical_td COAGLCOGRAM"> <div class="verticalTableHeader">COAGLCOGRAM</div> </td>
-                            <td> PII  </td>
-                            <td>11.4-13.7 seconds</td>
-                            <td> <input type="text" tabindex="46" name="PII_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="146" name="PII_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="246" name="PII_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="346" name="PII_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="446" name="PII_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="546" name="PII_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="646" name="PII_7" class="report_text"></td>
-
-                        </tr>
-
-
-                        <tr>
+                            <td> <div class="vertical_td SODIUM"> <div class="verticalTableHeader"></div> </td>
+                            <td>SERUM SODIUM</td>
                             <td></td>
-                            <td> INR  </td>
-                            <td><1.4 Ratio</td>
-                            <td> <input type="text" tabindex="47" name="INR_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="147" name="INR_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="247" name="INR_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="347" name="INR_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="447" name="INR_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="547" name="INR_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="647" name="INR_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td> PIIK  </td>
-                            <td> 27.8-41.8 seconds</td>
-                            <td> <input type="text" tabindex="48" name="PIIK_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="148" name="PIIK_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="248" name="PIIK_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="348" name="PIIK_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="448" name="PIIK_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="548" name="PIIK_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="648" name="PIIK_7" class="report_text"></td>
-
-                        </tr>
-
-                       <tr class="tr_border">
-                            <td> <div class="vertical_td CARDAC"> <div class="verticalTableHeader">CARDAC ENZYMES  </div> </td>
-                            <td>  CPK MB  </td>
-                            <td> 0.6-3.5 ng/ml</td>
-                            <td> <input type="text" tabindex="50" name="CARDAC_ENZYMES_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="150" name="CARDAC_ENZYMES_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="250" name="CARDAC_ENZYMES_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="350" name="CARDAC_ENZYMES_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="450" name="CARDAC_ENZYMES_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="550" name="CARDAC_ENZYMES_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="650" name="CARDAC_ENZYMES_7" class="report_text"></td>
-
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>  Trap I  </td>
-                            <td> 0.0-0.06 ng/ml</td>
-                            <td> <input type="text" tabindex="51" name="TrapI_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="151" name="TrapI_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="251" name="TrapI_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="351" name="TrapI_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="451" name="TrapI_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="551" name="TrapI_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="651" name="TrapI_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  Myoglobin  </td>
-                            <td>  20-80 ng/ml</td>
-                            <td> <input type="text" tabindex="52" name="Myoglobin_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="152" name="Myoglobin_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="252" name="Myoglobin_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="352" name="Myoglobin_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="452" name="Myoglobin_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="552" name="Myoglobin_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="652" name="Myoglobin_7" class="report_text"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td>  HIV  </td>
-                            <td> Not Detected</td>
-                            <td> <input type="text" tabindex="55" name="hiv_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="155" name="hiv_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="255" name="hiv_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="355" name="hiv_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="455" name="hiv_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="555" name="hiv_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="655" name="hiv_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="40" name="sodium" class="report_text"></td>
+                            <td> <input type="text" tabindex="140" name="sodium" class="report_text"></td>
+                            <td> <input type="text" tabindex="240" name="sodium" class="report_text"></td>
+                            <td> <input type="text" tabindex="340" name="sodium" class="report_text"></td>
+                            <td> <input type="text" tabindex="440" name="sodium" class="report_text"></td>
+                            <td> <input type="text" tabindex="540" name="sodium" class="report_text"></td>
+                            <td> <input type="text" tabindex="640" name="sodium" class="report_text"></td>
 
                         </tr>
 
                         <tr class="tr_border">
+                            <td> <div class="vertical_td POTASSIUM"> <div class="verticalTableHeader"></div> </td>
+                            <td>SERUM POTASSIUM</td>
                             <td></td>
-                            <td>  HbaAg  </td>
-                            <td> Not Detected</td>
-                            <td> <input type="text" tabindex="56" name="HbaAg_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="156" name="HbaAg_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="256" name="HbaAg_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="356" name="HbaAg_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="456" name="HbaAg_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="556" name="HbaAg_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="656" name="HbaAg_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="41" name="potassium" class="report_text"></td>
+                            <td> <input type="text" tabindex="141" name="potassium" class="report_text"></td>
+                            <td> <input type="text" tabindex="241" name="potassium" class="report_text"></td>
+                            <td> <input type="text" tabindex="341" name="potassium" class="report_text"></td>
+                            <td> <input type="text" tabindex="441" name="potassium" class="report_text"></td>
+                            <td> <input type="text" tabindex="541" name="potassium" class="report_text"></td>
+                            <td> <input type="text" tabindex="641" name="potassium" class="report_text"></td>
 
                         </tr>
 
                         <tr class="tr_border">
+                            <td> <div class="vertical_td CHLORIDE"> <div class="verticalTableHeader"></div> </td>
+                            <td>SERUM CHLORIDE</td>
                             <td></td>
-                            <td>  HCV  </td>
-                            <td> Not Detected</td>
-                            <td> <input type="text" tabindex="57" name="hcv_1" class="report_text"></td>
-                            <td> <input type="text" tabindex="157" name="hcv_2" class="report_text"></td>
-                            <td> <input type="text" tabindex="257" name="hcv_3" class="report_text"></td>
-                            <td> <input type="text" tabindex="357" name="hcv_4" class="report_text"></td>
-                            <td> <input type="text" tabindex="457" name="hcv_5" class="report_text"></td>
-                            <td> <input type="text" tabindex="557" name="hcv_6" class="report_text"></td>
-                            <td> <input type="text" tabindex="657" name="hcv_7" class="report_text"></td>
+                            <td> <input type="text" tabindex="42" name="chloride" class="report_text"></td>
+                            <td> <input type="text" tabindex="142" name="chloride" class="report_text"></td>
+                            <td> <input type="text" tabindex="242" name="chloride" class="report_text"></td>
+                            <td> <input type="text" tabindex="342" name="chloride" class="report_text"></td>
+                            <td> <input type="text" tabindex="442" name="chloride" class="report_text"></td>
+                            <td> <input type="text" tabindex="542" name="chloride" class="report_text"></td>
+                            <td> <input type="text" tabindex="642" name="chloride" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td LIVER"> <div class="verticalTableHeader">LFT CGHS 1513</div> </td>
+                            <td>TOTAL BILIRUBIN</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="" name="bilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="143" name="bilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="243" name="bilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="343" name="bilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="443" name="bilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="543" name="bilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="643" name="bilirubin" class="report_text"></td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td>CONJUGATED (D. BILIRUBIN)</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="44" name="cbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="144" name="cbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="244" name="cbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="344" name="cbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="444" name="cbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="544" name="cbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="644" name="cbilirubin" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>UNCOUNJUGATED (I D BILIRUBIN)</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="45"" name="ucbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="145" name="ucbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="245" name="ucbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="345" name="ucbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="445" name="ucbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="545" name="ucbilirubin" class="report_text"></td>
+                            <td> <input type="text" tabindex="645" name="ucbilirubin" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>AST / SGOT</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="46" name="sgot" class="report_text"></td>
+                            <td> <input type="text" tabindex="146" name="sgot" class="report_text"></td>
+                            <td> <input type="text" tabindex="246" name="sgot" class="report_text"></td>
+                            <td> <input type="text" tabindex="346" name="sgot" class="report_text"></td>
+                            <td> <input type="text" tabindex="446" name="sgot" class="report_text"></td>
+                            <td> <input type="text" tabindex="546" name="sgot" class="report_text"></td>
+                            <td> <input type="text" tabindex="646" name="sgot" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td SGPT"> <div class="verticalTableHeader">SGPT / ALT CGHS 1475</div> </td>
+                            <td>ALT/SGPT</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="47" name="sgpt" class="report_text"></td>
+                            <td> <input type="text" tabindex="147" name="sgpt" class="report_text"></td>
+                            <td> <input type="text" tabindex="247" name="sgpt" class="report_text"></td>
+                            <td> <input type="text" tabindex="347" name="sgpt" class="report_text"></td>
+                            <td> <input type="text" tabindex="447" name="sgpt" class="report_text"></td>
+                            <td> <input type="text" tabindex="547" name="sgpt" class="report_text"></td>
+                            <td> <input type="text" tabindex="647" name="sgpt" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>ALKALINE PHOSPHATASE (ALP)</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="48" name="alkphosphatase" class="report_text"></td>
+                            <td> <input type="text" tabindex="148" name="alkphosphatase" class="report_text"></td>
+                            <td> <input type="text" tabindex="248" name="alkphosphatase" class="report_text"></td>
+                            <td> <input type="text" tabindex="348" name="alkphosphatase" class="report_text"></td>
+                            <td> <input type="text" tabindex="448" name="alkphosphatase" class="report_text"></td>
+                            <td> <input type="text" tabindex="548" name="alkphosphatase" class="report_text"></td>
+                            <td> <input type="text" tabindex="648" name="alkphosphatase" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>TOTAL PROTEIN</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="49" name="tprotein" class="report_text"></td>
+                            <td> <input type="text" tabindex="149" name="tprotein" class="report_text"></td>
+                            <td> <input type="text" tabindex="249" name="tprotein" class="report_text"></td>
+                            <td> <input type="text" tabindex="349" name="tprotein" class="report_text"></td>
+                            <td> <input type="text" tabindex="449" name="tprotein" class="report_text"></td>
+                            <td> <input type="text" tabindex="549" name="tprotein" class="report_text"></td>
+                            <td> <input type="text" tabindex="649" name="tprotein" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>SERUM ALBUMIN</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="50" name="serumalbumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="150" name="serumalbumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="250" name="serumalbumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="350" name="serumalbumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="450" name="serumalbumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="550" name="serumalbumin" class="report_text"></td>
+                            <td> <input type="text" tabindex="650" name="serumalbumin" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>GLOBIN</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="51" name="globin" class="report_text"></td>
+                            <td> <input type="text" tabindex="151" name="globin" class="report_text"></td>
+                            <td> <input type="text" tabindex="251" name="globin" class="report_text"></td>
+                            <td> <input type="text" tabindex="351" name="globin" class="report_text"></td>
+                            <td> <input type="text" tabindex="451" name="globin" class="report_text"></td>
+                            <td> <input type="text" tabindex="551" name="globin" class="report_text"></td>
+                            <td> <input type="text" tabindex="651" name="globin" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>A/G RATIO</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="52" name="agratio" class="report_text"></td>
+                            <td> <input type="text" tabindex="152" name="agratio" class="report_text"></td>
+                            <td> <input type="text" tabindex="252" name="agratio" class="report_text"></td>
+                            <td> <input type="text" tabindex="352" name="agratio" class="report_text"></td>
+                            <td> <input type="text" tabindex="452" name="agratio" class="report_text"></td>
+                            <td> <input type="text" tabindex="552" name="agratio" class="report_text"></td>
+                            <td> <input type="text" tabindex="652" name="agratio" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>GGT</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="53" name="ggt" class="report_text"></td>
+                            <td> <input type="text" tabindex="153" name="ggt" class="report_text"></td>
+                            <td> <input type="text" tabindex="253" name="ggt" class="report_text"></td>
+                            <td> <input type="text" tabindex="353" name="ggt" class="report_text"></td>
+                            <td> <input type="text" tabindex="453" name="ggt" class="report_text"></td>
+                            <td> <input type="text" tabindex="553" name="ggt" class="report_text"></td>
+                            <td> <input type="text" tabindex="653" name="ggt" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>SERUM AMYLASE</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="54" name="serumamylase" class="report_text"></td>
+                            <td> <input type="text" tabindex="154" name="serumamylase" class="report_text"></td>
+                            <td> <input type="text" tabindex="254" name="serumamylase" class="report_text"></td>
+                            <td> <input type="text" tabindex="354" name="serumamylase" class="report_text"></td>
+                            <td> <input type="text" tabindex="454" name="serumamylase" class="report_text"></td>
+                            <td> <input type="text" tabindex="554" name="serumamylase" class="report_text"></td>
+                            <td> <input type="text" tabindex="654" name="serumamylase" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>SERUM LIPASE</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="55" name="serumlipase" class="report_text"></td>
+                            <td> <input type="text" tabindex="155" name="serumlipase" class="report_text"></td>
+                            <td> <input type="text" tabindex="255" name="serumlipase" class="report_text"></td>
+                            <td> <input type="text" tabindex="355" name="serumlipase" class="report_text"></td>
+                            <td> <input type="text" tabindex="455" name="serumlipase" class="report_text"></td>
+                            <td> <input type="text" tabindex="555" name="serumlipase" class="report_text"></td>
+                            <td> <input type="text" tabindex="655" name="serumlipase" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td COAGU"> <div class="verticalTableHeader">COAGU CGHS 1733</div> </td>
+                            <td>PT PATIENT</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="56" name="ptpatient" class="report_text"></td>
+                            <td> <input type="text" tabindex="156" name="ptpatient" class="report_text"></td>
+                            <td> <input type="text" tabindex="256" name="ptpatient" class="report_text"></td>
+                            <td> <input type="text" tabindex="356" name="ptpatient" class="report_text"></td>
+                            <td> <input type="text" tabindex="456" name="ptpatient" class="report_text"></td>
+                            <td> <input type="text" tabindex="556" name="ptpatient" class="report_text"></td>
+                            <td> <input type="text" tabindex="656" name="ptpatient" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>PT CONTROL</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="57" name="ptcontrol" class="report_text"></td>
+                            <td> <input type="text" tabindex="157" name="ptcontrol" class="report_text"></td>
+                            <td> <input type="text" tabindex="257" name="ptcontrol" class="report_text"></td>
+                            <td> <input type="text" tabindex="357" name="ptcontrol" class="report_text"></td>
+                            <td> <input type="text" tabindex="457" name="ptcontrol" class="report_text"></td>
+                            <td> <input type="text" tabindex="557" name="ptcontrol" class="report_text"></td>
+                            <td> <input type="text" tabindex="657" name="ptcontrol" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>INDEX</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="58" name="index" class="report_text"></td>
+                            <td> <input type="text" tabindex="158" name="index" class="report_text"></td>
+                            <td> <input type="text" tabindex="258" name="index" class="report_text"></td>
+                            <td> <input type="text" tabindex="358" name="index" class="report_text"></td>
+                            <td> <input type="text" tabindex="458" name="index" class="report_text"></td>
+                            <td> <input type="text" tabindex="558" name="index" class="report_text"></td>
+                            <td> <input type="text" tabindex="658" name="index" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>ISI Value of Reagent</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="59" name="isireagent" class="report_text"></td>
+                            <td> <input type="text" tabindex="159" name="isireagent" class="report_text"></td>
+                            <td> <input type="text" tabindex="259" name="isireagent" class="report_text"></td>
+                            <td> <input type="text" tabindex="359" name="isireagent" class="report_text"></td>
+                            <td> <input type="text" tabindex="459" name="isireagent" class="report_text"></td>
+                            <td> <input type="text" tabindex="559" name="isireagent" class="report_text"></td>
+                            <td> <input type="text" tabindex="659" name="isireagent" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>INR (International Normalized Ratio)</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="60" name="inr" class="report_text"></td>
+                            <td> <input type="text" tabindex="160" name="inr" class="report_text"></td>
+                            <td> <input type="text" tabindex="260" name="inr" class="report_text"></td>
+                            <td> <input type="text" tabindex="360" name="inr" class="report_text"></td>
+                            <td> <input type="text" tabindex="460" name="inr" class="report_text"></td>
+                            <td> <input type="text" tabindex="560" name="inr" class="report_text"></td>
+                            <td> <input type="text" tabindex="660" name="inr" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>PTTK</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="61" name="pttk" class="report_text"></td>
+                            <td> <input type="text" tabindex="161" name="pttk" class="report_text"></td>
+                            <td> <input type="text" tabindex="261" name="pttk" class="report_text"></td>
+                            <td> <input type="text" tabindex="361" name="pttk" class="report_text"></td>
+                            <td> <input type="text" tabindex="461" name="pttk" class="report_text"></td>
+                            <td> <input type="text" tabindex="561" name="pttk" class="report_text"></td>
+                            <td> <input type="text" tabindex="661" name="pttk" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>HIV (AIDS) ANTIBODY I & II</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="62" name="hiv" class="report_text"></td>
+                            <td> <input type="text" tabindex="162" name="hiv" class="report_text"></td>
+                            <td> <input type="text" tabindex="262" name="hiv" class="report_text"></td>
+                            <td> <input type="text" tabindex="362" name="hiv" class="report_text"></td>
+                            <td> <input type="text" tabindex="462" name="hiv" class="report_text"></td>
+                            <td> <input type="text" tabindex="562" name="hiv" class="report_text"></td>
+                            <td> <input type="text" tabindex="662" name="hiv" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>HEPATITIS B SURFACE ANTIGEN</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="63" name="hepatitis" class="report_text"></td>
+                            <td> <input type="text" tabindex="163" name="hepatitis" class="report_text"></td>
+                            <td> <input type="text" tabindex="263" name="hepatitis" class="report_text"></td>
+                            <td> <input type="text" tabindex="363" name="hepatitis" class="report_text"></td>
+                            <td> <input type="text" tabindex="463" name="hepatitis" class="report_text"></td>
+                            <td> <input type="text" tabindex="563" name="hepatitis" class="report_text"></td>
+                            <td> <input type="text" tabindex="663" name="hepatitis" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>HCV ANTIBODY TEST</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="64" name="hcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="164" name="hcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="264" name="hcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="364" name="hcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="464" name="hcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="564" name="hcv" class="report_text"></td>
+                            <td> <input type="text" tabindex="664" name="hcv" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>VDRL CARD</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="65" name="vdrl" class="report_text"></td>
+                            <td> <input type="text" tabindex="165" name="vdrl" class="report_text"></td>
+                            <td> <input type="text" tabindex="265" name="vdrl" class="report_text"></td>
+                            <td> <input type="text" tabindex="365" name="vdrl" class="report_text"></td>
+                            <td> <input type="text" tabindex="465" name="vdrl" class="report_text"></td>
+                            <td> <input type="text" tabindex="565" name="vdrl" class="report_text"></td>
+                            <td> <input type="text" tabindex="665" name="vdrl" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>BLOOD SUGAR</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="66" name="bsugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="166" name="bsugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="266" name="bsugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="366" name="bsugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="466" name="bsugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="566" name="bsugar" class="report_text"></td>
+                            <td> <input type="text" tabindex="666" name="bsugar" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>BLOOD GLUCOSE - RANDOM</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="67" name="bglucose" class="report_text"></td>
+                            <td> <input type="text" tabindex="167" name="bglucose" class="report_text"></td>
+                            <td> <input type="text" tabindex="267" name="bglucose" class="report_text"></td>
+                            <td> <input type="text" tabindex="367" name="bglucose" class="report_text"></td>
+                            <td> <input type="text" tabindex="467" name="bglucose" class="report_text"></td>
+                            <td> <input type="text" tabindex="567" name="bglucose" class="report_text"></td>
+                            <td> <input type="text" tabindex="667" name="bglucose" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>PP</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="68" name="pp" class="report_text"></td>
+                            <td> <input type="text" tabindex="168" name="pp" class="report_text"></td>
+                            <td> <input type="text" tabindex="268" name="pp" class="report_text"></td>
+                            <td> <input type="text" tabindex="368" name="pp" class="report_text"></td>
+                            <td> <input type="text" tabindex="468" name="pp" class="report_text"></td>
+                            <td> <input type="text" tabindex="568" name="pp" class="report_text"></td>
+                            <td> <input type="text" tabindex="668" name="pp" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>PCT</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="69" name="pct" class="report_text"></td>
+                            <td> <input type="text" tabindex="169" name="pct" class="report_text"></td>
+                            <td> <input type="text" tabindex="269" name="pct" class="report_text"></td>
+                            <td> <input type="text" tabindex="369" name="pct" class="report_text"></td>
+                            <td> <input type="text" tabindex="469" name="pct" class="report_text"></td>
+                            <td> <input type="text" tabindex="569" name="pct" class="report_text"></td>
+                            <td> <input type="text" tabindex="669" name="pct" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>D DIMER</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="70" name="dimer" class="report_text"></td>
+                            <td> <input type="text" tabindex="170" name="dimer" class="report_text"></td>
+                            <td> <input type="text" tabindex="270" name="dimer" class="report_text"></td>
+                            <td> <input type="text" tabindex="370" name="dimer" class="report_text"></td>
+                            <td> <input type="text" tabindex="470" name="dimer" class="report_text"></td>
+                            <td> <input type="text" tabindex="570" name="dimer" class="report_text"></td>
+                            <td> <input type="text" tabindex="670" name="dimer" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>SERUM FERRITIN</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="71" name="serumferritin" class="report_text"></td>
+                            <td> <input type="text" tabindex="171" name="serumferritin" class="report_text"></td>
+                            <td> <input type="text" tabindex="271" name="serumferritin" class="report_text"></td>
+                            <td> <input type="text" tabindex="371" name="serumferritin" class="report_text"></td>
+                            <td> <input type="text" tabindex="471" name="serumferritin" class="report_text"></td>
+                            <td> <input type="text" tabindex="571" name="serumferritin" class="report_text"></td>
+                            <td> <input type="text" tabindex="671" name="serumferritin" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>MALARIA ANTIGEN</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="72" name="malaria" class="report_text"></td>
+                            <td> <input type="text" tabindex="172" name="malaria" class="report_text"></td>
+                            <td> <input type="text" tabindex="272" name="malaria" class="report_text"></td>
+                            <td> <input type="text" tabindex="372" name="malaria" class="report_text"></td>
+                            <td> <input type="text" tabindex="472" name="malaria" class="report_text"></td>
+                            <td> <input type="text" tabindex="572" name="malaria" class="report_text"></td>
+                            <td> <input type="text" tabindex="672" name="malaria" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td DENGUE"> <div class="verticalTableHeader">DENGUE</div> </td>
+                            <td>DENGUE NSI ANTIGEN</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="73" name="dengue" class="report_text"></td>
+                            <td> <input type="text" tabindex="173" name="dengue" class="report_text"></td>
+                            <td> <input type="text" tabindex="273" name="dengue" class="report_text"></td>
+                            <td> <input type="text" tabindex="373" name="dengue" class="report_text"></td>
+                            <td> <input type="text" tabindex="473" name="dengue" class="report_text"></td>
+                            <td> <input type="text" tabindex="573" name="dengue" class="report_text"></td>
+                            <td> <input type="text" tabindex="673" name="dengue" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>DENGUE IgG</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="74" name="dengueigg" class="report_text"></td>
+                            <td> <input type="text" tabindex="174" name="dengueigg" class="report_text"></td>
+                            <td> <input type="text" tabindex="274" name="dengueigg" class="report_text"></td>
+                            <td> <input type="text" tabindex="374" name="dengueigg" class="report_text"></td>
+                            <td> <input type="text" tabindex="474" name="dengueigg" class="report_text"></td>
+                            <td> <input type="text" tabindex="574" name="dengueigg" class="report_text"></td>
+                            <td> <input type="text" tabindex="674" name="dengueigg" class="report_text"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>DENGUE IgM</td>
+                            <td>70-140 Mg/dll</td>
+                            <td> <input type="text" tabindex="75" name="dengueigm" class="report_text"></td>
+                            <td> <input type="text" tabindex="175" name="dengueigm" class="report_text"></td>
+                            <td> <input type="text" tabindex="275" name="dengueigm" class="report_text"></td>
+                            <td> <input type="text" tabindex="375" name="dengueigm" class="report_text"></td>
+                            <td> <input type="text" tabindex="475" name="dengueigm" class="report_text"></td>
+                            <td> <input type="text" tabindex="575" name="dengueigm" class="report_text"></td>
+                            <td> <input type="text" tabindex="675" name="dengueigm" class="report_text"></td>
+
+                        </tr>
+
+                        <tr class="tr_border">
+                            <td> <div class="vertical_td"> <div class="verticalTableHeader"></div> </td>
+                            <td>WIDAL TEST (SLIDE METHOD)</td>
+                            <td></td>
+                            <td> <input type="text" tabindex="76" name="widal" class="report_text"></td>
+                            <td> <input type="text" tabindex="176" name="widal" class="report_text"></td>
+                            <td> <input type="text" tabindex="276" name="widal" class="report_text"></td>
+                            <td> <input type="text" tabindex="376" name="widal" class="report_text"></td>
+                            <td> <input type="text" tabindex="476" name="widal" class="report_text"></td>
+                            <td> <input type="text" tabindex="576" name="widal" class="report_text"></td>
+                            <td> <input type="text" tabindex="676" name="widal" class="report_text"></td>
 
                         </tr>
                     </table>
