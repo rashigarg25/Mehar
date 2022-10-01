@@ -53,6 +53,50 @@ const generatePdf = async (info) => {
         border: '10px',
         header: {
             height: '220px'
+        },
+        footer: {
+            height: '130px',
+            contents: {
+                default: '<div id="pageFooter">\n' +
+                    '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +
+                    '                <div class="left aligned ui segment" style="margin-top: 40px">\n' +
+                    '                    <h3>TECHNOLOGIST</h3>\n' +
+                    '                </div>\n' +
+                    '                <div class="right aligned ui segment" style="border-left: 0">\n' +
+                    '                    <img src="https://i.postimg.cc/KRC0X4CC/signature.png" width="100px"' +
+                    ' alt="Signature alt">\n' +
+                    '                    <p><b>Dr. Shweta</b><br/>\n' +
+                    '                        MBBS, MD(PATHOLOGY)<br/>\n' +
+                    '                        (EX. PGIMER, CHD.)\n' +
+                    '                    </p>\n' +
+                    '                </div>\n' +
+                    '            </div>\n' +
+                    '            <div class="center aligned ui segment">\n' +
+                    '                <!--<p><b>End of Report</b>-->\n' +
+                    '                <p><b>{{page}}/{{pages}}</b>\n' +
+                    '                </p>\n' +
+                    '            </div>\n' +
+                    '        </div>',
+                last: '<div id="pageFooter">\n' +
+                    '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +
+                    '                <div class="left aligned ui segment" style="margin-top: 40px">\n' +
+                    '                    <h3>TECHNOLOGIST</h3>\n' +
+                    '                </div>\n' +
+                    '                <div class="right aligned ui segment" style="border-left: 0">\n' +
+                    '                    <img src="https://i.postimg.cc/KRC0X4CC/signature.png" width="100px">\n' +
+                    '                    <p><b>Dr. Shweta</b><br/>\n' +
+                    '                        MBBS, MD(PATHOLOGY)<br/>\n' +
+                    '                        (EX. PGIMER, CHD.)\n' +
+                    '                    </p>\n' +
+                    '                </div>\n' +
+                    '            </div>\n' +
+                    '            <div class="center aligned ui segment">\n' +
+                    '                <!--<p><b>End of Report</b>-->\n' +
+                    '                <p><b>End of Report</b>\n' +
+                    '                </p>\n' +
+                    '            </div>\n' +
+                    '        </div>'
+            }
         }
     }
 
