@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const { check, validationResult } = require('express-validator');
-const {printView, generatePdf} = require("../controller/homeController");
+const {printView, generatePdfParent} = require("../controller/homeController");
 
 const router = express.Router();
 
@@ -15,11 +15,11 @@ router.get('/form', (req, res) => {
 });
 
 router.post("/print_report",
-generatePdf
+generatePdfParent
 );
 
 router.post("/download",
-generatePdf
+generatePdfParent
 );
 
 router.post('/form', 
