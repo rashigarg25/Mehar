@@ -3,7 +3,7 @@ const pdf = require('pdf-creator-node');
 const path = require('path');
 const {getSantizedInfo} = require('../controller/sanitizeData')
 const {sanitize} = require("express-validator");
-//const options = require('../helper/options');
+const _ = require('lodash');
 
 const printView = (req, res, next) => {
     var reqData = req.body;
@@ -14,22 +14,14 @@ const generatePdfParent = async (req, res, next) => {
 
     for (let i = 0; i < 1; i++) {
         const info = getInfo(req.body, i);
-        //const sanitizedData = getSantizedInfo(info);
-        console.log(info);
-        generatePdf(info);
+        if(!_.isEmpty(info.data.testDate)){
+            generatePdf(info);
+        }
+        
     }
     res.render('print_report');
 }
 
-const dummyInfo = {
-    "blood" : {
-        hb: '12.4',
-        tlc: '8000',
-        dlc: '',
-        neutrophils: '64',
-        lymphocytes: ''
-    }
-};
 
 const getInfo = (body, i) => {
 
@@ -50,10 +42,10 @@ const getInfo = (body, i) => {
 
 const generatePdf = async (info) => {
 
-    const test1 = info.testDate.substring(0, 2).replace('/\//g', '-');
+    const test1 = info.testDate.substring(0, 10).replaceAll('/', '-');
 
-    const sampleDate = info.testDate.substring(0, info.testDate.indexOf(" "));
-    const sampleTime = info.testDate.substring(info.testDate.indexOf(" "));
+    const sampleDate = info.testDate.substring(0, info.data.testDate.indexOf(" "));
+    const sampleTime = info.testDate.substring(info.data.testDate.indexOf(" "));
 
     info.sampleDate = sampleDate.replaceAll('/','-');
     info.sampleTime = sampleTime;
@@ -61,7 +53,7 @@ const generatePdf = async (info) => {
     console.log(">>>>> Time: " + sampleTime);
 
     const html = fs.readFileSync(path.join(__dirname, '../views/print_report.html'), 'utf-8');
-    const filename = info.patient_name + '_' + info.ipd + '_' + test1 + '.pdf';
+    const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
 
     const document = {
         html: html,
