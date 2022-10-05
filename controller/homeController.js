@@ -1,6 +1,8 @@
 const fs = require('fs');
 const pdf = require('pdf-creator-node');
 const path = require('path');
+const {getSantizedInfo} = require('../controller/sanitizeData')
+const {sanitize} = require("express-validator");
 //const options = require('../helper/options');
 
 const printView = (req, res, next) => {
@@ -11,11 +13,23 @@ const printView = (req, res, next) => {
 const generatePdfParent = async (req, res, next) => {
 
     for (let i = 0; i < 1; i++) {
-        info = getInfo(req.body, i);
+        const info = getInfo(req.body, i);
+        //const sanitizedData = getSantizedInfo(info);
+        console.log(info);
         generatePdf(info);
     }
     res.render('print_report');
 }
+
+const dummyInfo = {
+    "blood" : {
+        hb: '12.4',
+        tlc: '8000',
+        dlc: '',
+        neutrophils: '64',
+        lymphocytes: ''
+    }
+};
 
 const getInfo = (body, i) => {
 
@@ -30,9 +44,9 @@ const getInfo = (body, i) => {
             info[element] = body[element];
         }
     });
-    return info;
+    const sanitizedData = getSantizedInfo(info);
+    return sanitizedData;
 }
-
 
 const generatePdf = async (info) => {
 
@@ -122,7 +136,7 @@ const generatePdf = async (info) => {
         console.log(error);
     });
     const filepath = 'http://localhost:3000/docs/' + filename;
-    
+
 }
 
 module.exports = {
