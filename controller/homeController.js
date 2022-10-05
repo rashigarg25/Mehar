@@ -12,7 +12,7 @@ const printView = (req, res, next) => {
 
 const generatePdfParent = async (req, res, next) => {
 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 7; i++) {
         const info = getInfo(req.body, i);
         if(!_.isEmpty(info.data.testDate)){
             generatePdf(info);
@@ -36,8 +36,7 @@ const getInfo = (body, i) => {
             info[element] = body[element];
         }
     });
-    const sanitizedData = getSantizedInfo(info);
-    return sanitizedData;
+    return getSantizedInfo(info);
 }
 
 const generatePdf = async (info) => {
@@ -47,11 +46,14 @@ const generatePdf = async (info) => {
     const sampleDate = info.data.testDate.substring(0, info.data.testDate.indexOf(" "));
     const sampleTime = info.data.testDate.substring(info.data.testDate.indexOf(" "));
 
-    info.data.printDate = info.data.printDate.substring(0, info.data.printDate.indexOf(" "));
-    info.data.printTime = info.data.printDate.substring(info.data.printDate.indexOf(" "));
+    const printDate = info.data.printDate.substring(0, info.data.printDate.indexOf(" "));
+    const printTime = info.data.printDate.substring(info.data.printDate.indexOf(" "));
 
     info.data.testDate = sampleDate.replaceAll('/','-');
     info.data.testTime = sampleTime;
+
+    info.data.printDate = printDate;
+    info.data.printTime = printTime;
 
     console.log(">>>>> Date: " + sampleDate);
     console.log(">>>>> Time: " + sampleTime);
