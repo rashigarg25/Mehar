@@ -70,38 +70,44 @@ const generatePdf = async (info) => {
                 default: '<div id="pageFooter">\n' +
                     '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +
                     '                <div class="left aligned ui segment" style="margin-top: 40px">\n' +
-                    '                    <p style="font-family: Tahoma, serif; font-size: 8px;' +
-                    ' font-weight: 900">TECHNOLOGIST</p>\n' +
+                    '                    <p style="font-size: 9px!important; font-weight: 900;' +
+                    ' padding-left: 30px;">TECHNOLOGIST</p>\n' +
                     '                </div>\n' +
                     '                <div class="right aligned ui segment" style="border-left: 0">\n' +
                     '                    <img src="https://i.postimg.cc/KRC0X4CC/signature.png" width="100px"' +
                     ' alt="Signature alt">\n' +
-                    '                    <p><b>Dr. Shweta</b><br/>\n' +
+                    '                    <p style="font-size: 8px!important;"><span style="font-weight:' +
+                    ' 900;font-size: 9px!important;">Dr.' +
+                    ' Shweta</span><br/>\n' +
                     '                        MBBS, MD(PATHOLOGY)<br/>\n' +
-                    '                        (EX. PGIMER, CHD.)\n' +
+                    '                        (EX. PGIMER, CHD)\n' +
                     '                    </p>\n' +
                     '                </div>\n' +
                     '            </div>\n' +
                     '            <div class="center aligned ui segment">\n' +
-                    '                <p><b>Page {{page}} of {{pages}}</b>\n' +
+                    '                <p style="font-size: 9px!important; font-weight: 900;">Page {{page}} of {{pages}}\n' +
                     '                </p>\n' +
                     '            </div>\n' +
                     '        </div>',
                 last: '<div id="pageFooter">\n' +
                     '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +
                     '                <div class="left aligned ui segment" style="margin-top: 40px">\n' +
-                    '                    <h3>TECHNOLOGIST</h3>\n' +
+                    '                    <p style="font-size: 9px!important; font-weight: 900;' +
+                    ' padding-left: 30px;">TECHNOLOGIST</p>\n' +
                     '                </div>\n' +
                     '                <div class="right aligned ui segment" style="border-left: 0">\n' +
-                    '                    <img src="https://i.postimg.cc/KRC0X4CC/signature.png" width="100px">\n' +
-                    '                    <p><b>Dr. Shweta</b><br/>\n' +
+                    '                    <img src="https://i.postimg.cc/KRC0X4CC/signature.png" width="100px"' +
+                    ' alt="Signature alt">\n' +
+                    '                    <p style="font-size: 8px!important;"><span style="font-weight:' +
+                    ' 900;font-size: 9px!important;">Dr.' +
+                    ' Shweta</span><br/>\n' +
                     '                        MBBS, MD(PATHOLOGY)<br/>\n' +
-                    '                        (EX. PGIMER, CHD.)\n' +
+                    '                        (EX. PGIMER, CHD)\n' +
                     '                    </p>\n' +
                     '                </div>\n' +
                     '            </div>\n' +
                     '            <div class="center aligned ui segment">\n' +
-                    '                <p><b>End of Report</b>\n' +
+                    '                <p style="font-size: 9px!important; font-weight: 900;">End of Report\n' +
                     '                </p>\n' +
                     '            </div>\n' +
                     '        </div>'
