@@ -1,0 +1,179 @@
+       .row.patient_re th {
+                font-size: 13px;
+                text-align: CENTER;
+            }
+
+            .verticalTableHeader {
+                width: 40px;
+                position: absolute;
+                font-weight: 600; 
+                font-family: system-ui;
+            }
+            .row.headerdetails {
+                border-bottom: 1px solid #000;
+                padding-top: 21px;
+                /* font-size: 14px; */
+            }
+            .patient_address .table>tbody>tr>td, .patient_address .table>tbody>tr>th, .patient_address .table>tfoot>tr>td, .patient_address .table>tfoot>tr>th, .patient_address .table>thead>tr>td, .patient_address .table>thead>tr>th {
+                border: navajowhite;
+            }
+            input.inputc {
+                border: none;
+                border-bottom: 1px solid #000;
+            }
+            .col-sm-4.logodiv {
+                border-right: 1px solid #000;
+                float: left;
+            }
+            .row.nav {
+                border-bottom: 1px solid #000;
+                margin-top: -8px;
+            }
+            button.reportbutton {
+                float: right;
+                margin-top: 2px;
+                position: absolute;
+                right: 20px;
+            }
+
+
+            .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {   
+                border-top: 1px solid #000;
+            }
+            .table>thead>tr>th{
+                border-bottom: 1px solid #000;
+            }
+            .row.patient_re {
+                margin-top: 20px;
+            }
+
+
+            .vertailtext {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                position: absolute;
+                /* margin-left: -48px; */
+                border: 1px solid;
+                width: 47px;
+                text-align: center;
+                padding-top: 51px;
+                height: 313px;
+                padding-left: 41px;
+                z-index: 9999;
+                background: #fff;
+            }
+
+            .col-sm-8.detaisheaddiv {
+                float: right;
+            }
+            textarea
+            {
+                resize: none;
+            }
+            .row.patient_re th:first-child , .row.patient_re td:first-child{
+                border: none;
+
+            }
+
+            .input-group {
+                position: relative;
+                display: inline-flex;
+                border-collapse: separate;
+            }
+
+            .input-group.date .input-group-addon {
+                border-bottom: 1px solid #000 !important;
+                cursor: pointer;
+                background: #fff;
+                margin-left: 0px;
+                width: 24px;
+                border: none;
+            }
+            .row.patient_re .input-group.date .input-group-addon{
+                width: auto;
+                border: none !important;
+            }
+            .row.patient_re .input-group.date .input-group-addon {
+                width: auto;
+                border: none !important;
+                /* border: 1px solid red !important; */
+                padding: 0px;
+                width: 75px;
+            }
+            .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+                padding: 2px;
+            }
+
+            td.vertical_td.HEMOGRAM .verticalTableHeader {
+                margin-top: 138px;
+            }
+            .vertical_td.URINE .verticalTableHeader {
+                margin-top: 55px;
+            }
+            .vertical_td.BLOOD .verticalTableHeader {
+                margin-top: 28%;
+            }
+            .vertical_td.CARDAC .verticalTableHeader {
+                margin-top: 100px;
+            }
+            .vertical_td.COAGLCOGRAM .verticalTableHeader {
+                margin-top: 59px;
+            }
+
+            .vertical_td.LIPIDGRAM .verticalTableHeader {
+                margin-top: 60px;
+            }
+
+
+            .verticalTableHeader {
+                text-align:center;
+                white-space:nowrap;
+                transform-origin:50% 50%;
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(-90deg);
+
+            }
+            .verticalTableHeader:before {
+                content:'';
+                padding-top:110%;/* takes width as reference, + 10% for faking some extra padding */
+                display:inline-block;
+                vertical-align:middle;
+            }     
+
+            .verticalTableHeader {
+                width: 40px;
+                position: absolute;               
+            }
+            .vertical_td{
+                width: 45px;
+            }
+            textarea.report_text {
+                border: none;
+                height: 25px;
+                width: 100%;
+            }
+            .table>tbody>tr>td{
+                font-size: 12px;
+            }
+            .tr_border  {
+                border-top: 1px solid #000;
+            }
+
+
+            @media print{
+
+                .vertailtext {
+                    display: none;
+                }
+                button.reportbutton ,.row.headerdetails .input-group.date .input-group-addon {
+                    display:none;
+                }
+                .haddress {
+                    float: right;
+                    margin-top: -10%;
+                }
+
+
