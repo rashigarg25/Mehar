@@ -192,13 +192,14 @@
                     </div>
                 </div>
 
-                <div class="ui segment patient-details" style="overflow: hidden; white-space: nowrap; border: 1px solid#5e5e5e; border-radius: 0;">
+                <div class="ui segment patient-details"
+                     style="overflow: hidden; white-space: nowrap; border: 1px solid#5e5e5e; border-radius: 0;">
                     <table class="ui very basic table tahoma">
                         <tbody>
                         <tr>
                             <td class="three wide font-8">Patient Name</td>
                             <td class="one wide font-8">:</td>
-                            <td class="four wide font-10">{{patient_name}}</td>
+                            <td class="four wide font-10">{{data.patient_name}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-8">Mobile No</td>
                             <td class="one wide font-8">:</td>
@@ -207,11 +208,11 @@
                         <tr>
                             <td class="three wide font-8">UHID No.</td>
                             <td class="one wide font-8">:</td>
-                            <td class="four wide font-10">{{uhid}}</td>
+                            <td class="four wide font-10">{{data.uhid}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-8">ID No , Age</td>
                             <td class="one wide font-8">:</td>
-                            <td class="five wide font-10">{{ipd}} , {{Age}}</td>
+                            <td class="five wide font-10">{{data.ipd}} , {{data.Age}}</td>
                         </tr>
                         <tr>
                             <td class="three wide font-8">Address</td>
@@ -220,16 +221,16 @@
                             <td class="one wide"></td>
                             <td class="two wide font-8">Sampling Date</td>
                             <td class="one wide font-8">:</td>
-                            <td class="five wide font-10">{{sampleDate}}&emsp;&emsp;{{sampleTime}}</td>
+                            <td class="five wide font-10">{{data.testDate}}&emsp;&emsp;{{data.testTime}}</td>
                         </tr>
                         <tr>
                             <td class="three wide font-8">Doctor</td>
                             <td class="one wide font-8">:</td>
-                            <td class="four wide font-10">{{consultant}}</td>
+                            <td class="four wide font-10">{{data.consultant}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-8">Print Date</td>
                             <td class="one wide font-8">:</td>
-                            <td class="five wide font-10">{{printDate}}</td>
+                            <td class="five wide font-10">{{data.printDate}}&emsp;&emsp;{{data.printTime}}</td>
                         </tr>
                     </table>
                 </div>
@@ -278,49 +279,63 @@
                 <td class="third-column">4000-11000</td>
                 <td class="fourth-column">/cmm</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.dlc "!=" null}}
             <tr>
                 <td class="first-column">DLC<br/><i class="test-method">Method : Uricase-POD</i></td>
                 <td class="second-column">{{blood.dlc}}</td>
                 <td class="third-column">13.5-18 ( F-11.5-15)</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.neutrophils "!=" null}}
             <tr>
                 <td class="first-column">NEUTROPHILS</td>
                 <td class="second-column">{{blood.neutrophils}}</td>
                 <td class="third-column">45-75</td>
                 <td class="fourth-column">%</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.lymphocytes "!=" null}}
             <tr>
                 <td class="first-column">LYMPHOCYTE</td>
                 <td class="second-column">{{blood.lymphocytes}}</td>
                 <td class="third-column">20-45</td>
                 <td class="fourth-column">%</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.monocyte "!=" null}}
             <tr>
                 <td class="first-column">MONOCYTE</td>
                 <td class="second-column">{{blood.monocyte}}</td>
                 <td class="third-column">0-10</td>
                 <td class="fourth-column">%</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.eosinophils "!=" null}}
             <tr>
                 <td class="first-column">EOSINOPHIL</td>
                 <td class="second-column">{{blood.eosinophils}}</td>
                 <td class="third-column">0-6</td>
                 <td class="fourth-column">%</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.basophils "!=" null}}
             <tr>
                 <td class="first-column">BASOPHILS<br/><i class="test-method">Method : Uricase-POD</i></td>
                 <td class="second-column">{{blood.basophils}}</td>
                 <td class="third-column">0-1</td>
                 <td class="fourth-column">%</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.rbc "!=" null}}
             <tr>
                 <td class="first-column">RBC (RED BLOOD CELLS)<br/><i class="test-method">Method: Calculation /Automated
                     Cell counter</i>
@@ -329,7 +344,9 @@
                 <td class="third-column">3.8 - 5.8</td>
                 <td class="fourth-column">Million/cmm</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.pcv "!=" null}}
             <tr>
                 <td class="first-column">PCV<br/><i class="test-method">Method: Impedance/Automated Cell counter</i>
                 </td>
@@ -337,7 +354,9 @@
                 <td class="third-column">35-47</td>
                 <td class="fourth-column">%</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.mcv "!=" null}}
             <tr>
                 <td class="first-column">MCV (MEAN CELL VOLUME)<br/><i class="test-method">Method: Impedance/Automated
                     Cell counter</i></td>
@@ -345,7 +364,9 @@
                 <td class="third-column">80-100</td>
                 <td class="fourth-column">fL</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.mch "!=" null}}
             <tr>
                 <td class="first-column">MCH (MEAN CELL HAEMOGLOBIN)<br/><i class="test-method">Method:
                     Impedance/Automated Cell counter</i>
@@ -354,7 +375,9 @@
                 <td class="third-column">27-31</td>
                 <td class="fourth-column">picogram</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.mchc "!=" null}}
             <tr>
                 <td class="first-column">MCHC<br/><i class="test-method">Method: Calculation /Automated Cell counter</i>
                 </td>
@@ -362,7 +385,9 @@
                 <td class="third-column">33-37</td>
                 <td class="fourth-column">g/dL</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.rdwcv "!=" null}}
             <tr>
                 <td class="first-column">RDW-CV<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL
                     COUNTER</i></td>
@@ -370,7 +395,9 @@
                 <td class="third-column">10.0 - 15.0</td>
                 <td class="fourth-column">%</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.rdwsd "!=" null}}
             <tr>
                 <td class="first-column">RDW-SD<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL
                     COUNTER</i></td>
@@ -378,7 +405,9 @@
                 <td class="third-column">35.0 - 60.0</td>
                 <td class="fourth-column">fL</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond blood.platelet "!=" null}}
             <tr>
                 <td class="first-column">PLATELET COUNT<br/><i class="test-method">Method: Impedance/Automated Cell
                     counter</i></td>
@@ -386,17 +415,21 @@
                 <td class="third-column">1.5 - 4.5</td>
                 <td class="fourth-column">L/cmm</td>
             </tr>
+            {{/ifCond}}
+            {{/ifCond}}
 
+            {{#ifCond esr "!=" null}}
             <tr class="test-category">
                 <th><u>ESR CGHS 1392</u></th>
             </tr>
             <tr>
                 <td class="first-column">ERYTHROCYTE SEDIMENTATION RATE</td>
-                <td class="second-column">{{blood.esr}}</td>
+                <td class="second-column">{{esr.esr}}</td>
                 <td class="third-column">0-20</td>
                 <td class="fourth-column">mm</td>
             </tr>
             {{/ifCond}}
+
             {{#ifCond protein "!=" null}}
             <tr class="test-category">
                 <th><u>C REACTIVE PROTEIN (CRP) QUANTITATIVE</u></th>
@@ -413,20 +446,25 @@
             <tr class="test-category">
                 <td>KIDNEY FUNCTION TEST (KFT) CGHS 1512</td>
             </tr>
+            {{#ifCond kidney.burea "!=" null}}
             <tr>
                 <td class="first-column">BLOOD UREA<br/><i class="test-method">Method: Urease - GLDH</i></td>
                 <td class="second-column">{{kidney.burea}}</td>
                 <td class="third-column">18-55</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond kidney.creatinine "!=" null}}
             <tr>
                 <td class="first-column">SERUM CREATININE<br/><i class="test-method">Method : Enzymatic</i></td>
                 <td class="second-column">{{kidney.creatinine}}</td>
                 <td class="third-column">0.7 - 1.3</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond kidney.uric "!=" null}}
             <tr>
                 <td class="first-column">SERUM URIC ACID<br/><i class="test-method">Method : Uricase-POD</i></td>
                 <td class="second-column">{{kidney.uric}}</td>
@@ -434,11 +472,13 @@
                 <td class="fourth-column"> mg/dl</td>
             </tr>
             {{/ifCond}}
+            {{/ifCond}}
 
-            {{#ifCond serumSodium "!=" null}}
+            {{#ifCond sodium "!=" null}}
             <tr class="test-category">
                 <th><u>SERUM SODIUM CGHS 1481</u></th>
             </tr>
+            {{#ifCond sodium.sodium "!=" null}}
             <tr>
                 <td class="first-column">SODIUM<br/><i class="test-method">Method: Uricase - Ion Selective Electrode</i>
                 </td>
@@ -447,27 +487,29 @@
                 <td class="fourth-column">mmol/l</td>
             </tr>
             {{/ifCond}}
+            {{/ifCond}}
 
-            {{#ifCond serumPotassium "!=" null}}
+            {{#ifCond potassium "!=" null}}
             <tr class="test-category">
                 <th><u>SERUM POTASSIUM CGHS 1482</u></th>
             </tr>
             <tr>
                 <td class="first-column">POTASSIUM<br/><i class="test-method">Method: Uricase - Ion Selective
                     Electrode</i></td>
-                <td class="second-column">{{serumPotassium.potassium}}</td>
+                <td class="second-column">{{potassium.potassium}}</td>
                 <td class="third-column">3.5 - 5.5</td>
                 <td class="fourth-column">mmol/l</td>
             </tr>
             {{/ifCond}}
 
-            {{#ifCond serumChloride "!=" null}}
+            {{#ifCond chloride "!=" null}}
             <tr class="test-category">
                 <th><u>SERUM CHLORIDE CGHS 1531</u></th>
             </tr>
             <tr>
-                <td class="first-column">CHLORIDE<br/><i class="test-method">Method: Uricase - Ion Selective Electrode</i></td>
-                <td class="second-column">{{serumChloride.chloride}}</td>
+                <td class="first-column">CHLORIDE<br/><i class="test-method">Method: Uricase - Ion Selective
+                    Electrode</i></td>
+                <td class="second-column">{{chloride.chloride}}</td>
                 <td class="third-column">96 - 107</td>
                 <td class="fourth-column">mmol/l</td>
             </tr>
@@ -477,18 +519,24 @@
             <tr class="test-category">
                 <th><u>LIVER FUNCTION TEST LFT CGHS 1513</u></th>
             </tr>
+            {{#ifCond liver.bilirubin "!=" null}}
             <tr>
                 <td class="first-column">TOTAL BILIRUBIN<br/><i class="test-method">Method: Diazo</i></td>
                 <td class="second-column">{{liver.bilirubin}}</td>
                 <td class="third-column">0.2 - 1.2</td>
                 <td class="fourth-column">mg/l</td>
             </tr>
+            {{/ifCond}}
+            {{#ifCond liver.cbilirubin "!=" null}}
             <tr>
                 <td class="first-column">CONJUGATED (D. BILIRUBIN)<br/><i class="test-method">Method: Diazo</i></td>
                 <td class="second-column">{{liver.cbilirubin}}</td>
                 <td class="third-column">0.1 -0.41</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond liver.ucbilirubin "!=" null}}
             <tr>
                 <td class="first-column">UNCOUNJUGATED (I D BILIRUBIN)<br/><i class="test-method">Method: Calculated</i>
                 </td>
@@ -496,6 +544,7 @@
                 <td class="third-column">0.2 - 1</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond sgot "!=" null}}
@@ -514,53 +563,68 @@
             <tr class="test-category">
                 <th><u>SGPT / ALT CGHS 1475</u></th>
             </tr>
+            {{#ifCond sgpt.sgpt "!=" null}}
             <tr>
                 <td class="first-column">ALT/SGPT<br/><i class="test-method">Method: IFCC</i></td>
                 <td class="second-column">{{sgpt.sgpt}}</td>
                 <td class="third-column">0-45</td>
                 <td class="fourth-column">iu/l</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond sgpt.alkphosphatase "!=" null}}
             <tr>
                 <td class="first-column">ALKALINE PHOSPHATASE (ALP)<br/><i class="test-method">Method: ALP-AMP</i></td>
                 <td class="second-column">{{sgpt.alkphosphatase}}</td>
                 <td class="third-column">53 - 128</td>
                 <td class="fourth-column">iu/l</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond sgpt.tprotein "!=" null}}
             <tr>
                 <td class="first-column">TOTAL PROTEIN<br/><i class="test-method">Method: Biuret</i></td>
                 <td class="second-column">{{sgpt.tprotein}}</td>
                 <td class="third-column">6.4 - 8.3</td>
                 <td class="fourth-column">g/dl</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond sgpt.serumalbumin "!=" null}}
             <tr>
                 <td class="first-column">SERUM ALBUMIN<br/><i class="test-method">Method: Calculated</i></td>
                 <td class="second-column">{{sgpt.serumalbumin}}</td>
                 <td class="third-column">3.5 - 5.2</td>
                 <td class="fourth-column">g/dl</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond sgpt.globin "!=" null}}
             <tr>
                 <td class="first-column">GLOBIN<br/><i class="test-method">Method: Calculated</i></td>
                 <td class="second-column">{{sgpt.globin}}</td>
                 <td class="third-column">1.5 - 3</td>
                 <td class="fourth-column">g/dl</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond sgpt.agratio "!=" null}}
             <tr>
                 <td class="first-column">A/G RATIO<br/><i class="test-method">Method: Calculated</i></td>
                 <td class="second-column">{{sgpt.agratio}}</td>
                 <td class="third-column">1.5 - 3</td>
                 <td class="fourth-column">g/dl</td>
             </tr>
+            {{/ifCond}}
 
+            {{#ifCond sgpt.ggt "!=" null}}
             <tr>
                 <td class="first-column">GGT<br/><i class="test-method">Method: Gulpa C</i></td>
                 <td class="second-column">{{sgpt.ggt}}</td>
                 <td class="third-column">0-38</td>
                 <td class="fourth-column">u/l</td>
             </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond serumAmylase "!=" null}}
@@ -591,42 +655,59 @@
             <tr class="test-category">
                 <th><u>COAGULATION PROFILE CGHS 1733</u></th>
             </tr>
+            {{#ifCond coagulation.ptpatient "!=" null}}
             <tr>
                 <td class="first-column">PT PATIENT</td>
                 <td class="second-column">{{coagulation.ptpatient}}</td>
                 <td class="third-column">11.00 - 16.00</td>
                 <td class="fourth-column">u/l</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond coagulation.ptcontrol "!=" null}}
             <tr>
                 <td class="first-column">PT CONTROL</td>
                 <td class="second-column">{{coagulation.ptcontrol}}</td>
                 <td class="third-column"></td>
                 <td class="fourth-column">u/l</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond coagulation.index "!=" null}}
             <tr>
                 <td class="first-column">INDEX</td>
                 <td class="second-column">{{coagulation.index}}</td>
                 <td class="third-column"></td>
                 <td class="fourth-column">u/l</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond coagulation.isireagent "!=" null}}
             <tr>
                 <td class="first-column">ISI Value of Reagent</td>
                 <td class="second-column">{{coagulation.isireagent}}</td>
                 <td class="third-column"></td>
                 <td class="fourth-column">u/l</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond coagulation.inr "!=" null}}
             <tr>
                 <td class="first-column">INR (International Normalized Ratio)</td>
                 <td class="second-column">{{coagulation.inr}}</td>
                 <td class="third-column">0.8 - 1.2</td>
                 <td class="fourth-column">u/l</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond coagulation.pttk "!=" null}}
             <tr>
                 <td class="first-column">PTTK</td>
                 <td class="second-column">{{coagulation.pttk}}</td>
                 <td class="third-column">22 - 40</td>
                 <td class="fourth-column">u/l</td>
             </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond hiv "!=" null}}
@@ -681,120 +762,176 @@
             <tr class="test-category">
                 <th><u>URINE ROUTINE CGHS 1383</u></th>
             </tr>
+            {{#ifCond urine.quantity "!=" null}}
             <tr>
                 <td class="first-column">QUANTITY</td>
                 <td class="second-column">{{urine.quantity}}</td>
                 <td class="third-column"></td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.color "!=" null}}
             <tr>
                 <td class="first-column">COLOUR</td>
                 <td class="second-column">{{urine.color}}</td>
                 <td class="third-column"></td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.transparency "!=" null}}
             <tr>
                 <td class="first-column">TRANSPARENCY</td>
                 <td class="second-column">{{urine.transparency}}</td>
                 <td class="third-column"></td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.gravity "!=" null}}
             <tr>
                 <td class="first-column">SPECIFIC GRAVITY</td>
                 <td class="second-column">{{urine.gravity}}</td>
                 <td class="third-column">1.005 - 1.030</td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.reaction "!=" null}}
             <tr>
                 <td class="first-column">REACTION</td>
                 <td class="second-column">{{urine.reaction}}</td>
                 <td class="third-column">ACIDIC</td>
                 <td class="fourth-column">ACIDIC - ALKALINE</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.ph "!=" null}}
             <tr>
                 <td class="first-column">PH</td>
                 <td class="second-column">{{urine.ph}}</td>
                 <td class="third-column">4.8 - 7.4</td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.albumin "!=" null}}
             <tr>
                 <td class="first-column">ALBUMIN</td>
                 <td class="second-column">{{urine.albumin}}</td>
                 <td class="third-column">3.50 - 5.20</td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.usugar "!=" null}}
             <tr>
                 <td class="first-column">SUGAR</td>
                 <td class="second-column">{{urine.usugar}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">NIL</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.ublood "!=" null}}
             <tr>
                 <td class="first-column">BLOOD</td>
                 <td class="second-column">{{urine.ublood}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.ubilirubin "!=" null}}
             <tr>
                 <td class="first-column">URINE BILIRUBIN</td>
                 <td class="second-column">{{urine.ubilirubin}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.urobilinogen "!=" null}}
             <tr>
                 <td class="first-column">UROBILINOGEN</td>
                 <td class="second-column">{{urine.urobilinogen}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.uacetone "!=" null}}
             <tr>
                 <td class="first-column">URINE FOR KETONE BODIES/ACETONE</td>
                 <td class="second-column">{{urine.uacetone}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">mg/dL</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.epithelial "!=" null}}
             <tr>
                 <td class="first-column">EPITHELIAL CELLS</td>
                 <td class="second-column">{{urine.epithelial}}</td>
                 <td class="third-column">/HPF</td>
                 <td class="fourth-column">/HPF</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.pus "!=" null}}
             <tr>
                 <td class="first-column">PUS CELLS</td>
                 <td class="second-column">{{urine.pus}}</td>
                 <td class="third-column">1-2</td>
                 <td class="fourth-column">/HPF</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.urbc "!=" null}}
             <tr>
                 <td class="first-column">RBC</td>
                 <td class="second-column">{{urine.urbc}}</td>
                 <td class="third-column">/HPF</td>
                 <td class="fourth-column">/HPF</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.crystals "!=" null}}
             <tr>
                 <td class="first-column">CRYSTALS</td>
                 <td class="second-column">{{urine.crystals}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">NIL</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.casts "!=" null}}
             <tr>
                 <td class="first-column">CASTS</td>
                 <td class="second-column">{{urine.casts}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">NIL</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.bacteria "!=" null}}
             <tr>
                 <td class="first-column">BACTERIA</td>
                 <td class="second-column">{{urine.bacteria}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond urine.uother "!=" null}}
             <tr>
                 <td class="first-column">OTHER</td>
                 <td class="second-column">{{urine.uother}}</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">dl</td>
             </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond bloodSugar "!=" null}}
@@ -813,18 +950,23 @@
             <tr class="test-category">
                 <th><u>BLOOD GLUCOSE RANDOM CGHS 1444</u></th>
             </tr>
+            {{#ifCond bloodGlucose.bglucose "!=" null}}
             <tr>
                 <td class="first-column">BLOOD GLUCOSE - RANDOM</td>
                 <td class="second-column">{{bloodGlucose.bglucose}}</td>
                 <td class="third-column">70-140</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond bloodGlucose.pp "!=" null}}
             <tr>
                 <td class="first-column">PP</td>
                 <td class="second-column">{{bloodGlucose.pp}}</td>
                 <td class="third-column">100-140</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond pct "!=" null}}
@@ -879,24 +1021,32 @@
             <tr class="test-category">
                 <th><u>DENGUE SEROLOGY CGHS 1824</u></th>
             </tr>
+            {{#ifCond dengue.dengue "!=" null}}
             <tr>
                 <td class="first-column">DENGUE NSI ANTIGEN</td>
                 <td class="second-column">{{dengue.dengue}}</td>
                 <td class="third-column">Non-reactive</td>
                 <td class="fourth-column">Negative</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond dengue.dengueigg "!=" null}}
             <tr>
                 <td class="first-column">DENGUE IgG</td>
                 <td class="second-column">{{dengue.dengueigg}}</td>
                 <td class="third-column">Non-reactive</td>
                 <td class="fourth-column">Negative</td>
             </tr>
+            {{/ifCond}}
+
+            {{#ifCond dengue.dengueigm "!=" null}}
             <tr>
                 <td class="first-column">DENGUE IgM</td>
                 <td class="second-column">{{dengue.dengueigm}}</td>
                 <td class="third-column">Non-reactive</td>
                 <td class="fourth-column">Negative</td>
             </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond widal "!=" null}}
@@ -909,6 +1059,7 @@
                 <td class="third-column">Non-reactive</td>
                 <td class="fourth-column">Negative</td>
             </tr>
+            {{/ifCond}}
         </table>
     </div>
 </div>

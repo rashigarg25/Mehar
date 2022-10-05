@@ -35,5 +35,4 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
 
     return sanitizedInfo;
-
 };

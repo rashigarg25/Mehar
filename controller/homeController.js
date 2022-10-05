@@ -42,13 +42,17 @@ const getInfo = (body, i) => {
 
 const generatePdf = async (info) => {
 
-    const test1 = info.testDate.substring(0, 10).replaceAll('/', '-');
+    const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
 
-    const sampleDate = info.testDate.substring(0, info.data.testDate.indexOf(" "));
-    const sampleTime = info.testDate.substring(info.data.testDate.indexOf(" "));
+    const sampleDate = info.data.testDate.substring(0, info.data.testDate.indexOf(" "));
+    const sampleTime = info.data.testDate.substring(info.data.testDate.indexOf(" "));
 
-    info.sampleDate = sampleDate.replaceAll('/','-');
-    info.sampleTime = sampleTime;
+    info.data.printDate = info.data.printDate.substring(0, info.data.printDate.indexOf(" "));
+    info.data.printTime = info.data.printDate.substring(info.data.printDate.indexOf(" "));
+
+    info.data.testDate = sampleDate.replaceAll('/','-');
+    info.data.testTime = sampleTime;
+
     console.log(">>>>> Date: " + sampleDate);
     console.log(">>>>> Time: " + sampleTime);
 
