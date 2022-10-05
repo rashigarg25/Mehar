@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon ./start.js"
+    "meher": "nodemon ./start.js"
   },
   "keywords": [],
   "author": "",
