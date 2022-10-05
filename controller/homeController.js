@@ -36,7 +36,16 @@ const getInfo = (body, i) => {
 
 const generatePdf = async (info) => {
 
-    var test1 = info.testDate.substring(0, 2).replace('/\//g', '-');
+    const test1 = info.testDate.substring(0, 2).replace('/\//g', '-');
+
+    const sampleDate = info.testDate.substring(0, info.testDate.indexOf(" "));
+    const sampleTime = info.testDate.substring(info.testDate.indexOf(" "));
+
+    info.sampleDate = sampleDate.replaceAll('/','-');
+    info.sampleTime = sampleTime;
+    console.log(">>>>> Date: " + sampleDate);
+    console.log(">>>>> Time: " + sampleTime);
+
     const html = fs.readFileSync(path.join(__dirname, '../views/print_report.html'), 'utf-8');
     const filename = info.patient_name + '_' + info.ipd + '_' + test1 + '.pdf';
 
@@ -50,9 +59,10 @@ const generatePdf = async (info) => {
         format: 'A4',
         orientation: 'portrait',
         base: "file:///home/www/",
-        border: '10px',
+        border: '30px',
+        borderLeft: '60px',
         header: {
-            height: '220px'
+            height: '175px'
         },
         footer: {
             height: '130px',
@@ -60,7 +70,8 @@ const generatePdf = async (info) => {
                 default: '<div id="pageFooter">\n' +
                     '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +
                     '                <div class="left aligned ui segment" style="margin-top: 40px">\n' +
-                    '                    <h3>TECHNOLOGIST</h3>\n' +
+                    '                    <p style="font-family: Tahoma, serif; font-size: 8px;' +
+                    ' font-weight: 900">TECHNOLOGIST</p>\n' +
                     '                </div>\n' +
                     '                <div class="right aligned ui segment" style="border-left: 0">\n' +
                     '                    <img src="https://i.postimg.cc/KRC0X4CC/signature.png" width="100px"' +
@@ -72,8 +83,7 @@ const generatePdf = async (info) => {
                     '                </div>\n' +
                     '            </div>\n' +
                     '            <div class="center aligned ui segment">\n' +
-                    '                <!--<p><b>End of Report</b>-->\n' +
-                    '                <p><b>{{page}}/{{pages}}</b>\n' +
+                    '                <p><b>Page {{page}} of {{pages}}</b>\n' +
                     '                </p>\n' +
                     '            </div>\n' +
                     '        </div>',
@@ -91,7 +101,6 @@ const generatePdf = async (info) => {
                     '                </div>\n' +
                     '            </div>\n' +
                     '            <div class="center aligned ui segment">\n' +
-                    '                <!--<p><b>End of Report</b>-->\n' +
                     '                <p><b>End of Report</b>\n' +
                     '                </p>\n' +
                     '            </div>\n' +

@@ -4,23 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link href="//db.onlinewebfonts.com/c/f793779a938d146e45851f90db29e3e2?family=Tahoma" rel="stylesheet" type="text/css"/>
 
     <style>
+
         html {
-            zoom: 0.55;
+            zoom: 0.85;
         }
 
         @page {
             size: A4 !important;
-            margin: 0;
+            /*margin: 10em 10em 10em 20em;*/
         }
 
         .ui.table tr td {
             border-top: 0 !important;
         }
 
-        .ui.table.heading thead th {
-            background: #aeaeae !important;
+        .ui.table.heading thead td {
+            /*background: #aeaeae !important;*/
+            font-weight: 900;
+            font-family: Tahoma, serif;
+            font-size: 8px;
         }
 
         .this-page {
@@ -32,15 +37,16 @@
             bottom: 0;
         }
 
-        .test-method {
-            font-size: x-small !important;
+        .first-column > .test-method {
+            font-size: 7px;
+            font-family: Arial, serif;
         }
 
         .small-font {
             font-size: small !important;
         }
 
-        tr.highlight th {
+        tr.test-category th {
             padding-top: 20px !important;
         }
 
@@ -48,13 +54,111 @@
             break-inside: avoid;
         }
 
-        .fourthColumn {
-            font-style: italic !important;
-            font-size: medium !important;
+        .first-column {
+            font-family: Times, serif;
+            font-size: 8px;
         }
 
-        .thirdColumn {
-            font-size: x-small !important;
+        h3 {
+            font: 900 15px/20px serif Times;
+        }
+
+        .second-column {
+            font-family: Arial, serif;
+            font-size: 10px;
+        }
+
+        .third-column {
+            font-size: 8px;
+            font-family: Tahoma, serif;
+        }
+
+        .fourth-column {
+            font-style: italic;
+            font-size: 10px;
+            font-family: Arial, serif;
+        }
+
+        .tahoma {
+            font-family: Tahoma, serif;
+        }
+
+        .times-new-roman {
+            font-family: Times, serif;
+        }
+
+        .arial {
+            font-family: serif, Arial;
+        }
+
+        .bold {
+            font-weight: 900 !important;
+        }
+
+        .font-7 {
+            font-size: 7px;
+        }
+
+        .font-8 {
+            font-size: 8px;
+        }
+
+        .font-9 {
+            font-size: 9px;
+        }
+
+        .font-10 {
+            font-size: 9px;
+        }
+
+        .font-11 {
+            font-size: 11px;
+        }
+
+        .font-12 {
+            font-size: 12px;
+        }
+
+        .font-13 {
+            font-size: 13px;
+        }
+
+        .font-20 {
+            font-size: 20px;
+        }
+
+        tr.test-category:not(.report-heading) {
+            font-size: 9px;
+            font-family: Times, serif;
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        .nabh-logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .mehar-logo {
+            width: 180px;
+            height: auto;
+        }
+
+        .ui.heading.table td {
+            padding: 5px;
+        }
+
+        .ui.segment.patient-details {
+            padding: 5px 5px 5px 10px;
+        }
+
+        .ui.very.basic.table.heading {
+            padding: 7px;
+            background-color: #C8C8C8;
+        }
+
+        .ui.patient-details .table td {
+            padding-bottom: 0px;
         }
 
     </style>
@@ -62,80 +166,88 @@
 <body>
 
 
-<div class="this-page" style="overflow: hidden; white-space: nowrap">
+<div class="this-page" style="overflow: hidden; white-space: nowrap;">
     <div class="ui container">
         <img src="https://i.postimg.cc/KRC0X4CC/signature.png" height="1px" style="display: none">
         <div id="pageHeader">
-            <div class="ui segments" style="overflow: hidden; white-space: nowrap;">
+            <div class="ui segments" style="overflow: hidden; white-space: nowrap; border: none">
                 <div class="ui horizontal segments">
-                    <div class="ui segment" style="border: none !important">
-                        <br>
-                        <img class="ui medium left aligned image"
-                             src="https://meharhospital.com/wp-content/uploads/2020/01/Logo_Large_1119_319_100.png">
+                    <div class="ui segment" style="border: none !important; padding: 0px;">
+
+                        <img class="ui left aligned image mehar-logo"
+                             src='https://i.postimg.cc/DJyvzMQc/Screenshot-2022-10-05-at-7-59-20-AM.png'
+                             alt='Mehar hospital logo'>
                     </div>
                     <div class="ui segment" style="border: none !important">
-                        <br>
-                        <img class="ui tiny centered image"
+
+                        <img class="ui left aligned image nabh-logo"
                              src="https://i.postimg.cc/MnV2NC3b/nabh-logo.png">
                     </div>
-                    <div class="ui right aligned segment" style="border: none !important">
-                        <h4>MEHAR SUPER SPECIALITY HOSPITAL</h4>
-                        <p class="small-font">
-                            Opposite Grandeur Marriage Palace<br/>
-                            Singhpura Road, Zirakpur, Mohali<br/>
-                            Phone: +91 7527070509, 7527070510<br/>
-                            E-mail: info@meharhospital.com<br/></p>
+                    <div class="ui left aligned segment" style="border: none !important; padding-bottom: 0px;">
+                        <p style="font-weight: 700 !important;margin-bottom: 0;">
+                            <span class="times-new-roman font-13">MEHAR SUPER SPECIALITY HOSPITAL</span>
+                        </p>
+                        <p class="times-new-roman font-9">
+                            Opposite Grandeur Marriage Palace, Singhpura Road,<br/>
+                            Zirakpur, Mohali Ph: +91 7527070509, 7527070510<br/>
+                            E-mail: info@meharhospital.com, Website:- www.meharhospital.com<br/></p>
                     </div>
                 </div>
-                <div class="ui segment" style="overflow: hidden; white-space: nowrap">
-                    <table class="ui very basic table">
+
+                <div class="ui segment patient-details" style="overflow: hidden; white-space: nowrap; border: 1px solid
+                #5e5e5e;">
+                    <table class="ui very basic table tahoma">
                         <tbody>
                         <tr>
-                            <td class="three wide">Patient Name</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">{{patient_name}}</td>
-                            <td class="three wide">Mobile No</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">987654567</td>
+                            <td class="three wide font-8">Patient Name</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="four wide font-10">{{patient_name}}</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-8">Mobile No</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="five wide font-10">987654567</td>
                         </tr>
                         <tr>
-                            <td class="three wide">UHID No.</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">{{uhid}}</td>
-                            <td class="three wide">Age</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">{{Age}}</td>
+                            <td class="three wide font-8">UHID No.</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="four wide font-10">{{uhid}}</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-8">ID No , Age</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="five wide font-10">{{ipd}} , {{Age}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide">Address</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">Ward No.3 Vill Post Mohanpura Katra</td>
-                            <td class="three wide">Sampling Date</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">{{testDate}}</td>
+                            <td class="three wide font-8">Address</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="four wide font-10">Ward No.3</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-8">Sampling Date</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="five wide font-10">{{sampleDate}}&emsp;&emsp;{{sampleTime}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide">Doctor</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">{{consultant}}</td>
-                            <td class="three wide">Print Date</td>
-                            <td class="one wide">:</td>
-                            <td class="four wide">{{printDate}}</td>
+                            <td class="three wide font-8">Doctor</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="four wide font-10">{{consultant}}</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-8">Print Date</td>
+                            <td class="one wide font-8">:</td>
+                            <td class="five wide font-10">{{printDate}}</td>
                         </tr>
                     </table>
                 </div>
-                <div class="ui segment" style="padding: 0">
-                    <table class="ui very basic table heading">
-                        <thead>
-                        <tr class="highlight left aligned">
-                            <th class="six wide" style="padding-left: 20px!important;">Investigation</th>
-                            <th class="three wide">Observations</th>
-                            <th class="four wide">Biological Reference Interval</th>
-                            <th class="three wide">Units</th>
-                        </tr>
-                        </thead>
-                    </table>
-                </div>
+            </div>
+            <div class="ui segment" style="padding: 0; margin-top: -10px">
+                <table class="ui very basic table heading">
+                    <thead>
+                    <tr class="left aligned report-heading" style="padding-top: 20px">
+                        <th class="six wide font-9" style="padding-top: 7px"><b>Investigation</b></th>
+                        <th class="three wide font-9" style="padding-top: 7px"><b>Observations</b></th>
+                        <th class="four wide font-9" style="padding-top: 7px"><b>Biological Reference Interval</b></th>
+                        <th class="three wide font-9" style="padding-top: 7px"><b>Units</b></th>
+                    </tr>
+                    </thead>
+                </table>
             </div>
         </div>
         <table class="ui compact table testResult"
@@ -146,615 +258,616 @@
                 <td class="four wide"></td>
                 <td class="three wide"></td>
             </tr>
-            <tr class="highlight">
-                <th class="six wide"><u>COMPLETE HAEMOGRAM CBC CGHS 1394</u></th>
+            <tr class="test-category">
+                <th class="six wide">COMPLETE HAEMOGRAM CBC CGHS 1394</th>
             </tr>
             <tr>
-                <td class="firstColumn">HAEMOGLOBIN
-                    (HB)<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL COUNTER</i></td>
-                <td class="secondColumn">{{hb}}</td>
-                <td class="thirdColumn">13.0 - 18.0</td>
-                <td class="fourthColumn">gm/dl</td>
+                <td class="first-column">HAEMOGLOBIN (HB)<br/>
+                    <i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL COUNTER</i></td>
+                <td class="second-column">{{hb}}</td>
+                <td class="third-column">13.0 - 18.0</td>
+                <td class="fourth-column">gm/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">TOTAL LEUCOCYTE COUNT (TLC)<br/><i class="test-method">Method:
+                <td class="first-column">TOTAL LEUCOCYTE COUNT (TLC)<br/><i class="test-method">Method:
                     Impedance/Automated Cell counter</i>
                 </td>
-                <td class="secondColumn">{{tlc}}</td>
-                <td class="thirdColumn">4000-11000</td>
-                <td class="fourthColumn">/cmm</td>
+                <td class="second-column">{{tlc}}</td>
+                <td class="third-column">4000-11000</td>
+                <td class="fourth-column">/cmm</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">DLC<br/><i class="test-method">Method : Uricase-POD</i></td>
-                <td class="secondColumn">{{dlc}}</td>
-                <td class="thirdColumn">13.5-18 ( F-11.5-15)</td>
-                <td class="fourthColumn">mg/dl</td>
+                <td class="first-column">DLC<br/><i class="test-method">Method : Uricase-POD</i></td>
+                <td class="second-column">{{dlc}}</td>
+                <td class="third-column">13.5-18 ( F-11.5-15)</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">NEUTROPHILS</td>
-                <td class="secondColumn">{{neutrophils}}</td>
-                <td class="thirdColumn">45-75</td>
-                <td class="fourthColumn">%</td>
+                <td class="first-column">NEUTROPHILS</td>
+                <td class="second-column">{{neutrophils}}</td>
+                <td class="third-column">45-75</td>
+                <td class="fourth-column">%</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">LYMPHOCYTE</td>
-                <td class="secondColumn">{{lymphocytes}}</td>
-                <td class="thirdColumn">20-45</td>
-                <td class="fourthColumn">%</td>
+                <td class="first-column">LYMPHOCYTE</td>
+                <td class="second-column">{{lymphocytes}}</td>
+                <td class="third-column">20-45</td>
+                <td class="fourth-column">%</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">MONOCYTE</td>
-                <td class="secondColumn">{{monocyte}}</td>
-                <td class="thirdColumn">0-10</td>
-                <td class="fourthColumn">%</td>
+                <td class="first-column">MONOCYTE</td>
+                <td class="second-column">{{monocyte}}</td>
+                <td class="third-column">0-10</td>
+                <td class="fourth-column">%</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">EOSINOPHIL</td>
-                <td class="secondColumn">{{eosinophils}}</td>
-                <td class="thirdColumn">0-6</td>
-                <td class="fourthColumn">%</td>
+                <td class="first-column">EOSINOPHIL</td>
+                <td class="second-column">{{eosinophils}}</td>
+                <td class="third-column">0-6</td>
+                <td class="fourth-column">%</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">BASOPHILS<br/><i class="test-method">Method : Uricase-POD</i></td>
-                <td class="secondColumn">{{basophils}}</td>
-                <td class="thirdColumn">0-1</td>
-                <td class="fourthColumn">%</td>
+                <td class="first-column">BASOPHILS<br/><i class="test-method">Method : Uricase-POD</i></td>
+                <td class="second-column">{{basophils}}</td>
+                <td class="third-column">0-1</td>
+                <td class="fourth-column">%</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">RBC (RED BLOOD CELLS)<br/><i class="test-method">Method: Calculation /Automated
+                <td class="first-column">RBC (RED BLOOD CELLS)<br/><i class="test-method">Method: Calculation /Automated
                     Cell counter</i>
                 </td>
-                <td class="secondColumn">{{rbc}}</td>
-                <td class="thirdColumn">3.8 - 5.8</td>
-                <td class="fourthColumn">Million/cmm</td>
+                <td class="second-column">{{rbc}}</td>
+                <td class="third-column">3.8 - 5.8</td>
+                <td class="fourth-column">Million/cmm</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">PCV<br/><i class="test-method">Method: Impedance/Automated Cell counter</i></td>
-                <td class="secondColumn">{{pcv}}</td>
-                <td class="thirdColumn">35-47</td>
-                <td class="fourthColumn">%</td>
+                <td class="first-column">PCV<br/><i class="test-method">Method: Impedance/Automated Cell counter</i>
+                </td>
+                <td class="second-column">{{pcv}}</td>
+                <td class="third-column">35-47</td>
+                <td class="fourth-column">%</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">MCV (MEAN CELL VOLUME)<br/><i class="test-method">Method: Impedance/Automated
+                <td class="first-column">MCV (MEAN CELL VOLUME)<br/><i class="test-method">Method: Impedance/Automated
                     Cell counter</i></td>
-                <td class="secondColumn">{{mcv}}</td>
-                <td class="thirdColumn">80-100</td>
-                <td class="fourthColumn">fL</td>
+                <td class="second-column">{{mcv}}</td>
+                <td class="third-column">80-100</td>
+                <td class="fourth-column">fL</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">MCH (MEAN CELL HAEMOGLOBIN)<br/><i class="test-method">Method:
+                <td class="first-column">MCH (MEAN CELL HAEMOGLOBIN)<br/><i class="test-method">Method:
                     Impedance/Automated Cell counter</i>
                 </td>
-                <td class="secondColumn">{{mch}}</td>
-                <td class="thirdColumn">27-31</td>
-                <td class="fourthColumn">picogram</td>
+                <td class="second-column">{{mch}}</td>
+                <td class="third-column">27-31</td>
+                <td class="fourth-column">picogram</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">MCHC<br/><i class="test-method">Method: Calculation /Automated Cell counter</i>
+                <td class="first-column">MCHC<br/><i class="test-method">Method: Calculation /Automated Cell counter</i>
                 </td>
-                <td class="secondColumn">{{mchc}}</td>
-                <td class="thirdColumn">33-37</td>
-                <td class="fourthColumn">g/dL</td>
+                <td class="second-column">{{mchc}}</td>
+                <td class="third-column">33-37</td>
+                <td class="fourth-column">g/dL</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">RDW-CV<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL
+                <td class="first-column">RDW-CV<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL
                     COUNTER</i></td>
-                <td class="secondColumn">{{rdwcv}}</td>
-                <td class="thirdColumn">10.0 - 15.0</td>
-                <td class="fourthColumn">%</td>
+                <td class="second-column">{{rdwcv}}</td>
+                <td class="third-column">10.0 - 15.0</td>
+                <td class="fourth-column">%</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">RDW-SD<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL
+                <td class="first-column">RDW-SD<br/><i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL
                     COUNTER</i></td>
-                <td class="secondColumn">{{rdwsd}}</td>
-                <td class="thirdColumn">35.0 - 60.0</td>
-                <td class="fourthColumn">fL</td>
+                <td class="second-column">{{rdwsd}}</td>
+                <td class="third-column">35.0 - 60.0</td>
+                <td class="fourth-column">fL</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">PLATELET COUNT<br/><i class="test-method">Method: Impedance/Automated Cell
+                <td class="first-column">PLATELET COUNT<br/><i class="test-method">Method: Impedance/Automated Cell
                     counter</i></td>
-                <td class="secondColumn">{{platelet}}</td>
-                <td class="thirdColumn">1.5 - 4.5</td>
-                <td class="fourthColumn">L/cmm</td>
+                <td class="second-column">{{platelet}}</td>
+                <td class="third-column">1.5 - 4.5</td>
+                <td class="fourth-column">L/cmm</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>ESR CGHS 1392</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">ERYTHROCYTE SEDIMENTATION RATE</td>
-                <td class="secondColumn">{{esr}}</td>
-                <td class="thirdColumn">0-20</td>
-                <td class="fourthColumn">mm</td>
+                <td class="first-column">ERYTHROCYTE SEDIMENTATION RATE</td>
+                <td class="second-column">{{esr}}</td>
+                <td class="third-column">0-20</td>
+                <td class="fourth-column">mm</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>C REACTIVE PROTEIN (CRP) QUANTITATIVE</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">C REACTIVE PROTEIN (CRP) QUANTITATIVE</td>
-                <td class="secondColumn">{{crp}}</td>
-                <td class="thirdColumn">0-6</td>
-                <td class="fourthColumn">mg/l</td>
+                <td class="first-column">C REACTIVE PROTEIN (CRP) QUANTITATIVE</td>
+                <td class="second-column">{{crp}}</td>
+                <td class="third-column">0-6</td>
+                <td class="fourth-column">mg/l</td>
             </tr>
 
-            <tr class="highlight">
-                <th><u>KIDNEY FUNCTION TEST (KFT) CGHS 1512</u></th>
+            <tr class="test-category">
+                <td>KIDNEY FUNCTION TEST (KFT) CGHS 1512</td>
             </tr>
             <tr>
-                <td class="firstColumn">BLOOD UREA<br/><i class="test-method">Method: Urease - GLDH</i></td>
-                <td class="secondColumn">{{burea}}</td>
-                <td class="thirdColumn">18-55</td>
-                <td class="fourthColumn">mg/dl</td>
-            </tr>
-
-            <tr>
-                <td class="firstColumn">SERUM CREATININE<br/><i class="test-method">Method : Enzymatic</i></td>
-                <td class="secondColumn">{{creatinine}}</td>
-                <td class="thirdColumn">0.7 - 1.3</td>
-                <td class="fourthColumn">mg/dl</td>
+                <td class="first-column">BLOOD UREA<br/><i class="test-method">Method: Urease - GLDH</i></td>
+                <td class="second-column">{{burea}}</td>
+                <td class="third-column">18-55</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">SERUM URIC ACID<br/><i class="test-method">Method : Uricase-POD</i></td>
-                <td class="secondColumn">{{uric}}</td>
-                <td class="thirdColumn">3.5 - 7.2</td>
-                <td class="fourthColumn"> mg/dl</td>
+                <td class="first-column">SERUM CREATININE<br/><i class="test-method">Method : Enzymatic</i></td>
+                <td class="second-column">{{creatinine}}</td>
+                <td class="third-column">0.7 - 1.3</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
 
-            <tr class="highlight">
+            <tr>
+                <td class="first-column">SERUM URIC ACID<br/><i class="test-method">Method : Uricase-POD</i></td>
+                <td class="second-column">{{uric}}</td>
+                <td class="third-column">3.5 - 7.2</td>
+                <td class="fourth-column"> mg/dl</td>
+            </tr>
+
+            <tr class="test-category">
                 <th><u>SERUM SODIUM CGHS 1481</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">SODIUM<br/><i class="test-method">Method: Uricase - Ion Selective Electrode</i>
+                <td class="first-column">SODIUM<br/><i class="test-method">Method: Uricase - Ion Selective Electrode</i>
                 </td>
-                <td class="secondColumn">{{sodium}}</td>
-                <td class="thirdColumn">136 - 155</td>
-                <td class="fourthColumn">mmol/l</td>
+                <td class="second-column">{{sodium}}</td>
+                <td class="third-column">136 - 155</td>
+                <td class="fourth-column">mmol/l</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>SERUM POTASSIUM CGHS 1482</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">POTASSIUM<br/><i class="test-method">Method: Uricase - Ion Selective
+                <td class="first-column">POTASSIUM<br/><i class="test-method">Method: Uricase - Ion Selective
                     Electrode</i></td>
-                <td class="secondColumn">{{potassium}}</td>
-                <td class="thirdColumn">3.5 - 5.5</td>
-                <td class="fourthColumn">mmol/l</td>
+                <td class="second-column">{{potassium}}</td>
+                <td class="third-column">3.5 - 5.5</td>
+                <td class="fourth-column">mmol/l</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>SERUM CHLORIDE CGHS 1531</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">CHLORIDE<br/><i class="test-method">Method: Uricase - Ion Selective
+                <td class="first-column">CHLORIDE<br/><i class="test-method">Method: Uricase - Ion Selective
                     Electrode</i></td>
-                <td class="secondColumn">{{chloride}}</td>
-                <td class="thirdColumn">96 - 107</td>
-                <td class="fourthColumn">mmol/l</td>
+                <td class="second-column">{{chloride}}</td>
+                <td class="third-column">96 - 107</td>
+                <td class="fourth-column">mmol/l</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>LIVER FUNCTION TEST LFT CGHS 1513</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">TOTAL BILIRUBIN<br/><i class="test-method">Method: Diazo</i></td>
-                <td class="secondColumn">{{bilirubin}}</td>
-                <td class="thirdColumn">0.2 - 1.2</td>
-                <td class="fourthColumn">mg/l</td>
+                <td class="first-column">TOTAL BILIRUBIN<br/><i class="test-method">Method: Diazo</i></td>
+                <td class="second-column">{{bilirubin}}</td>
+                <td class="third-column">0.2 - 1.2</td>
+                <td class="fourth-column">mg/l</td>
             </tr>
 
 
             <tr>
-                <td class="firstColumn">CONJUGATED (D. BILIRUBIN)<br/><i class="test-method">Method: Diazo</i></td>
-                <td class="secondColumn">{{cbilirubin}}</td>
-                <td class="thirdColumn">0.1 -0.41</td>
-                <td class="fourthColumn">mg/dl</td>
+                <td class="first-column">CONJUGATED (D. BILIRUBIN)<br/><i class="test-method">Method: Diazo</i></td>
+                <td class="second-column">{{cbilirubin}}</td>
+                <td class="third-column">0.1 -0.41</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">UNCOUNJUGATED (I D BILIRUBIN)<br/><i class="test-method">Method: Calculated</i>
+                <td class="first-column">UNCOUNJUGATED (I D BILIRUBIN)<br/><i class="test-method">Method: Calculated</i>
                 </td>
-                <td class="secondColumn">{{ucbilirubin}}</td>
-                <td class="thirdColumn">0.2 - 1</td>
-                <td class="fourthColumn">mg/dl</td>
+                <td class="second-column">{{ucbilirubin}}</td>
+                <td class="third-column">0.2 - 1</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>SGOT / AST CGHS 1476</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">AST/SGOT<br/><i class="test-method">Method: IFCC</i></td>
-                <td class="secondColumn">{{sgot}}</td>
-                <td class="thirdColumn">0-35</td>
-                <td class="fourthColumn">iu/l</td>
+                <td class="first-column">AST/SGOT<br/><i class="test-method">Method: IFCC</i></td>
+                <td class="second-column">{{sgot}}</td>
+                <td class="third-column">0-35</td>
+                <td class="fourth-column">iu/l</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>SGPT / ALT CGHS 1475</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">ALT/SGPT<br/><i class="test-method">Method: IFCC</i></td>
-                <td class="secondColumn">{{sgpt}}</td>
-                <td class="thirdColumn">0-45</td>
-                <td class="fourthColumn">iu/l</td>
+                <td class="first-column">ALT/SGPT<br/><i class="test-method">Method: IFCC</i></td>
+                <td class="second-column">{{sgpt}}</td>
+                <td class="third-column">0-45</td>
+                <td class="fourth-column">iu/l</td>
             </tr>
 
 
             <tr>
-                <td class="firstColumn">ALKALINE PHOSPHATASE (ALP)<br/><i class="test-method">Method: ALP-AMP</i></td>
-                <td class="secondColumn">{{alkphosphatase}}</td>
-                <td class="thirdColumn">53 - 128</td>
-                <td class="fourthColumn">iu/l</td>
+                <td class="first-column">ALKALINE PHOSPHATASE (ALP)<br/><i class="test-method">Method: ALP-AMP</i></td>
+                <td class="second-column">{{alkphosphatase}}</td>
+                <td class="third-column">53 - 128</td>
+                <td class="fourth-column">iu/l</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">TOTAL PROTEIN<br/><i class="test-method">Method: Biuret</i></td>
-                <td class="secondColumn">{{tprotein}}</td>
-                <td class="thirdColumn">6.4 - 8.3</td>
-                <td class="fourthColumn">g/dl</td>
+                <td class="first-column">TOTAL PROTEIN<br/><i class="test-method">Method: Biuret</i></td>
+                <td class="second-column">{{tprotein}}</td>
+                <td class="third-column">6.4 - 8.3</td>
+                <td class="fourth-column">g/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">SERUM ALBUMIN<br/><i class="test-method">Method: Calculated</i></td>
-                <td class="secondColumn">{{serumalbumin}}</td>
-                <td class="thirdColumn">3.5 - 5.2</td>
-                <td class="fourthColumn">g/dl</td>
+                <td class="first-column">SERUM ALBUMIN<br/><i class="test-method">Method: Calculated</i></td>
+                <td class="second-column">{{serumalbumin}}</td>
+                <td class="third-column">3.5 - 5.2</td>
+                <td class="fourth-column">g/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">GLOBIN<br/><i class="test-method">Method: Calculated</i></td>
-                <td class="secondColumn">{{globin}}</td>
-                <td class="thirdColumn">1.5 - 3</td>
-                <td class="fourthColumn">g/dl</td>
+                <td class="first-column">GLOBIN<br/><i class="test-method">Method: Calculated</i></td>
+                <td class="second-column">{{globin}}</td>
+                <td class="third-column">1.5 - 3</td>
+                <td class="fourth-column">g/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">A/G RATIO<br/><i class="test-method">Method: Calculated</i></td>
-                <td class="secondColumn">{{agratio}}</td>
-                <td class="thirdColumn">1.5 - 3</td>
-                <td class="fourthColumn">g/dl</td>
+                <td class="first-column">A/G RATIO<br/><i class="test-method">Method: Calculated</i></td>
+                <td class="second-column">{{agratio}}</td>
+                <td class="third-column">1.5 - 3</td>
+                <td class="fourth-column">g/dl</td>
             </tr>
 
             <tr>
-                <td class="firstColumn">GGT<br/><i class="test-method">Method: Gulpa C</i></td>
-                <td class="secondColumn">{{ggt}}</td>
-                <td class="thirdColumn">0-38</td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">GGT<br/><i class="test-method">Method: Gulpa C</i></td>
+                <td class="second-column">{{ggt}}</td>
+                <td class="third-column">0-38</td>
+                <td class="fourth-column">u/l</td>
             </tr>
 
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>SERUM AMYLASE CGHS 1477</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">S AMYLASE</td>
-                <td class="secondColumn">{{serumamylase}}</td>
-                <td class="thirdColumn">0-90</td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">S AMYLASE</td>
+                <td class="second-column">{{serumamylase}}</td>
+                <td class="third-column">0-90</td>
+                <td class="fourth-column">u/l</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>SERUM LIPASE CGHS 1478</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">S LIPASE</td>
-                <td class="secondColumn">{{serumlipase}}</td>
-                <td class="thirdColumn">0-60</td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">S LIPASE</td>
+                <td class="second-column">{{serumlipase}}</td>
+                <td class="third-column">0-60</td>
+                <td class="fourth-column">u/l</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>COAGULATION PROFILE CGHS 1733</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">PT PATIENT</td>
-                <td class="secondColumn">{{ptpatient}}</td>
-                <td class="thirdColumn">11.00 - 16.00</td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">PT PATIENT</td>
+                <td class="second-column">{{ptpatient}}</td>
+                <td class="third-column">11.00 - 16.00</td>
+                <td class="fourth-column">u/l</td>
             </tr>
             <tr>
-                <td class="firstColumn">PT CONTROL</td>
-                <td class="secondColumn">{{ptcontrol}}</td>
-                <td class="thirdColumn"></td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">PT CONTROL</td>
+                <td class="second-column">{{ptcontrol}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column">u/l</td>
             </tr>
             <tr>
-                <td class="firstColumn">INDEX</td>
-                <td class="secondColumn">{{index}}</td>
-                <td class="thirdColumn"></td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">INDEX</td>
+                <td class="second-column">{{index}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column">u/l</td>
             </tr>
             <tr>
-                <td class="firstColumn">ISI Value of Reagent</td>
-                <td class="secondColumn">{{isireagent}}</td>
-                <td class="thirdColumn"></td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">ISI Value of Reagent</td>
+                <td class="second-column">{{isireagent}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column">u/l</td>
             </tr>
             <tr>
-                <td class="firstColumn">INR (International Normalized Ratio)</td>
-                <td class="secondColumn">{{inr}}</td>
-                <td class="thirdColumn">0.8 - 1.2</td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">INR (International Normalized Ratio)</td>
+                <td class="second-column">{{inr}}</td>
+                <td class="third-column">0.8 - 1.2</td>
+                <td class="fourth-column">u/l</td>
             </tr>
             <tr>
-                <td class="firstColumn">PTTK</td>
-                <td class="secondColumn">{{pttk}}</td>
-                <td class="thirdColumn">22 - 40</td>
-                <td class="fourthColumn">u/l</td>
+                <td class="first-column">PTTK</td>
+                <td class="second-column">{{pttk}}</td>
+                <td class="third-column">22 - 40</td>
+                <td class="fourth-column">u/l</td>
             </tr>
 
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>HIV 1 & 2 CGHS 1426</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">HIV (AIDS) ANTIBODY I & II</td>
-                <td class="secondColumn">{{hiv}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Non-reactive</td>
+                <td class="first-column">HIV (AIDS) ANTIBODY I & II</td>
+                <td class="second-column">{{hiv}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Non-reactive</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>HBS AG CHGS 1424</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">HEPATITIS B SURFACE ANTIGEN</td>
-                <td class="secondColumn">{{hepatitis}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Non-reactive</td>
+                <td class="first-column">HEPATITIS B SURFACE ANTIGEN</td>
+                <td class="second-column">{{hepatitis}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Non-reactive</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>HCV CGHS 1425</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">HCV ANTIBODY TEST</td>
-                <td class="secondColumn">{{hcv}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Non-reactive</td>
+                <td class="first-column">HCV ANTIBODY TEST</td>
+                <td class="second-column">{{hcv}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Non-reactive</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>VDRL CGHS 1427</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">VDRL CARD</td>
-                <td class="secondColumn">{{vdrl}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Non-reactive</td>
+                <td class="first-column">VDRL CARD</td>
+                <td class="second-column">{{vdrl}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Non-reactive</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>URINE ROUTINE CGHS 1383</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">QUANTITY</td>
-                <td class="secondColumn">{{quantity}}</td>
-                <td class="thirdColumn"></td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">QUANTITY</td>
+                <td class="second-column">{{quantity}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">COLOUR</td>
-                <td class="secondColumn">{{color}}</td>
-                <td class="thirdColumn"></td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">COLOUR</td>
+                <td class="second-column">{{color}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">TRANSPARENCY</td>
-                <td class="secondColumn">{{transparency}}</td>
-                <td class="thirdColumn"></td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">TRANSPARENCY</td>
+                <td class="second-column">{{transparency}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">SPECIFIC GRAVITY</td>
-                <td class="secondColumn">{{gravity}}</td>
-                <td class="thirdColumn">1.005 - 1.030</td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">SPECIFIC GRAVITY</td>
+                <td class="second-column">{{gravity}}</td>
+                <td class="third-column">1.005 - 1.030</td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">REACTION</td>
-                <td class="secondColumn">{{reaction}}</td>
-                <td class="thirdColumn">ACIDIC</td>
-                <td class="fourthColumn">ACIDIC - ALKALINE</td>
+                <td class="first-column">REACTION</td>
+                <td class="second-column">{{reaction}}</td>
+                <td class="third-column">ACIDIC</td>
+                <td class="fourth-column">ACIDIC - ALKALINE</td>
             </tr>
             <tr>
-                <td class="firstColumn">PH</td>
-                <td class="secondColumn">{{ph}}</td>
-                <td class="thirdColumn">4.8 - 7.4</td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">PH</td>
+                <td class="second-column">{{ph}}</td>
+                <td class="third-column">4.8 - 7.4</td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">ALBUMIN</td>
-                <td class="secondColumn">{{albumin}}</td>
-                <td class="thirdColumn">3.50 - 5.20</td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">ALBUMIN</td>
+                <td class="second-column">{{albumin}}</td>
+                <td class="third-column">3.50 - 5.20</td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">SUGAR</td>
-                <td class="secondColumn">{{usugar}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn">NIL</td>
+                <td class="first-column">SUGAR</td>
+                <td class="second-column">{{usugar}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column">NIL</td>
             </tr>
             <tr>
-                <td class="firstColumn">BLOOD</td>
-                <td class="secondColumn">{{ublood}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">BLOOD</td>
+                <td class="second-column">{{ublood}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">URINE BILIRUBIN</td>
-                <td class="secondColumn">{{ubilirubin}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">URINE BILIRUBIN</td>
+                <td class="second-column">{{ubilirubin}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">UROBILINOGEN</td>
-                <td class="secondColumn">{{urobilinogen}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">UROBILINOGEN</td>
+                <td class="second-column">{{urobilinogen}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">URINE FOR KETONE BODIES/ACETONE</td>
-                <td class="secondColumn">{{uacetone}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn">mg/dL</td>
+                <td class="first-column">URINE FOR KETONE BODIES/ACETONE</td>
+                <td class="second-column">{{uacetone}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column">mg/dL</td>
             </tr>
             <tr>
-                <td class="firstColumn">EPITHELIAL CELLS</td>
-                <td class="secondColumn">{{epithelial}}</td>
-                <td class="thirdColumn">/HPF</td>
-                <td class="fourthColumn">/HPF</td>
+                <td class="first-column">EPITHELIAL CELLS</td>
+                <td class="second-column">{{epithelial}}</td>
+                <td class="third-column">/HPF</td>
+                <td class="fourth-column">/HPF</td>
             </tr>
             <tr>
-                <td class="firstColumn">PUS CELLS</td>
-                <td class="secondColumn">{{pus}}</td>
-                <td class="thirdColumn">1-2</td>
-                <td class="fourthColumn">/HPF</td>
+                <td class="first-column">PUS CELLS</td>
+                <td class="second-column">{{pus}}</td>
+                <td class="third-column">1-2</td>
+                <td class="fourth-column">/HPF</td>
             </tr>
             <tr>
-                <td class="firstColumn">RBC</td>
-                <td class="secondColumn">{{urbc}}</td>
-                <td class="thirdColumn">/HPF</td>
-                <td class="fourthColumn">/HPF</td>
+                <td class="first-column">RBC</td>
+                <td class="second-column">{{urbc}}</td>
+                <td class="third-column">/HPF</td>
+                <td class="fourth-column">/HPF</td>
             </tr>
             <tr>
-                <td class="firstColumn">CRYSTALS</td>
-                <td class="secondColumn">{{crystals}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn">NIL</td>
+                <td class="first-column">CRYSTALS</td>
+                <td class="second-column">{{crystals}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column">NIL</td>
             </tr>
             <tr>
-                <td class="firstColumn">CASTS</td>
-                <td class="secondColumn">{{casts}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn">NIL</td>
+                <td class="first-column">CASTS</td>
+                <td class="second-column">{{casts}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column">NIL</td>
             </tr>
             <tr>
-                <td class="firstColumn">BACTERIA</td>
-                <td class="secondColumn">{{bacteria}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">BACTERIA</td>
+                <td class="second-column">{{bacteria}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column"></td>
             </tr>
             <tr>
-                <td class="firstColumn">OTHER</td>
-                <td class="secondColumn">{{uother}}</td>
-                <td class="thirdColumn">NIL</td>
-                <td class="fourthColumn">dl</td>
+                <td class="first-column">OTHER</td>
+                <td class="second-column">{{uother}}</td>
+                <td class="third-column">NIL</td>
+                <td class="fourth-column">dl</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>BLOOD SUGAR</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">FBS</td>
-                <td class="secondColumn">{{bsugar}}</td>
-                <td class="thirdColumn">70-110</td>
-                <td class="fourthColumn">mg/dl</td>
+                <td class="first-column">FBS</td>
+                <td class="second-column">{{bsugar}}</td>
+                <td class="third-column">70-110</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>BLOOD GLUCOSE RANDOM CGHS 1444</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">BLOOD GLUCOSE - RANDOM</td>
-                <td class="secondColumn">{{bglucose}}</td>
-                <td class="thirdColumn">70-140</td>
-                <td class="fourthColumn">mg/dl</td>
+                <td class="first-column">BLOOD GLUCOSE - RANDOM</td>
+                <td class="second-column">{{bglucose}}</td>
+                <td class="third-column">70-140</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
             <tr>
-                <td class="firstColumn">PP</td>
-                <td class="secondColumn">{{pp}}</td>
-                <td class="thirdColumn">100-140</td>
-                <td class="fourthColumn">mg/dl</td>
+                <td class="first-column">PP</td>
+                <td class="second-column">{{pp}}</td>
+                <td class="third-column">100-140</td>
+                <td class="fourth-column">mg/dl</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>PCT</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">PCT</td>
-                <td class="secondColumn">{{pct}}</td>
-                <td class="thirdColumn">0 - 0.05</td>
-                <td class="fourthColumn">ng/ml</td>
+                <td class="first-column">PCT</td>
+                <td class="second-column">{{pct}}</td>
+                <td class="third-column">0 - 0.05</td>
+                <td class="fourth-column">ng/ml</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>D-DIMER CGHS 1409</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">D DIMER</td>
-                <td class="secondColumn">{{dimer}}</td>
-                <td class="thirdColumn">0-500</td>
-                <td class="fourthColumn">ng/ml</td>
+                <td class="first-column">D DIMER</td>
+                <td class="second-column">{{dimer}}</td>
+                <td class="third-column">0-500</td>
+                <td class="fourth-column">ng/ml</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>SERUM FERRITIN CGHS 1517</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">SERUM FERRITIN CGHS 1517</td>
-                <td class="secondColumn">{{serumferritin}}</td>
-                <td class="thirdColumn"></td>
-                <td class="fourthColumn"></td>
+                <td class="first-column">SERUM FERRITIN CGHS 1517</td>
+                <td class="second-column">{{serumferritin}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>MALARIA CARD TEST CGHS 1407</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">MALARIA ANTIGEN</td>
-                <td class="secondColumn">{{malaria}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Negative</td>
+                <td class="first-column">MALARIA ANTIGEN</td>
+                <td class="second-column">{{malaria}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Negative</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>DENGUE SEROLOGY CGHS 1824</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">DENGUE NSI ANTIGEN</td>
-                <td class="secondColumn">{{dengue}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Negative</td>
+                <td class="first-column">DENGUE NSI ANTIGEN</td>
+                <td class="second-column">{{dengue}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Negative</td>
             </tr>
             <tr>
-                <td class="firstColumn">DENGUE IgG</td>
-                <td class="secondColumn">{{dengueigg}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Negative</td>
+                <td class="first-column">DENGUE IgG</td>
+                <td class="second-column">{{dengueigg}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Negative</td>
             </tr>
             <tr>
-                <td class="firstColumn">DENGUE IgM</td>
-                <td class="secondColumn">{{dengueigm}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Negative</td>
+                <td class="first-column">DENGUE IgM</td>
+                <td class="second-column">{{dengueigm}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Negative</td>
             </tr>
 
-            <tr class="highlight">
+            <tr class="test-category">
                 <th><u>WIDAL TEST CGHS 1823</u></th>
             </tr>
             <tr>
-                <td class="firstColumn">WIDAL TEST (SLIDE METHOD)</td>
-                <td class="secondColumn">{{widal}}</td>
-                <td class="thirdColumn">Non-reactive</td>
-                <td class="fourthColumn">Negative</td>
+                <td class="first-column">WIDAL TEST (SLIDE METHOD)</td>
+                <td class="second-column">{{widal}}</td>
+                <td class="third-column">Non-reactive</td>
+                <td class="fourth-column">Negative</td>
             </tr>
         </table>
     </div>
