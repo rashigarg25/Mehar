@@ -55,9 +55,6 @@ const generatePdf = async (info) => {
     info.data.printDate = printDate;
     info.data.printTime = printTime;
 
-    console.log(">>>>> Date: " + sampleDate);
-    console.log(">>>>> Time: " + sampleTime);
-
     const html = fs.readFileSync(path.join(__dirname, '../views/print_report.html'), 'utf-8');
     const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
 
