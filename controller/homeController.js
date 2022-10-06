@@ -4,20 +4,26 @@ const path = require('path');
 const {getSantizedInfo} = require('../controller/sanitizeData')
 const {sanitize} = require("express-validator");
 const _ = require('lodash');
+const dateTime = require('node-datetime');
 
 const printView = (req, res, next) => {
     var reqData = req.body;
     res.render("print_report", {data: req.body});
 }
 
-const generatePdfParent = async (req, res, next) => {
+const generatePdfParent = async (req, res) => {
 
     for (let i = 0; i < 7; i++) {
         const info = getInfo(req.body, i);
         if(!_.isEmpty(info.data.testDate)){
+            if(_.isEmpty(info.data.printDate)) {
+                var dt = dateTime.create();
+                var formatted = dt.format('d/m/Y I:M p');
+                info.data.printDate = formatted;
+            }
             generatePdf(info);
         }
-        
+
     }
     res.render('print_report');
 }
