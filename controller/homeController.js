@@ -2,7 +2,6 @@ const fs = require('fs');
 const pdf = require('pdf-creator-node');
 const path = require('path');
 const {getSantizedInfo} = require('../controller/sanitizeData')
-const {sanitize} = require("express-validator");
 const _ = require('lodash');
 const dateTime = require('node-datetime');
 
@@ -18,18 +17,18 @@ const generatePdfParent = async (req, res) => {
         const info = getInfo(req.body, i);
         if(!_.isEmpty(info.data.testDate)){
             if(_.isEmpty(info.data.printDate)) {
-                var dt = dateTime.create();
-                var formatted = dt.format('d/m/Y I:M p');
-                info.data.printDate = formatted;
+                const dt = dateTime.create();
+                info.data.printDate = dt.format('d/m/Y I:M p');
             }
             const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
             const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
             files.push(filename);
-            console.info(">>>>>>>> filessss:   ");
             generatePdf(info, filename);
         }
     }
-    res.render('print_report');
+    //console.info(">>>>>>>> files:   " + files);
+    res.files = files;
+    //res.render('print_report');
 }
 
 
