@@ -223,7 +223,7 @@ textarea
             </style>
         </head>
         <body>
-            <form action="print_report" method="POST">
+            <form id="myForm" action="print_report" method="POST" >
             <div class="container">
                 <button type="submit" class="reportbutton">Preview</button>
                 <div class="row headerdetails">
@@ -249,14 +249,9 @@ textarea
 
                                 <tr>
                                     <td>Department : <input type="text" class="inputc" id="pwd"  name="department"></td>
-                                    <td>DOB :
+                                    <td>Address :
 
-                                        <div class='input-group date' id='datetimepicker2' data-date-format="dd-mm-yyyy">
-                                            <input type="text" class="inputc" id="pwd" data-format="dd/MM/yyyy" name="dob">
-                                            <span class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
-                                        </div>
+                                        <input type="text" class="inputc" id="pwd"  name="addess">
 
 
                                         <script type="text/javascript">
@@ -381,6 +376,13 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
   this.style.removeProperty('height');
   this.style.height = (this.scrollHeight+2) + 'px';
 });
+
+document.getElementById("myForm").onkeypress = function(e) {
+    var key = e.charCode || e.keyCode || 0;     
+    if (key == 13) {
+      e.preventDefault();
+    }
+  } 
 </script>
 
 
@@ -391,6 +393,10 @@ $('body').on('keydown input', 'textarea[data-expandable]', function() {
 
                                 <tr >
                                     <td colspan="2"> Consultant : <input type="text" class="inputc" id="pwd"  name="consultant" style="width:80%"></td>
+
+                                </tr>
+                                <tr >
+                                    <td colspan="2"> Phone : <input type="text" class="inputc" id="pwd"  name="phone" style="width:80%"></td>
 
                                 </tr>
 
