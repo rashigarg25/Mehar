@@ -60,7 +60,7 @@
         }
 
         .second-column {
-            font-family: Arial, serif;
+            /*font-family: Arial, serif;*/
             font-size: 10px;
         }
 
@@ -263,7 +263,13 @@
             <tr>
                 <td class="first-column">HAEMOGLOBIN (HB)<br/>
                     <i class="test-method">Method: SPECTROPHTOMETER/AUTOMATED CELL COUNTER</i></td>
+                {{#ifCond blood.hb "<" 13}}
+                <td class="second-column bold"><b>{{blood.hb}}</b></td>
+                {{else ifCond blood.hb ">" 18}}
+                <td class="second-column bold">{{blood.hb}}</td>
+                {{else}}
                 <td class="second-column">{{blood.hb}}</td>
+                {{/ifCond}}
                 <td class="third-column">13.0 - 18.0</td>
                 <td class="fourth-column">gm/dl</td>
             </tr>
