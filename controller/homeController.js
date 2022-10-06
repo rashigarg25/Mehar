@@ -77,10 +77,14 @@ const generatePdf = async (info, filename) => {
         format: 'A4',
         orientation: 'portrait',
         base: "file:///home/www/",
-        border: '30px',
-        borderLeft: '60px',
+        border: {
+			left: '60px',
+			right: '30px',
+			top: '0px',
+			bottom: '0px'
+		},
         header: {
-            height: '175px'
+            height: '220px'
         },
         footer: {
             height: '130px',

@@ -8,7 +8,7 @@
     <style>
 
         html {
-            zoom: 0.85;
+            zoom: 1;
         }
 
         @page {
@@ -104,7 +104,7 @@
         }
 
         .font-10 {
-            font-size: 9px;
+            font-size: 10px;
         }
 
         .font-11 {
@@ -152,6 +152,7 @@
             padding: 7px;
             background-color: #C8C8C8;
             border-radius: 0;
+			font-family: Tahoma, serif;
         }
 
         .ui.patient-details .table td {
@@ -175,7 +176,7 @@
                              src='https://i.postimg.cc/DJyvzMQc/Screenshot-2022-10-05-at-7-59-20-AM.png'
                              alt='Mehar hospital logo'>
                     </div>
-                    <div class="ui segment" style="border: none !important">
+                    <div class="ui segment" style="border: none !important;">
 
                         <img class="ui left aligned image nabh-logo"
                              src="https://i.postimg.cc/MnV2NC3b/nabh-logo.png">
@@ -196,40 +197,40 @@
                     <table class="ui very basic table tahoma">
                         <tbody>
                         <tr>
-                            <td class="three wide font-8">Patient Name</td>
-                            <td class="one wide font-8">:</td>
+                            <td class="three wide font-9">Patient Name</td>
+                            <td class="one wide font-9">:</td>
                             <td class="four wide font-10">{{data.patient_name}}</td>
                             <td class="one wide"></td>
-                            <td class="two wide font-8">Mobile No</td>
-                            <td class="one wide font-8">:</td>
+                            <td class="two wide font-9">Mobile No</td>
+                            <td class="one wide font-9">:</td>
                             <td class="five wide font-10">{{data.phone}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide font-8">UHID No.</td>
-                            <td class="one wide font-8">:</td>
+                            <td class="three wide font-9">UHID No.</td>
+                            <td class="one wide font-9">:</td>
                             <td class="four wide font-10">{{data.uhid}}</td>
                             <td class="one wide"></td>
-                            <td class="two wide font-8">ID No , Age</td>
-                            <td class="one wide font-8">:</td>
+                            <td class="two wide font-9">ID No , Age</td>
+                            <td class="one wide font-9">:</td>
                             <td class="five wide font-10">{{data.ipd}} , {{data.Age}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide font-8">Address</td>
-                            <td class="one wide font-8">:</td>
+                            <td class="three wide font-9">Address</td>
+                            <td class="one wide font-9">:</td>
                             <td class="four wide font-10">{{data.addess}}</td>
                             <td class="one wide"></td>
-                            <td class="two wide font-8">Sampling Date</td>
-                            <td class="one wide font-8">:</td>
-                            <td class="five wide font-10">{{data.testDate}}&emsp;&emsp;{{data.testTime}}</td>
+                            <td class="two wide font-9">Sampling Date</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="five wide font-10">{{data.testDate}}&emsp;&emsp;&emsp;&emsp;{{data.testTime}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide font-8">Doctor</td>
-                            <td class="one wide font-8">:</td>
+                            <td class="three wide font-9">Doctor</td>
+                            <td class="one wide font-9">:</td>
                             <td class="four wide font-10">{{data.consultant}}</td>
                             <td class="one wide"></td>
-                            <td class="two wide font-8">Print Date</td>
-                            <td class="one wide font-8">:</td>
-                            <td class="five wide font-10">{{data.printDate}}&emsp;&emsp;{{data.printTime}}</td>
+                            <td class="two wide font-9">Print Date</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="five wide font-10">{{data.printDate}}&emsp;&emsp;&emsp;&emsp;{{data.printTime}}</td>
                         </tr>
                     </table>
                 </div>
@@ -239,9 +240,9 @@
                     <thead>
                     <tr class="left aligned report-heading" style="padding-top: 20px">
                         <td class="six wide font-9" style="padding-top: 7px"><b>Investigation</b></td>
-                        <td class="three wide font-9" style="padding-top: 7px"><b>Observations</b></td>
+                        <td class="four wide font-9" style="padding-top: 7px"><b>Observations</b></td>
                         <td class="four wide font-9" style="padding-top: 7px"><b>Biological Reference Interval</b></td>
-                        <td class="three wide font-9" style="padding-top: 7px"><b>Units</b></td>
+                        <td class="two wide font-9" style="padding-top: 7px"><b>Units</b></td>
                     </tr>
                     </thead>
                 </table>
@@ -251,9 +252,9 @@
                style="border: none !important; margin-top: 0 !important">
             <tr>
                 <td class="six wide"></td>
-                <td class="three wide"></td>
                 <td class="four wide"></td>
-                <td class="three wide"></td>
+                <td class="four wide"></td>
+                <td class="two wide"></td>
             </tr>
             {{#ifCond blood "!=" null}}
             <tr class="test-category">
