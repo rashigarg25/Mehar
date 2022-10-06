@@ -10,7 +10,7 @@ Sample project to generate report!
 
 4. Run "npm install"
 
-5. Run "npm run meher"
+5. Run "npm run mehar"
 
 6. In browser (Chrome, Firefox, Safari, etc) visit "http://localhost:3000/"
 

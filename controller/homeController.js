@@ -13,6 +13,7 @@ const printView = (req, res, next) => {
 
 const generatePdfParent = async (req, res) => {
 
+    const files = [];
     for (let i = 0; i < 7; i++) {
         const info = getInfo(req.body, i);
         if(!_.isEmpty(info.data.testDate)){
@@ -21,9 +22,12 @@ const generatePdfParent = async (req, res) => {
                 var formatted = dt.format('d/m/Y I:M p');
                 info.data.printDate = formatted;
             }
-            generatePdf(info);
+            const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
+            const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
+            files.push(filename);
+            console.info(">>>>>>>> filessss:   ");
+            generatePdf(info, filename);
         }
-
     }
     res.render('print_report');
 }
@@ -45,9 +49,9 @@ const getInfo = (body, i) => {
     return getSantizedInfo(info);
 }
 
-const generatePdf = async (info) => {
+const generatePdf = async (info, filename) => {
 
-    const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
+    //const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
 
     const sampleDate = info.data.testDate.substring(0, info.data.testDate.indexOf(" "));
     const sampleTime = info.data.testDate.substring(info.data.testDate.indexOf(" "));
@@ -62,7 +66,7 @@ const generatePdf = async (info) => {
     info.data.printTime = printTime;
 
     const html = fs.readFileSync(path.join(__dirname, '../views/print_report.html'), 'utf-8');
-    const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
+    //const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
 
     const document = {
         html: html,
@@ -136,7 +140,6 @@ const generatePdf = async (info) => {
         }).catch(error => {
         console.log(error);
     });
-    const filepath = 'http://localhost:3000/docs/' + filename;
 
 }
 
