@@ -14,8 +14,11 @@ router.get('/form', (req, res) => {
   res.render('form');
 });
 
-router.post("/print_report",
-generatePdfParent
+router.post("/print_report", (req, res) => {
+  generatePdfParent
+  //console.log('Response--->\n' + res.files);
+  res.download('./docs/Rashi_undefined_06-10-2022.pdf');
+} 
 );
 
 router.post("/download",

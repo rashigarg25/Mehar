@@ -4,20 +4,30 @@ const path = require('path');
 const {getSantizedInfo} = require('../controller/sanitizeData')
 const {sanitize} = require("express-validator");
 const _ = require('lodash');
+const dateTime = require('node-datetime');
 
 const printView = (req, res, next) => {
     var reqData = req.body;
     res.render("print_report", {data: req.body});
 }
 
-const generatePdfParent = async (req, res, next) => {
+const generatePdfParent = async (req, res) => {
 
+    const files = [];
     for (let i = 0; i < 7; i++) {
         const info = getInfo(req.body, i);
         if(!_.isEmpty(info.data.testDate)){
-            generatePdf(info);
+            if(_.isEmpty(info.data.printDate)) {
+                var dt = dateTime.create();
+                var formatted = dt.format('d/m/Y I:M p');
+                info.data.printDate = formatted;
+            }
+            const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
+            const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
+            files.push(filename);
+            console.info(">>>>>>>> filessss:   ");
+            generatePdf(info, filename);
         }
-        
     }
     res.render('print_report');
 }
@@ -39,9 +49,9 @@ const getInfo = (body, i) => {
     return getSantizedInfo(info);
 }
 
-const generatePdf = async (info) => {
+const generatePdf = async (info, filename) => {
 
-    const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
+    //const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
 
     const sampleDate = info.data.testDate.substring(0, info.data.testDate.indexOf(" "));
     const sampleTime = info.data.testDate.substring(info.data.testDate.indexOf(" "));
@@ -55,11 +65,8 @@ const generatePdf = async (info) => {
     info.data.printDate = printDate;
     info.data.printTime = printTime;
 
-    console.log(">>>>> Date: " + sampleDate);
-    console.log(">>>>> Time: " + sampleTime);
-
     const html = fs.readFileSync(path.join(__dirname, '../views/print_report.html'), 'utf-8');
-    const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
+    //const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
 
     const document = {
         html: html,
@@ -133,7 +140,6 @@ const generatePdf = async (info) => {
         }).catch(error => {
         console.log(error);
     });
-    const filepath = 'http://localhost:3000/docs/' + filename;
 
 }
 
