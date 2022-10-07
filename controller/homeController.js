@@ -14,7 +14,7 @@ const generatePdfParent = async (req, res) => {
     const files = [];
     for (let i = 0; i < 7; i++) {
         const info = getInfo(req.body, i);
-        if(!_.isEmpty(info.data.testDate)){
+        if(info.data && !_.isEmpty(info.data.testDate)){
             if(_.isEmpty(info.data.printDate)) {
                 info.data.printDate = info.data.testDate;
             }
