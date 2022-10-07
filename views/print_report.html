@@ -834,21 +834,6 @@
                 <td class="fourth-column">g/dl</td>
             </tr>
             {{/ifCond}}
-
-            {{#ifCond sgpt.ggt "!=" null}}
-            <tr>
-                <td class="first-column">GGT<br/><i class="test-method">Method: Gulpa C</i></td>
-                {{#ifCond sgpt.ggt "<" 0}}
-                <td class="second-column bold">{{sgpt.ggt}}</td>
-                {{else ifCond sgpt.ggt ">" 38}}
-                <td class="second-column bold">{{sgpt.ggt}}</td>
-                {{else}}
-                <td class="second-column">{{sgpt.ggt}}</td>
-                {{/ifCond}}
-                <td class="third-column">0-38</td>
-                <td class="fourth-column">u/l</td>
-            </tr>
-            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond serumAmylase "!=" null}}
