@@ -637,12 +637,12 @@
             <tr>
                 <td class="first-column">SODIUM<br/><i class="test-method">Method: Uricase - Ion Selective Electrode</i>
                 </td>
-                {{#ifCond serumSodium.sodium "<" 136}}
-                <td class="second-column bold">{{serumSodium.sodium}}</td>
+                {{#ifCond sodium.sodium "<" 136}}
+                <td class="second-column bold">{{sodium.sodium}}</td>
                 {{else ifCond serumSodium.sodium ">" 155}}
-                <td class="second-column bold">{{serumSodium.sodium}}</td>
+                <td class="second-column bold">{{sodium.sodium}}</td>
                 {{else}}
-                <td class="second-column">{{serumSodium.sodium}}</td>
+                <td class="second-column">{{sodium.sodium}}</td>
                 {{/ifCond}}
                 <td class="third-column">136 - 155</td>
                 <td class="fourth-column">mmol/l</td>
