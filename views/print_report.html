@@ -612,6 +612,21 @@
                 <td class="fourth-column"> mg/dl</td>
             </tr>
             {{/ifCond}}
+
+            {{#ifCond kidney.bun "!=" null}}
+            <tr>
+                <td class="first-column">BUN<br/><i class="test-method">Method : Uricase-POD</i></td>
+                {{#ifCond kidney.bun "<" 0.64}}
+                <td class="second-column bold">{{kidney.bun}}</td>
+                {{else ifCond kidney.bun ">" 25.7}}
+                <td class="second-column bold">{{kidney.bun}}</td>
+                {{else}}
+                <td class="second-column">{{kidney.bun}}</td>
+                {{/ifCond}}
+                <td class="third-column">0.64 - 25.7</td>
+                <td class="fourth-column"> mg/dl</td>
+            </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond sodium "!=" null}}

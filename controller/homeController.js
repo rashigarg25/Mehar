@@ -3,7 +3,6 @@ const pdf = require('pdf-creator-node');
 const path = require('path');
 const {getSantizedInfo} = require('../controller/sanitizeData')
 const _ = require('lodash');
-const dateTime = require('node-datetime');
 
 const printView = (req, res, next) => {
     var reqData = req.body;
@@ -17,8 +16,7 @@ const generatePdfParent = async (req, res) => {
         const info = getInfo(req.body, i);
         if(!_.isEmpty(info.data.testDate)){
             if(_.isEmpty(info.data.printDate)) {
-                const dt = dateTime.create();
-                info.data.printDate = dt.format('d/m/Y I:M p');
+                info.data.printDate = info.data.testDate;
             }
             const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
             const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
@@ -61,7 +59,7 @@ const generatePdf = async (info, filename) => {
     info.data.testDate = sampleDate.replaceAll('/','-');
     info.data.testTime = sampleTime;
 
-    info.data.printDate = printDate;
+    info.data.printDate = printDate.replaceAll('/','-');
     info.data.printTime = printTime;
 
     const html = fs.readFileSync(path.join(__dirname, '../views/print_report.html'), 'utf-8');

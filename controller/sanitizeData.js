@@ -2,36 +2,32 @@ const _ = require('lodash');
 
 module.exports.getSantizedInfo = (info) => {
 
-    let dr_mapping = {
-        "risham" : {
-            "name": "Dr. Risham Singla",
-            "department": "Orthopedics"
-        },
-        "alka" : {
-            "name": "Dr. Alka Singla",
-            "department": "Gynaecologist"
-        },
-        "arsha" : {
-            "name": "Dr. Arsha Kalra",
-            "department": "Pediatrician"
-        }
+    if(!_.isEmpty(info.neutrophils) || !_.isEmpty(info.lymphocytes) || !_.isEmpty(info.monocyte) || !_.isEmpty(info.eosinophils) || !_.isEmpty(info.basophils)){
+
+        info.neutrophils = _.isEmpty(info.neutrophils) ? 0 : info.neutrophils;
+        info.lymphocytes = _.isEmpty(info.lymphocytes) ? 0 : info.lymphocytes;
+        info.monocyte = _.isEmpty(info.monocyte) ? 0 : info.monocyte;
+        info.eosinophils = _.isEmpty(info.eosinophils) ? 0 : info.eosinophils;
+        info.basophils = _.isEmpty(info.basophils) ? 0 : info.basophils;
+        info.dlc = ".."
+
     }
 
     if(!_.isEmpty(info.hb) && !_.isEmpty(info.rbc)){
-        info.pcv = info.hb * 3;
-        info.mcv = (info.pcv * 10) / info.rbc;
-        info.mch = info.hb/info.rbc;
-        info.mchc = (info.hb/info.pcv) * 100;
+        info.pcv = (info.hb * 3).toFixed(1);
+        info.mcv = ((info.pcv * 10) / info.rbc).toFixed(1);
+        info.mch = ((info.hb/info.rbc) * 10).toFixed(1) ;
+        info.mchc = ((info.hb/info.pcv) * 100).toFixed(1);
     }
 
     if(!_.isEmpty(info.inr)) {
         info.ptcontrol = 11.5;
-        info.ptpatient = info.ptcontrol * info.inr;
-        info.index = (info.ptcontrol/info.ptpatient) * 100;
+        info.ptpatient = (info.ptcontrol * info.inr).toFixed(1);
+        info.index = ((info.ptcontrol/info.ptpatient) * 100).toFixed(1);
     }
 
     if(!_.isEmpty(info.burea)){
-        info.bun = info.burea/2.14;
+        info.bun = (info.burea/2.14).toFixed(1);
     }
 
     if(!_.isEmpty(info.bilirubin) && !_.isEmpty(info.cbilirubin)) {
@@ -40,7 +36,7 @@ module.exports.getSantizedInfo = (info) => {
 
     if(!_.isEmpty(info.tprotein) && !_.isEmpty(info.serumalbumin)) {
         info.globin = info.tprotein - info.serumalbumin;
-        info.agratio = info.serumalbumin/info.globin;
+        info.agratio = (info.serumalbumin/info.globin).toFixed(1);
     }
 
     const removedEmpty = _.omitBy(info, v => v === '');
@@ -48,7 +44,7 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["blood"] = _.pick(removedEmpty, ["hb", "tlc", "dlc", "neutrophils", "lymphocytes", "monocyte", "eosinophils", "basophils", "rbc", "pcv", "mcv", "mch", "mchc", "rdwcv", "rdwsd", "platelet"]);
     sanitizedInfo["esr"] = _.pick(removedEmpty, ["esr"]);
     sanitizedInfo["protein"] = _.pick(removedEmpty, ["crp"]);
-    sanitizedInfo["kidney"] = _.pick(removedEmpty, ["burea", "creatinine", "uric"]);
+    sanitizedInfo["kidney"] = _.pick(removedEmpty, ["burea", "creatinine", "uric", "bun"]);
     sanitizedInfo["sodium"] = _.pick(removedEmpty, ["sodium"]);
     sanitizedInfo["potassium"] = _.pick(removedEmpty, ["potassium"]);
     sanitizedInfo["chloride"] = _.pick(removedEmpty, ["chloride"]);
