@@ -29,9 +29,6 @@ router.post("/print_report", (req, res) => {
                 file.name = element;
                 fileList.push(file);
             });
-            fileList.forEach(file => {
-                console.log(file.path);
-            })
             res.zip(fileList, req.body.patient_name + ".zip");
         });
     }
