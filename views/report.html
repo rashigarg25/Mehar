@@ -44,7 +44,7 @@
 
         input.inputc, input.report_text {
             margin: 0;
-            max-width: 100%;
+            width: auto;
             -webkit-box-flex: 1;
             -ms-flex: 1 0 auto;
             flex: 1 0 auto;
@@ -204,7 +204,7 @@
         }
 
         .table > tbody > tr > td {
-            font-size: 12px;
+            /*font-size: 12px;*/
         }
 
         .tr_border {
@@ -221,11 +221,6 @@
             button.reportbutton, .row.headerdetails .input-group.date .input-group-addon {
                 display: none;
             }
-
-            .haddress {
-                float: right;
-                margin-top: -10%;
-            }
         }
 
     </style>
@@ -233,10 +228,9 @@
 <body>
 
 <form class="ui form" id="myForm" action="print_report" method="POST">
-
     <div class="ui container">
         <button type="submit" class="ui blue button reportbutton">Preview</button>
-        <div class="ui two column grid container">
+        <div class="ui two column grid">
             <div class="column logodiv">
                 <br>
                 <p><img src="img/logo.png"></p>
@@ -287,26 +281,30 @@
                                     <i class="dropdown icon"></i>
                                     <div class="default text">Consultant</div>
                                     <div class="menu">
-                                       <div class="item" data-value="Dr. Hardeep Singh">Dr. Hardeep Singh</div>
-										<div class="item" data-value="Dr. Alok Ahuja">Dr. Alok Ahuja</div>
-										<div class="item" data-value="Dr. Alka Singla">Dr. Alka Singla</div>
-										<div class="item" data-value="Dr. Risham Singla/Dr.Ashutosh">Dr. Risham Singla/Dr.Ashutosh</div>
-										<div class="item" data-value="Dr. Arsha Kalra">Dr. Arsha Kalra</div>
-										<div class="item" data-value="Dr. Monika Garg">Dr. Monika Garg</div>
-										<div class="item" data-value="Dr. Amitoj Garg">Dr. Amitoj Garg</div>
-										<div class="item" data-value="Dr. Navdeep Garg">Dr. Navdeep Garg</div>
-										<div class="item" data-value="Dr. Preeti Sharma">Dr. Preeti Sharma</div>
-										<div class="item" data-value="Dr. Jasbeer Singh Ahluwalia">Dr. Jasbeer Singh Ahluwalia</div>
-										<div class="item" data-value="Dr. Kapil Dev Doomra">Dr. Kapil Dev Doomra</div>
-										<div class="item" data-value="Dr. Abhinav Lakhiyani">Dr. Abhinav Lakhiyani</div>
-										<div class="item" data-value="Dr. Shelly Chugh">Dr. Shelly Chugh</div>
-										<div class="item" data-value="Dr. Abhishek ENT">Dr. Abhishek ENT</div>
-										<div class="item" data-value="Dr. Lovekesh Mittal">Dr. Lovekesh Mittal</div>
-										<div class="item" data-value="Dr. Lokesh">Dr. Lokesh</div>
-										<div class="item" data-value="Dr. Abeer Neurology">Dr. Abeer Neurology</div>
-										<div class="item" data-value="Dr. Gaurav Urology">Dr. Gaurav Urology</div>
-										<div class="item" data-value="Dr. Davinder Midha">Dr. Davinder Midha</div>
-										<div class="item" data-value="Dr. S. K. Gupta">Dr. S. K. Gupta</div>
+                                        <div class="item" data-value="Dr. Hardeep Singh">Dr. Hardeep Singh</div>
+                                        <div class="item" data-value="Dr. Alok Ahuja">Dr. Alok Ahuja</div>
+                                        <div class="item" data-value="Dr. Alka Singla">Dr. Alka Singla</div>
+                                        <div class="item" data-value="Dr. Risham Singla/Dr.Ashutosh">Dr. Risham
+                                            Singla/Dr.Ashutosh
+                                        </div>
+                                        <div class="item" data-value="Dr. Arsha Kalra">Dr. Arsha Kalra</div>
+                                        <div class="item" data-value="Dr. Monika Garg">Dr. Monika Garg</div>
+                                        <div class="item" data-value="Dr. Amitoj Garg">Dr. Amitoj Garg</div>
+                                        <div class="item" data-value="Dr. Navdeep Garg">Dr. Navdeep Garg</div>
+                                        <div class="item" data-value="Dr. Preeti Sharma">Dr. Preeti Sharma</div>
+                                        <div class="item" data-value="Dr. Jasbeer Singh Ahluwalia">Dr. Jasbeer Singh
+                                            Ahluwalia
+                                        </div>
+                                        <div class="item" data-value="Dr. Kapil Dev Doomra">Dr. Kapil Dev Doomra</div>
+                                        <div class="item" data-value="Dr. Abhinav Lakhiyani">Dr. Abhinav Lakhiyani</div>
+                                        <div class="item" data-value="Dr. Shelly Chugh">Dr. Shelly Chugh</div>
+                                        <div class="item" data-value="Dr. Abhishek ENT">Dr. Abhishek ENT</div>
+                                        <div class="item" data-value="Dr. Lovekesh Mittal">Dr. Lovekesh Mittal</div>
+                                        <div class="item" data-value="Dr. Lokesh">Dr. Lokesh</div>
+                                        <div class="item" data-value="Dr. Abeer Neurology">Dr. Abeer Neurology</div>
+                                        <div class="item" data-value="Dr. Gaurav Urology">Dr. Gaurav Urology</div>
+                                        <div class="item" data-value="Dr. Davinder Midha">Dr. Davinder Midha</div>
+                                        <div class="item" data-value="Dr. S. K. Gupta">Dr. S. K. Gupta</div>
                                     </div>
                                 </div>
 
@@ -348,7 +346,6 @@
                                 });
                             });
                         </script>
-
 
                         <script type="text/javascript">
                             $(function () {
@@ -479,9 +476,8 @@
             <h3> INVESTIGATION FLOW SHEET</h3>
         </div>
 
-
         <div class="row patient_re">
-            <table class="basic ui table" border="1px">
+            <table class="ui table" border="1px">
                 <thead>
                 <tr>
                     <th></th>
@@ -759,16 +755,52 @@
                     <td>
                         <div class="vertical_td URINE">
                             <div class="verticalTableHeader">URINE ROUTINE CGHS 1383</div>
+                        </div>
                     </td>
                     <td>QUANTITY</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="19" name="quantity" class="report_text"></td>
-                    <td><input type="text" tabindex="119" name="quantity" class="report_text"></td>
-                    <td><input type="text" tabindex="219" name="quantity" class="report_text"></td>
-                    <td><input type="text" tabindex="319" name="quantity" class="report_text"></td>
-                    <td><input type="text" tabindex="419" name="quantity" class="report_text"></td>
-                    <td><input type="text" tabindex="519" name="quantity" class="report_text"></td>
-                    <td><input type="text" tabindex="619" name="quantity" class="report_text"></td>
+                    <td>
+                        <div class="ui right labeled input">
+                            <input type="text" tabindex="19" name="quantity" style="width: fit-content">
+                            <div class="ui very basic label">ml</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui right labeled input">
+                            <input type="text" tabindex="119" name="quantity" style="width: fit-content">
+                            <div class="ui very basic label">ml</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui right labeled input">
+                            <input type="text" tabindex="219" name="quantity" style="width: fit-content">
+                            <div class="ui very basic label">ml</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui right labeled input">
+                            <input type="text" tabindex="319" name="quantity" style="width: fit-content">
+                            <div class="ui very basic label">ml</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui right labeled input">
+                            <input type="text" tabindex="419" name="quantity" style="width: fit-content">
+                            <div class="ui very basic label">ml</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui right labeled input">
+                            <input type="text" tabindex="519" name="quantity" style="width: fit-content">
+                            <div class="ui very basic label">ml</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui right labeled input">
+                            <input type="text" tabindex="619" name="quantity" style="width: fit-content">
+                            <div class="ui very basic label">ml</div>
+                        </div>
+                    </td>
 
                 </tr>
 
@@ -776,27 +808,201 @@
                     <td></td>
                     <td>COLOR</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="20" name="color" class="report_text"></td>
-                    <td><input type="text" tabindex="120" name="color" class="report_text"></td>
-                    <td><input type="text" tabindex="220" name="color" class="report_text"></td>
-                    <td><input type="text" tabindex="320" name="color" class="report_text"></td>
-                    <td><input type="text" tabindex="420" name="color" class="report_text"></td>
-                    <td><input type="text" tabindex="520" name="color" class="report_text"></td>
-                    <td><input type="text" tabindex="620" name="color" class="report_text"></td>
-
+                    <td>
+                        <div class="ui selection dropdown" id="urine-color-dropdown-1">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="PALE YELLOW">PALE YELLOW</div>
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="PINK/RED">PINK/RED</div>
+                                <div class="item" data-value="ORANGE">ORANGE</div>
+                                <div class="item" data-value="BLUE/GREEN">BLUE/GREEN</div>
+                                <div class="item" data-value="DARK BROWN">DARK BROWN</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="urine-color-dropdown-2">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="PALE YELLOW">PALE YELLOW</div>
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="PINK/RED">PINK/RED</div>
+                                <div class="item" data-value="ORANGE">ORANGE</div>
+                                <div class="item" data-value="BLUE/GREEN">BLUE/GREEN</div>
+                                <div class="item" data-value="DARK BROWN">DARK BROWN</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="urine-color-dropdown-3">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="PALE YELLOW">PALE YELLOW</div>
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="PINK/RED">PINK/RED</div>
+                                <div class="item" data-value="ORANGE">ORANGE</div>
+                                <div class="item" data-value="BLUE/GREEN">BLUE/GREEN</div>
+                                <div class="item" data-value="DARK BROWN">DARK BROWN</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="urine-color-dropdown-4">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="PALE YELLOW">PALE YELLOW</div>
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="PINK/RED">PINK/RED</div>
+                                <div class="item" data-value="ORANGE">ORANGE</div>
+                                <div class="item" data-value="BLUE/GREEN">BLUE/GREEN</div>
+                                <div class="item" data-value="DARK BROWN">DARK BROWN</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="urine-color-dropdown-5">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="PALE YELLOW">PALE YELLOW</div>
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="PINK/RED">PINK/RED</div>
+                                <div class="item" data-value="ORANGE">ORANGE</div>
+                                <div class="item" data-value="BLUE/GREEN">BLUE/GREEN</div>
+                                <div class="item" data-value="DARK BROWN">DARK BROWN</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="urine-color-dropdown-6">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="PALE YELLOW">PALE YELLOW</div>
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="PINK/RED">PINK/RED</div>
+                                <div class="item" data-value="ORANGE">ORANGE</div>
+                                <div class="item" data-value="BLUE/GREEN">BLUE/GREEN</div>
+                                <div class="item" data-value="DARK BROWN">DARK BROWN</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="urine-color-dropdown-7">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="PALE YELLOW">PALE YELLOW</div>
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="PINK/RED">PINK/RED</div>
+                                <div class="item" data-value="ORANGE">ORANGE</div>
+                                <div class="item" data-value="BLUE/GREEN">BLUE/GREEN</div>
+                                <div class="item" data-value="DARK BROWN">DARK BROWN</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
 
                 <tr>
                     <td></td>
                     <td>TRANSPARENCY</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="21" name="transparency" class="report_text"></td>
-                    <td><input type="text" tabindex="121" name="transparency" class="report_text"></td>
-                    <td><input type="text" tabindex="221" name="transparency" class="report_text"></td>
-                    <td><input type="text" tabindex="321" name="transparency" class="report_text"></td>
-                    <td><input type="text" tabindex="421" name="transparency" class="report_text"></td>
-                    <td><input type="text" tabindex="521" name="transparency" class="report_text"></td>
-                    <td><input type="text" tabindex="621" name="transparency" class="report_text"></td>
+                    <td>
+                        <div class="ui selection dropdown" id="transparency-dropdown-1">
+                            <input type="hidden" name="transparency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Transparency</div>
+                            <div class="menu">
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="transparency-dropdown-2">
+                            <input type="hidden" name="transparency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Transparency</div>
+                            <div class="menu">
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="transparency-dropdown-3">
+                            <input type="hidden" name="transparency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Transparency</div>
+                            <div class="menu">
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="transparency-dropdown-4">
+                            <input type="hidden" name="transparency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Transparency</div>
+                            <div class="menu">
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="transparency-dropdown-5">
+                            <input type="hidden" name="transparency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Transparency</div>
+                            <div class="menu">
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="transparency-dropdown-6">
+                            <input type="hidden" name="transparency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Transparency</div>
+                            <div class="menu">
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="transparency-dropdown-7">
+                            <input type="hidden" name="transparency">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Transparency</div>
+                            <div class="menu">
+                                <div class="item" data-value="CLEAR">CLEAR</div>
+                                <div class="item" data-value="CLOUDY">CLOUDY</div>
+                            </div>
+                        </div>
+                    </td>
 
                 </tr>
 
@@ -818,13 +1024,83 @@
                     <td></td>
                     <td>REACTION</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="23" name="reaction" class="report_text"></td>
-                    <td><input type="text" tabindex="123" name="reaction" class="report_text"></td>
-                    <td><input type="text" tabindex="223" name="reaction" class="report_text"></td>
-                    <td><input type="text" tabindex="323" name="reaction" class="report_text"></td>
-                    <td><input type="text" tabindex="423" name="reaction" class="report_text"></td>
-                    <td><input type="text" tabindex="523" name="reaction" class="report_text"></td>
-                    <td><input type="text" tabindex="623" name="reaction" class="report_text"></td>
+                    <td>
+                        <div class="ui selection dropdown" id="reaction-dropdown-1">
+                            <input type="hidden" name="reaction">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Reaction</div>
+                            <div class="menu">
+                                <div class="item" data-value="ACIDIC">ACIDIC</div>
+                                <div class="item" data-value="ALKALINE">ALKALINE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="reaction-dropdown-2">
+                            <input type="hidden" name="reaction">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Reaction</div>
+                            <div class="menu">
+                                <div class="item" data-value="ACIDIC">ACIDIC</div>
+                                <div class="item" data-value="ALKALINE">ALKALINE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="reaction-dropdown-3">
+                            <input type="hidden" name="reaction">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Reaction</div>
+                            <div class="menu">
+                                <div class="item" data-value="ACIDIC">ACIDIC</div>
+                                <div class="item" data-value="ALKALINE">ALKALINE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="reaction-dropdown-4">
+                            <input type="hidden" name="reaction">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Reaction</div>
+                            <div class="menu">
+                                <div class="item" data-value="ACIDIC">ACIDIC</div>
+                                <div class="item" data-value="ALKALINE">ALKALINE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="reaction-dropdown-5">
+                            <input type="hidden" name="reaction">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Reaction</div>
+                            <div class="menu">
+                                <div class="item" data-value="ACIDIC">ACIDIC</div>
+                                <div class="item" data-value="ALKALINE">ALKALINE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="reaction-dropdown-6">
+                            <input type="hidden" name="reaction">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Reaction</div>
+                            <div class="menu">
+                                <div class="item" data-value="ACIDIC">ACIDIC</div>
+                                <div class="item" data-value="ALKALINE">ALKALINE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="reaction-dropdown-7">
+                            <input type="hidden" name="reaction">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Reaction</div>
+                            <div class="menu">
+                                <div class="item" data-value="ACIDIC">ACIDIC</div>
+                                <div class="item" data-value="ALKALINE">ALKALINE</div>
+                            </div>
+                        </div>
+                    </td>
 
                 </tr>
 
@@ -860,28 +1136,194 @@
                     <td></td>
                     <td>SUGAR</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="26" name="usugar" class="report_text"></td>
-                    <td><input type="text" tabindex="126" name="usugar" class="report_text"></td>
-                    <td><input type="text" tabindex="226" name="usugar" class="report_text"></td>
-                    <td><input type="text" tabindex="326" name="usugar" class="report_text"></td>
-                    <td><input type="text" tabindex="426" name="usugar" class="report_text"></td>
-                    <td><input type="text" tabindex="526" name="usugar" class="report_text"></td>
-                    <td><input type="text" tabindex="626" name="usugar" class="report_text"></td>
-
+                    <td>
+                        <div class="ui selection dropdown" id="usugar-dropdown-1">
+                            <input type="hidden" name="usugar">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Sugar</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="+">+</div>
+                                <div class="item" data-value="++">++</div>
+                                <div class="item" data-value="+++">+++</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="usugar-dropdown-2">
+                            <input type="hidden" name="usugar">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Sugar</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="+">+</div>
+                                <div class="item" data-value="++">++</div>
+                                <div class="item" data-value="+++">+++</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="usugar-dropdown-3">
+                            <input type="hidden" name="usugar">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Sugar</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="+">+</div>
+                                <div class="item" data-value="++">++</div>
+                                <div class="item" data-value="+++">+++</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="usugar-dropdown-4">
+                            <input type="hidden" name="usugar">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Sugar</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="+">+</div>
+                                <div class="item" data-value="++">++</div>
+                                <div class="item" data-value="+++">+++</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="usugar-dropdown-5">
+                            <input type="hidden" name="usugar">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Sugar</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="+">+</div>
+                                <div class="item" data-value="++">++</div>
+                                <div class="item" data-value="+++">+++</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="usugar-dropdown-6">
+                            <input type="hidden" name="usugar">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Sugar</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="+">+</div>
+                                <div class="item" data-value="++">++</div>
+                                <div class="item" data-value="+++">+++</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="usugar-dropdown-7">
+                            <input type="hidden" name="usugar">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Sugar</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="+">+</div>
+                                <div class="item" data-value="++">++</div>
+                                <div class="item" data-value="+++">+++</div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
 
                 <tr>
                     <td></td>
                     <td>BLOOD</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="26" name="ublood" class="report_text"></td>
-                    <td><input type="text" tabindex="126" name="ublood" class="report_text"></td>
-                    <td><input type="text" tabindex="226" name="ublood" class="report_text"></td>
-                    <td><input type="text" tabindex="326" name="ublood" class="report_text"></td>
-                    <td><input type="text" tabindex="426" name="ublood" class="report_text"></td>
-                    <td><input type="text" tabindex="526" name="ublood" class="report_text"></td>
-                    <td><input type="text" tabindex="626" name="ublood" class="report_text"></td>
-
+                    <td>
+                        <div class="ui selection dropdown" id="ublood-dropdown-1">
+                            <input type="hidden" name="ublood">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="ublood-dropdown-2">
+                            <input type="hidden" name="ublood">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="ublood-dropdown-3">
+                            <input type="hidden" name="ublood">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="ublood-dropdown-4">
+                            <input type="hidden" name="ublood">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="ublood-dropdown-5">
+                            <input type="hidden" name="ublood">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="ublood-dropdown-6">
+                            <input type="hidden" name="ublood">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="ublood-dropdown-7">
+                            <input type="hidden" name="ublood">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">NIL</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
 
                 <tr>
@@ -930,13 +1372,90 @@
                     <td></td>
                     <td>EPITHELIAL CELLS</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="30" name="epithelial" class="report_text"></td>
-                    <td><input type="text" tabindex="130" name="epithelial" class="report_text"></td>
-                    <td><input type="text" tabindex="230" name="epithelial" class="report_text"></td>
-                    <td><input type="text" tabindex="330" name="epithelial" class="report_text"></td>
-                    <td><input type="text" tabindex="430" name="epithelial" class="report_text"></td>
-                    <td><input type="text" tabindex="530" name="epithelial" class="report_text"></td>
-                    <td><input type="text" tabindex="630" name="epithelial" class="report_text"></td>
+                    <td>
+                        <div class="ui selection dropdown" id="epithelial-dropdown-1">
+                            <input type="hidden" name="epithelial">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="0 -5">0 -5</div>
+                                <div class="item" data-value="5 - 10">5 - 10</div>
+                                <div class="item" data-value="> 10">> 10</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="epithelial-dropdown-2">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="0 -5">0 -5</div>
+                                <div class="item" data-value="5 - 10">5 - 10</div>
+                                <div class="item" data-value="> 10">> 10</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="epithelial-dropdown-3">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="0 -5">0 -5</div>
+                                <div class="item" data-value="5 - 10">5 - 10</div>
+                                <div class="item" data-value="> 10">> 10</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="epithelial-dropdown-4">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="0 -5">0 -5</div>
+                                <div class="item" data-value="5 - 10">5 - 10</div>
+                                <div class="item" data-value="> 10">> 10</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="epithelial-dropdown-5">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="0 -5">0 -5</div>
+                                <div class="item" data-value="5 - 10">5 - 10</div>
+                                <div class="item" data-value="> 10">> 10</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="epithelial-dropdown-6">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="0 -5">0 -5</div>
+                                <div class="item" data-value="5 - 10">5 - 10</div>
+                                <div class="item" data-value="> 10">> 10</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="epithelial-dropdown-7">
+                            <input type="hidden" name="color">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Color</div>
+                            <div class="menu">
+                                <div class="item" data-value="0 -5">0 -5</div>
+                                <div class="item" data-value="5 - 10">5 - 10</div>
+                                <div class="item" data-value="> 10">> 10</div>
+                            </div>
+                        </div>
+                    </td>
 
                 </tr>
 
@@ -944,13 +1463,19 @@
                     <td></td>
                     <td>PUS CELLS</td>
                     <td>Not Delected</td>
-                    <td><input type="text" tabindex="31" name="pus" class="report_text"></td>
-                    <td><input type="text" tabindex="131" name="pus" class="report_text"></td>
-                    <td><input type="text" tabindex="231" name="pus" class="report_text"></td>
-                    <td><input type="text" tabindex="331" name="pus" class="report_text"></td>
-                    <td><input type="text" tabindex="431" name="pus" class="report_text"></td>
-                    <td><input type="text" tabindex="531" name="pus" class="report_text"></td>
-                    <td><input type="text" tabindex="631" name="pus" class="report_text"></td>
+                    <td>
+                        <div class="ui selection dropdown" id="pus-dropdown-1">
+                            <input type="hidden" name="pus">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Pus cells</div>
+                            <div class="menu">
+                                <div class="item" data-value="NIL">0 - 5</div>
+                                <div class="item" data-value="FEW RBCs SEEN">FEW RBCs SEEN</div>
+                                <div class="item" data-value="PLENTY RBCs SEEN">PLENTY RBCs SEEN</div>
+                                <div class="item" data-value="FULL SHIELD OF RBCs">FULL SHIELD OF RBCs</div>
+                            </div>
+                        </div>
+                    </td>
 
                 </tr>
 
@@ -1155,7 +1680,7 @@
                     <td></td>
                     <td>UNCOUNJUGATED (I D BILIRUBIN)</td>
                     <td>70-140 Mg/dll</td>
-                    <td><input type="text" tabindex="45"" name="ucbilirubin" class="report_text"></td>
+                    <td><input type="text" tabindex="145" name="ucbilirubin" class="report_text"></td>
                     <td><input type="text" tabindex="145" name="ucbilirubin" class="report_text"></td>
                     <td><input type="text" tabindex="245" name="ucbilirubin" class="report_text"></td>
                     <td><input type="text" tabindex="345" name="ucbilirubin" class="report_text"></td>
@@ -1463,6 +1988,7 @@
                     <td>
                         <div class="vertical_td">
                             <div class="verticalTableHeader"></div>
+                        </div>
                     </td>
                     <td>SERUM FERRITIN</td>
                     <td></td>
@@ -1552,11 +2078,239 @@
                     <td><input type="text" tabindex="476" name="widal" class="report_text"></td>
                     <td><input type="text" tabindex="576" name="widal" class="report_text"></td>
                     <td><input type="text" tabindex="676" name="widal" class="report_text"></td>
-
                 </tr>
             </table>
         </div>
     </div>
+    <script>
+        $('#urine-color-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#urine-color-dropdown-1 input[name="color"]').val(value);
+            }
+        });
+        $('#urine-color-dropdown-2').dropdown({
+            'onChange': function (value) {
+                $('#urine-color-dropdown-2 input[name="color"]').val(value);
+            }
+        });
+        $('#urine-color-dropdown-3').dropdown({
+            'onChange': function (value) {
+                $('#urine-color-dropdown-3 input[name="color"]').val(value);
+            }
+        });
+        $('#urine-color-dropdown-4').dropdown({
+            'onChange': function (value) {
+                $('#urine-color-dropdown-4 input[name="color"]').val(value);
+            }
+        });
+        $('#urine-color-dropdown-5').dropdown({
+            'onChange': function (value) {
+                $('#urine-color-dropdown-5 input[name="color"]').val(value);
+            }
+        });
+        $('#urine-color-dropdown-6').dropdown({
+            'onChange': function (value) {
+                $('#urine-color-dropdown-6 input[name="color"]').val(value);
+            }
+        });
+        $('#urine-color-dropdown-7').dropdown({
+            'onChange': function (value) {
+                $('#urine-color-dropdown-7 input[name="color"]').val(value);
+            }
+        });
+
+        $('#transparency-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-1 input[name="transparency"]').val(value);
+            }
+        });
+        $('#transparency-dropdown-2').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-2 input[name="transparency"]').val(value);
+            }
+        });
+        $('#transparency-dropdown-3').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-3 input[name="transparency"]').val(value);
+            }
+        });
+        $('#transparency-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-1 input[name="transparency"]').val(value);
+            }
+        });
+        $('#transparency-dropdown-4').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-4 input[name="transparency"]').val(value);
+            }
+        });
+        $('#transparency-dropdown-5').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-5 input[name="transparency"]').val(value);
+            }
+        });
+        $('#transparency-dropdown-6').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-6 input[name="transparency"]').val(value);
+            }
+        });
+        $('#transparency-dropdown-7').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-7 input[name="transparency"]').val(value);
+            }
+        });
+
+        $('#reaction-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-1 input[name="reaction"]').val(value);
+            }
+        });
+        $('#reaction-dropdown-2').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-2 input[name="reaction"]').val(value);
+            }
+        });
+        $('#reaction-dropdown-3').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-3 input[name="reaction"]').val(value);
+            }
+        });
+        $('#reaction-dropdown-4').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-4 input[name="reaction"]').val(value);
+            }
+        });
+        $('#reaction-dropdown-5').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-5 input[name="reaction"]').val(value);
+            }
+        });
+        $('#reaction-dropdown-6').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-6 input[name="reaction"]').val(value);
+            }
+        });
+        $('#reaction-dropdown-7').dropdown({
+            'onChange': function (value) {
+                $('#transparency-dropdown-7 input[name="reaction"]').val(value);
+            }
+        });
+
+        $('#usugar-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-1 input[name="usugar"]').val(value);
+            }
+        });
+
+        $('#usugar-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-1 input[name="usugar"]').val(value);
+            }
+        });
+        $('#usugar-dropdown-2').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-2 input[name="usugar"]').val(value);
+            }
+        });
+        $('#usugar-dropdown-3').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-3 input[name="usugar"]').val(value);
+            }
+        });
+        $('#usugar-dropdown-4').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-4 input[name="usugar"]').val(value);
+            }
+        });
+        $('#usugar-dropdown-5').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-5 input[name="usugar"]').val(value);
+            }
+        });
+        $('#usugar-dropdown-6').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-6 input[name="usugar"]').val(value);
+            }
+        });
+        $('#usugar-dropdown-7').dropdown({
+            'onChange': function (value) {
+                $('#usugar-dropdown-7 input[name="usugar"]').val(value);
+            }
+        });
+
+        $('#epithelial-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#epithelial-dropdown-1 input[name="epithelial"]').val(value);
+            }
+        });
+        $('#epithelial-dropdown-2').dropdown({
+            'onChange': function (value) {
+                $('#epithelial-dropdown-2 input[name="epithelial"]').val(value);
+            }
+        });
+        $('#epithelial-dropdown-3').dropdown({
+            'onChange': function (value) {
+                $('#epithelial-dropdown-3 input[name="epithelial"]').val(value);
+            }
+        });
+        $('#epithelial-dropdown-4').dropdown({
+            'onChange': function (value) {
+                $('#epithelial-dropdown-4 input[name="epithelial"]').val(value);
+            }
+        });
+        $('#epithelial-dropdown-5').dropdown({
+            'onChange': function (value) {
+                $('#epithelial-dropdown-5 input[name="epithelial"]').val(value);
+            }
+        });
+        $('#epithelial-dropdown-6').dropdown({
+            'onChange': function (value) {
+                $('#epithelial-dropdown-6 input[name="epithelial"]').val(value);
+            }
+        });
+        $('#epithelial-dropdown-7').dropdown({
+            'onChange': function (value) {
+                $('#epithelial-dropdown-7 input[name="epithelial"]').val(value);
+            }
+        });
+
+        $('#ublood-dropdown-1').dropdown({
+            'onChange': function (value) {
+                $('#ublood-dropdown-1 input[name="ublood"]').val(value);
+            }
+        });
+        $('#ublood-dropdown-2').dropdown({
+            'onChange': function (value) {
+                $('#ublood-dropdown-2 input[name="ublood"]').val(value);
+            }
+        });
+        $('#ublood-dropdown-3').dropdown({
+            'onChange': function (value) {
+                $('#ublood-dropdown-3 input[name="ublood"]').val(value);
+            }
+        });
+        $('#ublood-dropdown-4').dropdown({
+            'onChange': function (value) {
+                $('#ublood-dropdown-4 input[name="ublood"]').val(value);
+            }
+        });
+        $('#ublood-dropdown-5').dropdown({
+            'onChange': function (value) {
+                $('#ublood-dropdown-5 input[name="ublood"]').val(value);
+            }
+        });
+        $('#ublood-dropdown-6').dropdown({
+            'onChange': function (value) {
+                $('#ublood-dropdown-6 input[name="ublood"]').val(value);
+            }
+        });
+        $('#ublood-dropdown-7').dropdown({
+            'onChange': function (value) {
+                $('#ublood-dropdown-7 input[name="ublood"]').val(value);
+            }
+        });
+
+    </script>
 </form>
 <br/>
 

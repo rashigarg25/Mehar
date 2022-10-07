@@ -8,7 +8,7 @@ const {printView, generatePdfParent} = require("../controller/homeController");
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../views/report2.html'));
+    res.sendFile(path.join(__dirname + '/../views/report.html'));
 });
 
 router.get('/form', (req, res) => {
@@ -16,8 +16,8 @@ router.get('/form', (req, res) => {
 });
 
 router.post("/print_report", (req, res) => {
+    console.info(">>>>>> Form data: \n" + JSON.stringify(req.body, null, 4));
         generatePdfParent(req, res).then(r => {
-            //console.info(">>>>> response.files: " + res.files);
 
             let fileList = [];
             const rootPath = "./docs/";
