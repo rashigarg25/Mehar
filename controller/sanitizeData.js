@@ -8,12 +8,12 @@ module.exports.getSantizedInfo = (info) => {
             info.department = "Orthopedics";
             break;
         case "alka":
-            info.consultant = "Dr. Risham Singla";
-            info.department = "Orthopedics";
+            info.consultant = "Dr. Alka Singla";
+            info.department = "Gynaecology";
             break;
         case "arsha":
-            info.consultant = "Dr. Risham Singla";
-            info.department = "Orthopedics";
+            info.consultant = "Dr. Arsha Kalra";
+            info.department = "Paediatrics";
             break;
         default:
             info.consultant = "Dr. Default";
@@ -93,7 +93,7 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["malaria"] = _.pick(removedEmpty, ["malaria"]);
     sanitizedInfo["widal"] = _.pick(removedEmpty, ["widal"]);
     sanitizedInfo["dengue"] = _.pick(removedEmpty, ["dengue", "dengueigg", "dengueigm"]);
-    sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender"]);
+    sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
 
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
 

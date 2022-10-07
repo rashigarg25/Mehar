@@ -17,7 +17,7 @@ router.get('/form', (req, res) => {
 
 router.post("/print_report", (req, res) => {
         generatePdfParent(req, res).then(r => {
-            console.info(">>>>> response.files: " + res.files);
+            //console.info(">>>>> response.files: " + res.files);
 
             let fileList = [];
             const rootPath = "./docs/";
