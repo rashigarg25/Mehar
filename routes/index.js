@@ -16,15 +16,12 @@ router.get('/form', (req, res) => {
 });
 
 router.post("/print_report", (req, res) => {
-    console.info(">>>>>> Form data: \n" + JSON.stringify(req.body, null, 4));
         generatePdfParent(req, res).then(r => {
 
             let fileList = [];
             const rootPath = "./docs/";
             res.files.forEach(element => {
                 let file = {};
-                console.info(">> Processing file: " + element);
-                console.info();
                 file.path = rootPath + element;
                 file.name = element;
                 fileList.push(file);
