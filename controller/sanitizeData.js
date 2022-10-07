@@ -2,28 +2,6 @@ const _ = require('lodash');
 
 module.exports.getSantizedInfo = (info) => {
 
-    switch(info.consultantD) {
-        case "risham":
-            info.consultant = "Dr. Risham Singla";
-            info.department = "Orthopedics";
-            break;
-        case "alka":
-            info.consultant = "Dr. Alka Singla";
-            info.department = "Gynaecology";
-            break;
-        case "arsha":
-            info.consultant = "Dr. Arsha Kalra";
-            info.department = "Paediatrics";
-            break;
-        default:
-            info.consultant = "Dr. Default";
-            info.department = "Default";
-            break;
-    }
-
-
-    console.log("consultant --> " + info.consultant + "   " + info.department);
-
     let dr_mapping = {
         "risham" : {
             "name": "Dr. Risham Singla",
