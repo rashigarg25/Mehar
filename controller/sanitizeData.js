@@ -31,7 +31,8 @@ module.exports.getSantizedInfo = (info) => {
     }
 
     if(!_.isEmpty(info.bilirubin) && !_.isEmpty(info.cbilirubin)) {
-        info.ucbilirubin = info.bilirubin - info.cbilirubin;
+        info.ucbilirubin = (info.bilirubin - info.cbilirubin).toFixed(2);
+
     }
 
     if(!_.isEmpty(info.tprotein) && !_.isEmpty(info.serumalbumin)) {
