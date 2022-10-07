@@ -229,6 +229,7 @@
 
 <form class="ui form" id="myForm" action="print_report" method="POST">
     <div class="ui container">
+        <div class="ui error message"></div>
         <button type="submit" class="ui blue button reportbutton">Preview</button>
         <div class="ui two column grid">
             <div class="column logodiv">
@@ -2844,6 +2845,114 @@
         });
 
     </script>
+    <script>
+        $('.ui.form')
+           .form({
+               fields: {
+                   patient_name: {
+                       identifier: 'patient_name',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter patient's name"
+                       }
+                       ]
+                   },
+                   Age: {
+                       identifier: 'Age',
+                       rules: [
+                        {
+                            type   : 'empty',
+                            prompt : "Please enter patient's age"
+                        },
+                        {
+                                type   : 'integer',
+                                prompt : "Age should be a number"
+                        }
+                       ]
+                   },
+                   ageUnit: {
+                       identifier: 'ageUnit',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter patient's ageUnit"
+                       }
+                       ]
+                   },
+                   uhid: {
+                       identifier: 'uhid',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter patient's UHID"
+                       },
+                       {
+                                type   : 'integer',
+                                prompt : "UHID should be a number"
+                        }
+                       ]
+                   },
+                   ipd: {
+                       identifier: 'ipd',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter patient's IPD no."
+                       },
+                       {
+                                type   : 'integer',
+                                prompt : "IPD should be a number"
+                        }
+                       ]
+                   },
+                   address: {
+                       identifier: 'address',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter patient's address"
+                       }
+                       ]
+                   },
+                   phone: {
+                       identifier: 'phone',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter patient's phone no."
+                       },
+                       {
+                                type   : 'integer',
+                                prompt : "Phone number should be in digits"
+                        },
+                        {
+                                type   : 'exactLength[10]',
+                                prompt : "Phone number should be of 10 digits"
+                        }
+                       ]
+                   },
+                   gender: {
+                       identifier: 'gender',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter patient's gender"
+                       }
+                       ]
+                   },
+                   consultant: {
+                       identifier: 'consultant',
+                       rules: [
+                       {
+                           type   : 'empty',
+                           prompt : "Please enter consultant doctor's name"
+                       }
+                       ]
+                   }         
+               }
+           });
+   </script>
 </form>
 <br/>
 
