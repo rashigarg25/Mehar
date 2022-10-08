@@ -1028,7 +1028,11 @@
             {{#ifCond urine.color "!=" null}}
             <tr>
                 <td class="first-column">COLOUR</td>
+                {{#ifCond urine.color "===" 'PALE YELLOW'}}
                 <td class="second-column">{{urine.color}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.color}}</td>
+                {{/ifCond}}
                 <td class="third-column"></td>
                 <td class="fourth-column"></td>
             </tr>
@@ -1037,7 +1041,11 @@
             {{#ifCond urine.transparency "!=" null}}
             <tr>
                 <td class="first-column">TRANSPARENCY</td>
+                {{#ifCond urine.transparency "===" 'CLEAR'}}
                 <td class="second-column">{{urine.transparency}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.transparency}}</td>
+                {{/ifCond}}
                 <td class="third-column"></td>
                 <td class="fourth-column"></td>
             </tr>
@@ -1100,7 +1108,11 @@
             {{#ifCond urine.usugar "!=" null}}
             <tr>
                 <td class="first-column">SUGAR</td>
+                {{#ifCond urine.usugar "===" 'NIL'}}
                 <td class="second-column">{{urine.usugar}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.usugar}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">NIL</td>
             </tr>
@@ -1109,7 +1121,11 @@
             {{#ifCond urine.ublood "!=" null}}
             <tr>
                 <td class="first-column">BLOOD</td>
+                {{#ifCond urine.ublood "===" 'NIL'}}
                 <td class="second-column">{{urine.ublood}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.ublood}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
@@ -1145,7 +1161,11 @@
             {{#ifCond urine.epithelial "!=" null}}
             <tr>
                 <td class="first-column">EPITHELIAL CELLS</td>
+                {{#ifCond urine.epithelial "===" '0 - 5'}}
                 <td class="second-column">{{urine.epithelial}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.epithelial}}</td>
+                {{/ifCond}}
                 <td class="third-column">/HPF</td>
                 <td class="fourth-column">/HPF</td>
             </tr>
@@ -1154,12 +1174,10 @@
             {{#ifCond urine.pus "!=" null}}
             <tr>
                 <td class="first-column">PUS CELLS</td>
-                {{#ifCond urine.pus "<" 1}}
-                <td class="second-column bold">{{urine.pus}}</td>
-                {{else ifCond urine.pus ">" 2}}
-                <td class="second-column bold">{{urine.pus}}</td>
-                {{else}}
+                {{#ifCond urine.pus "===" '0 - 5'}}
                 <td class="second-column">{{urine.pus}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.pus}}</td>
                 {{/ifCond}}
                 <td class="third-column">1-2</td>
                 <td class="fourth-column">/HPF</td>
@@ -1169,7 +1187,11 @@
             {{#ifCond urine.urbc "!=" null}}
             <tr>
                 <td class="first-column">RBC</td>
+                {{#ifCond urine.urbc "===" '0 - 5'}}
                 <td class="second-column">{{urine.urbc}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.urbc}}</td>
+                {{/ifCond}}
                 <td class="third-column">/HPF</td>
                 <td class="fourth-column">/HPF</td>
             </tr>
@@ -1178,7 +1200,11 @@
             {{#ifCond urine.crystals "!=" null}}
             <tr>
                 <td class="first-column">CRYSTALS</td>
+                {{#ifCond urine.crystals "===" 'NIL'}}
                 <td class="second-column">{{urine.crystals}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.crystals}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">NIL</td>
             </tr>
@@ -1187,7 +1213,11 @@
             {{#ifCond urine.casts "!=" null}}
             <tr>
                 <td class="first-column">CASTS</td>
+                {{#ifCond urine.casts "===" 'NIL'}}
                 <td class="second-column">{{urine.casts}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.casts}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">NIL</td>
             </tr>
@@ -1196,7 +1226,11 @@
             {{#ifCond urine.bacteria "!=" null}}
             <tr>
                 <td class="first-column">BACTERIA</td>
+                {{#ifCond urine.bacteria "===" 'ABSENT'}}
                 <td class="second-column">{{urine.bacteria}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.bacteria}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
@@ -1205,7 +1239,7 @@
             {{#ifCond urine.uother "!=" null}}
             <tr>
                 <td class="first-column">OTHER</td>
-                <td class="second-column">{{urine.uother}}</td>
+                <td class="second-column">NIL</td>
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">dl</td>
             </tr>

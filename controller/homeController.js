@@ -13,20 +13,22 @@ const generatePdfParent = async (req, res) => {
 
     const files = [];
     for (let i = 0; i < 7; i++) {
-        const info = getInfo(req.body, i);
-        if(!_.isEmpty(info.data.testDate)){
-            if(_.isEmpty(info.data.printDate)) {
-                info.data.printDate = info.data.testDate;
+
+        let completeData = req.body;
+        if(!_.isEmpty(completeData.testDate[i])) {
+            const info = getInfo(req.body, i);
+            if(info.data){
+                if(_.isEmpty(info.data.printDate)) {
+                    info.data.printDate = info.data.testDate;
+                }
+                const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
+                const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
+                files.push(filename);
+                generatePdf(info, filename);
             }
-            const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
-            const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
-            files.push(filename);
-            generatePdf(info, filename);
         }
     }
-    //console.info(">>>>>>>> files:   " + files);
     res.files = files;
-    //res.render('print_report');
 }
 
 

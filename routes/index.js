@@ -8,7 +8,7 @@ const {printView, generatePdfParent} = require("../controller/homeController");
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../views/report2.html'));
+    res.sendFile(path.join(__dirname + '/../views/report.html'));
 });
 
 router.get('/form', (req, res) => {
@@ -17,21 +17,15 @@ router.get('/form', (req, res) => {
 
 router.post("/print_report", (req, res) => {
         generatePdfParent(req, res).then(r => {
-            //console.info(">>>>> response.files: " + res.files);
 
             let fileList = [];
             const rootPath = "./docs/";
             res.files.forEach(element => {
                 let file = {};
-                console.info(">> Processing file: " + element);
-                console.info();
                 file.path = rootPath + element;
                 file.name = element;
                 fileList.push(file);
             });
-            fileList.forEach(file => {
-                console.log(file.path);
-            })
             res.zip(fileList, req.body.patient_name + ".zip");
         });
     }
