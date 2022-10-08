@@ -902,7 +902,7 @@
                 <td class="second-column">{{coagulation.ptpatient}}</td>
                 {{/ifCond}}
                 <td class="third-column">11.00 - 16.00</td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column">sec</td>
             </tr>
             {{/ifCond}}
 
@@ -911,7 +911,7 @@
                 <td class="first-column">PT CONTROL</td>
                 <td class="second-column">{{coagulation.ptcontrol}}</td>
                 <td class="third-column"></td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column">sec</td>
             </tr>
             {{/ifCond}}
 
@@ -920,7 +920,7 @@
                 <td class="first-column">INDEX</td>
                 <td class="second-column">{{coagulation.index}}</td>
                 <td class="third-column"></td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
 
@@ -944,7 +944,7 @@
                 <td class="second-column">{{coagulation.inr}}</td>
                 {{/ifCond}}
                 <td class="third-column">0.8 - 1.2</td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
 
@@ -1114,7 +1114,7 @@
                 {{else}}
                 <td class="second-column bold">{{urine.albumin}}</td>
                 {{/ifCond}}
-                <td class="third-column">3.50 - 5.20</td>
+                <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
@@ -1174,7 +1174,7 @@
             {{#ifCond urine.uacetone "!=" null}}
             <tr>
                 <td class="first-column">URINE FOR KETONE BODIES/ACETONE</td>
-                {{#ifCond {urine.uacetone "===" 'ABSENT'}}
+                {{#ifCond urine.uacetone "===" 'ABSENT'}}
                 <td class="second-column">{{urine.uacetone}}</td>
                 {{else}}
                 <td class="second-column">{{urine.uacetone}}</td>
