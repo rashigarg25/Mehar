@@ -59,8 +59,8 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["hepatitis"] = _.pick(removedEmpty, ["hepatitis"]);
     sanitizedInfo["hcv"] = _.pick(removedEmpty, ["hcv"]);
     sanitizedInfo["vdrl"] = _.pick(removedEmpty, ["vdrl"]);
-    sanitizedInfo["bloodSugar"] = _.pick(removedEmpty, ["bsugar"]);
-    sanitizedInfo["bloodGlucose"] = _.pick(removedEmpty, ["bglucose", "pp"]);
+    sanitizedInfo["bloodSugar"] = _.pick(removedEmpty, [""]);
+    sanitizedInfo["bloodGlucose"] = _.pick(removedEmpty, ["bsugar", "bglucose", "pp"]);
     sanitizedInfo["pct"] = _.pick(removedEmpty, ["pct"]);
     sanitizedInfo["dimer"] = _.pick(removedEmpty, ["dimer"]);
     sanitizedInfo["serumFerritin"] = _.pick(removedEmpty, ["serumferritin"]);
