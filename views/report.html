@@ -38,7 +38,7 @@
             /* font-size: 14px; */
         }
 
-        .patient_address .table > tbody > tr > td, .patient_address .table > tbody > tr > th, .patient_address .table > tfoot > tr > td, .patient_address .table > tfoot > tr > th, .patient_address .table > thead > tr > td, .patient_address .table > thead > tr > th {
+        .patient_details .table > tbody > tr > td, .patient_details .table > tbody > tr > th, .patient_details .table > tfoot > tr > td, .patient_details .table > tfoot > tr > th, .patient_details .table > thead > tr > td, .patient_details .table > thead > tr > th {
             border: navajowhite;
         }
 
@@ -224,6 +224,11 @@
         }
 
     </style>
+    <script> 
+        $(function(){
+          $("#patient_details").load("views/form_elements/patient_data.html"); 
+        });
+    </script> 
 </head>
 <body>
 
@@ -238,237 +243,7 @@
             </div>
             <div class="column detaisheaddiv">
 
-                <div class="patient_address">
-                    <table class="basic ui table">
-                        <tr>
-                            <td>Patient Name :
-                                <input type="text" class=" ui input inputc" id="pwd" name="patient_name"></td>
-                            <td> Age : <input type="text" class="inputc" id="pwd" name="Age">
-                                <div class="ui selection dropdown" id="ageunit-dropDown">
-                                    <input type="hidden" name="ageUnit">
-                                    <i class="dropdown icon"></i>
-                                    <div class="text">Years</div>
-                                    <div class="menu">
-                                        <div class="item active selected" data-value="Yr">Years</div>
-                                        <div class="item" data-value="Months">Months</div>
-                                        <div class="item" data-value="Days">Days</div>
-                                    </div>
-                                </div>
-                            </td>
-
-                        </tr>
-
-                        <tr>
-                            <td>UHID/MR No. : <input type="text" class="inputc" id="pwd" name="uhid"></td>
-                            <td>IPD No. : <input type="text" class="inputc" id="pwd" name="ipd"></td>
-                        </tr>
-
-                        <tr>
-                            <td>Gender :
-                                <div class="ui selection dropdown" id="gender-dropDown">
-                                    <input type="hidden" name="gender">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text">Gender</div>
-                                    <div class="menu">
-                                        <div class="item" data-value="Male">Male</div>
-                                        <div class="item" data-value="Female">Female</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Consultant :
-
-                                <div class="ui selection dropdown" id="consultant-dropDown">
-                                    <input type="hidden" name="consultant">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text">Consultant</div>
-                                    <div class="menu">
-                                        <div class="item" data-value="Dr. Hardeep Singh">Dr. Hardeep Singh</div>
-                                        <div class="item" data-value="Dr. Alok Ahuja">Dr. Alok Ahuja</div>
-                                        <div class="item" data-value="Dr. Alka Singla">Dr. Alka Singla</div>
-                                        <div class="item" data-value="Dr. Risham Singla/Dr.Ashutosh">Dr. Risham
-                                            Singla/Dr.Ashutosh
-                                        </div>
-                                        <div class="item" data-value="Dr. Arsha Kalra">Dr. Arsha Kalra</div>
-                                        <div class="item" data-value="Dr. Monika Garg">Dr. Monika Garg</div>
-                                        <div class="item" data-value="Dr. Amitoj Garg">Dr. Amitoj Garg</div>
-                                        <div class="item" data-value="Dr. Navdeep Garg">Dr. Navdeep Garg</div>
-                                        <div class="item" data-value="Dr. Preeti Sharma">Dr. Preeti Sharma</div>
-                                        <div class="item" data-value="Dr. Jasbeer Singh Ahluwalia">Dr. Jasbeer Singh
-                                            Ahluwalia
-                                        </div>
-                                        <div class="item" data-value="Dr. Kapil Dev Doomra">Dr. Kapil Dev Doomra</div>
-                                        <div class="item" data-value="Dr. Abhinav Lakhiyani">Dr. Abhinav Lakhiyani</div>
-                                        <div class="item" data-value="Dr. Shelly Chugh">Dr. Shelly Chugh</div>
-                                        <div class="item" data-value="Dr. Abhishek ENT">Dr. Abhishek ENT</div>
-                                        <div class="item" data-value="Dr. Lovekesh Mittal">Dr. Lovekesh Mittal</div>
-                                        <div class="item" data-value="Dr. Lokesh">Dr. Lokesh</div>
-                                        <div class="item" data-value="Dr. Abeer Neurology">Dr. Abeer Neurology</div>
-                                        <div class="item" data-value="Dr. Gaurav Urology">Dr. Gaurav Urology</div>
-                                        <div class="item" data-value="Dr. Davinder Midha">Dr. Davinder Midha</div>
-                                        <div class="item" data-value="Dr. S. K. Gupta">Dr. S. K. Gupta</div>
-                                    </div>
-                                </div>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"> Address : <input type="text" class="inputc" id="pwd" name="address"
-                                                              style="width:80%"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"> Phone : <input type="text" class="inputc" id="pwd" name="phone"
-                                                            style="width:80%"></td>
-                        </tr>
-
-                        <script>
-                            $('#ageunit-dropDown').dropdown({
-                                'onChange': function (value) {
-                                    $('input[name="ageUnit"]').val(value);
-                                }
-                            });
-                        </script>
-
-                        <script>
-                            $('#consultant-dropDown').dropdown({
-                                'onChange': function (value) {
-                                    $('input[name="consultantD"]').val(value);
-                                }
-                            });
-                            $('#gender-dropDown').dropdown({
-                                'onChange': function (value) {
-                                    $('input[name="gender"]').val(value);
-                                }
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker2').datetimepicker({
-                                    format: 'DD/MM/Y hh:mm A'
-                                });
-                            });
-                        </script>
-
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker3').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker4').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker5').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker6').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker7').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker8').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker9').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#printDatetimepicker3').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#printDatetimepicker4').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#printDatetimepicker5').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#printDatetimepicker6').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#printDatetimepicker7').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#printDatetimepicker8').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#printDatetimepicker9').datetimepicker({
-                                    format: "DD/MM/Y hh:mm A"
-                                });
-                            });
-                        </script>
-
-                        <script type="text/javascript">
-                            $('body').on('keydown input', 'textarea[data-expandable]', function () {
-                                //Auto-expanding textarea
-                                this.style.removeProperty('height');
-                                this.style.height = (this.scrollHeight + 2) + 'px';
-                            }).on('mousedown focus', 'textarea[data-expandable]', function () {
-                                //Do this on focus, to allow textarea to animate to height...
-                                this.style.removeProperty('height');
-                                this.style.height = (this.scrollHeight + 2) + 'px';
-                            });
-
-                            document.getElementById("myForm").onkeypress = function (e) {
-                                var key = e.charCode || e.keyCode || 0;
-                                if (key == 13) {
-                                    e.preventDefault();
-                                }
-                            }
-                        </script>
-                    </table>
+                <div class="patient_details" id="patient_details">
                 </div>
             </div>
         </div>
@@ -3121,7 +2896,7 @@
                     <td>DENGUE IgG
                         <button class = "ui tiny red button" onclick="clearFields('.dengueigg .dropdown')">CLEAR</button>
                     </td>
-                    <td>70-140 Mg/dll</td>
+                    <td>70-140 Mg/dl</td>
                     <td>
                         <div class="ui selection dropdown" id="dengueigg-dropdown-1">
                             <input type="hidden" name="dengueigg">
@@ -3376,6 +3151,199 @@
                         </div>
                     </td>
                 </tr>
+
+
+
+
+
+                <tr class="tr_border blood-group-abo">
+                    <td>
+                        <div class="vertical_td">
+                            <div class="verticalTableHeader"></div>
+                    </td>
+                    <td>BLOOD GROUP ABO
+                        <button class = "ui tiny red button" onclick="clearFields('.blood-group-abo .dropdown')">CLEAR</button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-abo-dropdown-1">
+                            <input type="hidden" name="blood-group-abo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood ABO</div>
+                            <div class="menu">
+                                <div class="item" data-value="A">A</div>
+                                <div class="item" data-value="A">B</div>
+                                <div class="item" data-value="A">AB</div>
+                                <div class="item" data-value="A">O</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-abo-dropdown-2">
+                            <input type="hidden" name="blood-group-abo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood ABO</div>
+                            <div class="menu">
+                                <div class="item" data-value="A">A</div>
+                                <div class="item" data-value="A">B</div>
+                                <div class="item" data-value="A">AB</div>
+                                <div class="item" data-value="A">O</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-abo-dropdown-3">
+                            <input type="hidden" name="blood-group-abo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood ABO</div>
+                            <div class="menu">
+                                <div class="item" data-value="A">A</div>
+                                <div class="item" data-value="A">B</div>
+                                <div class="item" data-value="A">AB</div>
+                                <div class="item" data-value="A">O</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-abo-dropdown-4">
+                            <input type="hidden" name="blood-group-abo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood ABO</div>
+                            <div class="menu">
+                                <div class="item" data-value="A">A</div>
+                                <div class="item" data-value="A">B</div>
+                                <div class="item" data-value="A">AB</div>
+                                <div class="item" data-value="A">O</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-abo-dropdown-5">
+                            <input type="hidden" name="blood-group-abo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood ABO</div>
+                            <div class="menu">
+                                <div class="item" data-value="A">A</div>
+                                <div class="item" data-value="A">B</div>
+                                <div class="item" data-value="A">AB</div>
+                                <div class="item" data-value="A">O</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-abo-dropdown-6">
+                            <input type="hidden" name="blood-group-abo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood ABO</div>
+                            <div class="menu">
+                                <div class="item" data-value="A">A</div>
+                                <div class="item" data-value="A">B</div>
+                                <div class="item" data-value="A">AB</div>
+                                <div class="item" data-value="A">O</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-abo-dropdown-7">
+                            <input type="hidden" name="blood-group-abo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood ABO</div>
+                            <div class="menu">
+                                <div class="item" data-value="A">A</div>
+                                <div class="item" data-value="A">B</div>
+                                <div class="item" data-value="A">AB</div>
+                                <div class="item" data-value="A">O</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="tr_border blood-group-rh">
+                    <td>
+                    </td>
+                    <td>BLOOD GROUP RH
+                        <button class = "ui tiny red button" onclick="clearFields('.blood-group-rh .dropdown')">CLEAR</button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-rh-dropdown-1">
+                            <input type="hidden" name="blood-group-rh">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood RH</div>
+                            <div class="menu">
+                                <div class="item" data-value="POSITIVE">POSITIVE</div>
+                                <div class="item" data-value="NEGATIVE">NEGATIVE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-rh-dropdown-2">
+                            <input type="hidden" name="blood-group-rh">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood RH</div>
+                            <div class="menu">
+                                <div class="item" data-value="POSITIVE">POSITIVE</div>
+                                <div class="item" data-value="NEGATIVE">NEGATIVE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-rh-dropdown-3">
+                            <input type="hidden" name="blood-group-rh">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood RH</div>
+                            <div class="menu">
+                                <div class="item" data-value="POSITIVE">POSITIVE</div>
+                                <div class="item" data-value="NEGATIVE">NEGATIVE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-rh-dropdown-4">
+                            <input type="hidden" name="blood-group-rh">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood RH</div>
+                            <div class="menu">
+                                <div class="item" data-value="POSITIVE">POSITIVE</div>
+                                <div class="item" data-value="NEGATIVE">NEGATIVE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-rh-dropdown-5">
+                            <input type="hidden" name="blood-group-rh">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood RH</div>
+                            <div class="menu">
+                                <div class="item" data-value="POSITIVE">POSITIVE</div>
+                                <div class="item" data-value="NEGATIVE">NEGATIVE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-rh-dropdown-6">
+                            <input type="hidden" name="blood-group-rh">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood RH</div>
+                            <div class="menu">
+                                <div class="item" data-value="POSITIVE">POSITIVE</div>
+                                <div class="item" data-value="NEGATIVE">NEGATIVE</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui selection dropdown" id="blood-group-rh-dropdown-7">
+                            <input type="hidden" name="blood-group-rh">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Blood RH</div>
+                            <div class="menu">
+                                <div class="item" data-value="POSITIVE">POSITIVE</div>
+                                <div class="item" data-value="NEGATIVE">NEGATIVE</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
             </table>
         </div>
     </div>
