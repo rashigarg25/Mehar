@@ -902,7 +902,7 @@
                 <td class="second-column">{{coagulation.ptpatient}}</td>
                 {{/ifCond}}
                 <td class="third-column">11.00 - 16.00</td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column">sec</td>
             </tr>
             {{/ifCond}}
 
@@ -911,7 +911,7 @@
                 <td class="first-column">PT CONTROL</td>
                 <td class="second-column">{{coagulation.ptcontrol}}</td>
                 <td class="third-column"></td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column">sec</td>
             </tr>
             {{/ifCond}}
 
@@ -920,14 +920,14 @@
                 <td class="first-column">INDEX</td>
                 <td class="second-column">{{coagulation.index}}</td>
                 <td class="third-column"></td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
 
             {{#ifCond coagulation.isireagent "!=" null}}
             <tr>
                 <td class="first-column">ISI Value of Reagent</td>
-                <td class="second-column">{{coagulation.isireagent}}</td>
+                <td class="second-column">1.1</td>
                 <td class="third-column"></td>
                 <td class="fourth-column">u/l</td>
             </tr>
@@ -944,7 +944,7 @@
                 <td class="second-column">{{coagulation.inr}}</td>
                 {{/ifCond}}
                 <td class="third-column">0.8 - 1.2</td>
-                <td class="fourth-column">u/l</td>
+                <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
 
@@ -970,8 +970,12 @@
             </tr>
             <tr>
                 <td class="first-column">HIV (AIDS) ANTIBODY I & II</td>
+                {{#ifCond hiv.hiv "===" 'NON-REACTIVE'}}
                 <td class="second-column">{{hiv.hiv}}</td>
-                <td class="third-column">Non-reactive</td>
+                {{else}}
+                <td class="second-column bold">{{hiv.hiv}}</td>
+                {{/ifCond}}
+                <td class="third-column">Non-reactive/Reactive</td>
                 <td class="fourth-column">Non-reactive</td>
             </tr>
             {{/ifCond}}
@@ -982,8 +986,12 @@
             </tr>
             <tr>
                 <td class="first-column">HEPATITIS B SURFACE ANTIGEN</td>
+                {{#ifCond hepatitis.hepatitis "===" 'NON-REACTIVE'}}
                 <td class="second-column">{{hepatitis.hepatitis}}</td>
-                <td class="third-column">Non-reactive</td>
+                {{else}}
+                <td class="second-column bold">{{hepatitis.hepatitis}}</td>
+                {{/ifCond}}
+                <td class="third-column">Non-reactive/Reactive</td>
                 <td class="fourth-column">Non-reactive</td>
             </tr>
             {{/ifCond}}
@@ -994,8 +1002,12 @@
             </tr>
             <tr>
                 <td class="first-column">HCV ANTIBODY TEST</td>
+                {{#ifCond hcv.hcv "===" 'NON-REACTIVE'}}
                 <td class="second-column">{{hcv.hcv}}</td>
-                <td class="third-column">Non-reactive</td>
+                {{else}}
+                <td class="second-column bold">{{hcv.hcv}}</td>
+                {{/ifCond}}
+                <td class="third-column">Non-reactive/Reactive</td>
                 <td class="fourth-column">Non-reactive</td>
             </tr>
             {{/ifCond}}
@@ -1006,8 +1018,12 @@
             </tr>
             <tr>
                 <td class="first-column">VDRL CARD</td>
+                {{#ifCond vdrl.vdrl "===" 'NON-REACTIVE'}}
                 <td class="second-column">{{vdrl.vdrl}}</td>
-                <td class="third-column">Non-reactive</td>
+                {{else}}
+                <td class="second-column bold">{{vdrl.vdrl}}</td>
+                {{/ifCond}}
+                <td class="third-column">Non-reactive/Reactive</td>
                 <td class="fourth-column">Non-reactive</td>
             </tr>
             {{/ifCond}}
@@ -1093,14 +1109,12 @@
             {{#ifCond urine.albumin "!=" null}}
             <tr>
                 <td class="first-column">ALBUMIN</td>
-                {{#ifCond urine.albumin "<" 3.5}}
-                <td class="second-column bold">{{urine.albumin}}</td>
-                {{else ifCond urine.albumin ">" 5.2}}
-                <td class="second-column bold">{{urine.albumin}}</td>
-                {{else}}
+                {{#ifCond urine.albumin "===" 'NIL'}}
                 <td class="second-column">{{urine.albumin}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.albumin}}</td>
                 {{/ifCond}}
-                <td class="third-column">3.50 - 5.20</td>
+                <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
@@ -1134,7 +1148,11 @@
             {{#ifCond urine.ubilirubin "!=" null}}
             <tr>
                 <td class="first-column">URINE BILIRUBIN</td>
+                {{#ifCond urine.ubilirubin "===" 'ABSENT'}}
                 <td class="second-column">{{urine.ubilirubin}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.ubilirubin}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
@@ -1143,7 +1161,11 @@
             {{#ifCond urine.urobilinogen "!=" null}}
             <tr>
                 <td class="first-column">UROBILINOGEN</td>
+                {{#ifCond urine.urobilinogen "===" 'ABSENT'}}
                 <td class="second-column">{{urine.urobilinogen}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.urobilinogen}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column"></td>
             </tr>
@@ -1152,7 +1174,11 @@
             {{#ifCond urine.uacetone "!=" null}}
             <tr>
                 <td class="first-column">URINE FOR KETONE BODIES/ACETONE</td>
+                {{#ifCond urine.uacetone "===" 'ABSENT'}}
                 <td class="second-column">{{urine.uacetone}}</td>
+                {{else}}
+                <td class="second-column bold">{{urine.uacetone}}</td>
+                {{/ifCond}}
                 <td class="third-column">NIL</td>
                 <td class="fourth-column">mg/dL</td>
             </tr>
@@ -1246,28 +1272,26 @@
             {{/ifCond}}
             {{/ifCond}}
 
-            {{#ifCond bloodSugar "!=" null}}
+            {{#ifCond bloodGlucose "!=" null}}
             <tr class="test-category">
-                <th><u>BLOOD SUGAR</u></th>
+                <th><u>BLOOD GLUCOSE RANDOM CGHS 1444</u></th>
             </tr>
+
+            {{#ifCond bloodGlucose.bsugar "!=" null}}
             <tr>
-                <td class="first-column">FBS</td>
-                {{#ifCond bloodSugar.bsugar "<" 70}}
-                <td class="second-column bold">{{bloodSugar.bsugar}}</td>
-                {{else ifCond bloodSugar.bsugar ">" 110}}
-                <td class="second-column bold">{{bloodSugar.bsugar}}</td>
+                <td class="first-column">BLOOD GLUCOSE - FASTING</td>
+                {{#ifCond bloodGlucose.bsugar "<" 70}}
+                <td class="second-column bold">{{bloodGlucose.bsugar}}</td>
+                {{else ifCond bloodGlucose.bsugar ">" 110}}
+                <td class="second-column bold">{{bloodGlucose.bsugar}}</td>
                 {{else}}
-                <td class="second-column">{{bloodSugar.bsugar}}</td>
+                <td class="second-column">{{bloodGlucose.bsugar}}</td>
                 {{/ifCond}}
                 <td class="third-column">70-110</td>
                 <td class="fourth-column">mg/dl</td>
             </tr>
             {{/ifCond}}
 
-            {{#ifCond bloodGlucose "!=" null}}
-            <tr class="test-category">
-                <th><u>BLOOD GLUCOSE RANDOM CGHS 1444</u></th>
-            </tr>
             {{#ifCond bloodGlucose.bglucose "!=" null}}
             <tr>
                 <td class="first-column">BLOOD GLUCOSE - RANDOM</td>
@@ -1285,7 +1309,7 @@
 
             {{#ifCond bloodGlucose.pp "!=" null}}
             <tr>
-                <td class="first-column">PP</td>
+                <td class="first-column">BLOOD GLUCOSE - PP</td>
                 {{#ifCond bloodGlucose.pp "<" 100}}
                 <td class="second-column bold">{{bloodGlucose.pp}}</td>
                 {{else ifCond bloodGlucose.pp ">" 140}}
@@ -1341,8 +1365,14 @@
             </tr>
             <tr>
                 <td class="first-column">SERUM FERRITIN CGHS 1517</td>
-                <td class="second-column">{serumFerritin.{serumferritin}}</td>
-                <td class="third-column"></td>
+                {{#ifCond dimer.dimer "<" 24}}
+                <td class="second-column bold">{{serumFerritin.serumferritin}}</td>
+                {{else ifCond dimer.dimer ">" 307}}
+                <td class="second-column bold">{{serumFerritin.serumferritin}}</td>
+                {{else}}
+                <td class="second-column">{{serumFerritin.serumferritin}}</td>
+                {{/ifCond}}
+                <td class="third-column">24-307</td>
                 <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
@@ -1353,9 +1383,13 @@
             </tr>
             <tr>
                 <td class="first-column">MALARIA ANTIGEN</td>
+                {{#ifCond malaria.malaria "===" 'NON-REACTIVE'}}
                 <td class="second-column">{{malaria.malaria}}</td>
-                <td class="third-column">Non-reactive</td>
-                <td class="fourth-column">Negative</td>
+                {{else}}
+                <td class="second-column bold">{{malaria.malaria}}</td>
+                {{/ifCond}}
+                <td class="third-column">Non-reactive/Reactive</td>
+                <td class="fourth-column">Non-reactive</td>
             </tr>
             {{/ifCond}}
 
@@ -1366,27 +1400,39 @@
             {{#ifCond dengue.dengue "!=" null}}
             <tr>
                 <td class="first-column">DENGUE NSI ANTIGEN</td>
+                {{#ifCond dengue.dengue "===" 'ABSENT'}}
                 <td class="second-column">{{dengue.dengue}}</td>
-                <td class="third-column">Non-reactive</td>
-                <td class="fourth-column">Negative</td>
+                {{else}}
+                <td class="second-column bold">{{dengue.dengue}}</td>
+                {{/ifCond}}
+                <td class="third-column">ABSENT/PRESNT</td>
+                <td class="fourth-column">ABSENT</td>
             </tr>
             {{/ifCond}}
 
             {{#ifCond dengue.dengueigg "!=" null}}
             <tr>
                 <td class="first-column">DENGUE IgG</td>
+                {{#ifCond dengue.dengueigg "===" 'ABSENT'}}
                 <td class="second-column">{{dengue.dengueigg}}</td>
-                <td class="third-column">Non-reactive</td>
-                <td class="fourth-column">Negative</td>
+                {{else}}
+                <td class="second-column bold">{{dengue.dengueigg}}</td>
+                {{/ifCond}}
+                <td class="third-column">ABSENT/PRESNT</td>
+                <td class="fourth-column">ABSENT</td>
             </tr>
             {{/ifCond}}
 
             {{#ifCond dengue.dengueigm "!=" null}}
             <tr>
                 <td class="first-column">DENGUE IgM</td>
+                {{#ifCond dengue.dengueigm "===" 'ABSENT'}}
                 <td class="second-column">{{dengue.dengueigm}}</td>
-                <td class="third-column">Non-reactive</td>
-                <td class="fourth-column">Negative</td>
+                {{else}}
+                <td class="second-column bold">{{dengue.dengueigm}}</td>
+                {{/ifCond}}
+                <td class="third-column">ABSENT</td>
+                <td class="fourth-column">ABSENT</td>
             </tr>
             {{/ifCond}}
             {{/ifCond}}
@@ -1397,8 +1443,12 @@
             </tr>
             <tr>
                 <td class="first-column">WIDAL TEST (SLIDE METHOD)</td>
+                {{#ifCond widal.widal "===" 'NEGATIVE'}}
                 <td class="second-column">{{widal.widal}}</td>
-                <td class="third-column">Non-reactive</td>
+                {{else}}
+                <td class="second-column bold">{{widal.widal}}</td>
+                {{/ifCond}}
+                <td class="third-column">Positive/Negative</td>
                 <td class="fourth-column">Negative</td>
             </tr>
             {{/ifCond}}

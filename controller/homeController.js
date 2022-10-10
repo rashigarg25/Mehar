@@ -24,7 +24,8 @@ const generatePdfParent = async (req, res) => {
                 const test1 = info.data.testDate.substring(0, 10).replaceAll('/', '-');
                 const filename = info.data.patient_name + '_' + info.data.ipd + '_' + test1 + '.pdf';
                 files.push(filename);
-                generatePdf(info, filename);
+                await generatePdf(info, filename);
+
             }
         }
     }
@@ -137,9 +138,9 @@ const generatePdf = async (info, filename) => {
         }
     }
 
-    pdf.create(document, options)
+    await pdf.create(document, options)
         .then(res => {
-            console.log(res);
+            //console.log(res);
         }).catch(error => {
         console.log(error);
     });
