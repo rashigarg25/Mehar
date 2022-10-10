@@ -67,9 +67,10 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["malaria"] = _.pick(removedEmpty, ["malaria"]);
     sanitizedInfo["widal"] = _.pick(removedEmpty, ["widal"]);
     sanitizedInfo["dengue"] = _.pick(removedEmpty, ["dengue", "dengueigg", "dengueigm"]);
+    sanitizedInfo["bloodGroup"] = _.pick(removedEmpty, ["bgroupAbo", "bgroupRh"]);
     sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
 
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
-
+console.log(sanitizedInfo.bloodGroup);
     return sanitizedInfo;
 };
