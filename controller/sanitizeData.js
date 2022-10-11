@@ -35,7 +35,7 @@ module.exports.getSantizedInfo = (info) => {
     }
 
     if(!_.isEmpty(info.tprotein) && !_.isEmpty(info.serumalbumin)) {
-        info.globin = info.tprotein - info.serumalbumin;
+        info.globin = ((info.tprotein - info.serumalbumin) * 1).toFixed(2);
         info.agratio = (info.serumalbumin/info.globin).toFixed(1);
     }
 
