@@ -39,6 +39,17 @@ module.exports.getSantizedInfo = (info) => {
         info.agratio = (info.serumalbumin/info.globin).toFixed(1);
     }
 
+    if(!_.isEmpty(info.triglycerides)){
+        info.vldl = (info.triglycerides/5).toFixed(1);
+
+        if(!_.isEmpty(info.totalCholestrol) && !_.isEmpty(info.hdlCholestrol)){
+            info.ldlCholestrol = ((info.totalCholestrol - info.hdlCholestrol - info.vldl) * 1).toFixed(1);
+            info.cholesterolRatio = (info.totalCholestrol/info.hdlCholestrol).toFixed(1);
+            info.ldlHdlRatio = (info.ldlCholestrol/info.ldlCholestrol).toFixed(1);
+        }
+    }
+
+
     const removedEmpty = _.omitBy(info, v => v === '');
     let sanitizedInfo = {};
     sanitizedInfo["blood"] = _.pick(removedEmpty, ["hb", "tlc", "dlc", "neutrophils", "lymphocytes", "monocyte", "eosinophils", "basophils", "rbc", "pcv", "mcv", "mch", "mchc", "rdwcv", "rdwsd", "platelet"]);
@@ -68,9 +79,26 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["widal"] = _.pick(removedEmpty, ["widal"]);
     sanitizedInfo["dengue"] = _.pick(removedEmpty, ["dengue", "dengueigg", "dengueigm"]);
     sanitizedInfo["bloodGroup"] = _.pick(removedEmpty, ["bgroupAbo", "bgroupRh"]);
+    sanitizedInfo["calcium"] = _.pick(removedEmpty, ["calcium"]);
+    sanitizedInfo["cpkMb"] = _.pick(removedEmpty, ["cpkMb"]);
+    sanitizedInfo["lipidProfile"] = _.pick(removedEmpty, ["totalCholestrol", "triglycerides","hdlCholestrol","ldlCholestrol", "vldl", "cholesterolRatio", "ldlHdlRatio"]);
+    sanitizedInfo["bleddingTime"] = _.pick(removedEmpty, ["bleedingTimeMin, bleedingTimeSec"]);
+    sanitizedInfo["clottingTime"] = _.pick(removedEmpty, ["clottingTimeMin, clottingTimeSec"]);
+    sanitizedInfo["vitB12"] = _.pick(removedEmpty, ["vitB12"]);
+    sanitizedInfo["troponinT"] = _.pick(removedEmpty, ["troponinT"]);
+    sanitizedInfo["troponinI"] = _.pick(removedEmpty, ["troponinI"]);
+    sanitizedInfo["vitD3"] = _.pick(removedEmpty, ["vitD3"]);
+    sanitizedInfo["thyroid"] = _.pick(removedEmpty, ["t3", "t4", "tsh"]);
+    sanitizedInfo["prolactin"] = _.pick(removedEmpty, ["prolactin"]);
+    sanitizedInfo["sFsh"] = _.pick(removedEmpty, ["sFsh"]);
+    sanitizedInfo["sLh"] = _.pick(removedEmpty, ["sLh"]);
+    
+    
+    
+    
+    
     sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
 
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
-console.log(sanitizedInfo.bloodGroup);
     return sanitizedInfo;
 };
