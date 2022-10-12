@@ -1659,7 +1659,7 @@
                 {{#ifCond vitB12.vitB12 "<" 157}}
                 <td class="second-column bold">{{vitB12.vitB12}}</td>
                 {{else ifCond vitB12.vitB12 ">" 1059}}
-                <td class="second-column bold">{{lvitB12.vitB12}}</td>
+                <td class="second-column bold">{{vitB12.vitB12}}</td>
                 {{else}}
                 <td class="second-column">{{vitB12.vitB12}}</td>
                 {{/ifCond}}
@@ -1841,7 +1841,7 @@
                 <th><u>BLEEDING TIME CGHS 1401</u></th>
             </tr>
 
-            {{#ifCond bleedingTime.bleedingTime "!=" null}}
+            {{#ifCond bleedingTime.bleedingTimeMin "!=" null}}
             <tr>
                 <td class="first-column">BLEEDING TIME</td>
                 {{#ifCond bleedingTime.bleedingTimeMin "<" 2}}
@@ -1862,7 +1862,7 @@
                 <th><u>CLOTTING TIME CGHS 1401</u></th>
             </tr>
 
-            {{#ifCond clottingTime.clottingTime "!=" null}}
+            {{#ifCond clottingTime.clottingTimeMin "!=" null}}
             <tr>
                 <td class="first-column">BLEEDING TIME</td>
                 {{#ifCond clottingTime.clottingTimeMin "<" 3}}
