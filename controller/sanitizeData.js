@@ -35,7 +35,7 @@ module.exports.getSantizedInfo = (info) => {
     }
 
     if(!_.isEmpty(info.tprotein) && !_.isEmpty(info.serumalbumin)) {
-        info.globin = info.tprotein - info.serumalbumin;
+        info.globin = ((info.tprotein - info.serumalbumin) * 1).toFixed(2);
         info.agratio = (info.serumalbumin/info.globin).toFixed(1);
     }
 
@@ -67,9 +67,10 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["malaria"] = _.pick(removedEmpty, ["malaria"]);
     sanitizedInfo["widal"] = _.pick(removedEmpty, ["widal"]);
     sanitizedInfo["dengue"] = _.pick(removedEmpty, ["dengue", "dengueigg", "dengueigm"]);
+    sanitizedInfo["bloodGroup"] = _.pick(removedEmpty, ["bgroupAbo", "bgroupRh"]);
     sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
 
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
-
+console.log(sanitizedInfo.bloodGroup);
     return sanitizedInfo;
 };

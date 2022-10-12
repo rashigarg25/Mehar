@@ -1452,6 +1452,29 @@
                 <td class="fourth-column">Negative</td>
             </tr>
             {{/ifCond}}
+
+            {{#ifCond bloodGroup "!=" null}}
+            <tr class="test-category">
+                <th><u>BLOOD GROUP (ABO RH) CGHS 1418</u></th>
+            </tr>
+            {{#ifCond bloodGroup.bgroupAbo "!=" null}}
+            <tr>
+                <td class="first-column">BLOOD GROUP ABO</td>
+                <td class="second-column">{{bloodGroup.bgroupAbo}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond bloodGroup.bgroupRh "!=" null}}
+            <tr>
+                <td class="first-column">BLOOD GROUP RH</td>
+                <td class="second-column">{{bloodGroup.bgroupRh}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
         </table>
     </div>
 </div>
