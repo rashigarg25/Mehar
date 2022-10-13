@@ -46,7 +46,7 @@ module.exports.getSantizedInfo = (info) => {
         if(!_.isEmpty(info.totalCholestrol) && !_.isEmpty(info.hdlCholestrol)){
             info.ldlCholestrol = ((info.totalCholestrol - info.hdlCholestrol - info.vldl) * 1).toFixed(1);
             info.cholesterolRatio = (info.totalCholestrol/info.hdlCholestrol).toFixed(1);
-            info.ldlHdlRatio = (info.ldlCholestrol/info.ldlCholestrol).toFixed(1);
+            info.ldlHdlRatio = (info.ldlCholestrol/info.hdlCholestrol).toFixed(1);
         }
     }
 
