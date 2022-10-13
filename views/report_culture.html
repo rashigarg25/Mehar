@@ -1,0 +1,274 @@
+<html lang="en">
+<head>
+    <title>MEHAR SUPER SPECIALITY HOSPITAL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker-standalone.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+
+    <link rel="stylesheet" href="css1/bootstrap.min.css">
+    <script src="js1/jquery.min.js"></script>
+    <script type="text/javascript" src="js1/moment.min.js"></script>
+    <script type="text/javascript" src="js1/bootstrap-datetimepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+    <style>
+        .row.patient_re th {
+            font-size: 13px;
+            text-align: CENTER;
+        }
+
+        .verticalTableHeader {
+            width: 40px;
+            position: absolute;
+            font-weight: 600;
+            font-family: system-ui;
+        }
+
+        .row.headerdetails {
+            border-bottom: 1px solid #000;
+            padding-top: 21px;
+            /* font-size: 14px; */
+        }
+
+        .patient_details .table > tbody > tr > td, .patient_details .table > tbody > tr > th, .patient_details .table > tfoot > tr > td, .patient_details .table > tfoot > tr > th, .patient_details .table > thead > tr > td, .patient_details .table > thead > tr > th {
+            border: navajowhite;
+        }
+
+        /*input.inputc, input.report_text {
+            margin: 0;
+            width: auto;
+            -webkit-box-flex: 1;
+            -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+            outline: none;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            text-align: left;
+            line-height: 1.21428571em;
+            font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            padding: 0.67857143em 1em;
+            background: #FFFFFF;
+            border: 1px solid rgba(34, 36, 38, 0.15);
+            color: rgba(0, 0, 0, 0.87);
+            border-radius: 0.28571429rem;
+            -webkit-transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
+            transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
+            transition: box-shadow 0.1s ease, border-color 0.1s ease;
+            transition: box-shadow 0.1s ease, border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }*/
+
+        button.reportbutton {
+            float: right !important;
+            margin-top: 2px;
+            position: absolute;
+            right: 20px;
+        }
+
+        /*.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            border-top: 1px solid #000;
+        }*/
+
+        .table > thead > tr > th {
+            border-bottom: 1px solid #000;
+        }
+
+        .row.patient_re {
+            margin-top: 20px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .row.patient_re th:first-child, .row.patient_re td:first-child {
+            border: none;
+
+        }
+
+        .input-group {
+            position: relative;
+            display: inline-flex;
+            border-collapse: separate;
+        }
+
+        .input-group.date .input-group-addon {
+            border-bottom: 1px solid #000 !important;
+            cursor: pointer;
+            background: #fff;
+            margin-left: 0px;
+            width: 24px;
+            border: none;
+        }
+
+        .row.patient_re .input-group.date .input-group-addon {
+            width: auto;
+            border: none !important;
+        }
+
+        .row.patient_re .input-group.date .input-group-addon {
+            width: auto;
+            border: none !important;
+            /* border: 1px solid red !important; */
+            padding: 0;
+            width: 135px;
+        }
+
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            padding: 2px;
+        }
+
+        td.vertical_td.HEMOGRAM .verticalTableHeader {
+            margin-top: 380px;
+        }
+
+        .vertical_td.URINE .verticalTableHeader {
+            margin-top: 300px;
+        }
+
+        .vertical_td.BLOOD .verticalTableHeader {
+            margin-top: 28%;
+        }
+
+        .vertical_td.CARDAC .verticalTableHeader {
+            margin-top: 100px;
+        }
+
+        .vertical_td.KIDNEY .verticalTableHeader {
+            margin-top: 50px;
+        }
+
+        .vertical_td.LIVER .verticalTableHeader {
+            margin-top: 55px;
+        }
+
+        .vertical_td.SGPT .verticalTableHeader {
+            margin-top: 140px;
+        }
+
+        .vertical_td.COAGU .verticalTableHeader {
+            margin-top: 100px;
+        }
+
+        .vertical_td.DENGUE .verticalTableHeader {
+            margin-top: 30px;
+        }
+
+        .vertical_td.COAGLCOGRAM .verticalTableHeader {
+            margin-top: 59px;
+        }
+
+        .vertical_td.LIPIDGRAM .verticalTableHeader {
+            margin-top: 60px;
+        }
+
+        .verticalTableHeader {
+            text-align: center;
+            white-space: nowrap;
+            transform-origin: 50% 50%;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(-90deg);
+        }
+
+        .verticalTableHeader:before {
+            content: '';
+            padding-top: 110%; /* takes width as reference, + 10% for faking some extra padding */
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .verticalTableHeader {
+            width: 40px;
+            position: absolute;
+        }
+
+        .vertical_td {
+            width: 45px;
+        }
+
+        textarea.report_text {
+            border: none;
+            height: 25px;
+            width: 100%;
+        }
+
+        .tr_border {
+            border-top: 1px solid #000;
+        }
+
+        #form_table tr td{
+            border: 1px solid  rgba(34, 36, 38, 0.1);
+        }
+
+
+        @media print {
+
+            .vertailtext {
+                display: none;
+            }
+
+            button.reportbutton, .row.headerdetails .input-group.date .input-group-addon {
+                display: none;
+            }
+        }
+
+    </style>
+    <script> 
+        $(function(){
+            jQuery.ajaxSetup({ async: false }); //if order matters
+            $("#culture_patient_details").load("views/form_elements/patient_data.html"); 
+            
+            $.get("views/form_elements/report_date_form.html", '', function (data) { $("#culture_form_table").append(data); });
+            $.get("views/form_elements/table_body.html", '', function (data) { $("#culture_form_table").append(data); });
+            $.get("views/form_elements/culture_group.html", '', function (data) { $("#culture_form_table").append(data); });
+            
+            $.get("views/form_elements/form_scripts.html", '', function (data) { $("#cultureForm").append(data); });
+            
+            jQuery.ajaxSetup({ async: true });  //if order matters
+        });
+        
+    </script> 
+</head>
+<body>
+
+<form class="ui form" id="cultureForm" action="print_report_culture" method="POST">
+    <div class="ui container">
+        <div class="ui error message"></div>
+        <button type="submit" class="ui blue button reportbutton">Download</button>
+        <div class="ui two column grid">
+            <div class="column logodiv">
+                <br>
+                <p><img src="img/logo.png"></p>
+            </div>
+            <div class="column detaisheaddiv">
+
+                <div class="patient_details" id="culture_patient_details">
+                </div>
+            </div>
+        </div>
+
+        <div class="ui center aligned row">
+            <h3> INVESTIGATION FLOW SHEET</h3>
+        </div>
+
+        <div class="ui row row patient_re" style="zoom: 0.65">
+            <table class="ui table" id="culture_form_table">
+            </table>
+        </div>
+    </div>
+</form>
+<br/>
+
+</body>
+</html>

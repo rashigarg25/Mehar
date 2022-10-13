@@ -14,6 +14,6 @@ Sample project to generate report!
 
 6. In browser (Chrome, Firefox, Safari, etc) visit "http://localhost:3000/"
 
-7. Fill in the details, click on "Preview" button.
+7. Fill in the details, click on "Download" button.
 
 8. The pdfs will be created using with the "<name>_<ipd>_<date>.pdf" format in "<projectFolder>/docs" path
