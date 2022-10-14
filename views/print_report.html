@@ -1878,13 +1878,165 @@
             {{/ifCond}}
             {{/ifCond}}
 
+            {{#ifCond abg "!=" null}}
+            <tr class="test-category">
+                <th><u>ABG WITH ELECTROLYTES CGHS 1507</u></th>
+            </tr>
+
+            {{#ifCond abg.phAbg "!=" null}}
+            <tr>
+                <td class="first-column">Ph ABG *</td>
+                {{#ifCond abg.phAbg "<" 7.35}}
+                <td class="second-column bold">{{abg.phAbg}}</td>
+                {{else ifCond abg.phAbg ">" 7.45}}
+                <td class="second-column bold">{{abg.phAbg}}</td>
+                {{else}}
+                <td class="second-column">{{abg.phAbg}}</td>
+                {{/ifCond}}
+                <td class="third-column">7.35 - 7.45</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
 
 
+            {{#ifCond abg.pco2 "!=" null}}
+            <tr>
+                <td class="first-column">PCO2 *</td>
+                {{#ifCond abg.pco2 "<" 35}}
+                <td class="second-column bold">{{abg.pco2}}</td>
+                {{else ifCond abg.pco2 ">" 45}}
+                <td class="second-column bold">{{abg.pco2}}</td>
+                {{else}}
+                <td class="second-column">{{abg.pco2}}</td>
+                {{/ifCond}}
+                <td class="third-column">35 - 45</td>
+                <td class="fourth-column">mmHg</td>
+            </tr>
+            {{/ifCond}}
 
+            {{#ifCond abg.po2 "!=" null}}
+            <tr>
+                <td class="first-column">PO2 *</td>
+                {{#ifCond abg.po2 "<" 80}}
+                <td class="second-column bold">{{abg.po2}}</td>
+                {{else ifCond abg.po2 ">" 100}}
+                <td class="second-column bold">{{abg.po2}}</td>
+                {{else}}
+                <td class="second-column">{{abg.po2}}</td>
+                {{/ifCond}}
+                <td class="third-column">80 - 100</td>
+                <td class="fourth-column">mmHg</td>
+            </tr>
+            {{/ifCond}}
 
+            {{#ifCond abg.beecf "!=" null}}
+            <tr>
+                <td class="first-column">BEecf *</td>
+                <td class="second-column">{{abg.beecf}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
 
- 
+            {{#ifCond abg.hco3 "!=" null}}
+            <tr>
+                <td class="first-column">HCO3 *</td>
+                {{#ifCond abg.hco3 "<" 21}}
+                <td class="second-column bold">{{abg.hco3}}</td>
+                {{else ifCond abg.hco3 ">" 28}}
+                <td class="second-column bold">{{abg.hco3}}</td>
+                {{else}}
+                <td class="second-column">{{abg.hco3}}</td>
+                {{/ifCond}}
+                <td class="third-column">21 - 28</td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
 
+            {{#ifCond abg.so2 "!=" null}}
+            <tr>
+                <td class="first-column">SO2 *</td>
+                {{#ifCond abg.so2 "<" 94}}
+                <td class="second-column bold">{{abg.so2}}</td>
+                {{else ifCond abg.so2 ">" 100}}
+                <td class="second-column bold">{{abg.so2}}</td>
+                {{else}}
+                <td class="second-column">{{abg.so2}}</td>
+                {{/ifCond}}
+                <td class="third-column">94 - 100</td>
+                <td class="fourth-column">%</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.na "!=" null}}
+            <tr>
+                <td class="first-column">NA *</td>
+                {{#ifCond abg.na "<" 135}}
+                <td class="second-column bold">{{abg.na}}</td>
+                {{else ifCond abg.na ">" 145}}
+                <td class="second-column bold">{{abg.na}}</td>
+                {{else}}
+                <td class="second-column">{{abg.na}}</td>
+                {{/ifCond}}
+                <td class="third-column">135 - 145</td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.k "!=" null}}
+            <tr>
+                <td class="first-column">K *</td>
+                {{#ifCond abg.k "<" 3.5}}
+                <td class="second-column bold">{{abg.k}}</td>
+                {{else ifCond abg.k ">" 5.2}}
+                <td class="second-column bold">{{abg.k}}</td>
+                {{else}}
+                <td class="second-column">{{abg.k}}</td>
+                {{/ifCond}}
+                <td class="third-column">3.5 - 5.2</td>
+                <td class="fourth-column">mmo/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.ica "!=" null}}
+            <tr>
+                <td class="first-column">Ph ABG *</td>
+                <td class="second-column">{{abg.ica}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.hct "!=" null}}
+            <tr>
+                <td class="first-column">HCT *</td>
+                {{#ifCond abg.hct "<" 16.5}}
+                <td class="second-column bold">{{abg.hct}}</td>
+                {{else ifCond abg.hct ">" 89.5}}
+                <td class="second-column bold">{{abg.hct}}</td>
+                {{else}}
+                <td class="second-column">{{abg.hct}}</td>
+                {{/ifCond}}
+                <td class="third-column">16.5 - 89.5</td>
+                <td class="fourth-column">%</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.abgHb "!=" null}}
+            <tr>
+                <td class="first-column">HB *</td>
+                {{#ifCond abg.abgHb "<" 13}}
+                <td class="second-column bold">{{abg.abgHb}}</td>
+                {{else ifCond abg.abgHb ">" 18}}
+                <td class="second-column bold">{{abg.abgHb}}</td>
+                {{else}}
+                <td class="second-column">{{abg.abgHb}}</td>
+                {{/ifCond}}
+                <td class="third-column">13.0 - 18.0</td>
+                <td class="fourth-column">g/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
 
         </table>
     </div>
