@@ -1475,6 +1475,569 @@
             </tr>
             {{/ifCond}}
             {{/ifCond}}
+
+            {{#ifCond calcium "!=" null}}
+            <tr class="test-category">
+                <th><u>SERUM CALCIUM CGHS 1466</u></th>
+            </tr>
+
+            {{#ifCond calcium.calcium "!=" null}}
+            <tr>
+                <td class="first-column">SERUM CALCIUM
+                    <br/>
+                    <i class="test-method">Method: NM-BAPTA + EDTA</i>
+                </td>
+                {{#ifCond calcium.calcium "<" 8.6}}
+                <td class="second-column bold">{{calcium.calcium}}</td>
+                {{else ifCond calcium.calcium ">" 10.2}}
+                <td class="second-column bold">{{calcium.calcium}}</td>
+                {{else}}
+                <td class="second-column">{{calcium.calcium}}</td>
+                {{/ifCond}}
+                <td class="third-column">8.6 TO 10.2 (ADULT)</td>
+                <td class="fourth-column">mg/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+
+            {{#ifCond cpkMb "!=" null}}
+            <tr class="test-category">
+                <th><u>CPK-MB CGHS 1496</u></th>
+            </tr>
+
+            {{#ifCond cpkMb.cpkMb "!=" null}}
+            <tr>
+                <td class="first-column">CPK-MB</td>
+                {{#ifCond cpkMb.cpkMb "<" 0}}
+                <td class="second-column bold">{{calcium.calcium}}</td>
+                {{else ifCond cpkMb.cpkMb ">" 7}}
+                <td class="second-column bold">{{cpkMb.cpkMb}}</td>
+                {{else}}
+                <td class="second-column">{{cpkMb.cpkMb}}</td>
+                {{/ifCond}}
+                <td class="third-column">0.00 to 7.00</td>
+                <td class="fourth-column">ng/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond lipidProfile "!=" null}}
+            <tr class="test-category">
+                <th><u>LIPID PROFILE CGHS 1514</u></th>
+            </tr>          
+
+            {{#ifCond lipidProfile.totalCholestrol "!=" null}}
+            <tr>
+                <td class="first-column">TOTAL CHOLESTROL
+                    <br/>
+                    <i class="test-method">Method: Enzymatic</i>
+                </td>
+                {{#ifCond lipidProfile.totalCholestrol ">" 240}}
+                <td class="second-column bold">{{lipidProfile.totalCholestrol}}</td>
+                {{else}}
+                <td class="second-column">{{lipidProfile.totalCholestrol}}</td>
+                {{/ifCond}}
+                <td class="third-column">Desirable Cholesterol Level < 200 ; Borderline High Cholesterol 200-240 ; High Cholesterol >240</td>
+                <td class="fourth-column">mg/dl</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond lipidProfile.triglycerides "!=" null}}
+            <tr>
+                <td class="first-column">TRIGLYCERIDES
+                    <br/>
+                    <i class="test-method">Method: GPO/PAP</i>
+                </td>
+                {{#ifCond lipidProfile.triglycerides ">" 200}}
+                <td class="second-column bold">{{lipidProfile.triglycerides}}</td>
+                {{else}}
+                <td class="second-column">{{lipidProfile.triglycerides}}</td>
+                {{/ifCond}}
+                <td class="third-column">Borderline High 150-199 ; High >= 200</td>
+                <td class="fourth-column">mg/dl</td>
+            </tr>
+            {{/ifCond}}
+          
+            {{#ifCond lipidProfile.hdlCholestrol "!=" null}}
+            <tr>
+                <td class="first-column">H D L CHOLESTEROL
+                    <br/>
+                    <i class="test-method">Method: End Point, Phosphotungstic Acid</i>
+                </td>
+                {{#ifCond lipidProfile.hdlCholestrol "<" 35.3}}
+                <td class="second-column bold">{{lipidProfile.hdlCholestrol}}</td>
+                {{else ifCond lipidProfile.hdlCholestrol ">" 79.5}}
+                <td class="second-column bold">{{lipidProfile.hdlCholestrol}}</td>
+                {{else}}
+                <td class="second-column">{{lipidProfile.hdlCholestrol}}</td>
+                {{/ifCond}}
+                <td class="third-column">35.3 to 79.5</td>
+                <td class="fourth-column">mg/dl</td>
+            </tr>
+            {{/ifCond}}
+          
+            {{#ifCond lipidProfile.ldlCholestrol "!=" null}}
+            <tr>
+                <td class="first-column">L D L CHOLESTEROL
+                    <br/>
+                    <i class="test-method">Method: Calculated</i>
+                </td>
+                {{#ifCond lipidProfile.ldlCholestrol "<" 100}}
+                <td class="second-column bold">{{lipidProfile.ldlCholestrol}}</td>
+                {{else ifCond lipidProfile.ldlCholestrol ">" 190}}
+                <td class="second-column bold">{{lipidProfile.ldlCholestrol}}</td>
+                {{else}}
+                <td class="second-column">{{lipidProfile.ldlCholestrol}}</td>
+                {{/ifCond}}
+                <td class="third-column">100-190</td>
+                <td class="fourth-column">mg/dl</td>
+            </tr>
+            {{/ifCond}}
+          
+            {{#ifCond lipidProfile.vldl "!=" null}}
+            <tr>
+                <td class="first-column">VLDL
+                    <br/>
+                    <i class="test-method">Method: Calculated</i>
+                </td>
+                {{#ifCond lipidProfile.vldl "<" 7}}
+                <td class="second-column bold">{{lipidProfile.vldl}}</td>
+                {{else ifCond lipidProfile.vldl ">" 35}}
+                <td class="second-column bold">{{lipidProfile.vldl}}</td>
+                {{else}}
+                <td class="second-column">{{lipidProfile.vldl}}</td>
+                {{/ifCond}}
+                <td class="third-column">7.00-35.00</td>
+                <td class="fourth-column">mg/dl</td>
+            </tr>
+            {{/ifCond}}
+          
+            {{#ifCond lipidProfile.cholesterolRatio "!=" null}}
+            <tr>
+                <td class="first-column">TOTAL CHOLESTEROL/HDL RATIO
+                    <br/>
+                    <i class="test-method">Method: Calculated</i>
+                </td>
+                {{#ifCond lipidProfile.cholesterolRatio ">" 5}}
+                <td class="second-column bold">{{lipidProfile.cholesterolRatio}}</td>
+                {{else}}
+                <td class="second-column">{{lipidProfile.cholesterolRatio}}</td>
+                {{/ifCond}}
+                <td class="third-column">Moderate risk: 3.5-5.0 ; High risk: >5.0</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+          
+            {{#ifCond lipidProfile.ldlHdlRatio "!=" null}}
+            <tr>
+                <td class="first-column">LDL/HDL RATIO
+                    <br/>
+                    <i class="test-method">Method: Calculated</i>
+                </td>
+                {{#ifCond lipidProfile.ldlHdlRatio ">" 5}}
+                <td class="second-column bold">{{lipidProfile.ldlHdlRatio}}</td>
+                {{else}}
+                <td class="second-column">{{lipidProfile.ldlHdlRatio}}</td>
+                {{/ifCond}}
+                <td class="third-column">Moderate risk: 3.5-5.0 ; High risk: >5.0</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{/ifCond}}
+
+
+            {{#ifCond vitB12 "!=" null}}
+            <tr class="test-category">
+                <th><u>VITAMIN B12 CGHS 1518</u></th>
+            </tr>
+
+            {{#ifCond vitB12.vitB12 "!=" null}}
+            <tr>
+                <td class="first-column">VITAMIN B12</td>
+                {{#ifCond vitB12.vitB12 "<" 157}}
+                <td class="second-column bold">{{vitB12.vitB12}}</td>
+                {{else ifCond vitB12.vitB12 ">" 1059}}
+                <td class="second-column bold">{{vitB12.vitB12}}</td>
+                {{else}}
+                <td class="second-column">{{vitB12.vitB12}}</td>
+                {{/ifCond}}
+                <td class="third-column">NORMAL: 187 - 1059 ; INTERMEDIATE: 157 - 186 ; DEFICIENT : < 157</td>
+                <td class="fourth-column">pg/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond vitD3 "!=" null}}
+            <tr class="test-category">
+                <th><u>VITAMIN D3 ASSAY CGHS 1552</u></th>
+            </tr>
+
+            {{#ifCond vitD3.vitD3 "!=" null}}
+            <tr>
+                <td class="first-column">VITAMIN D3</td>
+                {{#ifCond vitD3.vitD3 "<" 10}}
+                <td class="second-column bold">{{vitD3.vitD3}}</td>
+                {{else ifCond vitD3.vitD3 ">" 100}}
+                <td class="second-column bold">{{vitD3.vitD3}}</td>
+                {{else}}
+                <td class="second-column">{{vitD3.vitD3}}</td>
+                {{/ifCond}}
+                <td class="third-column">DEFFICIENCY : <10.0; INSUFFICIENCY : 10.0 - 30.0; SUFFICIENCY: 30.0 - 100.0 ; TOXICITY: >100.0 ; </td>
+                <td class="fourth-column">nm/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond troponinT "!=" null}}
+            <tr class="test-category">
+                <th><u>TROPONIN T CGHS 1499</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">TROPONIN T</td>
+                {{#ifCond troponinT.troponinT "===" 'NEGATIVE'}}
+                <td class="second-column">{{troponinT.troponinT}}</td>
+                {{else}}
+                <td class="second-column bold">{{troponinT.troponinT}}</td>
+                {{/ifCond}}
+                <td class="third-column">Positive/Negative</td>
+                <td class="fourth-column">Negative</td>
+            </tr>
+            {{/ifCond}}
+
+
+            {{#ifCond troponinI "!=" null}}
+            <tr class="test-category">
+                <th><u>TROPONIN I CGHS 1498</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">TROPONIN I</td>
+                {{#ifCond troponinI.troponinI "===" 'NEGATIVE'}}
+                <td class="second-column">{{troponinI.troponinI}}</td>
+                {{else}}
+                <td class="second-column bold">{{troponinI.troponinI}}</td>
+                {{/ifCond}}
+                <td class="third-column">Positive/Negative</td>
+                <td class="fourth-column">Negative</td>
+            </tr>
+            {{/ifCond}}
+
+
+            {{#ifCond prolactin "!=" null}}
+            <tr class="test-category">
+                <th><u>S. PROLACTIN CGHS 1565</u></th>
+            </tr>
+
+            {{#ifCond prolactin.prolactin "!=" null}}
+            <tr>
+                <td class="first-column">S. PROLACTIN</td>
+                {{#ifCond prolactin.prolactin "<" 1.2}}
+                <td class="second-column bold">{{prolactin.prolactin}}</td>
+                {{else ifCond prolactin.prolactin ">" 25}}
+                <td class="second-column bold">{{prolactin.prolactin}}</td>
+                {{else}}
+                <td class="second-column">{{prolactin.prolactin}}</td>
+                {{/ifCond}}
+                <td class="third-column">1.20 TO 25</td>
+                <td class="fourth-column">ng/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond sFsh "!=" null}}
+            <tr class="test-category">
+                <th><u>S. FSH CGHS 1564</u></th>
+            </tr>
+
+            {{#ifCond sFsh.sFsh "!=" null}}
+            <tr>
+                <td class="first-column">S. FSH</td>
+                <td class="second-column">{{sFsh.sFsh}}</td>
+                <td class="third-column">Males:1.5-12.4; Females as per phase --> Follicular:3.5-12.5; Ovulation:3.4-33.4; Luteal:1.7-7.7; PostMenopausal:25.8-134.8; </td>
+                <td class="fourth-column">mIU/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+
+            {{#ifCond sLh "!=" null}}
+            <tr class="test-category">
+                <th><u>S. LH CGHS 1563</u></th>
+            </tr>
+
+            {{#ifCond sLh.sLh "!=" null}}
+            <tr>
+                <td class="first-column">S. LH</td>
+                <td class="second-column">{{sLh.sLh}}</td>
+                <td class="third-column">Males:1.5-9.3; Females as per phase --> Follicular:1.9-12.5; Ovulation:8.7-76.3; Luteal:0.5-16.9; PostMenopausal:15.9-54.0;</td>
+                <td class="fourth-column">mIU/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond thyroid "!=" null}}
+            <tr class="test-category">
+                <th><u>T3, T4, TSH CGHS 1559</u></th>
+            </tr>
+
+            {{#ifCond thyroid.t3 "!=" null}}
+            <tr>
+                <td class="first-column">TOTAL T3
+                    <br/>
+                    <i class="test-method">Method: C.L.I.A.</i>
+                </td>
+                {{#ifCond thyroid.t3 "<" 0.80}}
+                <td class="second-column bold">{{thyroid.t3}}</td>
+                {{else ifCond thyroid.t3 ">" 1.60}}
+                <td class="second-column bold">{{thyroid.t3}}</td>
+                {{else}}
+                <td class="second-column">{{thyroid.t3}}</td>
+                {{/ifCond}}
+                <td class="third-column">0.80 TO 1.60</td>
+                <td class="fourth-column">ng/ml</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond thyroid.t4 "!=" null}}
+            <tr>
+                <td class="first-column">TOTAL T4
+                    <br/>
+                    <i class="test-method">Method: C.L.I.A.</i>
+                </td>
+                {{#ifCond thyroid.t4 "<" 5}}
+                <td class="second-column bold">{{thyroid.t4}}</td>
+                {{else ifCond thyroid.t4 ">" 12}}
+                <td class="second-column bold">{{thyroid.t4}}</td>
+                {{else}}
+                <td class="second-column">{{thyroid.t4}}</td>
+                {{/ifCond}}
+                <td class="third-column">5.00 TO 12.00</td>
+                <td class="fourth-column">ug/ml</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond thyroid.tsh "!=" null}}
+            <tr>
+                <td class="first-column">THYROID STIMULATING HORMONE (TSH)
+                    <br/>
+                    <i class="test-method">Method: C.L.I.A.</i>
+                </td>
+                {{#ifCond thyroid.tsh "<" 0.35}}
+                <td class="second-column bold">{{thyroid.tsh}}</td>
+                {{else ifCond thyroid.tsh ">" 5.50}}
+                <td class="second-column bold">{{thyroid.tsh}}</td>
+                {{else}}
+                <td class="second-column">{{thyroid.tsh}}</td>
+                {{/ifCond}}
+                <td class="third-column">0.35 TO 5.50</td>
+                <td class="fourth-column">uIU/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond bleedingTime "!=" null}}
+            <tr class="test-category">
+                <th><u>BLEEDING TIME CGHS 1401</u></th>
+            </tr>
+
+            {{#ifCond bleedingTime.bleedingTimeMin "!=" null}}
+            <tr>
+                <td class="first-column">BLEEDING TIME</td>
+                {{#ifCond bleedingTime.bleedingTimeMin "<" 2}}
+                <td class="second-column bold">{{bleedingTime.bleedingTimeMin}} MIN {{bleedingTime.bleedingTimeSec}} SEC</td>
+                {{else ifCond bleedingTime.bleedingTime ">=" 6}}
+                <td class="second-column bold">{{bleedingTime.bleedingTimeMin}} MIN {{bleedingTime.bleedingTimeSec}} SEC</td>
+                {{else}}
+                <td class="second-column">{{bleedingTime.bleedingTimeMin}} MIN {{bleedingTime.bleedingTimeSec}} SEC</td>
+                {{/ifCond}}
+                <td class="third-column">2 to 6</td>
+                <td class="fourth-column">min</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond clottingTime "!=" null}}
+            <tr class="test-category">
+                <th><u>CLOTTING TIME CGHS 1401</u></th>
+            </tr>
+
+            {{#ifCond clottingTime.clottingTimeMin "!=" null}}
+            <tr>
+                <td class="first-column">BLEEDING TIME</td>
+                {{#ifCond clottingTime.clottingTimeMin "<" 3}}
+                <td class="second-column bold">{{clottingTime.clottingTimeMin}} MIN {{clottingTime.clottingTimeSec}} SEC</td>
+                {{else ifCond clottingTime.clottingTime ">=" 10}}
+                <td class="second-column bold">{{clottingTime.clottingTimeMin}} MIN {{clottingTime.clottingTimeSec}} SEC</td>
+                {{else}}
+                <td class="second-column">{{clottingTime.clottingTimeMin}} MIN {{clottingTime.clottingTimeSec}} SEC</td>
+                {{/ifCond}}
+                <td class="third-column">3 to 10</td>
+                <td class="fourth-column">min</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond abg "!=" null}}
+            <tr class="test-category">
+                <th><u>ABG WITH ELECTROLYTES CGHS 1507</u></th>
+            </tr>
+
+            {{#ifCond abg.phAbg "!=" null}}
+            <tr>
+                <td class="first-column">Ph ABG *</td>
+                {{#ifCond abg.phAbg "<" 7.35}}
+                <td class="second-column bold">{{abg.phAbg}}</td>
+                {{else ifCond abg.phAbg ">" 7.45}}
+                <td class="second-column bold">{{abg.phAbg}}</td>
+                {{else}}
+                <td class="second-column">{{abg.phAbg}}</td>
+                {{/ifCond}}
+                <td class="third-column">7.35 - 7.45</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+
+            {{#ifCond abg.pco2 "!=" null}}
+            <tr>
+                <td class="first-column">PCO2 *</td>
+                {{#ifCond abg.pco2 "<" 35}}
+                <td class="second-column bold">{{abg.pco2}}</td>
+                {{else ifCond abg.pco2 ">" 45}}
+                <td class="second-column bold">{{abg.pco2}}</td>
+                {{else}}
+                <td class="second-column">{{abg.pco2}}</td>
+                {{/ifCond}}
+                <td class="third-column">35 - 45</td>
+                <td class="fourth-column">mmHg</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.po2 "!=" null}}
+            <tr>
+                <td class="first-column">PO2 *</td>
+                {{#ifCond abg.po2 "<" 80}}
+                <td class="second-column bold">{{abg.po2}}</td>
+                {{else ifCond abg.po2 ">" 100}}
+                <td class="second-column bold">{{abg.po2}}</td>
+                {{else}}
+                <td class="second-column">{{abg.po2}}</td>
+                {{/ifCond}}
+                <td class="third-column">80 - 100</td>
+                <td class="fourth-column">mmHg</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.beecf "!=" null}}
+            <tr>
+                <td class="first-column">BEecf *</td>
+                <td class="second-column">{{abg.beecf}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.hco3 "!=" null}}
+            <tr>
+                <td class="first-column">HCO3 *</td>
+                {{#ifCond abg.hco3 "<" 21}}
+                <td class="second-column bold">{{abg.hco3}}</td>
+                {{else ifCond abg.hco3 ">" 28}}
+                <td class="second-column bold">{{abg.hco3}}</td>
+                {{else}}
+                <td class="second-column">{{abg.hco3}}</td>
+                {{/ifCond}}
+                <td class="third-column">21 - 28</td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.so2 "!=" null}}
+            <tr>
+                <td class="first-column">SO2 *</td>
+                {{#ifCond abg.so2 "<" 94}}
+                <td class="second-column bold">{{abg.so2}}</td>
+                {{else ifCond abg.so2 ">" 100}}
+                <td class="second-column bold">{{abg.so2}}</td>
+                {{else}}
+                <td class="second-column">{{abg.so2}}</td>
+                {{/ifCond}}
+                <td class="third-column">94 - 100</td>
+                <td class="fourth-column">%</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.na "!=" null}}
+            <tr>
+                <td class="first-column">NA *</td>
+                {{#ifCond abg.na "<" 135}}
+                <td class="second-column bold">{{abg.na}}</td>
+                {{else ifCond abg.na ">" 145}}
+                <td class="second-column bold">{{abg.na}}</td>
+                {{else}}
+                <td class="second-column">{{abg.na}}</td>
+                {{/ifCond}}
+                <td class="third-column">135 - 145</td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.k "!=" null}}
+            <tr>
+                <td class="first-column">K *</td>
+                {{#ifCond abg.k "<" 3.5}}
+                <td class="second-column bold">{{abg.k}}</td>
+                {{else ifCond abg.k ">" 5.2}}
+                <td class="second-column bold">{{abg.k}}</td>
+                {{else}}
+                <td class="second-column">{{abg.k}}</td>
+                {{/ifCond}}
+                <td class="third-column">3.5 - 5.2</td>
+                <td class="fourth-column">mmo/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.ica "!=" null}}
+            <tr>
+                <td class="first-column">Ph ABG *</td>
+                <td class="second-column">{{abg.ica}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column">mmol/L</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.hct "!=" null}}
+            <tr>
+                <td class="first-column">HCT *</td>
+                {{#ifCond abg.hct "<" 16.5}}
+                <td class="second-column bold">{{abg.hct}}</td>
+                {{else ifCond abg.hct ">" 89.5}}
+                <td class="second-column bold">{{abg.hct}}</td>
+                {{else}}
+                <td class="second-column">{{abg.hct}}</td>
+                {{/ifCond}}
+                <td class="third-column">16.5 - 89.5</td>
+                <td class="fourth-column">%</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond abg.abgHb "!=" null}}
+            <tr>
+                <td class="first-column">HB *</td>
+                {{#ifCond abg.abgHb "<" 13}}
+                <td class="second-column bold">{{abg.abgHb}}</td>
+                {{else ifCond abg.abgHb ">" 18}}
+                <td class="second-column bold">{{abg.abgHb}}</td>
+                {{else}}
+                <td class="second-column">{{abg.abgHb}}</td>
+                {{/ifCond}}
+                <td class="third-column">13.0 - 18.0</td>
+                <td class="fourth-column">g/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
         </table>
     </div>
 </div>

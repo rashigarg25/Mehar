@@ -242,6 +242,15 @@
             $.get("views/form_elements/pct_dimer_ferritin.html", '', function (data) { $("#form_table_body").append(data); });
             $.get("views/form_elements/malaria_dengue.html", '', function (data) { $("#form_table_body").append(data); });
             $.get("views/form_elements/blood_group.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/calcium.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/cpk_mb.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/lipid_profile.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/bleeding_clotting.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/vit_b12_d3.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/troponin.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/thyroid.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/prolactin_sfsh_slh.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/abg.html", '', function (data) { $("#form_table_body").append(data); });
 
             $.get("views/form_elements/form_scripts.html", '', function (data) { $("#myForm").append(data); });
             
@@ -254,7 +263,7 @@
 <form class="ui form" id="myForm" action="print_report" method="POST">
     <div class="ui container">
         <div class="ui error message"></div>
-        <button type="submit" class="ui blue button reportbutton">Preview</button>
+        <button type="submit" class="ui blue button reportbutton">Download</button>
         <div class="ui two column grid">
             <div class="column logodiv">
                 <br>
