@@ -2,6 +2,12 @@ const {getSantizedInfo} = require('../controller/sanitizeData');
 const {generatePdf} = require('../controller/generatePdfController');
 const _ = require('lodash');
 
+
+const getCultureReportPdf = async (req, res) => {
+
+    await generatePdf('print_report_culture', {"hello": "hello"}, 'hello.pdf');
+}
+
 const getGeneralTestReportPdfs = async (req, res) => {
 
     const files = [];
@@ -58,5 +64,5 @@ const formatDate = (info) => {
 
 
 module.exports = {
-    getGeneralTestReportPdfs
+    getGeneralTestReportPdfs, getCultureReportPdf
 };
