@@ -28,22 +28,10 @@ router.post("/print_report", (req, res) => {
 
 router.post("/print_report_culture", (req, res) => {
         getCultureReportPdf(req, res).then(r =>  {
-        console.log('hello');
+            const rootPath = "./docs/";
+            console.log(res.file);
+        res.download(rootPath + res.file);
     });
-//     getCultureTestReportPdfs(req, res).then(r => {
-
-//         let fileList = [];
-//         const rootPath = "./docs/";
-//         res.files.forEach(element => {
-//             let file = {};
-//             file.path = rootPath + element;
-//             file.name = element;
-//             fileList.push(file);
-//         });
-//         res.zip(fileList, req.body.patient_name + "_culture.zip");
-//     });
-// }
-    res.render('print_report_culture');
 });
 
 router.get('/', (req, res) => {

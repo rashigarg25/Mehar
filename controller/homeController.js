@@ -14,9 +14,9 @@ const getCultureReportPdf = async (req, res) => {
             info.specimenOthers = info.specimenOthers.toUpperCase();
             info.organism = info.organism.toUpperCase();
 
-            console.log(info);
             const filename = info.patient_name + '_' + info.ipd + '_cs.pdf';
 
+            res.file = filename;
             await generatePdf('print_report_culture', info, filename, '190px');
         }
     }
