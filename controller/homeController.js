@@ -5,7 +5,21 @@ const _ = require('lodash');
 
 const getCultureReportPdf = async (req, res) => {
 
-    await generatePdf('print_report_culture', {"hello": "hello"}, 'hello.pdf');
+    for (let i = 0; i < 1; i++) {
+        let completeData = req.body;
+        if(!_.isEmpty(completeData.testDate[i])) {
+            const info = getInfo(req.body, i);
+            info.dateReceived = info.testDate.substring(0, info.testDate.indexOf(" "));
+            info.dateReported = info.printDate.substring(0, info.printDate.indexOf(" "));
+            info.specimenOthers = info.specimenOthers.toUpperCase();
+            info.organism = info.organism.toUpperCase();
+
+            console.log(info);
+            const filename = info.patient_name + '_' + info.ipd + '_cs.pdf';
+
+            await generatePdf('print_report_culture', info, filename, '190px');
+        }
+    }
 }
 
 const getGeneralTestReportPdfs = async (req, res) => {
@@ -15,7 +29,8 @@ const getGeneralTestReportPdfs = async (req, res) => {
 
         let completeData = req.body;
         if(!_.isEmpty(completeData.testDate[i])) {
-            const info = getInfo(req.body, i);
+            let info = getInfo(req.body, i);
+            info = getSantizedInfo(info)
             if(info.data){
                 if(_.isEmpty(info.data.printDate)) {
                     info.data.printDate = info.data.testDate;
@@ -44,7 +59,7 @@ const getInfo = (body, i) => {
             info[element] = body[element];
         }
     });
-    return getSantizedInfo(info);
+    return info;
 }
 
 const formatDate = (info) => {

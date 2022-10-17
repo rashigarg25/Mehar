@@ -177,28 +177,6 @@
         <img src="https://i.postimg.cc/KRC0X4CC/signature.png" height="1px" style="display: none">
         <div id="pageHeader">
             <div class="ui segments" style="overflow: hidden; white-space: nowrap; border: none">
-                <!--<div class="ui horizontal segments">
-                    <div class="ui segment" style="border: none !important; padding: 0px;">
-
-                        <img class="ui left aligned image mehar-logo"
-                             src='https://i.postimg.cc/DJyvzMQc/Screenshot-2022-10-05-at-7-59-20-AM.png'
-                             alt='Mehar hospital logo'>
-                    </div>
-                    <div class="ui segment" style="border: none !important;">
-
-                        <img class="ui left aligned image nabh-logo"
-                             src="https://i.postimg.cc/MnV2NC3b/nabh-logo.png">
-                    </div>
-                    <div class="ui left aligned segment" style="border: none !important; padding-bottom: 0px;">
-                        <p style="font-weight: 900 !important;margin-bottom: 0;">
-                            <span class="times-new-roman font-13">MEHAR SUPER SPECIALITY HOSPITAL</span>
-                        </p>
-                        <p class="times-new-roman font-9">
-                            Opposite Grandeur Marriage Palace, Singhpura Road,<br/>
-                            Zirakpur, Mohali Ph: +91 7527070509, 7527070510<br/>
-                            E-mail: info@meharhospital.com, Website:- www.meharhospital.com<br/></p>
-                    </div>
-                </div> -->
 				<div class="ui grid container">
                     <div class="six wide column" style="padding: 12px">
                         <img class="ui left aligned image mehar-logo"
@@ -227,38 +205,38 @@
                         <tr>
                             <td class="three wide font-9">Patient Name</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.patient_name}}</td>
+                            <td class="four wide font-10">{{patient_name}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">Mobile No</td>
                             <td class="one wide font-9">:</td>
-                            <td class="five wide font-10">{{data.phone}}</td>
+                            <td class="five wide font-10">{{phone}}</td>
                         </tr>
                         <tr>
                             <td class="three wide font-9">UHID No.</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.uhid}}</td>
+                            <td class="four wide font-10">{{uhid}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">ID No , Age</td>
                             <td class="one wide font-9">:</td>
-                            <td class="five wide font-10">{{data.ipd}} , {{data.Age}} {{data.ageUnit}} / {{data.gender}}</td>
+                            <td class="five wide font-10">{{ipd}} , {{Age}} {{ageUnit}} / {{gender}}</td>
                         </tr>
                         <tr>
                             <td class="three wide font-9">Address</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.address}}</td>
+                            <td class="four wide font-10">{{address}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">Sampling Date</td>
                             <td class="one wide font-9">:</td>
-                            <td class="five wide font-10">{{data.testDate}}&emsp;&emsp;&emsp;&emsp;{{data.testTime}}</td>
+                            <td class="five wide font-10">{{testDate}}&emsp;&emsp;&emsp;&emsp;{{testTime}}</td>
                         </tr>
                         <tr>
                             <td class="three wide font-9">Doctor</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.consultant}}</td>
+                            <td class="four wide font-10">{{consultant}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">Print Date</td>
                             <td class="one wide font-9">:</td>
-                            <td class="five wide font-10">{{data.printDate}}&emsp;&emsp;&emsp;&emsp;{{data.printTime}}</td>
+                            <td class="five wide font-10">{{printDate}}&emsp;&emsp;&emsp;&emsp;{{printTime}}</td>
                         </tr>
                     </table>
                 </div>
@@ -271,11 +249,15 @@
             <p>CULTURE & SENS AEROBIC</p>
 
 		<div style="padding-bottom: 25px;">
-            <p style="margin-bottom: 0px!important">NATURE OF SPECIMEN&emsp;&emsp;:&emsp;BLOOD</p>
-            <p style="margin-bottom: 0px!important">DATE RECEIVED&emsp;&emsp;:&emsp;31.08.2022</p>
-            <p style="margin-bottom: 0px!important">DATE REPORTED&emsp;&emsp;:&emsp;03.09.2022</p>
+            {{#ifCond specimenNature "===" 'OTHERS'}}
+            <p style="margin-bottom: 0px!important">NATURE OF SPECIMEN&emsp;&emsp;:&emsp;{{specimenOthers}}</p>
+            {{else}}
+            <p style="margin-bottom: 0px!important">NATURE OF SPECIMEN&emsp;&emsp;:&emsp;{{specimenNature}}</p>
+            {{/ifCond}}
+            <p style="margin-bottom: 0px!important">DATE RECEIVED&emsp;&emsp;:&emsp;{{dateReceived}}</p>
+            <p style="margin-bottom: 0px!important">DATE REPORTED&emsp;&emsp;:&emsp;{{dateReported}}</p>
 		</div>
-            <p><b>ORGANISM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;STAPHYLOCOCI AUREUS</b></p>
+            <p><b>ORGANISM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;{{organism}}</b></p>
 
             <p style="padding-left: 120px;"><b>ANTIBIOTIC SENSITIVITY</b></p>
 
@@ -301,27 +283,102 @@
                     <tr>
                         <td>AZITHROMYCIN</td>
                         <td class="second-col-culture">Phenicol</td>
-                        <td class="third-col-culture">-R-</td>
+                        <td class="third-col-culture">{{azithromycin}}</td>
                     </tr>
                     <tr>
                         <td>AMPICILLIN + SULBACTUM</td>
                         <td class="second-col-culture">Amino Penicillin</td>
-                        <td class="third-col-culture">-R-</td>
+                        <td class="third-col-culture">{{ampicillin}}</td>
                     </tr>
                     <tr>
                         <td>AMOXYCILLIN</td>
                         <td class="second-col-culture">Amino Penicillin</td>
-                        <td class="third-col-culture">-R-</td>
+                        <td class="third-col-culture">{{amoxycillin}}</td>
                     </tr>
                     <tr>
                         <td>AMIKACIN</td>
                         <td class="second-col-culture">Aminoglycoside</td>
-                        <td class="third-col-culture">-R-</td>
+                        <td class="third-col-culture">{{amikacin}}</td>
                     </tr>
                     <tr>
                         <td>CLOXACILLIN</td>
                         <td class="second-col-culture">Amino Penicillin</td>
-                        <td class="third-col-culture">-R-</td>
+                        <td class="third-col-culture">{{cloxacillin}}</td>
+                    </tr>
+                    <tr>
+                        <td>ERYTHROMYCIN</td>
+                        <td class="second-col-culture">Macrolides</td>
+                        <td class="third-col-culture">{{erythromycin}}</td>
+                    </tr>
+                    <tr>
+                        <td>CLIDAMYCIN</td>
+                        <td class="second-col-culture">Lincosamide</td>
+                        <td class="third-col-culture">{{clidamycin}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFADROXIL</td>
+                        <td class="second-col-culture">I st Gen Cephalosporin</td>
+                        <td class="third-col-culture">{{cefadroxil}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEPHOTAXIME</td>
+                        <td class="second-col-culture">II nd Gen Cephalosporin</td>
+                        <td class="third-col-culture">{{cephotaxime}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFUROXIME</td>
+                        <td class="second-col-culture">II nd Gen Cephalosporin</td>
+                        <td class="third-col-culture">{{cefuroxime}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFTRIAXONE</td>
+                        <td class="second-col-culture">II nd Gen Cephalosporin</td>
+                        <td class="third-col-culture">{{ceftriaxone}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFTAZIDIME</td>
+                        <td class="second-col-culture">III rd Gen Cephalosporin</td>
+                        <td class="third-col-culture">{{ceftazidime}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFOPERAZONE</td>
+                        <td class="second-col-culture">III rd Gen Cephalosporin</td>
+                        <td class="third-col-culture">{{cefoperazone}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFIXIME</td>
+                        <td class="second-col-culture">III rd Gen Cephalosporin</td>
+                        <td class="third-col-culture">{{cefixime}}</td>
+                    </tr>
+                    <tr>
+                        <td>IMIPENEM</td>
+                        <td class="second-col-culture">Penem</td>
+                        <td class="third-col-culture">{{imipenem}}</td>
+                    </tr>
+                    <tr>
+                        <td>MEROPENAM</td>
+                        <td class="second-col-culture">Penam</td>
+                        <td class="third-col-culture">{{meropenam}}</td>
+                    </tr>
+                    <tr>
+                        <td>LEVOFLOXACIN</td>
+                        <td class="second-col-culture">Quinolone</td>
+                        <td class="third-col-culture">{{levofloxacin}}</td>
+                    </tr>
+                    <tr>
+                        <td>LINEZOLID</td>
+                        <td class="second-col-culture">Lincosamide</td>
+                        <td class="third-col-culture">{{linezolid}}</td>
+                    </tr>
+                    <tr>
+                        <td>GATIFLOXACIN</td>
+                        <td class="second-col-culture">Quinolone</td>
+                        <td class="third-col-culture">{{gatifloxacin}}</td>
+                    </tr>
+                    <tr>
+                        <td>VANCOMYCIN</td>
+                        <td class="second-col-culture">Vancomycin</td>
+                        <td class="third-col-culture">{{vancomycin}}</td>
                     </tr>
                 </tbody>
             </table>
