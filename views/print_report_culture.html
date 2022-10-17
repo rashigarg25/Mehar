@@ -84,7 +84,7 @@
         }
 
         .arial {
-            font-family: serif, Arial;
+            font-family: Arial, sans-serif;
         }
 
         .bold {
@@ -158,6 +158,14 @@
         .ui.patient-details .table td {
             padding-bottom: 0px;
         }
+		
+		.second-col-culture {
+			text-align: center!important;
+		}
+		
+		.third-col-culture {
+			padding-left: 30px;
+		}
 
     </style>
 </head>
@@ -255,32 +263,21 @@
                     </table>
                 </div>
             </div>
-            <div class="ui segment" style="padding: 0; margin-top: -10px">
-                <table class="ui very basic table heading">
-                    <thead>
-                    <tr class="left aligned report-heading" style="padding-top: 20px">
-                        <td class="six wide font-11" style="padding-top: 7px"><b>Investigation</b></td>
-                        <td class="four wide font-11" style="padding-top: 7px"><b>Observations</b></td>
-                        <td class="four wide font-11" style="padding-top: 7px"><b>Biological Reference Interval</b></td>
-                        <td class="two wide font-11" style="padding-top: 7px"><b>Units</b></td>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
         </div>
         
-        <div class="ui segment">
+        <div class="ui segment arial" style="zoom: 0.65; border: none;">
 
-            <h5><u>CULTURE & SENSITIVITY CGHS 1739</u></h5>
-            <p>CULTURE & SENS AEROBIC</p></br></br>
+            <h5 class="times-new-roman" style="font-size: 16px;"><u>CULTURE & SENSITIVITY CGHS 1739</u></h5>
+            <p>CULTURE & SENS AEROBIC</p>
 
-            <p>NATURE OF SPECIMEN    :  BLOOD</p>
-            <p>DATE RECEIVED         :  31.08.2022</p>
-            <p>DATE REPORTED         :  03.09.2022</p>
+		<div style="padding-bottom: 25px;">
+            <p style="margin-bottom: 0px!important">NATURE OF SPECIMEN&emsp;&emsp;:&emsp;BLOOD</p>
+            <p style="margin-bottom: 0px!important">DATE RECEIVED&emsp;&emsp;:&emsp;31.08.2022</p>
+            <p style="margin-bottom: 0px!important">DATE REPORTED&emsp;&emsp;:&emsp;03.09.2022</p>
+		</div>
+            <p><b>ORGANISM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;STAPHYLOCOCI AUREUS</b></p>
 
-            <p><b>ORGANISM : STAPHYLOCOCI AUREUS</b></p>
-
-            <p style="padding-left: 100px;">ANTIBIOTIC SENSITIVITY</p>
+            <p style="padding-left: 120px;"><b>ANTIBIOTIC SENSITIVITY</b></p>
 
             <table>
                 
@@ -288,43 +285,43 @@
                     <tr>
                         <td>----------------------------------------------------------</td>
                         <td>-------------------------------------------</td>
-                        <td>-----------------------------------------------------------</td>
+                        <td>---------------------------------------------------------------------------------------------------</td>
                     </tr>
                     <tr>
-                        <td>ANTIBIOTIC</td>
-                        <td>CLASSIFICATION</td>
-                        <td>SENSITIVITY</td>
+                        <td class="bold">ANTIBIOTIC</td>
+                        <td class="second-col-culture bold">CLASSIFICATION</td>
+                        <td class="bold">SENSITIVITY</td>
                     </tr>
                     <tr>
                         <td>----------------------------------------------------------</td>
                         <td>-------------------------------------------</td>
-                        <td>-----------------------------------------------------------</td>
+                        <td>---------------------------------------------------------------------------------------------------</td>
                     </tr>
 
                     <tr>
                         <td>AZITHROMYCIN</td>
-                        <td>Phenicol</td>
-                        <td>-R-</td>
+                        <td class="second-col-culture">Phenicol</td>
+                        <td class="third-col-culture">-R-</td>
                     </tr>
                     <tr>
                         <td>AMPICILLIN + SULBACTUM</td>
-                        <td>Amino Penicillin</td>
-                        <td>-R-</td>
+                        <td class="second-col-culture">Amino Penicillin</td>
+                        <td class="third-col-culture">-R-</td>
                     </tr>
                     <tr>
                         <td>AMOXYCILLIN</td>
-                        <td>Amino Penicillin</td>
-                        <td>-R-</td>
+                        <td class="second-col-culture">Amino Penicillin</td>
+                        <td class="third-col-culture">-R-</td>
                     </tr>
                     <tr>
                         <td>AMIKACIN</td>
-                        <td>Aminoglycoside</td>
-                        <td>-R-</td>
+                        <td class="second-col-culture">Aminoglycoside</td>
+                        <td class="third-col-culture">-R-</td>
                     </tr>
                     <tr>
                         <td>CLOXACILLIN</td>
-                        <td>Amino Penicillin</td>
-                        <td>-R-</td>
+                        <td class="second-col-culture">Amino Penicillin</td>
+                        <td class="third-col-culture">-R-</td>
                     </tr>
                 </tbody>
             </table>
