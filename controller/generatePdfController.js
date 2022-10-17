@@ -79,7 +79,7 @@ const generatePdf = async (template_name, info, filename) => {
 
     await pdf.create(document, options)
         .then(res => {
-            //console.log(res);
+            console.log(res);
         }).catch(error => {
         console.log(error);
     });
