@@ -259,6 +259,7 @@
 		</div>
             <p><b>ORGANISM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;{{organism}}</b></p>
 
+            {{#ifCond organism "!=" 'NO GROWTH'}}
             <p style="padding-left: 120px;"><b>ANTIBIOTIC SENSITIVITY</b></p>
 
             <table>
@@ -382,7 +383,7 @@
                     </tr>
                 </tbody>
             </table>
-
+            {{/ifCond}}
         </div>
 
         </table>

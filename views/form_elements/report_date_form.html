@@ -4,45 +4,45 @@
     <th scope="col">Test Name</th>
     <th scope="col">Investigation Date</th>
     <th>
-        <div class='input-group date ' id='datetimepicker3'>
+        <div class='input-group date investigation' id='datetimepicker1'>
             <i class="calendar icon"></i>
-            <input type="text" class="input-group-addon" id="pwd" name="testDate" placeholder="Date">
+            <input type="text" class="input-group-addon" name="testDate" placeholder="Investigation Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='datetimepicker4'>
+        <div class='input-group date  investigation' id='datetimepicker2'>
             <i class="calendar icon"></i>
-            <input type="text" class="input-group-addon" id="pwd" name="testDate" placeholder="Date">
+            <input type="text" class="input-group-addon" name="testDate" placeholder="Investigation Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='datetimepicker5'>
+        <div class='input-group date  investigation' id='datetimepicker3'>
             <i class="calendar icon"></i>
-            <input type="text" class="input-group-addon" id="pwd" name="testDate" placeholder="Date">
+            <input type="text" class="input-group-addon" name="testDate" placeholder="Investigation Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='datetimepicker6'>
+        <div class='input-group date  investigation' id='datetimepicker4'>
             <i class="calendar icon"></i>
-            <input type="text" class="input-group-addon" id="pwd" name="testDate" placeholder="Date">
+            <input type="text" class="input-group-addon" name="testDate" placeholder="Investigation Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='datetimepicker7'>
+        <div class='input-group date  investigation' id='datetimepicker5'>
             <i class="calendar icon"></i>
-            <input type="text" class="input-group-addon" id="pwd" name="testDate" placeholder="Date">
+            <input type="text" class="input-group-addon" name="testDate" placeholder="Investigation Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='datetimepicker8'>
+        <div class='input-group date  investigation' id='datetimepicker6'>
             <i class="calendar icon"></i>
-            <input type="text" class="input-group-addon" id="pwd" name="testDate" placeholder="Date">
+            <input type="text" class="input-group-addon" name="testDate" placeholder="Investigation Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='datetimepicker9'>
+        <div class='input-group date  investigation' id='datetimepicker7'>
             <i class="calendar icon"></i>
-            <input type="text" class="input-group-addon" id="pwd" name="testDate" placeholder="Date">
+            <input type="text" class="input-group-addon" name="testDate" placeholder="Investigation Date">
         </div>
     </th>
 </tr>
@@ -54,39 +54,97 @@
     <th scope="col"></th>
     <th scope="col">Print Date</th>
     <th>
-        <div class='input-group date ' id='printDatetimepicker3'>
-            <input type="text" class="input-group-addon" id="pwd" name="printDate">
+        <div class='input-group date print' id='printDatetimepicker1'>
+            <i class="calendar icon"></i>
+            <input type="text" class="input-group-addon" name="printDate" placeholder="Print Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='printDatetimepicker4'>
-            <input type="text" class="input-group-addon" id="pwd" name="printDate">
+        <div class='input-group date print' id='printDatetimepicker2'>
+            <i class="calendar icon"></i>
+            <input type="text" class="input-group-addon" name="printDate" placeholder="Print Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='printDatetimepicker5'>
-            <input type="text" class="input-group-addon" id="pwd" name="printDate">
+        <div class='input-group date print' id='printDatetimepicker3'>
+            <i class="calendar icon"></i>
+            <input type="text" class="input-group-addon" name="printDate" placeholder="Print Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='printDatetimepicker6'>
-            <input type="text" class="input-group-addon" id="pwd" name="printDate">
+        <div class='input-group date print' id='printDatetimepicker4'>
+            <i class="calendar icon"></i>
+            <input type="text" class="input-group-addon" name="printDate" placeholder="Print Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='printDatetimepicker7'>
-            <input type="text" class="input-group-addon" id="pwd" name="printDate">
+        <div class='input-group date print' id='printDatetimepicker5'>
+            <i class="calendar icon"></i>
+            <input type="text" class="input-group-addon" name="printDate" placeholder="Print Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='printDatetimepicker8'>
-            <input type="text" class="input-group-addon" id="pwd" name="printDate">
+        <div class='input-group date print' id='printDatetimepicker6'>
+            <i class="calendar icon"></i>
+            <input type="text" class="input-group-addon" name="printDate" placeholder="Print Date">
         </div>
     </th>
     <th>
-        <div class='input-group date ' id='printDatetimepicker9'>
-            <input type="text" class="input-group-addon" id="pwd" name="printDate">
+        <div class='input-group date print' id='printDatetimepicker7'>
+            <i class="calendar icon"></i>
+            <input type="text" class="input-group-addon" name="printDate" placeholder="Print Date">
         </div>
     </th>
 </tr>
 </thead>
+
+<script type="text/javascript">
+
+    $('.date.investigation').datetimepicker({
+        format: 'DD/MM/Y hh:mm A',
+        widgetPositioning: { horizontal: 'left', vertical: 'top'},
+        showClose: true
+    });
+
+    $('.date.print').datetimepicker({
+        format: 'DD/MM/Y hh:mm A',
+        widgetPositioning: { horizontal: 'left', vertical: 'bottom'},
+        showClose: true
+    });
+
+    $('#datetimepicker1').on('dp.hide', (e) => {
+        let d = $("#datetimepicker1 .input-group-addon").val();
+        $("#printDatetimepicker1 .input-group-addon").val(d);
+    });
+
+    $('#datetimepicker2').on('dp.hide', (e) => {
+        let d = $("#datetimepicker2 .input-group-addon").val();
+        $("#printDatetimepicker2 .input-group-addon").val(d);
+    });
+
+    $('#datetimepicker3').on('dp.hide', (e) => {
+        let d = $("#datetimepicker3 .input-group-addon").val();
+        $("#printDatetimepicker3 .input-group-addon").val(d);
+    });
+
+    $('#datetimepicker4').on('dp.hide', (e) => {
+        let d = $("#datetimepicker4 .input-group-addon").val();
+        $("#printDatetimepicker4 .input-group-addon").val(d);
+    });
+
+    $('#datetimepicker5').on('dp.hide', (e) => {
+        let d = $("#datetimepicker5 .input-group-addon").val();
+        $("#printDatetimepicker5 .input-group-addon").val(d);
+    });
+
+    $('#datetimepicker6').on('dp.hide', (e) => {
+        let d = $("#datetimepicker6 .input-group-addon").val();
+        $("#printDatetimepicker6 .input-group-addon").val(d);
+    });
+
+    $('#datetimepicker7').on('dp.hide', (e) => {
+        let d = $("#datetimepicker7 .input-group-addon").val();
+        $("#printDatetimepicker7 .input-group-addon").val(d);
+    });
+
+</script>
