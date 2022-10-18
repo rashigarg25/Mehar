@@ -13,23 +13,25 @@ const generatePdf = async (template_name, info, filename, headerHeight) => {
         path: './docs/' + filename
     }
 
-    headerHeight = headerHeight ? headerHeight : '220px';
+    headerHeight = headerHeight ? headerHeight : '270px';
 
     const options = {
-        format: 'A4',
+        //format: 'A4',
+		//width: '200px',
+		//height: '300px',
         orientation: 'portrait',
         base: "file:///home/www/",
         border: {
-			left: '60px',
-			right: '30px',
 			top: '0px',
+			left: '40px',
+			right: '30px',
 			bottom: '0px'
 		},
         header: {
             height: headerHeight
         },
         footer: {
-            height: '130px',
+            height: '170px',
             contents: {
                 default: '<div id="pageFooter">\n' +
                     '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +
