@@ -9,12 +9,21 @@ const getCultureReportPdf = async (req, res) => {
         let completeData = req.body;
         if(!_.isEmpty(completeData.testDate[i])) {
             const info = getInfo(req.body, i);
+            info.data = {};
+            info.data.testDate = info.testDate;
+            info.data.printDate = info.printDate;
+            formatDate(info);
+            info.testDate = info.data.testDate;
+            info.testTime = info.data.testTime;
+            info.printDate = info.data.printDate;
+            info.printTime = info.data.printTime;
+
             info.dateReceived = info.testDate.substring(0, info.testDate.indexOf(" "));
             info.dateReported = info.printDate.substring(0, info.printDate.indexOf(" "));
             info.specimenOthers = info.specimenOthers.toUpperCase();
             info.organism = info.organism.toUpperCase();
 
-            const filename = info.patient_name + '_' + info.ipd + '_cs.pdf';
+            const filename = info.patient_name + '_' + info.ipd + '_' + info.testDate + '_' + info.specimenNature + '_cs.pdf';
 
             res.file = filename;
             await generatePdf('print_report_culture', info, filename, '190px');
@@ -36,7 +45,7 @@ const getGeneralTestReportPdfs = async (req, res) => {
                     info.data.printDate = info.data.testDate;
                 }
                 formatDate(info);
-                const filename = info.data.patient_name + '_' + info.data.ipd + '_' + info.data.testDate + '.pdf';
+                const filename = info.data.patient_name + '_' + info.data.ipd + '_' + info.data.testDate + '_' + info.data.testTime.replaceAll(':', '').substring(0, 5) + '.pdf';
                 files.push(filename);
                 await generatePdf('print_report', info, filename);
 
