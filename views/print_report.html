@@ -2038,6 +2038,88 @@
             {{/ifCond}}
             {{/ifCond}}
 
+            {{#ifCond rhFactor "!=" null}}
+            <tr class="test-category">
+                <th><u>RHEUMATOID FACTOR CGHS 1453</u></th>
+            </tr>
+
+            {{#ifCond rhFactor.rhFactor "!=" null}}
+            <tr>
+                <td class="first-column">RHEUMATOID FACTOR (Quantitative)</td>
+                {{#ifCond rhFactor.rhFactor "<" 0}}
+                <td class="second-column bold">{{rhFactor.rhFactor}}</td>
+                {{else ifCond rhFactor.rhFactor ">" 20}}
+                <td class="second-column bold">{{rhFactor.rhFactor}}</td>
+                {{else}}
+                <td class="second-column">{{rhFactor.rhFactor}}</td>
+                {{/ifCond}}
+                <td class="third-column">0 - 20</td>
+                <td class="fourth-column">IU/ML</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond antiCcp "!=" null}}
+            <tr class="test-category">
+                <th><u>ANTI CCP CGHS 1555</u></th>
+            </tr>
+
+            {{#ifCond antiCcp.antiCcp "!=" null}}
+            <tr>
+                <td class="first-column">ANTI CCP *</td>
+                {{ifCond antiCcp.antiCcp ">" 17}}
+                <td class="second-column bold">{{antiCcp.antiCcp}}</td>
+                {{else}}
+                <td class="second-column">{{antiCcp.antiCcp}}</td>
+                {{/ifCond}}
+                <td class="third-column">Non significant < 17 U/ml </br> Significant > 17.0 u/ml</td>
+                <td class="fourth-column">u/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond ca125 "!=" null}}
+            <tr class="test-category">
+                <th><u>CA 125 CGHS 1543</u></th>
+            </tr>
+
+            {{#ifCond ca125.ca125 "!=" null}}
+            <tr>
+                <td class="first-column">CA 125 (Ovarian Cancer Marker) *</td>
+                {{#ifCond ca125.ca125 "<" 0}}
+                <td class="second-column bold">{{ca125.ca125}}</td>
+                {{else ifCond ca125.ca125 ">" 35}}
+                <td class="second-column bold">{{ca125.ca125}}</td>
+                {{else}}
+                <td class="second-column">{{ca125.ca125}}</td>
+                {{/ifCond}}
+                <td class="third-column">0 - 35</td>
+                <td class="fourth-column">U/mL</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond glycoHb "!=" null}}
+            <tr class="test-category">
+                <th><u>GLYCOSYLATED HB (HBA1C) CGHS 1501</u></th>
+            </tr>
+
+            {{#ifCond glycoHb.glycoHb "!=" null}}
+            <tr>
+                <td class="first-column">GLYCOSYLATED Hb *</td>
+                {{#ifCond glycoHb.glycoHb "<" 4}}
+                <td class="second-column bold">{{glycoHb.glycoHb}}</td>
+                {{else ifCond glycoHb.glycoHb ">" 6.5}}
+                <td class="second-column bold">{{glycoHb.glycoHb}}</td>
+                {{else}}
+                <td class="second-column">{{glycoHb.glycoHb}}</td>
+                {{/ifCond}}
+                <td class="third-column">4 - 6.5 </br> Normal A1c = 6.5 %</br>Diabetic good control = 6.9 %</br>Diabetic fair control = 7.0 - 7.9 %</br>Diabetic poor control = >= 8.0%</td>
+                <td class="fourth-column">%</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
         </table>
     </div>
 </div>

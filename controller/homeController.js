@@ -17,9 +17,7 @@ const getCultureReportPdf = async (req, res) => {
             info.testTime = info.data.testTime;
             info.printDate = info.data.printDate;
             info.printTime = info.data.printTime;
-
-            info.dateReceived = info.testDate.substring(0, info.testDate.indexOf(" "));
-            info.dateReported = info.printDate.substring(0, info.printDate.indexOf(" "));
+            
             info.specimenOthers = info.specimenOthers.toUpperCase();
             info.organism = info.organism.toUpperCase();
 

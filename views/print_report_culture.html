@@ -254,8 +254,8 @@
             {{else}}
             <p style="margin-bottom: 0px!important">NATURE OF SPECIMEN&emsp;&emsp;:&emsp;{{specimenNature}}</p>
             {{/ifCond}}
-            <p style="margin-bottom: 0px!important">DATE RECEIVED&emsp;&emsp;:&emsp;{{dateReceived}}</p>
-            <p style="margin-bottom: 0px!important">DATE REPORTED&emsp;&emsp;:&emsp;{{dateReported}}</p>
+            <p style="margin-bottom: 0px!important">DATE RECEIVED&emsp;&emsp;:&emsp;{{testDate}}</p>
+            <p style="margin-bottom: 0px!important">DATE REPORTED&emsp;&emsp;:&emsp;{{printDate}}</p>
 		</div>
             <p><b>ORGANISM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;{{organism}}</b></p>
 
@@ -267,118 +267,115 @@
                 <tbody>
                     <tr>
                         <td>----------------------------------------------------------</td>
-                        <td>-------------------------------------------</td>
                         <td>---------------------------------------------------------------------------------------------------</td>
                     </tr>
                     <tr>
                         <td class="bold">ANTIBIOTIC</td>
-                        <td class="second-col-culture bold">CLASSIFICATION</td>
                         <td class="bold">SENSITIVITY</td>
                     </tr>
                     <tr>
                         <td>----------------------------------------------------------</td>
-                        <td>-------------------------------------------</td>
                         <td>---------------------------------------------------------------------------------------------------</td>
                     </tr>
 
                     <tr>
                         <td>AZITHROMYCIN</td>
-                        <td class="second-col-culture">Macrolides</td>
                         <td class="third-col-culture">{{azithromycin}}</td>
                     </tr>
                     <tr>
+                        <td>CLARITHROMYCIN</td>
+                        <td class="third-col-culture">{{clarithromycin}}</td>
+                    </tr>
+                    <tr>
                         <td>AMPICILLIN + SULBACTUM</td>
-                        <td class="second-col-culture">Amino Penicillin</td>
                         <td class="third-col-culture">{{ampicillin}}</td>
                     </tr>
                     <tr>
                         <td>AMOXYCILLIN</td>
-                        <td class="second-col-culture">Amino Penicillin</td>
                         <td class="third-col-culture">{{amoxycillin}}</td>
                     </tr>
                     <tr>
                         <td>AMIKACIN</td>
-                        <td class="second-col-culture">Aminoglycoside</td>
                         <td class="third-col-culture">{{amikacin}}</td>
                     </tr>
                     <tr>
                         <td>CLOXACILLIN</td>
-                        <td class="second-col-culture">Amino Penicillin</td>
                         <td class="third-col-culture">{{cloxacillin}}</td>
                     </tr>
                     <tr>
                         <td>ERYTHROMYCIN</td>
-                        <td class="second-col-culture">Macrolides</td>
                         <td class="third-col-culture">{{erythromycin}}</td>
                     </tr>
                     <tr>
                         <td>CLIDAMYCIN</td>
-                        <td class="second-col-culture">Lincosamide</td>
                         <td class="third-col-culture">{{clidamycin}}</td>
                     </tr>
                     <tr>
                         <td>CEFADROXIL</td>
-                        <td class="second-col-culture">I st Gen Cephalosporin</td>
                         <td class="third-col-culture">{{cefadroxil}}</td>
                     </tr>
                     <tr>
-                        <td>CEPHOTAXIME</td>
-                        <td class="second-col-culture">II nd Gen Cephalosporin</td>
-                        <td class="third-col-culture">{{cephotaxime}}</td>
+                        <td>CEFOTAXIME</td>
+                        <td class="third-col-culture">{{cefotaxime}}</td>
                     </tr>
                     <tr>
                         <td>CEFUROXIME</td>
-                        <td class="second-col-culture">II nd Gen Cephalosporin</td>
                         <td class="third-col-culture">{{cefuroxime}}</td>
                     </tr>
                     <tr>
                         <td>CEFTRIAXONE</td>
-                        <td class="second-col-culture">II nd Gen Cephalosporin</td>
                         <td class="third-col-culture">{{ceftriaxone}}</td>
                     </tr>
                     <tr>
                         <td>CEFTAZIDIME</td>
-                        <td class="second-col-culture">III rd Gen Cephalosporin</td>
                         <td class="third-col-culture">{{ceftazidime}}</td>
                     </tr>
                     <tr>
                         <td>CEFOPERAZONE</td>
-                        <td class="second-col-culture">III rd Gen Cephalosporin</td>
                         <td class="third-col-culture">{{cefoperazone}}</td>
                     </tr>
                     <tr>
                         <td>CEFIXIME</td>
-                        <td class="second-col-culture">III rd Gen Cephalosporin</td>
                         <td class="third-col-culture">{{cefixime}}</td>
                     </tr>
                     <tr>
+                        <td>CEFIPIME</td>
+                        <td class="third-col-culture">{{cefipime}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFIPIME + TAZOBACTUM</td>
+                        <td class="third-col-culture">{{cefipimeTazo}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFPIROME</td>
+                        <td class="third-col-culture">{{cefpirome}}</td>
+                    </tr>
+                    <tr>
+                        <td>CEFPIROME + SULB</td>
+                        <td class="third-col-culture">{{cefpiromeSulb}}</td>
+                    </tr>
+                    <tr>
                         <td>IMIPENEM</td>
-                        <td class="second-col-culture">Penem</td>
                         <td class="third-col-culture">{{imipenem}}</td>
                     </tr>
                     <tr>
                         <td>MEROPENAM</td>
-                        <td class="second-col-culture">Penam</td>
                         <td class="third-col-culture">{{meropenam}}</td>
                     </tr>
                     <tr>
                         <td>LEVOFLOXACIN</td>
-                        <td class="second-col-culture">Quinolone</td>
                         <td class="third-col-culture">{{levofloxacin}}</td>
                     </tr>
                     <tr>
                         <td>LINEZOLID</td>
-                        <td class="second-col-culture">Lincosamide</td>
                         <td class="third-col-culture">{{linezolid}}</td>
                     </tr>
                     <tr>
                         <td>GATIFLOXACIN</td>
-                        <td class="second-col-culture">Quinolone</td>
                         <td class="third-col-culture">{{gatifloxacin}}</td>
                     </tr>
                     <tr>
                         <td>VANCOMYCIN</td>
-                        <td class="second-col-culture">Vancomycin</td>
                         <td class="third-col-culture">{{vancomycin}}</td>
                     </tr>
                 </tbody>
