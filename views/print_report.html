@@ -2067,7 +2067,7 @@
             {{#ifCond antiCcp.antiCcp "!=" null}}
             <tr>
                 <td class="first-column">ANTI CCP *</td>
-                {{ifCond antiCcp.antiCcp ">" 17}}
+                {{#ifCond antiCcp.antiCcp ">" 17}}
                 <td class="second-column bold">{{antiCcp.antiCcp}}</td>
                 {{else}}
                 <td class="second-column">{{antiCcp.antiCcp}}</td>
