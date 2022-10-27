@@ -1,4 +1,4 @@
-const {getSantizedInfo} = require('../controller/sanitizeData');
+const {getSantizedInfo, getDataForBill} = require('../controller/sanitizeData');
 const {generatePdf} = require('../controller/generatePdfController');
 const _ = require('lodash');
 
@@ -32,9 +32,12 @@ const getCultureReportPdf = async (req, res) => {
 const getGeneralTestReportPdfs = async (req, res) => {
 
     const files = [];
+    let billList = {};
+    let patientData = {};
     for (let i = 0; i < 7; i++) {
 
         let completeData = req.body;
+        
         if(!_.isEmpty(completeData.testDate[i])) {
             let info = getInfo(req.body, i);
             info = getSantizedInfo(info)
@@ -48,8 +51,25 @@ const getGeneralTestReportPdfs = async (req, res) => {
                 await generatePdf('print_report', info, filename);
 
             }
+            if(!_.has(billList, info.data.testDate)){
+                billList[info.data.testDate] = getDataForBill(info);
+            }
+            else {
+                Array.prototype.push.apply(billList[info.data.testDate], getDataForBill(info));
+            }
+            patientData = info.data;
         }
+        
     }
+    const filename = patientData.patient_name + '_bill.pdf';
+    files.push(filename);
+    let billData = {};
+    billData["billList"] = billList;
+    billData["data"] = patientData;
+    await generatePdf('print_bill', billData, filename);
+
+    
+    console.log((billData));
     res.files = files;
 }
 

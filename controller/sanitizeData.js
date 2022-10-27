@@ -1,6 +1,7 @@
 const _ = require('lodash');
+const {testPriceList} = require('../controller/testPriceList');
 
-module.exports.getSantizedInfo = (info) => {
+const getSantizedInfo = (info) => {
 
 
     if(!_.isEmpty(info.neutrophils) || !_.isEmpty(info.lymphocytes) || !_.isEmpty(info.monocyte) || !_.isEmpty(info.eosinophils) || !_.isEmpty(info.basophils)){
@@ -121,4 +122,20 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
 
     return sanitizedInfo;
+};
+
+
+const getDataForBill = (info) => {
+    let testKeys = _.keys(info);
+
+    let testList = [];
+    testKeys.forEach((key) => {
+        if(key!='data')
+            testList.push(testPriceList[key]);
+    });
+    return testList;
+}
+
+module.exports = {
+    getDataForBill, getSantizedInfo
 };

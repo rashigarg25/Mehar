@@ -1,0 +1,250 @@
+<html lang="en">
+<head>
+    <title>MEHAR SUPER SPECIALITY HOSPITAL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+
+    <style>
+
+        html {
+            zoom: 1;
+        }
+
+        @page {
+            size: A4 !important;
+        }
+
+        .ui.table tr td {
+            border-top: 0 !important;
+        }
+
+        .ui.table.heading thead td {
+            font-weight: 900;
+            font-size: 8px;
+        }
+
+        .this-page {
+            page-break-after: always;
+        }
+
+        .footer > div {
+            position: fixed;
+            bottom: 0;
+        }
+
+        .first-column > .test-method {
+            font-size: 8px;
+            font-family: Arial, serif;
+        }
+
+        .small-font {
+            font-size: small !important;
+        }
+
+        tr.test-category th {
+            padding-top: 5px !important;
+        }
+
+        table, tbody, tr, td {
+            break-inside: avoid;
+        }
+
+        .first-column {
+            font-family: Times, serif;
+            font-size: 9px;
+        }
+
+        h3 {
+            font: 900 15px/20px serif Times;
+        }
+
+        .second-column {
+            font-family: Arial, serif;
+            font-size: 10px;
+        }
+
+        .third-column {
+            font-size: 9px;
+            font-family: Tahoma, serif;
+        }
+
+        .fourth-column {
+            font-style: italic;
+            font-size: 11px;
+            font-family: Arial, serif;
+        }
+
+        .tahoma {
+            font-family: Tahoma, serif;
+        }
+
+        .times-new-roman {
+            font-family: Times, serif;
+        }
+
+        .arial {
+            font-family: serif, Arial;
+        }
+
+        .bold {
+            font-weight: 900 !important;
+        }
+
+        .font-7 {
+            font-size: 7px;
+        }
+
+        .font-8 {
+            font-size: 8px;
+        }
+
+        .font-9 {
+            font-size:10px;
+        }
+
+        .font-10 {
+            font-size: 11px;
+        }
+
+        .font-11 {
+            font-size: 11px;
+        }
+
+        .font-12 {
+            font-size: 12px;
+        }
+
+        .font-13 {
+            font-size: 14px;
+        }
+
+        .font-20 {
+            font-size: 20px;
+        }
+
+        tr.test-category:not(.report-heading) {
+            font-size: 10px;
+            font-family: Times, serif;
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        .nabh-logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .mehar-logo {
+            width: 180px;
+            height: auto;
+        }
+
+        .ui.heading.table td {
+            padding: 5px;
+        }
+
+        .ui.segment.patient-details {
+            padding: 5px 5px 5px 10px;
+        }
+
+        .ui.very.basic.table.heading {
+            padding: 7px;
+            background-color: #C8C8C8;
+            border-radius: 0;
+			font-family: Tahoma, serif;
+        }
+
+        .ui.patient-details .table td {
+            padding-bottom: 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="this-page" style="overflow: hidden; white-space: nowrap;">
+    <div class="ui container">
+        <img src="https://i.postimg.cc/KRC0X4CC/signature.png" height="1px" style="display: none">
+        <div id="pageHeader">
+            <div class="ui segments" style="overflow: hidden; white-space: nowrap; border: none">
+				<div class="ui grid container">
+                    <div class="six wide column" style="padding: 12px">
+                        <img class="ui left aligned image mehar-logo"
+                             src='https://i.postimg.cc/DJyvzMQc/Screenshot-2022-10-05-at-7-59-20-AM.png'
+                             alt='Mehar hospital logo'>
+                    </div>
+                    <div class="three wide column" style="padding-top: 35px">
+                        <img class="nabh-logo"
+                             src="https://i.postimg.cc/MnV2NC3b/nabh-logo.png">
+                    </div>
+                    <div class="seven wide left aligned column" style="padding-top: 20px">
+                        <p style="font-weight: 900 !important; letter-spacing: 0.5px; margin-bottom: auto">
+                            <span class="times-new-roman font-13">MEHAR SUPER SPECIALITY HOSPITAL</span>
+                        </p>
+                        <p class="times-new-roman font-9">
+                            Opposite Grandeur Marriage Palace, Singhpura Road,<br/>
+                            Zirakpur, Mohali Ph: +91 7527070509, 7527070510<br/>
+                            E-mail: info@meharhospital.com, Website:- www.meharhospital.com</p>
+                    </div>
+                </div>
+
+                <div class="ui segment patient-details"
+                     style="overflow: hidden; white-space: nowrap; border: 1px solid#5e5e5e; border-radius: 0;">
+                    <table class="ui very basic table tahoma">
+                        <tbody>
+                        <tr>
+                            <td class="three wide font-9">Patient Name</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="four wide font-10">{{data.patient_name}}</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-9">Mobile No</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="five wide font-10">{{data.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td class="three wide font-9">UHID No.</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="four wide font-10">{{data.uhid}}</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-9">ID No , Age</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="five wide font-10">{{data.ipd}} , {{data.Age}} {{data.ageUnit}} / {{data.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td class="three wide font-9">Address</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="four wide font-10">{{data.address}}</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-9">Sampling Date</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="five wide font-10">{{data.testDate}}&emsp;&emsp;&emsp;&emsp;{{data.testTime}}</td>
+                        </tr>
+                        <tr>
+                            <td class="three wide font-9">Doctor</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="four wide font-10">{{data.consultant}}</td>
+                            <td class="one wide"></td>
+                            <td class="two wide font-9">Print Date</td>
+                            <td class="one wide font-9">:</td>
+                            <td class="five wide font-10">{{data.printDate}}&emsp;&emsp;&emsp;&emsp;{{data.printTime}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ui segment">
+
+            {{#each billList}}
+                <h6>{{@key}}</h6>
+                {{#each this}}
+                   <h6>{{this.testName}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{this.testPrice}}</h6>
+                {{/each}}
+            {{/each}}
+        </table>
+    </div>
+</div>
+</body>
+</html>
