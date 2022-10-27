@@ -112,11 +112,7 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["typhidot"] = _.pick(removedEmpty, ["typhidotIgm", "typhidotIgg"]);
     sanitizedInfo["serumIron"] = _.pick(removedEmpty, ["serumIron"]);
     sanitizedInfo["totalIron"] = _.pick(removedEmpty, ["totalIron"]);
-    
-    
-    
-    
-    
+
     sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
 
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
@@ -128,12 +124,15 @@ const getSantizedInfo = (info) => {
 const getDataForBill = (info) => {
     let testKeys = _.keys(info);
 
+    let returnObject = {};
     let testList = [];
     testKeys.forEach((key) => {
-        if(key!='data')
+        if(key !== 'data')
             testList.push(testPriceList[key]);
     });
-    return testList;
+    returnObject.date = info.data.testDate;
+    returnObject.testData = testList;
+    return returnObject;
 }
 
 module.exports = {
