@@ -107,6 +107,10 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["antiCcp"] = _.pick(removedEmpty, ["antiCcp"]);
     sanitizedInfo["ca125"] = _.pick(removedEmpty, ["ca125"]);
     sanitizedInfo["glycoHb"] = _.pick(removedEmpty, ["glycoHb"]);
+    sanitizedInfo["hlaB27"] = _.pick(removedEmpty, ["hlaB27"]);
+    sanitizedInfo["typhidot"] = _.pick(removedEmpty, ["typhidotIgm", "typhidotIgg"]);
+    sanitizedInfo["serumIron"] = _.pick(removedEmpty, ["serumIron"]);
+    sanitizedInfo["totalIron"] = _.pick(removedEmpty, ["totalIron"]);
     
     
     

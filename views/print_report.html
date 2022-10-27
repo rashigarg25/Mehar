@@ -2120,6 +2120,102 @@
             {{/ifCond}}
             {{/ifCond}}
 
+            {{#ifCond hlaB27 "!=" null}}
+            <tr class="test-category">
+                <th><u>HLA B27 (PCR) CGHS 1790</u></th>
+            </tr>
+
+            {{#ifCond hlaB27.hlaB27 "!=" null}}
+            <tr>
+                <td class="first-column">HLA B 27 PCR *</td>
+                {{#ifCond hlaB27.hlaB27 "===" 'POSITIVE' }}
+                <td class="second-column bold">{{hlaB27.hlaB27}}</td>
+                {{else}}
+                <td class="second-column">{{hlaB27.hlaB27}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond typhidot "!=" null}}
+            <tr class="test-category">
+                <th><u>TYPHIDOT IGM CGHS 1818</u></th>
+            </tr>
+
+            {{#ifCond typhidot.typhidotIgm "!=" null}}
+            <tr>
+                <td class="first-column">TYPHIDOT IGM *</td>
+                {{#ifCond typhidot.typhidotIgm "===" 'POSITIVE'}}
+                <td class="second-column bold">{{typhidot.typhidotIgm}}</td>
+                {{else}}
+                <td class="second-column">{{typhidot.typhidotIgm}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond typhidot.typhidotIgg "!=" null}}
+            <tr>
+                <td class="first-column">TYPHIDOT IGG *</td>
+                {{#ifCond typhidot.typhidotIgg "===" 'POSITIVE'}}
+                <td class="second-column bold">{{typhidot.typhidotIgg}}</td>
+                {{else}}
+                <td class="second-column">{{typhidot.typhidotIgg}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{/ifCond}}
+
+            {{#ifCond serumIron "!=" null}}
+            <tr class="test-category">
+                <th><u>SERUMIRON CGHS 1457</u></th>
+            </tr>
+
+            {{#ifCond serumIron.serumIron "!=" null}}
+            <tr>
+                <td class="first-column">SERUM IRON</td>
+                {{#ifCond serumIron.serumIron "<" 41}}
+                <td class="second-column bold">{{serumIron.serumIron}}</td>
+                {{else ifCond serumIron.serumIron ">" 132}}
+                <td class="second-column bold">{{serumIron.serumIron}}</td>
+                {{else}}
+                <td class="second-column">{{serumIron.serumIron}}</td>
+                {{/ifCond}}
+                <td class="third-column">41-132</td>
+                <td class="fourth-column">ug/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond totalIron "!=" null}}
+            <tr class="test-category">
+                <th><u>TOTAL IRON BINDING CAPACITY CGHS 1464</u></th>
+            </tr>
+
+            {{#ifCond totalIron.totalIron "!=" null}}
+            <tr>
+                <td class="first-column">GLYCOSYLATED Hb *</td>
+                {{#ifCond totalIron.totalIron "<" 250}}
+                <td class="second-column bold">{{totalIron.totalIron}}</td>
+                {{else ifCond totalIron.totalIron ">" 400}}
+                <td class="second-column bold">{{totalIron.totalIron}}</td>
+                {{else}}
+                <td class="second-column">{{totalIron.totalIron}}</td>
+                {{/ifCond}}
+                <td class="third-column">250-400</td>
+                <td class="fourth-column">ug/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            
+
         </table>
     </div>
 </div>
