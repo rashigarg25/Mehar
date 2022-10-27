@@ -8,7 +8,7 @@
     <style>
 
         html {
-            zoom: 1;
+            zoom: 1.2;
         }
 
         @page {
@@ -197,11 +197,11 @@
                              src='https://i.postimg.cc/DJyvzMQc/Screenshot-2022-10-05-at-7-59-20-AM.png'
                              alt='Mehar hospital logo'>
                     </div>
-                    <div class="three wide column" style="padding-top: 35px">
+                    <div class="two wide column" style="padding-top: 35px">
                         <img class="nabh-logo"
                              src="https://i.postimg.cc/MnV2NC3b/nabh-logo.png">
                     </div>
-                    <div class="seven wide left aligned column" style="padding-top: 20px">
+                    <div class="eight wide left aligned column" style="padding-top: 20px">
                         <p style="font-weight: 900 !important; letter-spacing: 0.5px; margin-bottom: auto">
                             <span class="times-new-roman font-13">MEHAR SUPER SPECIALITY HOSPITAL</span>
                         </p>
@@ -217,40 +217,40 @@
                     <table class="ui very basic table tahoma">
                         <tbody>
                         <tr>
-                            <td class="three wide font-9">Patient Name</td>
+                            <td class="two wide font-9">Patient Name</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.patient_name}}</td>
+                            <td class="five wide font-10">{{data.patient_name}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">Mobile No</td>
                             <td class="one wide font-9">:</td>
                             <td class="five wide font-10">{{data.phone}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide font-9">UHID No.</td>
+                            <td class="two wide font-9">UHID No.</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.uhid}}</td>
+                            <td class="five wide font-10">{{data.uhid}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">ID No , Age</td>
                             <td class="one wide font-9">:</td>
                             <td class="five wide font-10">{{data.ipd}} , {{data.Age}} {{data.ageUnit}} / {{data.gender}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide font-9">Address</td>
+                            <td class="two wide font-9">Address</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.address}}</td>
+                            <td class="five wide font-10">{{data.address}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">Sampling Date</td>
                             <td class="one wide font-9">:</td>
-                            <td class="five wide font-10">{{data.testDate}}&emsp;&emsp;&emsp;&emsp;{{data.testTime}}</td>
+                            <td class="five wide font-10">{{data.testDate}}&emsp;&emsp;{{data.testTime}}</td>
                         </tr>
                         <tr>
-                            <td class="three wide font-9">Doctor</td>
+                            <td class="two wide font-9">Doctor</td>
                             <td class="one wide font-9">:</td>
-                            <td class="four wide font-10">{{data.consultant}}</td>
+                            <td class="five wide font-10">{{data.consultant}}</td>
                             <td class="one wide"></td>
                             <td class="two wide font-9">Print Date</td>
                             <td class="one wide font-9">:</td>
-                            <td class="five wide font-10">{{data.printDate}}&emsp;&emsp;&emsp;&emsp;{{data.printTime}}</td>
+                            <td class="five wide font-10">{{data.printDate}}&emsp;&emsp;{{data.printTime}}</td>
                         </tr>
                     </table>
                 </div>
@@ -2037,6 +2037,184 @@
             </tr>
             {{/ifCond}}
             {{/ifCond}}
+
+            {{#ifCond rhFactor "!=" null}}
+            <tr class="test-category">
+                <th><u>RHEUMATOID FACTOR CGHS 1453</u></th>
+            </tr>
+
+            {{#ifCond rhFactor.rhFactor "!=" null}}
+            <tr>
+                <td class="first-column">RHEUMATOID FACTOR (Quantitative)</td>
+                {{#ifCond rhFactor.rhFactor "<" 0}}
+                <td class="second-column bold">{{rhFactor.rhFactor}}</td>
+                {{else ifCond rhFactor.rhFactor ">" 20}}
+                <td class="second-column bold">{{rhFactor.rhFactor}}</td>
+                {{else}}
+                <td class="second-column">{{rhFactor.rhFactor}}</td>
+                {{/ifCond}}
+                <td class="third-column">0 - 20</td>
+                <td class="fourth-column">IU/ML</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond antiCcp "!=" null}}
+            <tr class="test-category">
+                <th><u>ANTI CCP CGHS 1555</u></th>
+            </tr>
+
+            {{#ifCond antiCcp.antiCcp "!=" null}}
+            <tr>
+                <td class="first-column">ANTI CCP *</td>
+                {{#ifCond antiCcp.antiCcp ">" 17}}
+                <td class="second-column bold">{{antiCcp.antiCcp}}</td>
+                {{else}}
+                <td class="second-column">{{antiCcp.antiCcp}}</td>
+                {{/ifCond}}
+                <td class="third-column">Non significant < 17 U/ml </br> Significant > 17.0 u/ml</td>
+                <td class="fourth-column">u/ml</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond ca125 "!=" null}}
+            <tr class="test-category">
+                <th><u>CA 125 CGHS 1543</u></th>
+            </tr>
+
+            {{#ifCond ca125.ca125 "!=" null}}
+            <tr>
+                <td class="first-column">CA 125 (Ovarian Cancer Marker) *</td>
+                {{#ifCond ca125.ca125 "<" 0}}
+                <td class="second-column bold">{{ca125.ca125}}</td>
+                {{else ifCond ca125.ca125 ">" 35}}
+                <td class="second-column bold">{{ca125.ca125}}</td>
+                {{else}}
+                <td class="second-column">{{ca125.ca125}}</td>
+                {{/ifCond}}
+                <td class="third-column">0 - 35</td>
+                <td class="fourth-column">U/mL</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond glycoHb "!=" null}}
+            <tr class="test-category">
+                <th><u>GLYCOSYLATED HB (HBA1C) CGHS 1501</u></th>
+            </tr>
+
+            {{#ifCond glycoHb.glycoHb "!=" null}}
+            <tr>
+                <td class="first-column">GLYCOSYLATED Hb *</td>
+                {{#ifCond glycoHb.glycoHb "<" 4}}
+                <td class="second-column bold">{{glycoHb.glycoHb}}</td>
+                {{else ifCond glycoHb.glycoHb ">" 6.5}}
+                <td class="second-column bold">{{glycoHb.glycoHb}}</td>
+                {{else}}
+                <td class="second-column">{{glycoHb.glycoHb}}</td>
+                {{/ifCond}}
+                <td class="third-column">4 - 6.5 </br> Normal A1c = 6.5 %</br>Diabetic good control = 6.9 %</br>Diabetic fair control = 7.0 - 7.9 %</br>Diabetic poor control = >= 8.0%</td>
+                <td class="fourth-column">%</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond hlaB27 "!=" null}}
+            <tr class="test-category">
+                <th><u>HLA B27 (PCR) CGHS 1790</u></th>
+            </tr>
+
+            {{#ifCond hlaB27.hlaB27 "!=" null}}
+            <tr>
+                <td class="first-column">HLA B 27 PCR *</td>
+                {{#ifCond hlaB27.hlaB27 "===" 'POSITIVE' }}
+                <td class="second-column bold">{{hlaB27.hlaB27}}</td>
+                {{else}}
+                <td class="second-column">{{hlaB27.hlaB27}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond typhidot "!=" null}}
+            <tr class="test-category">
+                <th><u>TYPHIDOT IGM CGHS 1818</u></th>
+            </tr>
+
+            {{#ifCond typhidot.typhidotIgm "!=" null}}
+            <tr>
+                <td class="first-column">TYPHIDOT IGM *</td>
+                {{#ifCond typhidot.typhidotIgm "===" 'POSITIVE'}}
+                <td class="second-column bold">{{typhidot.typhidotIgm}}</td>
+                {{else}}
+                <td class="second-column">{{typhidot.typhidotIgm}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond typhidot.typhidotIgg "!=" null}}
+            <tr>
+                <td class="first-column">TYPHIDOT IGG *</td>
+                {{#ifCond typhidot.typhidotIgg "===" 'POSITIVE'}}
+                <td class="second-column bold">{{typhidot.typhidotIgg}}</td>
+                {{else}}
+                <td class="second-column">{{typhidot.typhidotIgg}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{/ifCond}}
+
+            {{#ifCond serumIron "!=" null}}
+            <tr class="test-category">
+                <th><u>SERUMIRON CGHS 1457</u></th>
+            </tr>
+
+            {{#ifCond serumIron.serumIron "!=" null}}
+            <tr>
+                <td class="first-column">SERUM IRON</td>
+                {{#ifCond serumIron.serumIron "<" 41}}
+                <td class="second-column bold">{{serumIron.serumIron}}</td>
+                {{else ifCond serumIron.serumIron ">" 132}}
+                <td class="second-column bold">{{serumIron.serumIron}}</td>
+                {{else}}
+                <td class="second-column">{{serumIron.serumIron}}</td>
+                {{/ifCond}}
+                <td class="third-column">41-132</td>
+                <td class="fourth-column">ug/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond totalIron "!=" null}}
+            <tr class="test-category">
+                <th><u>TOTAL IRON BINDING CAPACITY CGHS 1464</u></th>
+            </tr>
+
+            {{#ifCond totalIron.totalIron "!=" null}}
+            <tr>
+                <td class="first-column">GLYCOSYLATED Hb *</td>
+                {{#ifCond totalIron.totalIron "<" 250}}
+                <td class="second-column bold">{{totalIron.totalIron}}</td>
+                {{else ifCond totalIron.totalIron ">" 400}}
+                <td class="second-column bold">{{totalIron.totalIron}}</td>
+                {{else}}
+                <td class="second-column">{{totalIron.totalIron}}</td>
+                {{/ifCond}}
+                <td class="third-column">250-400</td>
+                <td class="fourth-column">ug/dl</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            
 
         </table>
     </div>

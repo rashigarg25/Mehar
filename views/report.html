@@ -3,23 +3,23 @@
     <title>MEHAR SUPER SPECIALITY HOSPITAL</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker-standalone.css">
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css1/bootstrap.min.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="js1/jquery.min.js"></script>
     <script type="text/javascript" src="js1/moment.min.js"></script>
     <script type="text/javascript" src="js1/bootstrap-datetimepicker.min.js"></script>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 
     <style>
+        body{
+            overflow-x:scroll !important;
+        }
+        
         .row.patient_re th {
             font-size: 13px;
             text-align: CENTER;
@@ -251,6 +251,7 @@
             $.get("views/form_elements/thyroid.html", '', function (data) { $("#form_table_body").append(data); });
             $.get("views/form_elements/prolactin_sfsh_slh.html", '', function (data) { $("#form_table_body").append(data); });
             $.get("views/form_elements/abg.html", '', function (data) { $("#form_table_body").append(data); });
+            $.get("views/form_elements/other_tests.html", '', function (data) { $("#form_table_body").append(data); });
 
             $.get("views/form_elements/form_scripts.html", '', function (data) { $("#myForm").append(data); });
             

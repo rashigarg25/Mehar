@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const zip = require('express-zip');
 
-const {getGeneralTestReportPdfs} = require("../controller/homeController");
+const {getGeneralTestReportPdfs, getCultureReportPdf} = require("../controller/homeController");
 
 const router = express.Router();
 
@@ -27,20 +27,11 @@ router.post("/print_report", (req, res) => {
 );
 
 router.post("/print_report_culture", (req, res) => {
-//     getCultureTestReportPdfs(req, res).then(r => {
-
-//         let fileList = [];
-//         const rootPath = "./docs/";
-//         res.files.forEach(element => {
-//             let file = {};
-//             file.path = rootPath + element;
-//             file.name = element;
-//             fileList.push(file);
-//         });
-//         res.zip(fileList, req.body.patient_name + "_culture.zip");
-//     });
-// }
-    res.render('print_report_culture');
+        getCultureReportPdf(req, res).then(r =>  {
+            const rootPath = "./docs/";
+            console.log(res.file);
+        res.download(rootPath + res.file);
+    });
 });
 
 router.get('/', (req, res) => {

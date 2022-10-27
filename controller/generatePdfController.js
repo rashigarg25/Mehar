@@ -2,7 +2,7 @@ const fs = require('fs');
 const pdf = require('pdf-creator-node');
 const path = require('path');
 
-const generatePdf = async (template_name, info, filename) => {
+const generatePdf = async (template_name, info, filename, headerHeight) => {
 
     let templatePath = '../views/' + template_name + '.html';
     const html = fs.readFileSync(path.join(__dirname, templatePath), 'utf-8');
@@ -13,21 +13,25 @@ const generatePdf = async (template_name, info, filename) => {
         path: './docs/' + filename
     }
 
+    headerHeight = headerHeight ? headerHeight : '270px';
+
     const options = {
-        format: 'A4',
+        //format: 'A4',
+		//width: '200px',
+		//height: '300px',
         orientation: 'portrait',
         base: "file:///home/www/",
         border: {
-			left: '60px',
-			right: '30px',
 			top: '0px',
+			left: '40px',
+			right: '30px',
 			bottom: '0px'
 		},
         header: {
-            height: '220px'
+            height: headerHeight
         },
         footer: {
-            height: '130px',
+            height: '170px',
             contents: {
                 default: '<div id="pageFooter">\n' +
                     '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +
@@ -79,7 +83,6 @@ const generatePdf = async (template_name, info, filename) => {
 
     await pdf.create(document, options)
         .then(res => {
-            //console.log(res);
         }).catch(error => {
         console.log(error);
     });

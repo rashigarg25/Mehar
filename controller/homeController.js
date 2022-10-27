@@ -2,6 +2,33 @@ const {getSantizedInfo} = require('../controller/sanitizeData');
 const {generatePdf} = require('../controller/generatePdfController');
 const _ = require('lodash');
 
+
+const getCultureReportPdf = async (req, res) => {
+
+    for (let i = 0; i < 1; i++) {
+        let completeData = req.body;
+        if(!_.isEmpty(completeData.testDate[i])) {
+            const info = getInfo(req.body, i);
+            info.data = {};
+            info.data.testDate = info.testDate;
+            info.data.printDate = info.printDate;
+            formatDate(info);
+            info.testDate = info.data.testDate;
+            info.testTime = info.data.testTime;
+            info.printDate = info.data.printDate;
+            info.printTime = info.data.printTime;
+            
+            info.specimenOthers = info.specimenOthers.toUpperCase();
+            info.organism = info.organism.toUpperCase();
+
+            const filename = info.patient_name + '_' + info.ipd + '_' + info.testDate + '_' + info.specimenNature + '_cs.pdf';
+
+            res.file = filename;
+            await generatePdf('print_report_culture', info, filename, '190px');
+        }
+    }
+}
+
 const getGeneralTestReportPdfs = async (req, res) => {
 
     const files = [];
@@ -9,13 +36,14 @@ const getGeneralTestReportPdfs = async (req, res) => {
 
         let completeData = req.body;
         if(!_.isEmpty(completeData.testDate[i])) {
-            const info = getInfo(req.body, i);
+            let info = getInfo(req.body, i);
+            info = getSantizedInfo(info)
             if(info.data){
                 if(_.isEmpty(info.data.printDate)) {
                     info.data.printDate = info.data.testDate;
                 }
                 formatDate(info);
-                const filename = info.data.patient_name + '_' + info.data.ipd + '_' + info.data.testDate + '.pdf';
+                const filename = info.data.patient_name + '_' + info.data.ipd + '_' + info.data.testDate + '_' + info.data.testTime.replaceAll(':', '').substring(0, 5) + '.pdf';
                 files.push(filename);
                 await generatePdf('print_report', info, filename);
 
@@ -38,7 +66,7 @@ const getInfo = (body, i) => {
             info[element] = body[element];
         }
     });
-    return getSantizedInfo(info);
+    return info;
 }
 
 const formatDate = (info) => {
@@ -58,5 +86,5 @@ const formatDate = (info) => {
 
 
 module.exports = {
-    getGeneralTestReportPdfs
+    getGeneralTestReportPdfs, getCultureReportPdf
 };
