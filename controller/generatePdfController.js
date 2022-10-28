@@ -14,6 +14,7 @@ const generatePdf = async (template_name, info, filename, headerHeight) => {
     }
 
     headerHeight = headerHeight ? headerHeight : '270px';
+	footerHeight = headerHeight ? '130px' : '170px';
 
     const options = {
         format: 'A4',
@@ -29,7 +30,7 @@ const generatePdf = async (template_name, info, filename, headerHeight) => {
             height: headerHeight
         },
         footer: {
-            height: '170px',
+            height: footerHeight,
             contents: {
                 default: '<div id="pageFooter">\n' +
                     '            <div class="ui horizontal segments" style="overflow: hidden; white-space: nowrap; border: none">\n' +

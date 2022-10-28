@@ -8,7 +8,7 @@ const path = require("path");
 
 const getCultureReportPdf = async (req, res) => {
 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 7; i++) {
         let completeData = req.body;
         if (!_.isEmpty(completeData.testDate[i])) {
             const info = getInfo(req.body, i);
