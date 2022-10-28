@@ -183,4 +183,12 @@ module.exports.testPriceList = {
         "testName": "TYPHIDOT IGM CGHS 1818",
         "testPrice": 340
     },
+    "serumIron": {
+        "testName": "SERUM IRON CGHS 1457",
+        "testPrice": 85
+    },
+    "totalIron": {
+        "testName": "TOTAL IRON BINDING CAPACITY CGHS 1464",
+        "testPrice": 80
+    }
 }
