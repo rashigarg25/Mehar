@@ -127,7 +127,7 @@ const getDataForBill = (info) => {
     let returnObject = {};
     let testList = [];
     testKeys.forEach((key) => {
-        if(key !== 'data')
+        if(key !== 'data' && testPriceList[key])
             testList.push(testPriceList[key]);
     });
     returnObject.date = info.data.testDate;
