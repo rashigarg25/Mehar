@@ -1,6 +1,7 @@
 const _ = require('lodash');
+const {testPriceList} = require('../controller/testPriceList');
 
-module.exports.getSantizedInfo = (info) => {
+const getSantizedInfo = (info) => {
 
 
     if(!_.isEmpty(info.neutrophils) || !_.isEmpty(info.lymphocytes) || !_.isEmpty(info.monocyte) || !_.isEmpty(info.eosinophils) || !_.isEmpty(info.basophils)){
@@ -111,14 +112,29 @@ module.exports.getSantizedInfo = (info) => {
     sanitizedInfo["typhidot"] = _.pick(removedEmpty, ["typhidotIgm", "typhidotIgg"]);
     sanitizedInfo["serumIron"] = _.pick(removedEmpty, ["serumIron"]);
     sanitizedInfo["totalIron"] = _.pick(removedEmpty, ["totalIron"]);
-    
-    
-    
-    
-    
+
     sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
 
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
 
     return sanitizedInfo;
+};
+
+
+const getDataForBill = (info) => {
+    let testKeys = _.keys(info);
+
+    let returnObject = {};
+    let testList = [];
+    testKeys.forEach((key) => {
+        if(key !== 'data' && testPriceList[key])
+            testList.push(testPriceList[key]);
+    });
+    returnObject.date = info.data.testDate;
+    returnObject.testData = testList;
+    return returnObject;
+}
+
+module.exports = {
+    getDataForBill, getSantizedInfo
 };
