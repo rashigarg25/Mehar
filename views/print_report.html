@@ -736,6 +736,81 @@
                 <td class="fourth-column">mg/dl</td>
             </tr>
             {{/ifCond}}
+
+            {{#ifCond liver.alkphosphatase "!=" null}}
+            <tr>
+                <td class="first-column">ALKALINE PHOSPHATASE (ALP)<br/><i class="test-method">Method: ALP-AMP</i></td>
+                {{#ifCond liver.alkphosphatase "<" 53}}
+                <td class="second-column bold">{{liver.alkphosphatase}}</td>
+                {{else ifCond liver.alkphosphatase ">" 128}}
+                <td class="second-column bold">{{liver.alkphosphatase}}</td>
+                {{else}}
+                <td class="second-column">{{liver.alkphosphatase}}</td>
+                {{/ifCond}}
+                <td class="third-column">53 - 128</td>
+                <td class="fourth-column">iu/l</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond liver.tprotein "!=" null}}
+            <tr>
+                <td class="first-column">TOTAL PROTEIN<br/><i class="test-method">Method: Biuret</i></td>
+                {{#ifCond liver.tprotein "<" 6.4}}
+                <td class="second-column bold">{{liver.tprotein}}</td>
+                {{else ifCond liver.tprotein ">" 8.3}}
+                <td class="second-column bold">{{liver.tprotein}}</td>
+                {{else}}
+                <td class="second-column">{{liver.tprotein}}</td>
+                {{/ifCond}}
+                <td class="third-column">6.4 - 8.3</td>
+                <td class="fourth-column">g/dl</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond liver.serumalbumin "!=" null}}
+            <tr>
+                <td class="first-column">SERUM ALBUMIN<br/><i class="test-method">Method: Calculated</i></td>
+                {{#ifCond liver.serumalbumin "<" 3.5}}
+                <td class="second-column bold">{{liver.serumalbumin}}</td>
+                {{else ifCond liver.serumalbumin ">" 5.2}}
+                <td class="second-column bold">{{liver.serumalbumin}}</td>
+                {{else}}
+                <td class="second-column">{{liver.serumalbumin}}</td>
+                {{/ifCond}}
+                <td class="third-column">3.5 - 5.2</td>
+                <td class="fourth-column">g/dl</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond liver.globin "!=" null}}
+            <tr>
+                <td class="first-column">GLOBIN<br/><i class="test-method">Method: Calculated</i></td>
+                {{#ifCond liver.globin "<" 1.5}}
+                <td class="second-column bold">{{liver.globin}}</td>
+                {{else ifCond liver.globin ">" 3}}
+                <td class="second-column bold">{{liver.globin}}</td>
+                {{else}}
+                <td class="second-column">{{liver.globin}}</td>
+                {{/ifCond}}
+                <td class="third-column">1.5 - 3</td>
+                <td class="fourth-column">g/dl</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond liver.agratio "!=" null}}
+            <tr>
+                <td class="first-column">A/G RATIO<br/><i class="test-method">Method: Calculated</i></td>
+                {{#ifCond liver.agratio "<" 1.5}}
+                <td class="second-column bold">{{liver.agratio}}</td>
+                {{else ifCond liver.agratio ">" 3}}
+                <td class="second-column bold">{{liver.agratio}}</td>
+                {{else}}
+                <td class="second-column">{{liver.agratio}}</td>
+                {{/ifCond}}
+                <td class="third-column">1.5 - 3</td>
+                <td class="fourth-column">g/dl</td>
+            </tr>
+            {{/ifCond}}
             {{/ifCond}}
 
             {{#ifCond sgot "!=" null}}
@@ -772,81 +847,6 @@
                 {{/ifCond}}
                 <td class="third-column">0-45</td>
                 <td class="fourth-column">iu/l</td>
-            </tr>
-            {{/ifCond}}
-
-            {{#ifCond sgpt.alkphosphatase "!=" null}}
-            <tr>
-                <td class="first-column">ALKALINE PHOSPHATASE (ALP)<br/><i class="test-method">Method: ALP-AMP</i></td>
-                {{#ifCond sgpt.alkphosphatase "<" 53}}
-                <td class="second-column bold">{{sgpt.alkphosphatase}}</td>
-                {{else ifCond sgpt.alkphosphatase ">" 128}}
-                <td class="second-column bold">{{sgpt.alkphosphatase}}</td>
-                {{else}}
-                <td class="second-column">{{sgpt.alkphosphatase}}</td>
-                {{/ifCond}}
-                <td class="third-column">53 - 128</td>
-                <td class="fourth-column">iu/l</td>
-            </tr>
-            {{/ifCond}}
-
-            {{#ifCond sgpt.tprotein "!=" null}}
-            <tr>
-                <td class="first-column">TOTAL PROTEIN<br/><i class="test-method">Method: Biuret</i></td>
-                {{#ifCond sgpt.tprotein "<" 6.4}}
-                <td class="second-column bold">{{sgpt.tprotein}}</td>
-                {{else ifCond sgpt.tprotein ">" 8.3}}
-                <td class="second-column bold">{{sgpt.tprotein}}</td>
-                {{else}}
-                <td class="second-column">{{sgpt.tprotein}}</td>
-                {{/ifCond}}
-                <td class="third-column">6.4 - 8.3</td>
-                <td class="fourth-column">g/dl</td>
-            </tr>
-            {{/ifCond}}
-
-            {{#ifCond sgpt.serumalbumin "!=" null}}
-            <tr>
-                <td class="first-column">SERUM ALBUMIN<br/><i class="test-method">Method: Calculated</i></td>
-                {{#ifCond sgpt.serumalbumin "<" 3.5}}
-                <td class="second-column bold">{{sgpt.serumalbumin}}</td>
-                {{else ifCond sgpt.serumalbumin ">" 5.2}}
-                <td class="second-column bold">{{sgpt.serumalbumin}}</td>
-                {{else}}
-                <td class="second-column">{{sgpt.serumalbumin}}</td>
-                {{/ifCond}}
-                <td class="third-column">3.5 - 5.2</td>
-                <td class="fourth-column">g/dl</td>
-            </tr>
-            {{/ifCond}}
-
-            {{#ifCond sgpt.globin "!=" null}}
-            <tr>
-                <td class="first-column">GLOBIN<br/><i class="test-method">Method: Calculated</i></td>
-                {{#ifCond sgpt.globin "<" 1.5}}
-                <td class="second-column bold">{{sgpt.globin}}</td>
-                {{else ifCond sgpt.globin ">" 3}}
-                <td class="second-column bold">{{sgpt.globin}}</td>
-                {{else}}
-                <td class="second-column">{{sgpt.globin}}</td>
-                {{/ifCond}}
-                <td class="third-column">1.5 - 3</td>
-                <td class="fourth-column">g/dl</td>
-            </tr>
-            {{/ifCond}}
-
-            {{#ifCond sgpt.agratio "!=" null}}
-            <tr>
-                <td class="first-column">A/G RATIO<br/><i class="test-method">Method: Calculated</i></td>
-                {{#ifCond sgpt.agratio "<" 1.5}}
-                <td class="second-column bold">{{sgpt.agratio}}</td>
-                {{else ifCond sgpt.agratio ">" 3}}
-                <td class="second-column bold">{{sgpt.agratio}}</td>
-                {{else}}
-                <td class="second-column">{{sgpt.agratio}}</td>
-                {{/ifCond}}
-                <td class="third-column">1.5 - 3</td>
-                <td class="fourth-column">g/dl</td>
             </tr>
             {{/ifCond}}
             {{/ifCond}}
@@ -1325,7 +1325,7 @@
 
             {{#ifCond pct "!=" null}}
             <tr class="test-category">
-                <th><u>PCT</u></th>
+                <th><u>PCT CGHS 1792</u></th>
             </tr>
             <tr>
                 <td class="first-column">PCT</td>
@@ -1864,7 +1864,7 @@
 
             {{#ifCond clottingTime.clottingTimeMin "!=" null}}
             <tr>
-                <td class="first-column">BLEEDING TIME</td>
+                <td class="first-column">CLOTTING TIME</td>
                 {{#ifCond clottingTime.clottingTimeMin "<" 3}}
                 <td class="second-column bold">{{clottingTime.clottingTimeMin}} MIN {{clottingTime.clottingTimeSec}} SEC</td>
                 {{else ifCond clottingTime.clottingTime ">=" 10}}

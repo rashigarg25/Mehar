@@ -145,7 +145,7 @@ module.exports.testPriceList = {
     },
     "thyroid": {
         "testName": "T3, T4, TSH CGHS 1559",
-        "testPrice": 1559
+        "testPrice": 181
     },
     "bleedingTime": {
         "testName": "BLEEDING TIME CGHS 1401",

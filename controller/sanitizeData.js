@@ -71,9 +71,9 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["potassium"] = _.pick(removedEmpty, ["potassium"]);
     sanitizedInfo["chloride"] = _.pick(removedEmpty, ["chloride"]);
     sanitizedInfo["urine"] = _.pick(removedEmpty, ["quantity", "color", "transparency", "gravity", "reaction", "ph", "albumin", "usugar", "ublood", "ubilirubin", "urobilinogen", "uacetone", "epithelial", "pus", "urbc", "crystals", "casts", "bacteria", "uother"]);
-    sanitizedInfo["sgpt"] = _.pick(removedEmpty, ["sgpt", "alkphosphatase", "tprotein", "serumalbumin", "globin", "agratio"]);
+    sanitizedInfo["sgpt"] = _.pick(removedEmpty, ["sgpt"]);
     sanitizedInfo["sgot"] = _.pick(removedEmpty, ["sgot"]);
-    sanitizedInfo["liver"] = _.pick(removedEmpty, ["bilirubin", "cbilirubin", "ucbilirubin"]);
+    sanitizedInfo["liver"] = _.pick(removedEmpty, ["bilirubin", "cbilirubin", "ucbilirubin", "alkphosphatase", "tprotein", "serumalbumin", "globin", "agratio"]);
     sanitizedInfo["coagulation"] = _.pick(removedEmpty, ["ptpatient", "ptcontrol", "index", "isireagent", "inr", "pttk"]);
     sanitizedInfo["serumAmylase"] = _.pick(removedEmpty, ["serumamylase"]);
     sanitizedInfo["serumLipase"] = _.pick(removedEmpty, ["serumlipase"]);

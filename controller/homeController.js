@@ -64,7 +64,6 @@ const getGeneralTestReportPdfs = async (req, res) => {
             }
             // If exists, it means multiple tests done on same date. Append tests to the existing array of tests
             else {
-                console.log(">>> Date already there, appending to " + info.data.testDate);
                 Array.prototype.push.apply(obj.testData, getDataForBill(info).testData)
             }
             patientData = info.data;
