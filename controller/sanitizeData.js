@@ -1,10 +1,11 @@
+// noinspection FallThroughInSwitchStatementJS
+
 const _ = require('lodash');
 const {testPriceList} = require('../controller/testPriceList');
 
 const getSantizedInfo = (info) => {
 
-
-    if(!_.isEmpty(info.neutrophils) || !_.isEmpty(info.lymphocytes) || !_.isEmpty(info.monocyte) || !_.isEmpty(info.eosinophils) || !_.isEmpty(info.basophils)){
+    if (!_.isEmpty(info.neutrophils) || !_.isEmpty(info.lymphocytes) || !_.isEmpty(info.monocyte) || !_.isEmpty(info.eosinophils) || !_.isEmpty(info.basophils)) {
 
         info.neutrophils = _.isEmpty(info.neutrophils) ? 0 : info.neutrophils;
         info.lymphocytes = _.isEmpty(info.lymphocytes) ? 0 : info.lymphocytes;
@@ -12,53 +13,65 @@ const getSantizedInfo = (info) => {
         info.eosinophils = _.isEmpty(info.eosinophils) ? 0 : info.eosinophils;
         info.basophils = _.isEmpty(info.basophils) ? 0 : info.basophils;
         info.dlc = ".."
-
     }
 
-    if(!_.isEmpty(info.hb) && !_.isEmpty(info.rbc)){
+    if (!_.isEmpty(info.hb) && !_.isEmpty(info.rbc)) {
         info.pcv = (info.hb * 3).toFixed(1);
         info.mcv = ((info.pcv * 10) / info.rbc).toFixed(1);
-        info.mch = ((info.hb/info.rbc) * 10).toFixed(1) ;
-        info.mchc = ((info.hb/info.pcv) * 100).toFixed(1);
+        info.mch = ((info.hb / info.rbc) * 10).toFixed(1);
+        info.mchc = ((info.hb / info.pcv) * 100).toFixed(1);
     }
 
-    if(!_.isEmpty(info.inr)) {
+    if (!_.isEmpty(info.inr)) {
         info.ptcontrol = 11.5;
         info.ptpatient = (info.ptcontrol * info.inr).toFixed(1);
-        info.index = ((info.ptcontrol/info.ptpatient) * 100).toFixed(1);
+        info.index = ((info.ptcontrol / info.ptpatient) * 100).toFixed(1);
     }
 
-    if(!_.isEmpty(info.burea)){
-        info.bun = (info.burea/2.14).toFixed(1);
+    if (!_.isEmpty(info.burea)) {
+        info.bun = (info.burea / 2.14).toFixed(1);
     }
 
-    if(!_.isEmpty(info.bilirubin) && !_.isEmpty(info.cbilirubin)) {
+    if (!_.isEmpty(info.bilirubin) && !_.isEmpty(info.cbilirubin)) {
         info.ucbilirubin = ((info.bilirubin - info.cbilirubin) * 1).toFixed(2);
     }
 
-    if(!_.isEmpty(info.tprotein) && !_.isEmpty(info.serumalbumin)) {
+    if (!_.isEmpty(info.tprotein) && !_.isEmpty(info.serumalbumin)) {
         info.globin = ((info.tprotein - info.serumalbumin) * 1).toFixed(2);
-        info.agratio = (info.serumalbumin/info.globin).toFixed(1);
+        info.agratio = (info.serumalbumin / info.globin).toFixed(1);
     }
 
-    if(!_.isEmpty(info.triglycerides)){
-        info.vldl = (info.triglycerides/5).toFixed(1);
+    if (!_.isEmpty(info.triglycerides)) {
+        info.vldl = (info.triglycerides / 5).toFixed(1);
 
-        if(!_.isEmpty(info.totalCholestrol) && !_.isEmpty(info.hdlCholestrol)){
+        if (!_.isEmpty(info.totalCholestrol) && !_.isEmpty(info.hdlCholestrol)) {
             info.ldlCholestrol = ((info.totalCholestrol - info.hdlCholestrol - info.vldl) * 1).toFixed(1);
-            info.cholesterolRatio = (info.totalCholestrol/info.hdlCholestrol).toFixed(1);
-            info.ldlHdlRatio = (info.ldlCholestrol/info.hdlCholestrol).toFixed(1);
+            info.cholesterolRatio = (info.totalCholestrol / info.hdlCholestrol).toFixed(1);
+            info.ldlHdlRatio = (info.ldlCholestrol / info.hdlCholestrol).toFixed(1);
         }
     }
 
-    if(!_.isEmpty(info.bleedingTimeMin) || !_.isEmpty(info.bleedingTimeSec)) {
+    if (!_.isEmpty(info.bleedingTimeMin) || !_.isEmpty(info.bleedingTimeSec)) {
         info.bleedingTimeMin = _.isEmpty(info.bleedingTimeMin) ? 0 : info.bleedingTimeMin;
         info.bleedingTimeSec = _.isEmpty(info.bleedingTimeSec) ? 0 : info.bleedingTimeSec;
     }
 
-    if(!_.isEmpty(info.clottingTimeMin) || !_.isEmpty(info.clottingTimeSec)) {
+    if (!_.isEmpty(info.clottingTimeMin) || !_.isEmpty(info.clottingTimeSec)) {
         info.clottingTimeMin = _.isEmpty(info.clottingTimeMin) ? 0 : info.clottingTimeMin;
         info.clottingTimeSec = _.isEmpty(info.clottingTimeSec) ? 0 : info.clottingTimeSec;
+    }
+
+    if(!_.isEmpty(info.widal)) {
+        info.typhyo = processWidalData(info.typhyo);
+        info.typhyh = processWidalData(info.typhyh);
+        info.typhyah = processWidalData(info.typhyah);
+        info.typhybh = processWidalData(info.typhybh);
+    }
+    else {
+        info.typhyo = '';
+        info.typhyh = '';
+        info.typhyah = '';
+        info.typhybh = '';
     }
 
     const removedEmpty = _.omitBy(info, v => v === '');
@@ -87,12 +100,12 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["dimer"] = _.pick(removedEmpty, ["dimer"]);
     sanitizedInfo["serumFerritin"] = _.pick(removedEmpty, ["serumferritin"]);
     sanitizedInfo["malaria"] = _.pick(removedEmpty, ["malaria"]);
-    sanitizedInfo["widal"] = _.pick(removedEmpty, ["widal"]);
+    sanitizedInfo["widal"] = _.pick(removedEmpty, ["widal", "typhyo", "typhyh", "typhyah", "typhybh"]);
     sanitizedInfo["dengue"] = _.pick(removedEmpty, ["dengue", "dengueigg", "dengueigm"]);
     sanitizedInfo["bloodGroup"] = _.pick(removedEmpty, ["bgroupAbo", "bgroupRh"]);
     sanitizedInfo["calcium"] = _.pick(removedEmpty, ["calcium"]);
     sanitizedInfo["cpkMb"] = _.pick(removedEmpty, ["cpkMb"]);
-    sanitizedInfo["lipidProfile"] = _.pick(removedEmpty, ["totalCholestrol", "triglycerides","hdlCholestrol","ldlCholestrol", "vldl", "cholesterolRatio", "ldlHdlRatio"]);
+    sanitizedInfo["lipidProfile"] = _.pick(removedEmpty, ["totalCholestrol", "triglycerides", "hdlCholestrol", "ldlCholestrol", "vldl", "cholesterolRatio", "ldlHdlRatio"]);
     sanitizedInfo["bleedingTime"] = _.pick(removedEmpty, ["bleedingTimeMin", "bleedingTimeSec"]);
     sanitizedInfo["clottingTime"] = _.pick(removedEmpty, ["clottingTimeMin", "clottingTimeSec"]);
     sanitizedInfo["vitB12"] = _.pick(removedEmpty, ["vitB12"]);
@@ -103,7 +116,7 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["prolactin"] = _.pick(removedEmpty, ["prolactin"]);
     sanitizedInfo["sFsh"] = _.pick(removedEmpty, ["sFsh"]);
     sanitizedInfo["sLh"] = _.pick(removedEmpty, ["sLh"]);
-    sanitizedInfo["abg"] = _.pick(removedEmpty, ["phAbg", "pco2", "po2", "beecf", "hco3", "so2", "na", "k",  "ica", "hct", "abgHb"]);
+    sanitizedInfo["abg"] = _.pick(removedEmpty, ["phAbg", "pco2", "po2", "beecf", "hco3", "so2", "na", "k", "ica", "hct", "abgHb"]);
     sanitizedInfo["rhFactor"] = _.pick(removedEmpty, ["rhFactor"]);
     sanitizedInfo["antiCcp"] = _.pick(removedEmpty, ["antiCcp"]);
     sanitizedInfo["ca125"] = _.pick(removedEmpty, ["ca125"]);
@@ -114,12 +127,29 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["totalIron"] = _.pick(removedEmpty, ["totalIron"]);
 
     sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
-
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
 
     return sanitizedInfo;
 };
 
+const processWidalData = (type) => {
+        let widalData = ["-ve", "-ve", "-ve", "-ve", "-ve"];
+        if (!_.isEmpty(type)) {
+            switch (type) {
+                case "1/320":
+                    widalData[4] = "+ve";
+                case "1/160":
+                    widalData[3] = "+ve";
+                case "1/80":
+                    widalData[2] = "+ve";
+                case "1/40":
+                    widalData[1] = "+ve";
+                case "1/20":
+                    widalData[0] = "+ve";
+            }
+        }
+    return widalData;
+}
 
 const getDataForBill = (info) => {
     let testKeys = _.keys(info);
@@ -127,7 +157,7 @@ const getDataForBill = (info) => {
     let returnObject = {};
     let testList = [];
     testKeys.forEach((key) => {
-        if(key !== 'data' && testPriceList[key])
+        if (key !== 'data' && testPriceList[key])
             testList.push(testPriceList[key]);
     });
     returnObject.date = info.data.testDate;

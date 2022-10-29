@@ -1,16 +1,20 @@
 <table class="basic ui table">
     <tr>
-        <td>Patient Name :
-            <input type="text" class=" ui input inputc" id="pwd" name="patient_name"></td>
-        <td> Age : <input type="text" class="inputc" id="pwd" name="Age">
-            <div class="ui selection dropdown" id="ageunit-dropDown">
-                <input type="hidden" name="ageUnit">
-                <i class="dropdown icon"></i>
-                <div class="text">Years</div>
-                <div class="menu">
-                    <div class="item active selected" data-value="Yr">Years</div>
-                    <div class="item" data-value="Months">Months</div>
-                    <div class="item" data-value="Days">Days</div>
+        <td>Patient Name
+            <input type="text" class=" ui input inputc" name="patient_name">
+        </td>
+        <td> Age
+            <div class="ui right labeled input">
+                <input type="text" name="Age" style="width: 20%">
+                <div class="ui selection compact dropdown" id="ageunit-dropDown">
+                    <input type="hidden" name="ageUnit">
+                    <i class="dropdown icon"></i>
+                    <div class="text">Years</div>
+                    <div class="menu">
+                        <div class="item active selected" data-value="Yr">Years</div>
+                        <div class="item" data-value="Months">Months</div>
+                        <div class="item" data-value="Days">Days</div>
+                    </div>
                 </div>
             </div>
         </td>
@@ -18,13 +22,13 @@
     </tr>
 
     <tr>
-        <td>UHID/MR No. : <input type="text" class="inputc" id="pwd" name="uhid"></td>
+        <td>UHID/MR No.<input type="text" class="inputc" id="pwd" name="uhid"></td>
         <td>IPD No. : <input type="text" class="inputc" id="pwd" name="ipd"></td>
     </tr>
 
     <tr>
-        <td>Gender :
-            <div class="ui selection dropdown" id="gender-dropDown">
+        <td>Gender
+            <div class="ui selection fluid dropdown" id="gender-dropDown">
                 <input type="hidden" name="gender">
                 <i class="dropdown icon"></i>
                 <div class="default text">Gender</div>
@@ -34,9 +38,8 @@
                 </div>
             </div>
         </td>
-        <td>Consultant :
-
-            <div class="ui selection dropdown" id="consultant-dropDown">
+        <td>Consultant
+            <div class="ui selection fluid dropdown" id="consultant-dropDown">
                 <input type="hidden" name="consultant">
                 <i class="dropdown icon"></i>
                 <div class="default text">Consultant</div>
@@ -71,12 +74,10 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2"> Address : <input type="text" class="inputc" id="pwd" name="address"
-                                          style="width:80%"></td>
+        <td colspan="2">Address<input type="text" class="inputc" name="address"></td>
     </tr>
     <tr>
-        <td colspan="2"> Phone : <input type="text" class="inputc" id="pwd" name="phone"
-                                        style="width:80%"></td>
+        <td> Phone : <input type="text" class="inputc" name="phone"></td>
     </tr>
 
     <script>
@@ -99,7 +100,7 @@
             }
         });
     </script>
-    
+
 
     <script type="text/javascript">
         $('body').on('keydown input', 'textarea[data-expandable]', function () {
@@ -112,6 +113,6 @@
             this.style.height = (this.scrollHeight + 2) + 'px';
         });
 
-        
+
     </script>
 </table>

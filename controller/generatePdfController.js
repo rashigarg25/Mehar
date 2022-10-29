@@ -14,7 +14,7 @@ const generatePdf = async (template_name, info, filename, headerHeight) => {
     }
 
     headerHeight = headerHeight ? headerHeight : '270px';
-	footerHeight = headerHeight ? '130px' : '170px';
+    let footerHeight = headerHeight ? '130px' : '170px';
 
     const options = {
         format: 'A4',
