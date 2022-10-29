@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Courier Prime' rel='stylesheet'>
 
     <style>
 
@@ -81,6 +82,10 @@
 
         .times-new-roman {
             font-family: Times, serif;
+        }
+
+        .courier {
+            font-family: 'Courier Prime', monospace;
         }
 
         .arial {
@@ -169,29 +174,7 @@
         <img src="https://i.postimg.cc/KRC0X4CC/signature.png" height="1px" style="display: none">
         <div id="pageHeader">
             <div class="ui segments" style="overflow: hidden; white-space: nowrap; border: none">
-                <!--<div class="ui horizontal segments">
-                    <div class="ui segment" style="border: none !important; padding: 0px;">
-
-                        <img class="ui left aligned image mehar-logo"
-                             src='https://i.postimg.cc/DJyvzMQc/Screenshot-2022-10-05-at-7-59-20-AM.png'
-                             alt='Mehar hospital logo'>
-                    </div>
-                    <div class="ui segment" style="border: none !important;">
-
-                        <img class="ui left aligned image nabh-logo"
-                             src="https://i.postimg.cc/MnV2NC3b/nabh-logo.png">
-                    </div>
-                    <div class="ui left aligned segment" style="border: none !important; padding-bottom: 0px;">
-                        <p style="font-weight: 900 !important;margin-bottom: 0;">
-                            <span class="times-new-roman font-13">MEHAR SUPER SPECIALITY HOSPITAL</span>
-                        </p>
-                        <p class="times-new-roman font-9">
-                            Opposite Grandeur Marriage Palace, Singhpura Road,<br/>
-                            Zirakpur, Mohali Ph: +91 7527070509, 7527070510<br/>
-                            E-mail: info@meharhospital.com, Website:- www.meharhospital.com<br/></p>
-                    </div>
-                </div> -->
-				<div class="ui grid container">
+                <div class="ui grid container">
                     <div class="six wide column" style="padding: 12px">
                         <img class="ui left aligned image mehar-logo"
                              src='https://i.postimg.cc/DJyvzMQc/Screenshot-2022-10-05-at-7-59-20-AM.png'
@@ -232,7 +215,9 @@
                             <td class="one wide"></td>
                             <td class="two wide font-9">ID No , Age</td>
                             <td class="one wide font-9">:</td>
-                            <td class="five wide font-10">{{data.ipd}} , {{data.Age}} {{data.ageUnit}} / {{data.gender}}</td>
+                            <td class="five wide font-10">{{data.ipd}} , {{data.Age}} {{data.ageUnit}} /
+                                {{data.gender}}
+                            </td>
                         </tr>
                         <tr>
                             <td class="two wide font-9">Address</td>
@@ -657,7 +642,7 @@
             <tr>
                 <td class="first-column">POTASSIUM<br/><i class="test-method">Method: Uricase - Ion Selective
                     Electrode</i></td>
-                    {{#ifCond potassium.potassium "<" 3.5}}
+                {{#ifCond potassium.potassium "<" 3.5}}
                 <td class="second-column bold">{{potassium.potassium}}</td>
                 {{else ifCond potassium.potassium ">" 5.5}}
                 <td class="second-column bold">{{potassium.potassium}}</td>
@@ -676,7 +661,7 @@
             <tr>
                 <td class="first-column">CHLORIDE<br/><i class="test-method">Method: Uricase - Ion Selective
                     Electrode</i></td>
-                {{#ifCond chloride.chloride "<" 96}}    
+                {{#ifCond chloride.chloride "<" 96}}
                 <td class="second-column bold">{{chloride.chloride}}</td>
                 {{else ifCond chloride.chloride ">" 107}}
                 <td class="second-column bold">{{chloride.chloride}}</td>
@@ -1451,6 +1436,149 @@
                 <td class="third-column">Positive/Negative</td>
                 <td class="fourth-column">Negative</td>
             </tr>
+            <!-- The table for Widal -->
+            <tr>
+                <td colspan="3">
+                    <table class="ui very basic table courier">
+                        <tr>
+                            <td></td>
+                            <td>1/20</td>
+                            <td>1/40</td>
+                            <td>1/80</td>
+                            <td>1/160</td>
+                            <td>1/320</td>
+                        </tr>
+                        <tr>
+                            <td>TYPHY "O"</td>
+                            {{#ifCond widal.typhyo.[0] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyo.[0]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyo.[0]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyo.[1] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyo.[1]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyo.[1]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyo.[2] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyo.[2]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyo.[2]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyo.[3] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyo.[3]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyo.[3]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyo.[4] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyo.[4]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyo.[4]}}</td>
+                            {{/ifCond}}
+                        </tr>
+                        <tr>
+                            <td>TYPHY "H"</td>
+                            {{#ifCond widal.typhyh.[0] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyh.[0]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyh.[0]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyh.[1] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyh.[1]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyh.[1]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyh.[2] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyh.[2]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyh.[2]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyh.[3] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyh.[3]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyh.[3]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyh.[4] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyh.[4]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyh.[4]}}</td>
+                            {{/ifCond}}
+                        </tr>
+                        <tr>
+                            <td>TYPHY "AH"</td>
+                            {{#ifCond widal.typhyah.[0] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyah.[0]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyah.[0]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyah.[1] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyah.[1]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyah.[1]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyah.[2] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyah.[2]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyah.[2]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyah.[3] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyah.[3]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyah.[3]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhyah.[4] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhyah.[4]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhyah.[4]}}</td>
+                            {{/ifCond}}
+                        </tr>
+                        <tr>
+                            <td>TYPHY "BH"</td>
+                            {{#ifCond widal.typhybh.[0] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhybh.[0]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhybh.[0]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhybh.[1] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhybh.[1]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhybh.[1]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhybh.[2] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhybh.[2]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhybh.[2]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhybh.[3] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhybh.[3]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhybh.[3]}}</td>
+                            {{/ifCond}}
+
+                            {{#ifCond widal.typhybh.[4] "===" '+ve'}}
+                            <td class="widal-typhy bold">{{widal.typhybh.[4]}}</td>
+                            {{else}}
+                            <td class="widal-typhy">{{widal.typhybh.[4]}}</td>
+                            {{/ifCond}}
+                        </tr>
+                    </table>
+                </td>
+            </tr>
             {{/ifCond}}
 
             {{#ifCond bloodGroup "!=" null}}
@@ -1558,7 +1686,7 @@
                 <td class="fourth-column">mg/dl</td>
             </tr>
             {{/ifCond}}
-          
+
             {{#ifCond lipidProfile.hdlCholestrol "!=" null}}
             <tr>
                 <td class="first-column">H D L CHOLESTEROL
@@ -1594,7 +1722,7 @@
                 <td class="fourth-column">mg/dl</td>
             </tr>
             {{/ifCond}}
-          
+
             {{#ifCond lipidProfile.vldl "!=" null}}
             <tr>
                 <td class="first-column">VLDL
