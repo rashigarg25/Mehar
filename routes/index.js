@@ -29,7 +29,6 @@ router.post("/print_report", (req, res) => {
 router.post("/print_report_culture", (req, res) => {
         getCultureReportPdf(req, res).then(r =>  {
             const rootPath = "./docs/";
-            console.log(res.file);
         res.download(rootPath + res.file);
     });
 });

@@ -190,5 +190,30 @@ module.exports.testPriceList = {
     "totalIron": {
         "testName": "TOTAL IRON BINDING CAPACITY CGHS 1464",
         "testPrice": 80
+    },
+    "cultureBlood": {
+        "testName": "CULTURE & SENSITIVITY FOR BLOOD CGHS 1739",
+        "testPrice": 180
+    },
+    "cultureUrine": {
+        "testName": "CULTURE & SENSITIVITY FOR URINE CGHS 1739",
+        "testPrice": 180
+    },
+    "culturePus": {
+        "testName": "CULTURE & SENSITIVITY FOR PUS CGHS 1739",
+        "testPrice": 180
+    },
+    "cultureVaginalSwab": {
+        "testName": "CULTURE & SENSITIVITY FOR VAGINAL SWAB CGHS 1739",
+        "testPrice": 180
+    },
+    "cultureStool": {
+        "testName": "CULTURE & SENSITIVITY FOR STOOL CGHS 1739",
+        "testPrice": 180
+    },
+    "cultureOthers": {
+        "testName": "CULTURE & SENSITIVITY FOR OTHERS CGHS 1739",
+        "testPrice": 180
     }
+
 }
