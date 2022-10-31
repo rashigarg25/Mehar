@@ -60,6 +60,7 @@ const getGeneralTestReportPdfs = async (req, res) => {
 
             //  If not, add a new entry
             if (obj === undefined) {
+
                 billList.push(getDataForBill(info));
             }
             // If exists, it means multiple tests done on same date. Append tests to the existing array of tests
@@ -129,6 +130,10 @@ const getInfo = (body, i) => {
             info[element] = body[element];
         }
     });
+    info.cultureForBill = body["cultureForBill-" + i];
+    if(!_.isArray(info.cultureForBill)) {
+        info.cultureForBill = [info.cultureForBill];
+    }
     return info;
 }
 

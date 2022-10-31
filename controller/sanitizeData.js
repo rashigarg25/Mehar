@@ -74,6 +74,33 @@ const getSantizedInfo = (info) => {
         info.typhybh = '';
     }
 
+    if(!_.isEmpty(info.cultureForBill)) {
+
+        info.cultureForBill.forEach(culture => {
+            switch(culture) {
+                case "BLOOD": 
+                    info.cultureBlood = true;
+                    break;
+                case "URINE": 
+                    info.cultureUrine = true;
+                    break;
+                case "PUS": 
+                    info.culturePus = true;
+                    break;
+                case "STOOL": 
+                    info.cultureStool = true;
+                    break;
+                case "VAGINAL SWAB": 
+                    info.cultureVaginalSwab = true;
+                    break;
+                case "OTHERS": 
+                    info.cultureOthers = true;
+                    break;
+            }
+        });
+
+    }
+    
     const removedEmpty = _.omitBy(info, v => v === '');
     let sanitizedInfo = {};
     sanitizedInfo["blood"] = _.pick(removedEmpty, ["hb", "tlc", "dlc", "neutrophils", "lymphocytes", "monocyte", "eosinophils", "basophils", "rbc", "pcv", "mcv", "mch", "mchc", "rdwcv", "rdwsd", "platelet"]);
@@ -125,6 +152,12 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["typhidot"] = _.pick(removedEmpty, ["typhidotIgm", "typhidotIgg"]);
     sanitizedInfo["serumIron"] = _.pick(removedEmpty, ["serumIron"]);
     sanitizedInfo["totalIron"] = _.pick(removedEmpty, ["totalIron"]);
+    sanitizedInfo["cultureBlood"] = _.pick(removedEmpty, ["cultureBlood"]);
+    sanitizedInfo["cultureUrine"] = _.pick(removedEmpty, ["cultureUrine"]);
+    sanitizedInfo["culturePus"] = _.pick(removedEmpty, ["culturePus"]);
+    sanitizedInfo["cultureVaginalSwab"] = _.pick(removedEmpty, ["cultureVaginalSwab"]);
+    sanitizedInfo["cultureStool"] = _.pick(removedEmpty, ["cultureStool"]);
+    sanitizedInfo["cultureOthers"] = _.pick(removedEmpty, ["cultureOthers"]);
 
     sanitizedInfo["data"] = _.pick(removedEmpty, ["patient_name", "uhid", "ipd", "department", "address", "phone", "consultant", "testDate", "testTime", "printDate", "printTime", "ageUnit", "gender", "Age"]);
     sanitizedInfo = _.omitBy(sanitizedInfo, v => _.isEmpty(v));
