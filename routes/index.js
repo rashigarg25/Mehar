@@ -28,10 +28,16 @@ router.post("/print_report", (req, res) => {
 
 router.post("/print_report_culture", (req, res) => {
         getCultureReportPdf(req, res).then(r =>  {
-            const rootPath = "./docs/";
 
-            if(res.file)
-            res.download(rootPath + res.file);
+            let fileList = [];
+            const rootPath = "./docs/";
+            res.files.forEach(element => {
+                let file = {};
+                file.path = rootPath + element;
+                file.name = element;
+                fileList.push(file);
+            });
+            res.zip(fileList, req.body.patient_name + "_cs.zip");
     });
 });
 
