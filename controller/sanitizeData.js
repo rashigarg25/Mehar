@@ -152,6 +152,16 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["typhidot"] = _.pick(removedEmpty, ["typhidotIgm", "typhidotIgg"]);
     sanitizedInfo["serumIron"] = _.pick(removedEmpty, ["serumIron"]);
     sanitizedInfo["totalIron"] = _.pick(removedEmpty, ["totalIron"]);
+
+    sanitizedInfo["covid19RAT"] = _.pick(removedEmpty, ["covid19RAT"]);
+    sanitizedInfo["absoluteEosinophil"] = _.pick(removedEmpty, ["absoluteEosinophil"]);
+    sanitizedInfo["chikungunyaIgm"] = _.pick(removedEmpty, ["chikungunyaIgm"]);
+    sanitizedInfo["leptospira"] = _.pick(removedEmpty, ["leptospiraIgg", "leptospiraIgm"]);
+    sanitizedInfo["scrub"] = _.pick(removedEmpty, ["scrubIgg", "scrubIgm"]);
+    sanitizedInfo["gramStain"] = _.pick(removedEmpty, ["gramStain"]);
+    sanitizedInfo["kohStain"] = _.pick(removedEmpty, ["kohStain"]);
+
+
     sanitizedInfo["cultureBlood"] = _.pick(removedEmpty, ["cultureBlood"]);
     sanitizedInfo["cultureUrine"] = _.pick(removedEmpty, ["cultureUrine"]);
     sanitizedInfo["culturePus"] = _.pick(removedEmpty, ["culturePus"]);
