@@ -191,6 +191,34 @@ module.exports.testPriceList = {
         "testName": "TOTAL IRON BINDING CAPACITY CGHS 1464",
         "testPrice": 80
     },
+    "scrub": {
+        "testName": "SCRUB TYPHUS ANTIBODY",
+        "testPrice": 1300
+    },
+    "leptospira": {
+        "testName": "LEPTOSPIRA ABs",
+        "testPrice": 2370
+    },
+    "chikungunyaIgm": {
+        "testName": "CHIKUNGUNYA IgM",
+        "testPrice": 1000
+    },
+    "absoluteEosinophil": {
+        "testName": "ABSOLUTE EOSINOPHILIC COUNT (AEC) CGHS 1397",
+        "testPrice": 43
+    },
+    "covid19RAT": {
+        "testName": "COVID-19 RAPID ANTIGEN CARD TEST",
+        "testPrice": 250
+    },
+    "gramStain": {
+        "testName": "GRAM STAIN (SPECIAL STAIN) CGHS 1433",
+        "testPrice": 65
+    },
+    "kohStain": {
+        "testName": "KOH STAIN FOR FUNGUS (SPECIAL STAIN) CGHS 1433",
+        "testPrice": 65
+    },
     "cultureBlood": {
         "testName": "CULTURE & SENSITIVITY FOR BLOOD CGHS 1739",
         "testPrice": 180

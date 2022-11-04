@@ -8,6 +8,8 @@ const path = require("path");
 
 const getCultureReportPdf = async (req, res) => {
 
+    const files = [];
+
     for (let i = 0; i < 7; i++) {
         let completeData = req.body;
         if (!_.isEmpty(completeData.testDate[i])) {
@@ -26,10 +28,12 @@ const getCultureReportPdf = async (req, res) => {
 
             const filename = info.patient_name + '_' + info.ipd + '_' + info.testDate + '_' + info.specimenNature + '_cs.pdf';
 
-            res.file = filename;
+            files.push(filename);
+
             await generatePdf('print_report_culture', info, filename, '190px');
         }
     }
+    res.files = files;
 }
 
 const getGeneralTestReportPdfs = async (req, res) => {

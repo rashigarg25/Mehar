@@ -36,7 +36,64 @@
         $('input[name="tiglecycline"]').val('Resistant');
         $('input[name="tiecoplanin"]').val('Resistant');
 
+        if(localStorage["patient_name"]) {
+            $('input[name="patient_name"]').val(localStorage["patient_name"]);
+        }
+        if(localStorage["Age"]) {
+            $('input[name="Age"]').val(localStorage["Age"]);
+        }
+        if(localStorage["uhid"]) {
+            $('input[name="uhid"]').val(localStorage["uhid"]);
+        }
+        if(localStorage["ipd"]) {
+            $('input[name="ipd"]').val(localStorage["ipd"]);
+        }
+        if(localStorage["gender"]) {
+            $('#gender-dropDown').find('div').first().removeClass('default');
+            $('#gender-dropDown').find('div').first().text(localStorage["gender"]);
+            document.querySelector("[data-value='" + localStorage["gender"] +"']").classList.add("active", "selected");
+            $('input[name="gender"]').val(localStorage["gender"]);
+        }
+        if(localStorage["consultant"]) {
+            $('#consultant-dropDown').find('div').first().removeClass('default');
+            $('#consultant-dropDown').find('div').first().text(localStorage["consultant"]);
+            document.querySelector("[data-value='" + localStorage["consultant"] +"']").classList.add("active", "selected");
+            $('input[name="consultant"]').val(localStorage["consultant"]);
+
+            $("#patient_details").find(`[data-value='consultant']`).val(localStorage["consultant"])
+        }
+        if(localStorage["address"]) {
+            $('input[name="address"]').val(localStorage["address"]);
+        }
+        if(localStorage["phone"]) {
+            $('input[name="phone"]').val(localStorage["phone"]);
+        }
+
+        localStorage.clear();
     };
+
+    $(document).ready(function(){
+        $('#createCulture').click(function(){
+            populateLocalStorage();
+            window.location = "/culture";
+        });
+
+        $('#createGeneralReport').click(function(){
+            populateLocalStorage();
+            window.location = "/";
+        });
+    });
+
+    function populateLocalStorage() {
+        localStorage["patient_name"] = document.getElementsByName("patient_name")[0].value;
+        localStorage["Age"] = document.getElementsByName("Age")[0].value;
+        localStorage["uhid"] = document.getElementsByName("uhid")[0].value;
+        localStorage["ipd"] = document.getElementsByName("ipd")[0].value;
+        localStorage["gender"] = document.getElementsByName("gender")[0].value;
+        localStorage["consultant"] = document.getElementsByName("consultant")[0].value;
+        localStorage["address"] = document.getElementsByName("address")[0].value;
+        localStorage["phone"] = document.getElementsByName("phone")[0].value;
+    }
 
     $('.ui.dropdown').dropdown();
 

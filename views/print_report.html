@@ -2343,6 +2343,152 @@
             {{/ifCond}}
             {{/ifCond}}
 
+            {{#ifCond scrub "!=" null}}
+            <tr class="test-category">
+                <th><u>SCRUB TYPHUS ANTIBODY</u></th>
+            </tr>
+
+            {{#ifCond scrub.scrubIgg "!=" null}}
+            <tr>
+                <td class="first-column">SCRUB TYPHUS IGG *</td>
+                {{#ifCond scrub.scrubIgg "===" 'POSITIVE' }}
+                <td class="second-column bold">{{scrub.scrubIgg}}</td>
+                {{else}}
+                <td class="second-column">{{scrub.scrubIgg}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond scrub.scrubIgm "!=" null}}
+            <tr>
+                <td class="first-column">SCRUB TYPHUS IGM *</td>
+                {{#ifCond scrub.scrubIgm "===" 'POSITIVE' }}
+                <td class="second-column bold">{{scrub.scrubIgm}}</td>
+                {{else}}
+                <td class="second-column">{{scrub.scrubIgm}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond leptospira "!=" null}}
+            <tr class="test-category">
+                <th><u>LEPTOSPIRA ABs</u></th>
+            </tr>
+
+            {{#ifCond leptospira.leptospiraIgg "!=" null}}
+            <tr>
+                <td class="first-column">LEPTOSPIRA IgG ABs *</td>
+                {{#ifCond leptospira.leptospiraIgg "===" 'POSITIVE' }}
+                <td class="second-column bold">{{leptospira.leptospiraIgg}}</td>
+                {{else}}
+                <td class="second-column">{{leptospira.leptospiraIgg}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond leptospira.leptospiraIgm "!=" null}}
+            <tr>
+                <td class="first-column">LEPTOSPIRA IgM ABs *</td>
+                {{#ifCond leptospira.leptospiraIgm "===" 'POSITIVE' }}
+                <td class="second-column bold">{{leptospira.leptospiraIgm}}</td>
+                {{else}}
+                <td class="second-column">{{leptospira.leptospiraIgm}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond chikungunyaIgm "!=" null}}
+            <tr class="test-category">
+                <th><u>CHIKUNGUNYA IgM</u></th>
+            </tr>
+
+            {{#ifCond leptospira.leptospiraIgm "!=" null}}
+            <tr>
+                <td class="first-column">CHIKUNGUNYA IgM *</td>
+                {{#ifCond chikungunyaIgm.chikungunyaIgm "===" 'POSITIVE' }}
+                <td class="second-column bold">{{chikungunyaIgm.chikungunyaIgm}}</td>
+                {{else}}
+                <td class="second-column">{{chikungunyaIgm.chikungunyaIgm}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond covid19RAT "!=" null}}
+            <tr class="test-category">
+                <th><u>COVID-19 RAPID ANTIGEN CARD TEST</u></th>
+            </tr>
+
+            {{#ifCond covid19RAT.covid19RAT "!=" null}}
+            <tr>
+                <td class="first-column">COVID-19 RAPID ANTIGEN CARD TEST *</td>
+                {{#ifCond covid19RAT.covid19RAT "===" 'POSITIVE' }}
+                <td class="second-column bold">{{covid19RAT.covid19RAT}}</td>
+                {{else}}
+                <td class="second-column">{{covid19RAT.covid19RAT}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond absoluteEosinophil "!=" null}}
+            <tr class="test-category">
+                <th><u>ABSOLUTE EOSINOPHILIC COUNT (AEC) CGHS 1397</u></th>
+            </tr>
+
+            {{#ifCond absoluteEosinophil.absoluteEosinophil "!=" null}}
+            <tr>
+                <td class="first-column">ABSOLUTE EOSINOPHIL COUNT</td>
+                {{#ifCond absoluteEosinophil.absoluteEosinophil "<" 40}}
+                <td class="second-column bold">{{absoluteEosinophil.absoluteEosinophil}}</td>
+                {{else ifCond absoluteEosinophil.absoluteEosinophil ">" 440}}
+                <td class="second-column bold">{{absoluteEosinophil.absoluteEosinophil}}</td>
+                {{else}}
+                <td class="second-column">{{absoluteEosinophil.absoluteEosinophil}}</td>
+                {{/ifCond}}
+                <td class="third-column">40.00 - 440.00</td>
+                <td class="fourth-column">Cells/cumm</td>
+            </tr>
+            {{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond gramStain "!=" null}}
+            <tr class="test-category">
+                <th><u>GRAM STAIN (SPECIAL STAIN) CGHS 1433</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">GRAM STAIN (SPECIAL STAIN)</td>
+                <td class="second-column">{{gramStain.gramStain}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond kohStain "!=" null}}
+            <tr class="test-category">
+                <th><u>KOH STAIN FOR FUNGUS (SPECIAL STAIN) CGHS 1433</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">KOH STAIN FOR FUNGUS (SPECIAL STAIN)</td>
+                <td class="second-column">{{kohStain.kohStain}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
             
 
         </table>
