@@ -224,6 +224,18 @@ module.exports.testPriceList = {
         "testName": "KOH STAIN FOR FUNGUS (SPECIAL STAIN) CGHS 1433",
         "testPrice": 65
     },
+    "znStain": {
+        "testName": "ZN STAIN (SPECIAL STAIN) CGHS 1433",
+        "testPrice": 65
+    },
+    "ntProBnp": {
+        "testName": "NT-PRO BNP CGHS 1783",
+        "testPrice": 1800
+    },
+    "g6pd": {
+        "testName": "G6PD CGHS 1500",
+        "testPrice": 100
+    },
     "cultureBlood": {
         "testName": "CULTURE & SENSITIVITY FOR BLOOD CGHS 1739",
         "testPrice": 180

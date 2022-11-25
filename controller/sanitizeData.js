@@ -162,6 +162,10 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["gramStain"] = _.pick(removedEmpty, ["gramStain"]);
     sanitizedInfo["kohStain"] = _.pick(removedEmpty, ["kohStain"]);
 
+    sanitizedInfo["ntProBnp"] = _.pick(removedEmpty, ["ntProBnp"]);
+    sanitizedInfo["g6pd"] = _.pick(removedEmpty, ["g6pd"]);
+    sanitizedInfo["znStain"] = _.pick(removedEmpty, ["znStain"]);
+
 
     sanitizedInfo["cultureBlood"] = _.pick(removedEmpty, ["cultureBlood"]);
     sanitizedInfo["cultureUrine"] = _.pick(removedEmpty, ["cultureUrine"]);

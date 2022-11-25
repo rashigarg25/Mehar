@@ -2508,7 +2508,46 @@
                 <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
+
+            {{#ifCond znStain "!=" null}}
+            <tr class="test-category">
+                <th><u>ZN STAIN (SPECIAL STAIN) CGHS 1433</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">FLUID (SPUTUM) ZN STAIN *</td>
+                <td class="second-column">{{znStain.znStain}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
 			
+            {{#ifCond ntProBnp "!=" null}}
+            <tr class="test-category">
+                <th><u>NT-PRO BNP CGHS 1783</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">NT-PRO BNP *</td>
+                {{#ifCond absoluteEosinophil.absoluteEosinophil ">" 300}}
+                <td class="second-column bold">{{ntProBnp.ntProBnp}}</td>
+                {{else}}
+                <td class="second-column">{{ntProBnp.ntProBnp}}</td>
+                {{/ifCond}}
+                <td class="third-column">0.00-300.00</td>
+                <td class="fourth-column">pg/mL</td>
+            </tr>
+            {{/ifCond}}
+
+            {{#ifCond g6pd "!=" null}}
+            <tr class="test-category">
+                <th><u>G6PD CGHS 1500</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">G6BP QUANTITATIVE *</td>
+                <td class="second-column">{{g6pd.g6pd}}</td>
+                <td class="third-column"></td>
+                <td class="fourth-column"></td>
+            </tr>
+            {{/ifCond}}
 
         </table>
     </div>
