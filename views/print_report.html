@@ -2329,7 +2329,7 @@
 
             {{#ifCond totalIron.totalIron "!=" null}}
             <tr>
-                <td class="first-column">GLYCOSYLATED Hb *</td>
+                <td class="first-column">TIBC</td>
                 {{#ifCond totalIron.totalIron "<" 250}}
                 <td class="second-column bold">{{totalIron.totalIron}}</td>
                 {{else ifCond totalIron.totalIron ">" 400}}
@@ -2412,7 +2412,7 @@
                 <th><u>CHIKUNGUNYA IgM</u></th>
             </tr>
 
-            {{#ifCond leptospira.leptospiraIgm "!=" null}}
+            {{#ifCond chikungunyaIgm.chikungunyaIgm "!=" null}}
             <tr>
                 <td class="first-column">CHIKUNGUNYA IgM *</td>
                 {{#ifCond chikungunyaIgm.chikungunyaIgm "===" 'POSITIVE' }}
@@ -2438,6 +2438,25 @@
                 <td class="second-column bold">{{covid19RAT.covid19RAT}}</td>
                 {{else}}
                 <td class="second-column">{{covid19RAT.covid19RAT}}</td>
+                {{/ifCond}}
+                <td class="third-column">NEGATIVE</td>
+                <td class="fourth-column"></td>
+            </tr>
+			{{/ifCond}}
+            {{/ifCond}}
+
+            {{#ifCond UPT "!=" null}}
+            <tr class="test-category">
+                <th><u>URINE PREGNANCY TEST CGHS 1508</u></th>
+            </tr>
+
+            {{#ifCond UPT.UPT "!=" null}}
+            <tr>
+                <td class="first-column">URINE PREGNANCY TEST CGHS 1508</td>
+                {{#ifCond UPT.UPT "===" 'POSITIVE' }}
+                <td class="second-column bold">{{UPT.UPT}}</td>
+                {{else}}
+                <td class="second-column">{{UPT.UPT}}</td>
                 {{/ifCond}}
                 <td class="third-column">NEGATIVE</td>
                 <td class="fourth-column"></td>
@@ -2489,7 +2508,7 @@
                 <td class="fourth-column"></td>
             </tr>
             {{/ifCond}}
-            
+			
 
         </table>
     </div>

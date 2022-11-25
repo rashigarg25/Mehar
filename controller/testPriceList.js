@@ -33,11 +33,11 @@ module.exports.testPriceList = {
     },
     "sgot": {
         "testName": "SGOT / AST CGHS 1476",
-        "testPrice": 50
+        "testPrice": 0
     },
     "sgpt": {
         "testName": "SGPT / ALT CGHS 1475",
-        "testPrice": 50
+        "testPrice": 0
     },
     "serumAmylase": {
         "testName": "SERUM AMYLASE CGHS 1477",
@@ -211,6 +211,11 @@ module.exports.testPriceList = {
         "testName": "COVID-19 RAPID ANTIGEN CARD TEST",
         "testPrice": 250
     },
+	"UPT": {
+        "testName": "URINE PREGNANCY TEST CGHS 1509",
+        "testPrice": 65
+    
+	},
     "gramStain": {
         "testName": "GRAM STAIN (SPECIAL STAIN) CGHS 1433",
         "testPrice": 65

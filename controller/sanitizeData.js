@@ -154,6 +154,7 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["totalIron"] = _.pick(removedEmpty, ["totalIron"]);
 
     sanitizedInfo["covid19RAT"] = _.pick(removedEmpty, ["covid19RAT"]);
+	sanitizedInfo["UPT"] = _.pick(removedEmpty, ["UPT"]);
     sanitizedInfo["absoluteEosinophil"] = _.pick(removedEmpty, ["absoluteEosinophil"]);
     sanitizedInfo["chikungunyaIgm"] = _.pick(removedEmpty, ["chikungunyaIgm"]);
     sanitizedInfo["leptospira"] = _.pick(removedEmpty, ["leptospiraIgg", "leptospiraIgm"]);
