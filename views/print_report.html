@@ -673,6 +673,24 @@
             </tr>
             {{/ifCond}}
 
+            {{#ifCond magnesium "!=" null}}
+            <tr class="test-category">
+                <th><u>SERUM MAGNESIUM CGHS 1480</u></th>
+            </tr>
+            <tr>
+                <td class="first-column">SERUM MAGNESIUM</td>
+                {{#ifCond magnesium.magnesium "<" 1.70}}
+                <td class="second-column bold">{{magnesium.magnesium}}</td>
+                {{else ifCond magnesium.magnesium ">" 2.70}}
+                <td class="second-column bold">{{magnesium.magnesium}}</td>
+                {{else}}
+                <td class="second-column">{{magnesium.magnesium}}</td>
+                {{/ifCond}}
+                <td class="third-column">1.70 - 2.70</td>
+                <td class="fourth-column">mg/dl</td>
+            </tr>
+            {{/ifCond}}
+
             {{#ifCond liver "!=" null}}
             <tr class="test-category">
                 <th><u>LIVER FUNCTION TEST LFT CGHS 1513</u></th>
@@ -2515,7 +2533,11 @@
             </tr>
             <tr>
                 <td class="first-column">FLUID (SPUTUM) ZN STAIN *</td>
+                {{#ifCond znStain.znStain "===" 'NEGATIVE'}}
                 <td class="second-column">{{znStain.znStain}}</td>
+                {{else}}
+                <td class="second-column bold">{{znStain.znStain}}</td>
+                {{/ifCond}}
                 <td class="third-column"></td>
                 <td class="fourth-column"></td>
             </tr>

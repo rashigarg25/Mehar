@@ -110,6 +110,8 @@ const getSantizedInfo = (info) => {
     sanitizedInfo["sodium"] = _.pick(removedEmpty, ["sodium"]);
     sanitizedInfo["potassium"] = _.pick(removedEmpty, ["potassium"]);
     sanitizedInfo["chloride"] = _.pick(removedEmpty, ["chloride"]);
+    sanitizedInfo["magnesium"] = _.pick(removedEmpty, ["magnesium"]);
+
     sanitizedInfo["urine"] = _.pick(removedEmpty, ["quantity", "color", "transparency", "gravity", "reaction", "ph", "albumin", "usugar", "ublood", "ubilirubin", "urobilinogen", "uacetone", "epithelial", "pus", "urbc", "crystals", "casts", "bacteria", "uother"]);
     sanitizedInfo["sgpt"] = _.pick(removedEmpty, ["sgpt"]);
     sanitizedInfo["sgot"] = _.pick(removedEmpty, ["sgot"]);
