@@ -27,6 +27,10 @@ module.exports.testPriceList = {
         "testName": "SERUM CHLORIDE CGHS 1531",
         "testPrice": 54
     },
+    "magnesium": {
+        "testName": "SERUM MAGNESIUM CGHS 1480",
+        "testPrice": 100
+    },
     "liver": {
         "testName": "LIVER FUNCTION TEST LFT CGHS 1513",
         "testPrice": 225
@@ -235,6 +239,10 @@ module.exports.testPriceList = {
     "g6pd": {
         "testName": "G6PD CGHS 1500",
         "testPrice": 100
+    },
+    "periSmearExam": {
+        "testName": "PERIPHERAL SMEAR EXAMINATION CHGS 1399",
+        "testPrice": 39
     },
     "cultureBlood": {
         "testName": "CULTURE & SENSITIVITY FOR BLOOD CGHS 1739",

@@ -2564,8 +2564,12 @@
                 <th><u>G6PD CGHS 1500</u></th>
             </tr>
             <tr>
-                <td class="first-column">G6BP QUANTITATIVE *</td>
+                <td class="first-column">G6PD QUANTITATIVE *</td>
+                {{#ifCond g6pd.g6pd "<" 10}}
+                <td class="second-column bold">{{g6pd.g6pd}}</td>
+                {{else}}
                 <td class="second-column">{{g6pd.g6pd}}</td>
+                {{/ifCond}}
                 <td class="third-column"></td>
                 <td class="fourth-column"></td>
             </tr>

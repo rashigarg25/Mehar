@@ -138,6 +138,7 @@ const getInfo = (body, i) => {
     if(!_.isArray(info.cultureForBill)) {
         info.cultureForBill = [info.cultureForBill];
     }
+    info.periSmearExam = body["periSmearExam-" + i] || "";
     return info;
 }
 

@@ -36,6 +36,8 @@
         $('input[name="tiglecycline"]').val('Resistant');
         $('input[name="tiecoplanin"]').val('Resistant');
 
+        $('.checkbox').checkbox();
+
         if(localStorage["patient_name"]) {
             $('input[name="patient_name"]').val(localStorage["patient_name"]);
         }
